@@ -1,0 +1,5904 @@
+{
+  "entry": "dist/entry.js",
+  "generatedAt": "2026-05-02T16:48:03.409Z",
+  "results": [
+    {
+      "id": "default",
+      "name": "gateway default",
+      "samples": [
+        {
+          "cpuCoreRatio": 1.1405855129919158,
+          "cpuMs": 2000,
+          "exitCode": 0,
+          "firstOutputMs": 28.918124999999918,
+          "healthz": {
+            "ms": 1645.2275849999999,
+            "status": 200
+          },
+          "maxRssMb": 525.83203125,
+          "outputTail": "2026-05-02T16:47:45.855+00:00 [plugins] embedded acpx runtime backend registered lazily\nWarning: no IPv4 address available on bsdummy6\n2026-05-02T16:47:45.864+00:00 [gateway] startup trace: sidecars.plugin-services 9.6ms total=347.6ms eventLoopMax=0.0ms\n2026-05-02T16:47:45.865+00:00 [gateway] startup trace: sidecars.memory 0.1ms total=348.3ms eventLoopMax=0.0ms\n2026-05-02T16:47:45.866+00:00 [gateway] startup trace: sidecars.restart-sentinel 1.0ms total=349.9ms eventLoopMax=0.0ms\n2026-05-02T16:47:45.870+00:00 [gateway] startup trace: sidecars.subagent-recovery 3.3ms total=353.8ms eventLoopMax=0.0ms\n2026-05-02T16:47:45.873+00:00 [gateway] startup trace: sidecars.main-session-recovery 2.0ms total=356.8ms eventLoopMax=0.0ms\n2026-05-02T16:47:45.874+00:00 [gateway] startup trace: sidecars.total 26.8ms total=357.5ms eventLoopMax=0.0ms\n2026-05-02T16:47:45.874+00:00 [gateway] startup trace: sidecars.ready 0.6ms total=358.1ms eventLoopMax=0.0ms\n2026-05-02T16:47:45.875+00:00 [gateway] ready\n2026-05-02T16:47:45.876+00:00 [gateway] startup trace: runtime.post-attach 176.2ms total=359.4ms eventLoopMax=0.0ms\n2026-05-02T16:47:45.876+00:00 [gateway] startup trace: ready 0.6ms total=360.0ms eventLoopMax=0.0ms\n2026-05-02T16:47:45.883+00:00 [heartbeat] started\n2026-05-02T16:47:45.978+00:00 [gateway] signal SIGTERM received\n2026-05-02T16:47:45.981+00:00 [gateway] received SIGTERM; shutting down\n2026-05-02T16:47:45.989+00:00 [shutdown] started: gateway stopping\n2026-05-02T16:47:45.990+00:00 [plugins] bonjour: advertised gateway fqdn=ip-172-31-64-123 (OpenClaw)._openclaw-gw._tcp.local. host=ip-172-31-64-123.local. port=35801 state=unannounced\n2026-05-02T16:47:45.994+00:00 [gmail-watcher] gmail watcher stopped\n2026-05-02T16:47:45.995+00:00 [shutdown] completed cleanly in 6ms\n",
+          "readyLogMs": 1604.0174519999998,
+          "readyz": {
+            "ms": 1753.4784280000001,
+            "status": 200
+          },
+          "signal": null,
+          "startupTrace": {
+            "entry.bootstrap": 0.3,
+            "entry.bootstrap.total": 0.3,
+            "entry.argv": 0.6,
+            "entry.argv.total": 0.9,
+            "entry.run-main-import": 6.9,
+            "entry.run-main-import.total": 7.9,
+            "cli.main.argv": 0.1,
+            "cli.main.argv.total": 0.1,
+            "cli.main.gateway-run-imports": 14.1,
+            "cli.main.gateway-run-imports.total": 353.1,
+            "cli.server-import": 0.5,
+            "cli.server-import.total": 0.5,
+            "cli.config-snapshot": 26.7,
+            "cli.config-snapshot.total": 36.8,
+            "cli.auth-resolve": 0.2,
+            "cli.auth-resolve.total": 42.2,
+            "cli.gateway-loop": 1.7,
+            "cli.gateway-loop.total": 43.9,
+            "gateway.server-impl-import": 854.9,
+            "gateway.server-impl-import.total": 854.9,
+            "config.snapshot.auto-enable": 9.8,
+            "config.snapshot.auto-enable.total": 10,
+            "config.snapshot.auto-enable.eventLoopMax": 0,
+            "config.snapshot": 11.4,
+            "config.snapshot.total": 11.5,
+            "config.snapshot.eventLoopMax": 0,
+            "config.auth": 1.6,
+            "config.auth.total": 13.8,
+            "config.auth.eventLoopMax": 0,
+            "control-ui.seed": 0.1,
+            "control-ui.seed.total": 14.8,
+            "control-ui.seed.eventLoopMax": 0,
+            "plugins.bootstrap": 29.5,
+            "plugins.bootstrap.total": 45,
+            "plugins.bootstrap.eventLoopMax": 0,
+            "plugins.lookup-table.registrySnapshotMs": 17.6,
+            "plugins.lookup-table.manifestRegistryMs": 5.9,
+            "plugins.lookup-table.startupPlanMs": 18.4,
+            "plugins.lookup-table.ownerMapsMs": 0.1,
+            "plugins.lookup-table.totalMs": 42.2,
+            "runtime.config": 1.2,
+            "runtime.config.total": 48.4,
+            "runtime.config.eventLoopMax": 0,
+            "control-ui.root": 0.1,
+            "control-ui.root.total": 49.3,
+            "control-ui.root.eventLoopMax": 0,
+            "tls.runtime": 0.1,
+            "tls.runtime.total": 49.9,
+            "tls.runtime.eventLoopMax": 0,
+            "runtime.state": 3.8,
+            "runtime.state.total": 55.1,
+            "runtime.state.eventLoopMax": 0,
+            "runtime.early": 66.9,
+            "runtime.early.total": 123.3,
+            "runtime.early.eventLoopMax": 0,
+            "http.bound": 59.1,
+            "http.bound.total": 182.3,
+            "http.bound.eventLoopMax": 0,
+            "post-attach.update-sentinel": 20.6,
+            "post-attach.update-sentinel.total": 204,
+            "post-attach.update-sentinel.eventLoopMax": 0,
+            "plugins.runtime-post-bind": 76.8,
+            "plugins.runtime-post-bind.total": 281.5,
+            "plugins.runtime-post-bind.eventLoopMax": 0,
+            "post-attach.log": 23.6,
+            "post-attach.log.total": 327.6,
+            "post-attach.log.eventLoopMax": 0,
+            "post-attach.update-check": 0.7,
+            "post-attach.update-check.total": 329.1,
+            "post-attach.update-check.eventLoopMax": 0,
+            "sidecars.session-locks": 1.8,
+            "sidecars.session-locks.total": 332.6,
+            "sidecars.session-locks.eventLoopMax": 0,
+            "sidecars.gmail-watch": 0,
+            "sidecars.gmail-watch.total": 333.2,
+            "sidecars.gmail-watch.eventLoopMax": 0,
+            "sidecars.gmail-model": 0.1,
+            "sidecars.gmail-model.total": 333.9,
+            "sidecars.gmail-model.eventLoopMax": 0,
+            "sidecars.internal-hooks": 0,
+            "sidecars.internal-hooks.total": 334.5,
+            "sidecars.internal-hooks.eventLoopMax": 0,
+            "sidecars.channel-start": 0.1,
+            "sidecars.channel-start.total": 335.8,
+            "sidecars.channel-start.eventLoopMax": 0,
+            "sidecars.channels": 1.2,
+            "sidecars.channels.total": 336.4,
+            "sidecars.channels.eventLoopMax": 0,
+            "sidecars.model-prewarm": 2.1,
+            "sidecars.model-prewarm.total": 337.3,
+            "sidecars.model-prewarm.eventLoopMax": 0,
+            "sidecars.plugin-services": 9.6,
+            "sidecars.plugin-services.total": 347.6,
+            "sidecars.plugin-services.eventLoopMax": 0,
+            "sidecars.memory": 0.1,
+            "sidecars.memory.total": 348.3,
+            "sidecars.memory.eventLoopMax": 0,
+            "sidecars.restart-sentinel": 1,
+            "sidecars.restart-sentinel.total": 349.9,
+            "sidecars.restart-sentinel.eventLoopMax": 0,
+            "sidecars.subagent-recovery": 3.3,
+            "sidecars.subagent-recovery.total": 353.8,
+            "sidecars.subagent-recovery.eventLoopMax": 0,
+            "sidecars.main-session-recovery": 2,
+            "sidecars.main-session-recovery.total": 356.8,
+            "sidecars.main-session-recovery.eventLoopMax": 0,
+            "sidecars.total": 26.8,
+            "sidecars.total.total": 357.5,
+            "sidecars.total.eventLoopMax": 0,
+            "sidecars.ready": 0.6,
+            "sidecars.ready.total": 358.1,
+            "sidecars.ready.eventLoopMax": 0,
+            "runtime.post-attach": 176.2,
+            "runtime.post-attach.total": 359.4,
+            "runtime.post-attach.eventLoopMax": 0,
+            "ready": 0.6,
+            "ready.total": 360,
+            "ready.eventLoopMax": 0
+          }
+        }
+      ],
+      "summary": {
+        "firstOutputMs": {
+          "avg": 28.918124999999918,
+          "max": 28.918124999999918,
+          "min": 28.918124999999918,
+          "p50": 28.918124999999918,
+          "p95": 28.918124999999918
+        },
+        "cpuCoreRatio": {
+          "avg": 1.1405855129919158,
+          "max": 1.1405855129919158,
+          "min": 1.1405855129919158,
+          "p50": 1.1405855129919158,
+          "p95": 1.1405855129919158
+        },
+        "cpuMs": {
+          "avg": 2000,
+          "max": 2000,
+          "min": 2000,
+          "p50": 2000,
+          "p95": 2000
+        },
+        "healthzMs": {
+          "avg": 1645.2275849999999,
+          "max": 1645.2275849999999,
+          "min": 1645.2275849999999,
+          "p50": 1645.2275849999999,
+          "p95": 1645.2275849999999
+        },
+        "maxRssMb": {
+          "avg": 525.83203125,
+          "max": 525.83203125,
+          "min": 525.83203125,
+          "p50": 525.83203125,
+          "p95": 525.83203125
+        },
+        "readyLogMs": {
+          "avg": 1604.0174519999998,
+          "max": 1604.0174519999998,
+          "min": 1604.0174519999998,
+          "p50": 1604.0174519999998,
+          "p95": 1604.0174519999998
+        },
+        "readyzMs": {
+          "avg": 1753.4784280000001,
+          "max": 1753.4784280000001,
+          "min": 1753.4784280000001,
+          "p50": 1753.4784280000001,
+          "p95": 1753.4784280000001
+        },
+        "startupTrace": {
+          "cli.auth-resolve": {
+            "avg": 0.2,
+            "max": 0.2,
+            "min": 0.2,
+            "p50": 0.2,
+            "p95": 0.2
+          },
+          "cli.auth-resolve.total": {
+            "avg": 42.2,
+            "max": 42.2,
+            "min": 42.2,
+            "p50": 42.2,
+            "p95": 42.2
+          },
+          "cli.config-snapshot": {
+            "avg": 26.7,
+            "max": 26.7,
+            "min": 26.7,
+            "p50": 26.7,
+            "p95": 26.7
+          },
+          "cli.config-snapshot.total": {
+            "avg": 36.8,
+            "max": 36.8,
+            "min": 36.8,
+            "p50": 36.8,
+            "p95": 36.8
+          },
+          "cli.gateway-loop": {
+            "avg": 1.7,
+            "max": 1.7,
+            "min": 1.7,
+            "p50": 1.7,
+            "p95": 1.7
+          },
+          "cli.gateway-loop.total": {
+            "avg": 43.9,
+            "max": 43.9,
+            "min": 43.9,
+            "p50": 43.9,
+            "p95": 43.9
+          },
+          "cli.main.argv": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "cli.main.argv.total": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "cli.main.gateway-run-imports": {
+            "avg": 14.1,
+            "max": 14.1,
+            "min": 14.1,
+            "p50": 14.1,
+            "p95": 14.1
+          },
+          "cli.main.gateway-run-imports.total": {
+            "avg": 353.1,
+            "max": 353.1,
+            "min": 353.1,
+            "p50": 353.1,
+            "p95": 353.1
+          },
+          "cli.server-import": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "cli.server-import.total": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "config.auth": {
+            "avg": 1.6,
+            "max": 1.6,
+            "min": 1.6,
+            "p50": 1.6,
+            "p95": 1.6
+          },
+          "config.auth.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.auth.total": {
+            "avg": 13.8,
+            "max": 13.8,
+            "min": 13.8,
+            "p50": 13.8,
+            "p95": 13.8
+          },
+          "config.snapshot": {
+            "avg": 11.4,
+            "max": 11.4,
+            "min": 11.4,
+            "p50": 11.4,
+            "p95": 11.4
+          },
+          "config.snapshot.auto-enable": {
+            "avg": 9.8,
+            "max": 9.8,
+            "min": 9.8,
+            "p50": 9.8,
+            "p95": 9.8
+          },
+          "config.snapshot.auto-enable.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.snapshot.auto-enable.total": {
+            "avg": 10,
+            "max": 10,
+            "min": 10,
+            "p50": 10,
+            "p95": 10
+          },
+          "config.snapshot.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.snapshot.total": {
+            "avg": 11.5,
+            "max": 11.5,
+            "min": 11.5,
+            "p50": 11.5,
+            "p95": 11.5
+          },
+          "control-ui.root": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "control-ui.root.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "control-ui.root.total": {
+            "avg": 49.3,
+            "max": 49.3,
+            "min": 49.3,
+            "p50": 49.3,
+            "p95": 49.3
+          },
+          "control-ui.seed": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "control-ui.seed.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "control-ui.seed.total": {
+            "avg": 14.8,
+            "max": 14.8,
+            "min": 14.8,
+            "p50": 14.8,
+            "p95": 14.8
+          },
+          "entry.argv": {
+            "avg": 0.6,
+            "max": 0.6,
+            "min": 0.6,
+            "p50": 0.6,
+            "p95": 0.6
+          },
+          "entry.argv.total": {
+            "avg": 0.9,
+            "max": 0.9,
+            "min": 0.9,
+            "p50": 0.9,
+            "p95": 0.9
+          },
+          "entry.bootstrap": {
+            "avg": 0.3,
+            "max": 0.3,
+            "min": 0.3,
+            "p50": 0.3,
+            "p95": 0.3
+          },
+          "entry.bootstrap.total": {
+            "avg": 0.3,
+            "max": 0.3,
+            "min": 0.3,
+            "p50": 0.3,
+            "p95": 0.3
+          },
+          "entry.run-main-import": {
+            "avg": 6.9,
+            "max": 6.9,
+            "min": 6.9,
+            "p50": 6.9,
+            "p95": 6.9
+          },
+          "entry.run-main-import.total": {
+            "avg": 7.9,
+            "max": 7.9,
+            "min": 7.9,
+            "p50": 7.9,
+            "p95": 7.9
+          },
+          "gateway.server-impl-import": {
+            "avg": 854.9,
+            "max": 854.9,
+            "min": 854.9,
+            "p50": 854.9,
+            "p95": 854.9
+          },
+          "gateway.server-impl-import.total": {
+            "avg": 854.9,
+            "max": 854.9,
+            "min": 854.9,
+            "p50": 854.9,
+            "p95": 854.9
+          },
+          "http.bound": {
+            "avg": 59.1,
+            "max": 59.1,
+            "min": 59.1,
+            "p50": 59.1,
+            "p95": 59.1
+          },
+          "http.bound.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "http.bound.total": {
+            "avg": 182.3,
+            "max": 182.3,
+            "min": 182.3,
+            "p50": 182.3,
+            "p95": 182.3
+          },
+          "plugins.bootstrap": {
+            "avg": 29.5,
+            "max": 29.5,
+            "min": 29.5,
+            "p50": 29.5,
+            "p95": 29.5
+          },
+          "plugins.bootstrap.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "plugins.bootstrap.total": {
+            "avg": 45,
+            "max": 45,
+            "min": 45,
+            "p50": 45,
+            "p95": 45
+          },
+          "plugins.lookup-table.manifestRegistryMs": {
+            "avg": 5.9,
+            "max": 5.9,
+            "min": 5.9,
+            "p50": 5.9,
+            "p95": 5.9
+          },
+          "plugins.lookup-table.ownerMapsMs": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "plugins.lookup-table.registrySnapshotMs": {
+            "avg": 17.6,
+            "max": 17.6,
+            "min": 17.6,
+            "p50": 17.6,
+            "p95": 17.6
+          },
+          "plugins.lookup-table.startupPlanMs": {
+            "avg": 18.4,
+            "max": 18.4,
+            "min": 18.4,
+            "p50": 18.4,
+            "p95": 18.4
+          },
+          "plugins.lookup-table.totalMs": {
+            "avg": 42.2,
+            "max": 42.2,
+            "min": 42.2,
+            "p50": 42.2,
+            "p95": 42.2
+          },
+          "plugins.runtime-post-bind": {
+            "avg": 76.8,
+            "max": 76.8,
+            "min": 76.8,
+            "p50": 76.8,
+            "p95": 76.8
+          },
+          "plugins.runtime-post-bind.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "plugins.runtime-post-bind.total": {
+            "avg": 281.5,
+            "max": 281.5,
+            "min": 281.5,
+            "p50": 281.5,
+            "p95": 281.5
+          },
+          "post-attach.log": {
+            "avg": 23.6,
+            "max": 23.6,
+            "min": 23.6,
+            "p50": 23.6,
+            "p95": 23.6
+          },
+          "post-attach.log.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.log.total": {
+            "avg": 327.6,
+            "max": 327.6,
+            "min": 327.6,
+            "p50": 327.6,
+            "p95": 327.6
+          },
+          "post-attach.update-check": {
+            "avg": 0.7,
+            "max": 0.7,
+            "min": 0.7,
+            "p50": 0.7,
+            "p95": 0.7
+          },
+          "post-attach.update-check.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.update-check.total": {
+            "avg": 329.1,
+            "max": 329.1,
+            "min": 329.1,
+            "p50": 329.1,
+            "p95": 329.1
+          },
+          "post-attach.update-sentinel": {
+            "avg": 20.6,
+            "max": 20.6,
+            "min": 20.6,
+            "p50": 20.6,
+            "p95": 20.6
+          },
+          "post-attach.update-sentinel.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.update-sentinel.total": {
+            "avg": 204,
+            "max": 204,
+            "min": 204,
+            "p50": 204,
+            "p95": 204
+          },
+          "ready": {
+            "avg": 0.6,
+            "max": 0.6,
+            "min": 0.6,
+            "p50": 0.6,
+            "p95": 0.6
+          },
+          "ready.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "ready.total": {
+            "avg": 360,
+            "max": 360,
+            "min": 360,
+            "p50": 360,
+            "p95": 360
+          },
+          "runtime.config": {
+            "avg": 1.2,
+            "max": 1.2,
+            "min": 1.2,
+            "p50": 1.2,
+            "p95": 1.2
+          },
+          "runtime.config.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.config.total": {
+            "avg": 48.4,
+            "max": 48.4,
+            "min": 48.4,
+            "p50": 48.4,
+            "p95": 48.4
+          },
+          "runtime.early": {
+            "avg": 66.9,
+            "max": 66.9,
+            "min": 66.9,
+            "p50": 66.9,
+            "p95": 66.9
+          },
+          "runtime.early.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.early.total": {
+            "avg": 123.3,
+            "max": 123.3,
+            "min": 123.3,
+            "p50": 123.3,
+            "p95": 123.3
+          },
+          "runtime.post-attach": {
+            "avg": 176.2,
+            "max": 176.2,
+            "min": 176.2,
+            "p50": 176.2,
+            "p95": 176.2
+          },
+          "runtime.post-attach.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.post-attach.total": {
+            "avg": 359.4,
+            "max": 359.4,
+            "min": 359.4,
+            "p50": 359.4,
+            "p95": 359.4
+          },
+          "runtime.state": {
+            "avg": 3.8,
+            "max": 3.8,
+            "min": 3.8,
+            "p50": 3.8,
+            "p95": 3.8
+          },
+          "runtime.state.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.state.total": {
+            "avg": 55.1,
+            "max": 55.1,
+            "min": 55.1,
+            "p50": 55.1,
+            "p95": 55.1
+          },
+          "sidecars.channel-start": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "sidecars.channel-start.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.channel-start.total": {
+            "avg": 335.8,
+            "max": 335.8,
+            "min": 335.8,
+            "p50": 335.8,
+            "p95": 335.8
+          },
+          "sidecars.channels": {
+            "avg": 1.2,
+            "max": 1.2,
+            "min": 1.2,
+            "p50": 1.2,
+            "p95": 1.2
+          },
+          "sidecars.channels.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.channels.total": {
+            "avg": 336.4,
+            "max": 336.4,
+            "min": 336.4,
+            "p50": 336.4,
+            "p95": 336.4
+          },
+          "sidecars.gmail-model": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "sidecars.gmail-model.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-model.total": {
+            "avg": 333.9,
+            "max": 333.9,
+            "min": 333.9,
+            "p50": 333.9,
+            "p95": 333.9
+          },
+          "sidecars.gmail-watch": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-watch.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-watch.total": {
+            "avg": 333.2,
+            "max": 333.2,
+            "min": 333.2,
+            "p50": 333.2,
+            "p95": 333.2
+          },
+          "sidecars.internal-hooks": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.internal-hooks.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.internal-hooks.total": {
+            "avg": 334.5,
+            "max": 334.5,
+            "min": 334.5,
+            "p50": 334.5,
+            "p95": 334.5
+          },
+          "sidecars.main-session-recovery": {
+            "avg": 2,
+            "max": 2,
+            "min": 2,
+            "p50": 2,
+            "p95": 2
+          },
+          "sidecars.main-session-recovery.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.main-session-recovery.total": {
+            "avg": 356.8,
+            "max": 356.8,
+            "min": 356.8,
+            "p50": 356.8,
+            "p95": 356.8
+          },
+          "sidecars.memory": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "sidecars.memory.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.memory.total": {
+            "avg": 348.3,
+            "max": 348.3,
+            "min": 348.3,
+            "p50": 348.3,
+            "p95": 348.3
+          },
+          "sidecars.model-prewarm": {
+            "avg": 2.1,
+            "max": 2.1,
+            "min": 2.1,
+            "p50": 2.1,
+            "p95": 2.1
+          },
+          "sidecars.model-prewarm.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.model-prewarm.total": {
+            "avg": 337.3,
+            "max": 337.3,
+            "min": 337.3,
+            "p50": 337.3,
+            "p95": 337.3
+          },
+          "sidecars.plugin-services": {
+            "avg": 9.6,
+            "max": 9.6,
+            "min": 9.6,
+            "p50": 9.6,
+            "p95": 9.6
+          },
+          "sidecars.plugin-services.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.plugin-services.total": {
+            "avg": 347.6,
+            "max": 347.6,
+            "min": 347.6,
+            "p50": 347.6,
+            "p95": 347.6
+          },
+          "sidecars.ready": {
+            "avg": 0.6,
+            "max": 0.6,
+            "min": 0.6,
+            "p50": 0.6,
+            "p95": 0.6
+          },
+          "sidecars.ready.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.ready.total": {
+            "avg": 358.1,
+            "max": 358.1,
+            "min": 358.1,
+            "p50": 358.1,
+            "p95": 358.1
+          },
+          "sidecars.restart-sentinel": {
+            "avg": 1,
+            "max": 1,
+            "min": 1,
+            "p50": 1,
+            "p95": 1
+          },
+          "sidecars.restart-sentinel.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.restart-sentinel.total": {
+            "avg": 349.9,
+            "max": 349.9,
+            "min": 349.9,
+            "p50": 349.9,
+            "p95": 349.9
+          },
+          "sidecars.session-locks": {
+            "avg": 1.8,
+            "max": 1.8,
+            "min": 1.8,
+            "p50": 1.8,
+            "p95": 1.8
+          },
+          "sidecars.session-locks.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.session-locks.total": {
+            "avg": 332.6,
+            "max": 332.6,
+            "min": 332.6,
+            "p50": 332.6,
+            "p95": 332.6
+          },
+          "sidecars.subagent-recovery": {
+            "avg": 3.3,
+            "max": 3.3,
+            "min": 3.3,
+            "p50": 3.3,
+            "p95": 3.3
+          },
+          "sidecars.subagent-recovery.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.subagent-recovery.total": {
+            "avg": 353.8,
+            "max": 353.8,
+            "min": 353.8,
+            "p50": 353.8,
+            "p95": 353.8
+          },
+          "sidecars.total": {
+            "avg": 26.8,
+            "max": 26.8,
+            "min": 26.8,
+            "p50": 26.8,
+            "p95": 26.8
+          },
+          "sidecars.total.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.total.total": {
+            "avg": 357.5,
+            "max": 357.5,
+            "min": 357.5,
+            "p50": 357.5,
+            "p95": 357.5
+          },
+          "tls.runtime": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "tls.runtime.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "tls.runtime.total": {
+            "avg": 49.9,
+            "max": 49.9,
+            "min": 49.9,
+            "p50": 49.9,
+            "p95": 49.9
+          }
+        }
+      }
+    },
+    {
+      "id": "skipChannels",
+      "name": "gateway, skip channels",
+      "samples": [
+        {
+          "cpuCoreRatio": 1.1897238063084052,
+          "cpuMs": 2000,
+          "exitCode": 0,
+          "firstOutputMs": 24.79413199999999,
+          "healthz": {
+            "ms": 1643.5472990000007,
+            "status": 200
+          },
+          "maxRssMb": 521.77734375,
+          "outputTail": "2026-05-02T16:47:49.380+00:00 [plugins] embedded acpx runtime backend registered lazily\nWarning: no IPv4 address available on bsdummy6\n2026-05-02T16:47:49.388+00:00 [gateway] startup trace: sidecars.plugin-services 8.7ms total=345.2ms eventLoopMax=0.0ms\n2026-05-02T16:47:49.388+00:00 [gateway] startup trace: sidecars.memory 0.1ms total=345.9ms eventLoopMax=0.0ms\n2026-05-02T16:47:49.390+00:00 [gateway] startup trace: sidecars.restart-sentinel 0.6ms total=347.1ms eventLoopMax=0.0ms\n2026-05-02T16:47:49.394+00:00 [gateway] startup trace: sidecars.subagent-recovery 3.3ms total=351.0ms eventLoopMax=0.0ms\n2026-05-02T16:47:49.396+00:00 [gateway] startup trace: sidecars.main-session-recovery 2.0ms total=354.0ms eventLoopMax=0.0ms\n2026-05-02T16:47:49.397+00:00 [gateway] startup trace: sidecars.total 23.6ms total=354.7ms eventLoopMax=0.0ms\n2026-05-02T16:47:49.398+00:00 [gateway] startup trace: sidecars.ready 0.7ms total=355.3ms eventLoopMax=0.0ms\n2026-05-02T16:47:49.398+00:00 [gateway] ready\n2026-05-02T16:47:49.399+00:00 [gateway] startup trace: runtime.post-attach 176.1ms total=356.8ms eventLoopMax=0.0ms\n2026-05-02T16:47:49.400+00:00 [gateway] startup trace: ready 0.7ms total=357.4ms eventLoopMax=0.0ms\n2026-05-02T16:47:49.402+00:00 [heartbeat] started\n2026-05-02T16:47:49.429+00:00 [gateway] signal SIGTERM received\n2026-05-02T16:47:49.432+00:00 [gateway] received SIGTERM; shutting down\n2026-05-02T16:47:49.440+00:00 [shutdown] started: gateway stopping\n2026-05-02T16:47:49.441+00:00 [plugins] bonjour: advertised gateway fqdn=ip-172-31-64-123 (OpenClaw)._openclaw-gw._tcp.local. host=ip-172-31-64-123.local. port=34773 state=unannounced\n2026-05-02T16:47:49.445+00:00 [gmail-watcher] gmail watcher stopped\n2026-05-02T16:47:49.446+00:00 [shutdown] completed cleanly in 6ms\n",
+          "readyLogMs": 1606.561466,
+          "readyz": {
+            "ms": 1681.048801,
+            "status": 200
+          },
+          "signal": null,
+          "startupTrace": {
+            "entry.bootstrap": 0.3,
+            "entry.bootstrap.total": 0.3,
+            "entry.argv": 0.6,
+            "entry.argv.total": 0.9,
+            "entry.run-main-import": 6.1,
+            "entry.run-main-import.total": 7.1,
+            "cli.main.argv": 0.1,
+            "cli.main.argv.total": 0.1,
+            "cli.main.gateway-run-imports": 14.6,
+            "cli.main.gateway-run-imports.total": 361,
+            "cli.server-import": 0.5,
+            "cli.server-import.total": 0.5,
+            "cli.config-snapshot": 26.8,
+            "cli.config-snapshot.total": 36.9,
+            "cli.auth-resolve": 0.2,
+            "cli.auth-resolve.total": 42.5,
+            "cli.gateway-loop": 1.7,
+            "cli.gateway-loop.total": 44.2,
+            "gateway.server-impl-import": 855.8,
+            "gateway.server-impl-import.total": 855.8,
+            "config.snapshot.auto-enable": 10.1,
+            "config.snapshot.auto-enable.total": 10.3,
+            "config.snapshot.auto-enable.eventLoopMax": 0,
+            "config.snapshot": 11.7,
+            "config.snapshot.total": 11.8,
+            "config.snapshot.eventLoopMax": 0,
+            "config.auth": 1.6,
+            "config.auth.total": 14.1,
+            "config.auth.eventLoopMax": 0,
+            "control-ui.seed": 0.1,
+            "control-ui.seed.total": 15.2,
+            "control-ui.seed.eventLoopMax": 0,
+            "plugins.bootstrap": 29.2,
+            "plugins.bootstrap.total": 44.9,
+            "plugins.bootstrap.eventLoopMax": 0,
+            "plugins.lookup-table.registrySnapshotMs": 17.9,
+            "plugins.lookup-table.manifestRegistryMs": 5.8,
+            "plugins.lookup-table.startupPlanMs": 18.2,
+            "plugins.lookup-table.ownerMapsMs": 0.1,
+            "plugins.lookup-table.totalMs": 42.1,
+            "runtime.config": 1.2,
+            "runtime.config.total": 48.3,
+            "runtime.config.eventLoopMax": 0,
+            "control-ui.root": 0.1,
+            "control-ui.root.total": 49.2,
+            "control-ui.root.eventLoopMax": 0,
+            "tls.runtime": 0.1,
+            "tls.runtime.total": 49.8,
+            "tls.runtime.eventLoopMax": 0,
+            "runtime.state": 3.7,
+            "runtime.state.total": 54.9,
+            "runtime.state.eventLoopMax": 0,
+            "runtime.early": 64.2,
+            "runtime.early.total": 120.4,
+            "runtime.early.eventLoopMax": 0,
+            "http.bound": 59.4,
+            "http.bound.total": 179.8,
+            "http.bound.eventLoopMax": 0,
+            "post-attach.update-sentinel": 21,
+            "post-attach.update-sentinel.total": 201.9,
+            "post-attach.update-sentinel.eventLoopMax": 0,
+            "plugins.runtime-post-bind": 77.5,
+            "plugins.runtime-post-bind.total": 280.2,
+            "plugins.runtime-post-bind.eventLoopMax": 0,
+            "post-attach.log": 23.1,
+            "post-attach.log.total": 325.8,
+            "post-attach.log.eventLoopMax": 0,
+            "post-attach.update-check": 0.7,
+            "post-attach.update-check.total": 327.2,
+            "post-attach.update-check.eventLoopMax": 0,
+            "sidecars.session-locks": 1.1,
+            "sidecars.session-locks.total": 332.3,
+            "sidecars.session-locks.eventLoopMax": 0,
+            "sidecars.gmail-watch": 0,
+            "sidecars.gmail-watch.total": 333,
+            "sidecars.gmail-watch.eventLoopMax": 0,
+            "sidecars.gmail-model": 0.1,
+            "sidecars.gmail-model.total": 333.7,
+            "sidecars.gmail-model.eventLoopMax": 0,
+            "sidecars.internal-hooks": 0,
+            "sidecars.internal-hooks.total": 334.3,
+            "sidecars.internal-hooks.eventLoopMax": 0,
+            "sidecars.channels": 0.6,
+            "sidecars.channels.total": 335.5,
+            "sidecars.channels.eventLoopMax": 0,
+            "sidecars.plugin-services": 8.7,
+            "sidecars.plugin-services.total": 345.2,
+            "sidecars.plugin-services.eventLoopMax": 0,
+            "sidecars.memory": 0.1,
+            "sidecars.memory.total": 345.9,
+            "sidecars.memory.eventLoopMax": 0,
+            "sidecars.restart-sentinel": 0.6,
+            "sidecars.restart-sentinel.total": 347.1,
+            "sidecars.restart-sentinel.eventLoopMax": 0,
+            "sidecars.subagent-recovery": 3.3,
+            "sidecars.subagent-recovery.total": 351,
+            "sidecars.subagent-recovery.eventLoopMax": 0,
+            "sidecars.main-session-recovery": 2,
+            "sidecars.main-session-recovery.total": 354,
+            "sidecars.main-session-recovery.eventLoopMax": 0,
+            "sidecars.total": 23.6,
+            "sidecars.total.total": 354.7,
+            "sidecars.total.eventLoopMax": 0,
+            "sidecars.ready": 0.7,
+            "sidecars.ready.total": 355.3,
+            "sidecars.ready.eventLoopMax": 0,
+            "runtime.post-attach": 176.1,
+            "runtime.post-attach.total": 356.8,
+            "runtime.post-attach.eventLoopMax": 0,
+            "ready": 0.7,
+            "ready.total": 357.4,
+            "ready.eventLoopMax": 0
+          }
+        }
+      ],
+      "summary": {
+        "firstOutputMs": {
+          "avg": 24.79413199999999,
+          "max": 24.79413199999999,
+          "min": 24.79413199999999,
+          "p50": 24.79413199999999,
+          "p95": 24.79413199999999
+        },
+        "cpuCoreRatio": {
+          "avg": 1.1897238063084052,
+          "max": 1.1897238063084052,
+          "min": 1.1897238063084052,
+          "p50": 1.1897238063084052,
+          "p95": 1.1897238063084052
+        },
+        "cpuMs": {
+          "avg": 2000,
+          "max": 2000,
+          "min": 2000,
+          "p50": 2000,
+          "p95": 2000
+        },
+        "healthzMs": {
+          "avg": 1643.5472990000007,
+          "max": 1643.5472990000007,
+          "min": 1643.5472990000007,
+          "p50": 1643.5472990000007,
+          "p95": 1643.5472990000007
+        },
+        "maxRssMb": {
+          "avg": 521.77734375,
+          "max": 521.77734375,
+          "min": 521.77734375,
+          "p50": 521.77734375,
+          "p95": 521.77734375
+        },
+        "readyLogMs": {
+          "avg": 1606.561466,
+          "max": 1606.561466,
+          "min": 1606.561466,
+          "p50": 1606.561466,
+          "p95": 1606.561466
+        },
+        "readyzMs": {
+          "avg": 1681.048801,
+          "max": 1681.048801,
+          "min": 1681.048801,
+          "p50": 1681.048801,
+          "p95": 1681.048801
+        },
+        "startupTrace": {
+          "cli.auth-resolve": {
+            "avg": 0.2,
+            "max": 0.2,
+            "min": 0.2,
+            "p50": 0.2,
+            "p95": 0.2
+          },
+          "cli.auth-resolve.total": {
+            "avg": 42.5,
+            "max": 42.5,
+            "min": 42.5,
+            "p50": 42.5,
+            "p95": 42.5
+          },
+          "cli.config-snapshot": {
+            "avg": 26.8,
+            "max": 26.8,
+            "min": 26.8,
+            "p50": 26.8,
+            "p95": 26.8
+          },
+          "cli.config-snapshot.total": {
+            "avg": 36.9,
+            "max": 36.9,
+            "min": 36.9,
+            "p50": 36.9,
+            "p95": 36.9
+          },
+          "cli.gateway-loop": {
+            "avg": 1.7,
+            "max": 1.7,
+            "min": 1.7,
+            "p50": 1.7,
+            "p95": 1.7
+          },
+          "cli.gateway-loop.total": {
+            "avg": 44.2,
+            "max": 44.2,
+            "min": 44.2,
+            "p50": 44.2,
+            "p95": 44.2
+          },
+          "cli.main.argv": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "cli.main.argv.total": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "cli.main.gateway-run-imports": {
+            "avg": 14.6,
+            "max": 14.6,
+            "min": 14.6,
+            "p50": 14.6,
+            "p95": 14.6
+          },
+          "cli.main.gateway-run-imports.total": {
+            "avg": 361,
+            "max": 361,
+            "min": 361,
+            "p50": 361,
+            "p95": 361
+          },
+          "cli.server-import": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "cli.server-import.total": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "config.auth": {
+            "avg": 1.6,
+            "max": 1.6,
+            "min": 1.6,
+            "p50": 1.6,
+            "p95": 1.6
+          },
+          "config.auth.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.auth.total": {
+            "avg": 14.1,
+            "max": 14.1,
+            "min": 14.1,
+            "p50": 14.1,
+            "p95": 14.1
+          },
+          "config.snapshot": {
+            "avg": 11.7,
+            "max": 11.7,
+            "min": 11.7,
+            "p50": 11.7,
+            "p95": 11.7
+          },
+          "config.snapshot.auto-enable": {
+            "avg": 10.1,
+            "max": 10.1,
+            "min": 10.1,
+            "p50": 10.1,
+            "p95": 10.1
+          },
+          "config.snapshot.auto-enable.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.snapshot.auto-enable.total": {
+            "avg": 10.3,
+            "max": 10.3,
+            "min": 10.3,
+            "p50": 10.3,
+            "p95": 10.3
+          },
+          "config.snapshot.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.snapshot.total": {
+            "avg": 11.8,
+            "max": 11.8,
+            "min": 11.8,
+            "p50": 11.8,
+            "p95": 11.8
+          },
+          "control-ui.root": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "control-ui.root.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "control-ui.root.total": {
+            "avg": 49.2,
+            "max": 49.2,
+            "min": 49.2,
+            "p50": 49.2,
+            "p95": 49.2
+          },
+          "control-ui.seed": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "control-ui.seed.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "control-ui.seed.total": {
+            "avg": 15.2,
+            "max": 15.2,
+            "min": 15.2,
+            "p50": 15.2,
+            "p95": 15.2
+          },
+          "entry.argv": {
+            "avg": 0.6,
+            "max": 0.6,
+            "min": 0.6,
+            "p50": 0.6,
+            "p95": 0.6
+          },
+          "entry.argv.total": {
+            "avg": 0.9,
+            "max": 0.9,
+            "min": 0.9,
+            "p50": 0.9,
+            "p95": 0.9
+          },
+          "entry.bootstrap": {
+            "avg": 0.3,
+            "max": 0.3,
+            "min": 0.3,
+            "p50": 0.3,
+            "p95": 0.3
+          },
+          "entry.bootstrap.total": {
+            "avg": 0.3,
+            "max": 0.3,
+            "min": 0.3,
+            "p50": 0.3,
+            "p95": 0.3
+          },
+          "entry.run-main-import": {
+            "avg": 6.1,
+            "max": 6.1,
+            "min": 6.1,
+            "p50": 6.1,
+            "p95": 6.1
+          },
+          "entry.run-main-import.total": {
+            "avg": 7.1,
+            "max": 7.1,
+            "min": 7.1,
+            "p50": 7.1,
+            "p95": 7.1
+          },
+          "gateway.server-impl-import": {
+            "avg": 855.8,
+            "max": 855.8,
+            "min": 855.8,
+            "p50": 855.8,
+            "p95": 855.8
+          },
+          "gateway.server-impl-import.total": {
+            "avg": 855.8,
+            "max": 855.8,
+            "min": 855.8,
+            "p50": 855.8,
+            "p95": 855.8
+          },
+          "http.bound": {
+            "avg": 59.4,
+            "max": 59.4,
+            "min": 59.4,
+            "p50": 59.4,
+            "p95": 59.4
+          },
+          "http.bound.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "http.bound.total": {
+            "avg": 179.8,
+            "max": 179.8,
+            "min": 179.8,
+            "p50": 179.8,
+            "p95": 179.8
+          },
+          "plugins.bootstrap": {
+            "avg": 29.2,
+            "max": 29.2,
+            "min": 29.2,
+            "p50": 29.2,
+            "p95": 29.2
+          },
+          "plugins.bootstrap.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "plugins.bootstrap.total": {
+            "avg": 44.9,
+            "max": 44.9,
+            "min": 44.9,
+            "p50": 44.9,
+            "p95": 44.9
+          },
+          "plugins.lookup-table.manifestRegistryMs": {
+            "avg": 5.8,
+            "max": 5.8,
+            "min": 5.8,
+            "p50": 5.8,
+            "p95": 5.8
+          },
+          "plugins.lookup-table.ownerMapsMs": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "plugins.lookup-table.registrySnapshotMs": {
+            "avg": 17.9,
+            "max": 17.9,
+            "min": 17.9,
+            "p50": 17.9,
+            "p95": 17.9
+          },
+          "plugins.lookup-table.startupPlanMs": {
+            "avg": 18.2,
+            "max": 18.2,
+            "min": 18.2,
+            "p50": 18.2,
+            "p95": 18.2
+          },
+          "plugins.lookup-table.totalMs": {
+            "avg": 42.1,
+            "max": 42.1,
+            "min": 42.1,
+            "p50": 42.1,
+            "p95": 42.1
+          },
+          "plugins.runtime-post-bind": {
+            "avg": 77.5,
+            "max": 77.5,
+            "min": 77.5,
+            "p50": 77.5,
+            "p95": 77.5
+          },
+          "plugins.runtime-post-bind.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "plugins.runtime-post-bind.total": {
+            "avg": 280.2,
+            "max": 280.2,
+            "min": 280.2,
+            "p50": 280.2,
+            "p95": 280.2
+          },
+          "post-attach.log": {
+            "avg": 23.1,
+            "max": 23.1,
+            "min": 23.1,
+            "p50": 23.1,
+            "p95": 23.1
+          },
+          "post-attach.log.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.log.total": {
+            "avg": 325.8,
+            "max": 325.8,
+            "min": 325.8,
+            "p50": 325.8,
+            "p95": 325.8
+          },
+          "post-attach.update-check": {
+            "avg": 0.7,
+            "max": 0.7,
+            "min": 0.7,
+            "p50": 0.7,
+            "p95": 0.7
+          },
+          "post-attach.update-check.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.update-check.total": {
+            "avg": 327.2,
+            "max": 327.2,
+            "min": 327.2,
+            "p50": 327.2,
+            "p95": 327.2
+          },
+          "post-attach.update-sentinel": {
+            "avg": 21,
+            "max": 21,
+            "min": 21,
+            "p50": 21,
+            "p95": 21
+          },
+          "post-attach.update-sentinel.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.update-sentinel.total": {
+            "avg": 201.9,
+            "max": 201.9,
+            "min": 201.9,
+            "p50": 201.9,
+            "p95": 201.9
+          },
+          "ready": {
+            "avg": 0.7,
+            "max": 0.7,
+            "min": 0.7,
+            "p50": 0.7,
+            "p95": 0.7
+          },
+          "ready.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "ready.total": {
+            "avg": 357.4,
+            "max": 357.4,
+            "min": 357.4,
+            "p50": 357.4,
+            "p95": 357.4
+          },
+          "runtime.config": {
+            "avg": 1.2,
+            "max": 1.2,
+            "min": 1.2,
+            "p50": 1.2,
+            "p95": 1.2
+          },
+          "runtime.config.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.config.total": {
+            "avg": 48.3,
+            "max": 48.3,
+            "min": 48.3,
+            "p50": 48.3,
+            "p95": 48.3
+          },
+          "runtime.early": {
+            "avg": 64.2,
+            "max": 64.2,
+            "min": 64.2,
+            "p50": 64.2,
+            "p95": 64.2
+          },
+          "runtime.early.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.early.total": {
+            "avg": 120.4,
+            "max": 120.4,
+            "min": 120.4,
+            "p50": 120.4,
+            "p95": 120.4
+          },
+          "runtime.post-attach": {
+            "avg": 176.1,
+            "max": 176.1,
+            "min": 176.1,
+            "p50": 176.1,
+            "p95": 176.1
+          },
+          "runtime.post-attach.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.post-attach.total": {
+            "avg": 356.8,
+            "max": 356.8,
+            "min": 356.8,
+            "p50": 356.8,
+            "p95": 356.8
+          },
+          "runtime.state": {
+            "avg": 3.7,
+            "max": 3.7,
+            "min": 3.7,
+            "p50": 3.7,
+            "p95": 3.7
+          },
+          "runtime.state.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.state.total": {
+            "avg": 54.9,
+            "max": 54.9,
+            "min": 54.9,
+            "p50": 54.9,
+            "p95": 54.9
+          },
+          "sidecars.channels": {
+            "avg": 0.6,
+            "max": 0.6,
+            "min": 0.6,
+            "p50": 0.6,
+            "p95": 0.6
+          },
+          "sidecars.channels.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.channels.total": {
+            "avg": 335.5,
+            "max": 335.5,
+            "min": 335.5,
+            "p50": 335.5,
+            "p95": 335.5
+          },
+          "sidecars.gmail-model": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "sidecars.gmail-model.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-model.total": {
+            "avg": 333.7,
+            "max": 333.7,
+            "min": 333.7,
+            "p50": 333.7,
+            "p95": 333.7
+          },
+          "sidecars.gmail-watch": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-watch.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-watch.total": {
+            "avg": 333,
+            "max": 333,
+            "min": 333,
+            "p50": 333,
+            "p95": 333
+          },
+          "sidecars.internal-hooks": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.internal-hooks.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.internal-hooks.total": {
+            "avg": 334.3,
+            "max": 334.3,
+            "min": 334.3,
+            "p50": 334.3,
+            "p95": 334.3
+          },
+          "sidecars.main-session-recovery": {
+            "avg": 2,
+            "max": 2,
+            "min": 2,
+            "p50": 2,
+            "p95": 2
+          },
+          "sidecars.main-session-recovery.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.main-session-recovery.total": {
+            "avg": 354,
+            "max": 354,
+            "min": 354,
+            "p50": 354,
+            "p95": 354
+          },
+          "sidecars.memory": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "sidecars.memory.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.memory.total": {
+            "avg": 345.9,
+            "max": 345.9,
+            "min": 345.9,
+            "p50": 345.9,
+            "p95": 345.9
+          },
+          "sidecars.plugin-services": {
+            "avg": 8.7,
+            "max": 8.7,
+            "min": 8.7,
+            "p50": 8.7,
+            "p95": 8.7
+          },
+          "sidecars.plugin-services.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.plugin-services.total": {
+            "avg": 345.2,
+            "max": 345.2,
+            "min": 345.2,
+            "p50": 345.2,
+            "p95": 345.2
+          },
+          "sidecars.ready": {
+            "avg": 0.7,
+            "max": 0.7,
+            "min": 0.7,
+            "p50": 0.7,
+            "p95": 0.7
+          },
+          "sidecars.ready.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.ready.total": {
+            "avg": 355.3,
+            "max": 355.3,
+            "min": 355.3,
+            "p50": 355.3,
+            "p95": 355.3
+          },
+          "sidecars.restart-sentinel": {
+            "avg": 0.6,
+            "max": 0.6,
+            "min": 0.6,
+            "p50": 0.6,
+            "p95": 0.6
+          },
+          "sidecars.restart-sentinel.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.restart-sentinel.total": {
+            "avg": 347.1,
+            "max": 347.1,
+            "min": 347.1,
+            "p50": 347.1,
+            "p95": 347.1
+          },
+          "sidecars.session-locks": {
+            "avg": 1.1,
+            "max": 1.1,
+            "min": 1.1,
+            "p50": 1.1,
+            "p95": 1.1
+          },
+          "sidecars.session-locks.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.session-locks.total": {
+            "avg": 332.3,
+            "max": 332.3,
+            "min": 332.3,
+            "p50": 332.3,
+            "p95": 332.3
+          },
+          "sidecars.subagent-recovery": {
+            "avg": 3.3,
+            "max": 3.3,
+            "min": 3.3,
+            "p50": 3.3,
+            "p95": 3.3
+          },
+          "sidecars.subagent-recovery.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.subagent-recovery.total": {
+            "avg": 351,
+            "max": 351,
+            "min": 351,
+            "p50": 351,
+            "p95": 351
+          },
+          "sidecars.total": {
+            "avg": 23.6,
+            "max": 23.6,
+            "min": 23.6,
+            "p50": 23.6,
+            "p95": 23.6
+          },
+          "sidecars.total.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.total.total": {
+            "avg": 354.7,
+            "max": 354.7,
+            "min": 354.7,
+            "p50": 354.7,
+            "p95": 354.7
+          },
+          "tls.runtime": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "tls.runtime.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "tls.runtime.total": {
+            "avg": 49.8,
+            "max": 49.8,
+            "min": 49.8,
+            "p50": 49.8,
+            "p95": 49.8
+          }
+        }
+      }
+    },
+    {
+      "id": "oneInternalHook",
+      "name": "gateway, one configured internal hook",
+      "samples": [
+        {
+          "cpuCoreRatio": 1.1682972664633275,
+          "cpuMs": 2000,
+          "exitCode": 0,
+          "firstOutputMs": 28.402016000000003,
+          "healthz": {
+            "ms": 1659.1248500000002,
+            "status": 200
+          },
+          "maxRssMb": 527.40234375,
+          "outputTail": "2026-05-02T16:47:52.910+00:00 [gateway] startup trace: sidecars.channels 0.7ms total=389.5ms eventLoopMax=0.0ms\n2026-05-02T16:47:52.911+00:00 [plugins] embedded acpx runtime backend registered lazily\n2026-05-02T16:47:52.914+00:00 [gateway] startup trace: sidecars.plugin-services 3.7ms total=393.8ms eventLoopMax=0.0ms\n2026-05-02T16:47:52.915+00:00 [gateway] startup trace: sidecars.memory 0.1ms total=394.5ms eventLoopMax=0.0ms\n2026-05-02T16:47:52.916+00:00 [gateway] startup trace: sidecars.restart-sentinel 0.6ms total=395.7ms eventLoopMax=0.0ms\n2026-05-02T16:47:52.919+00:00 [gateway] startup trace: sidecars.subagent-recovery 2.9ms total=399.2ms eventLoopMax=0.0ms\n2026-05-02T16:47:52.922+00:00 [gateway] startup trace: sidecars.main-session-recovery 2.0ms total=402.2ms eventLoopMax=0.0ms\n2026-05-02T16:47:52.923+00:00 [gateway] startup trace: sidecars.total 73.1ms total=402.8ms eventLoopMax=0.0ms\n2026-05-02T16:47:52.924+00:00 [gateway] startup trace: sidecars.ready 0.6ms total=403.5ms eventLoopMax=0.0ms\n2026-05-02T16:47:52.924+00:00 [gateway] ready\n2026-05-02T16:47:52.925+00:00 [gateway] startup trace: runtime.post-attach 224.6ms total=404.7ms eventLoopMax=0.0ms\n2026-05-02T16:47:52.925+00:00 [gateway] startup trace: ready 0.6ms total=405.3ms eventLoopMax=0.0ms\n2026-05-02T16:47:52.928+00:00 [heartbeat] started\n2026-05-02T16:47:52.947+00:00 [gateway] signal SIGTERM received\n2026-05-02T16:47:52.949+00:00 [gateway] received SIGTERM; shutting down\n2026-05-02T16:47:52.956+00:00 [shutdown] started: gateway stopping\n2026-05-02T16:47:52.957+00:00 [plugins] bonjour: advertised gateway fqdn=ip-172-31-64-123 (OpenClaw)._openclaw-gw._tcp.local. host=ip-172-31-64-123.local. port=32809 state=unannounced\n2026-05-02T16:47:52.964+00:00 [gmail-watcher] gmail watcher stopped\n2026-05-02T16:47:52.965+00:00 [shutdown] completed cleanly in 8ms\n",
+          "readyLogMs": 1594.2306769999996,
+          "readyz": {
+            "ms": 1711.88515,
+            "status": 200
+          },
+          "signal": null,
+          "startupTrace": {
+            "entry.bootstrap": 0.3,
+            "entry.bootstrap.total": 0.3,
+            "entry.argv": 0.6,
+            "entry.argv.total": 0.9,
+            "entry.run-main-import": 6.4,
+            "entry.run-main-import.total": 7.4,
+            "cli.main.argv": 0.1,
+            "cli.main.argv.total": 0.1,
+            "cli.main.gateway-run-imports": 14.1,
+            "cli.main.gateway-run-imports.total": 350.4,
+            "cli.server-import": 0.5,
+            "cli.server-import.total": 0.5,
+            "cli.config-snapshot": 26.9,
+            "cli.config-snapshot.total": 37.1,
+            "cli.auth-resolve": 0.2,
+            "cli.auth-resolve.total": 42.6,
+            "cli.gateway-loop": 1.7,
+            "cli.gateway-loop.total": 44.3,
+            "gateway.server-impl-import": 851.6,
+            "gateway.server-impl-import.total": 851.6,
+            "config.snapshot.auto-enable": 9.5,
+            "config.snapshot.auto-enable.total": 9.7,
+            "config.snapshot.auto-enable.eventLoopMax": 0,
+            "config.snapshot": 11.1,
+            "config.snapshot.total": 11.2,
+            "config.snapshot.eventLoopMax": 0,
+            "config.auth": 1.6,
+            "config.auth.total": 13.5,
+            "config.auth.eventLoopMax": 0,
+            "control-ui.seed": 0.1,
+            "control-ui.seed.total": 14.6,
+            "control-ui.seed.eventLoopMax": 0,
+            "plugins.bootstrap": 29.2,
+            "plugins.bootstrap.total": 44.3,
+            "plugins.bootstrap.eventLoopMax": 0,
+            "plugins.lookup-table.registrySnapshotMs": 17.5,
+            "plugins.lookup-table.manifestRegistryMs": 6.3,
+            "plugins.lookup-table.startupPlanMs": 18.2,
+            "plugins.lookup-table.ownerMapsMs": 0.1,
+            "plugins.lookup-table.totalMs": 42.2,
+            "runtime.config": 1.3,
+            "runtime.config.total": 47.8,
+            "runtime.config.eventLoopMax": 0,
+            "control-ui.root": 0.1,
+            "control-ui.root.total": 48.6,
+            "control-ui.root.eventLoopMax": 0,
+            "tls.runtime": 0.1,
+            "tls.runtime.total": 49.3,
+            "tls.runtime.eventLoopMax": 0,
+            "runtime.state": 3.7,
+            "runtime.state.total": 54.3,
+            "runtime.state.eventLoopMax": 0,
+            "runtime.early": 64.4,
+            "runtime.early.total": 120,
+            "runtime.early.eventLoopMax": 0,
+            "http.bound": 59.2,
+            "http.bound.total": 179.2,
+            "http.bound.eventLoopMax": 0,
+            "post-attach.update-sentinel": 20.9,
+            "post-attach.update-sentinel.total": 201.2,
+            "post-attach.update-sentinel.eventLoopMax": 0,
+            "plugins.runtime-post-bind": 76.5,
+            "plugins.runtime-post-bind.total": 278.5,
+            "plugins.runtime-post-bind.eventLoopMax": 0,
+            "post-attach.log": 23.5,
+            "post-attach.log.total": 324.6,
+            "post-attach.log.eventLoopMax": 0,
+            "post-attach.update-check": 0.7,
+            "post-attach.update-check.total": 326,
+            "post-attach.update-check.eventLoopMax": 0,
+            "sidecars.session-locks": 1.1,
+            "sidecars.session-locks.total": 331,
+            "sidecars.session-locks.eventLoopMax": 0,
+            "sidecars.gmail-watch": 0,
+            "sidecars.gmail-watch.total": 331.7,
+            "sidecars.gmail-watch.eventLoopMax": 0,
+            "sidecars.gmail-model": 0.1,
+            "sidecars.gmail-model.total": 332.4,
+            "sidecars.gmail-model.eventLoopMax": 0,
+            "sidecars.internal-hooks": 55.1,
+            "sidecars.internal-hooks.total": 388.1,
+            "sidecars.internal-hooks.eventLoopMax": 0,
+            "sidecars.channels": 0.7,
+            "sidecars.channels.total": 389.5,
+            "sidecars.channels.eventLoopMax": 0,
+            "sidecars.plugin-services": 3.7,
+            "sidecars.plugin-services.total": 393.8,
+            "sidecars.plugin-services.eventLoopMax": 0,
+            "sidecars.memory": 0.1,
+            "sidecars.memory.total": 394.5,
+            "sidecars.memory.eventLoopMax": 0,
+            "sidecars.restart-sentinel": 0.6,
+            "sidecars.restart-sentinel.total": 395.7,
+            "sidecars.restart-sentinel.eventLoopMax": 0,
+            "sidecars.subagent-recovery": 2.9,
+            "sidecars.subagent-recovery.total": 399.2,
+            "sidecars.subagent-recovery.eventLoopMax": 0,
+            "sidecars.main-session-recovery": 2,
+            "sidecars.main-session-recovery.total": 402.2,
+            "sidecars.main-session-recovery.eventLoopMax": 0,
+            "sidecars.total": 73.1,
+            "sidecars.total.total": 402.8,
+            "sidecars.total.eventLoopMax": 0,
+            "sidecars.ready": 0.6,
+            "sidecars.ready.total": 403.5,
+            "sidecars.ready.eventLoopMax": 0,
+            "runtime.post-attach": 224.6,
+            "runtime.post-attach.total": 404.7,
+            "runtime.post-attach.eventLoopMax": 0,
+            "ready": 0.6,
+            "ready.total": 405.3,
+            "ready.eventLoopMax": 0
+          }
+        }
+      ],
+      "summary": {
+        "firstOutputMs": {
+          "avg": 28.402016000000003,
+          "max": 28.402016000000003,
+          "min": 28.402016000000003,
+          "p50": 28.402016000000003,
+          "p95": 28.402016000000003
+        },
+        "cpuCoreRatio": {
+          "avg": 1.1682972664633275,
+          "max": 1.1682972664633275,
+          "min": 1.1682972664633275,
+          "p50": 1.1682972664633275,
+          "p95": 1.1682972664633275
+        },
+        "cpuMs": {
+          "avg": 2000,
+          "max": 2000,
+          "min": 2000,
+          "p50": 2000,
+          "p95": 2000
+        },
+        "healthzMs": {
+          "avg": 1659.1248500000002,
+          "max": 1659.1248500000002,
+          "min": 1659.1248500000002,
+          "p50": 1659.1248500000002,
+          "p95": 1659.1248500000002
+        },
+        "maxRssMb": {
+          "avg": 527.40234375,
+          "max": 527.40234375,
+          "min": 527.40234375,
+          "p50": 527.40234375,
+          "p95": 527.40234375
+        },
+        "readyLogMs": {
+          "avg": 1594.2306769999996,
+          "max": 1594.2306769999996,
+          "min": 1594.2306769999996,
+          "p50": 1594.2306769999996,
+          "p95": 1594.2306769999996
+        },
+        "readyzMs": {
+          "avg": 1711.88515,
+          "max": 1711.88515,
+          "min": 1711.88515,
+          "p50": 1711.88515,
+          "p95": 1711.88515
+        },
+        "startupTrace": {
+          "cli.auth-resolve": {
+            "avg": 0.2,
+            "max": 0.2,
+            "min": 0.2,
+            "p50": 0.2,
+            "p95": 0.2
+          },
+          "cli.auth-resolve.total": {
+            "avg": 42.6,
+            "max": 42.6,
+            "min": 42.6,
+            "p50": 42.6,
+            "p95": 42.6
+          },
+          "cli.config-snapshot": {
+            "avg": 26.9,
+            "max": 26.9,
+            "min": 26.9,
+            "p50": 26.9,
+            "p95": 26.9
+          },
+          "cli.config-snapshot.total": {
+            "avg": 37.1,
+            "max": 37.1,
+            "min": 37.1,
+            "p50": 37.1,
+            "p95": 37.1
+          },
+          "cli.gateway-loop": {
+            "avg": 1.7,
+            "max": 1.7,
+            "min": 1.7,
+            "p50": 1.7,
+            "p95": 1.7
+          },
+          "cli.gateway-loop.total": {
+            "avg": 44.3,
+            "max": 44.3,
+            "min": 44.3,
+            "p50": 44.3,
+            "p95": 44.3
+          },
+          "cli.main.argv": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "cli.main.argv.total": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "cli.main.gateway-run-imports": {
+            "avg": 14.1,
+            "max": 14.1,
+            "min": 14.1,
+            "p50": 14.1,
+            "p95": 14.1
+          },
+          "cli.main.gateway-run-imports.total": {
+            "avg": 350.4,
+            "max": 350.4,
+            "min": 350.4,
+            "p50": 350.4,
+            "p95": 350.4
+          },
+          "cli.server-import": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "cli.server-import.total": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "config.auth": {
+            "avg": 1.6,
+            "max": 1.6,
+            "min": 1.6,
+            "p50": 1.6,
+            "p95": 1.6
+          },
+          "config.auth.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.auth.total": {
+            "avg": 13.5,
+            "max": 13.5,
+            "min": 13.5,
+            "p50": 13.5,
+            "p95": 13.5
+          },
+          "config.snapshot": {
+            "avg": 11.1,
+            "max": 11.1,
+            "min": 11.1,
+            "p50": 11.1,
+            "p95": 11.1
+          },
+          "config.snapshot.auto-enable": {
+            "avg": 9.5,
+            "max": 9.5,
+            "min": 9.5,
+            "p50": 9.5,
+            "p95": 9.5
+          },
+          "config.snapshot.auto-enable.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.snapshot.auto-enable.total": {
+            "avg": 9.7,
+            "max": 9.7,
+            "min": 9.7,
+            "p50": 9.7,
+            "p95": 9.7
+          },
+          "config.snapshot.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.snapshot.total": {
+            "avg": 11.2,
+            "max": 11.2,
+            "min": 11.2,
+            "p50": 11.2,
+            "p95": 11.2
+          },
+          "control-ui.root": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "control-ui.root.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "control-ui.root.total": {
+            "avg": 48.6,
+            "max": 48.6,
+            "min": 48.6,
+            "p50": 48.6,
+            "p95": 48.6
+          },
+          "control-ui.seed": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "control-ui.seed.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "control-ui.seed.total": {
+            "avg": 14.6,
+            "max": 14.6,
+            "min": 14.6,
+            "p50": 14.6,
+            "p95": 14.6
+          },
+          "entry.argv": {
+            "avg": 0.6,
+            "max": 0.6,
+            "min": 0.6,
+            "p50": 0.6,
+            "p95": 0.6
+          },
+          "entry.argv.total": {
+            "avg": 0.9,
+            "max": 0.9,
+            "min": 0.9,
+            "p50": 0.9,
+            "p95": 0.9
+          },
+          "entry.bootstrap": {
+            "avg": 0.3,
+            "max": 0.3,
+            "min": 0.3,
+            "p50": 0.3,
+            "p95": 0.3
+          },
+          "entry.bootstrap.total": {
+            "avg": 0.3,
+            "max": 0.3,
+            "min": 0.3,
+            "p50": 0.3,
+            "p95": 0.3
+          },
+          "entry.run-main-import": {
+            "avg": 6.4,
+            "max": 6.4,
+            "min": 6.4,
+            "p50": 6.4,
+            "p95": 6.4
+          },
+          "entry.run-main-import.total": {
+            "avg": 7.4,
+            "max": 7.4,
+            "min": 7.4,
+            "p50": 7.4,
+            "p95": 7.4
+          },
+          "gateway.server-impl-import": {
+            "avg": 851.6,
+            "max": 851.6,
+            "min": 851.6,
+            "p50": 851.6,
+            "p95": 851.6
+          },
+          "gateway.server-impl-import.total": {
+            "avg": 851.6,
+            "max": 851.6,
+            "min": 851.6,
+            "p50": 851.6,
+            "p95": 851.6
+          },
+          "http.bound": {
+            "avg": 59.2,
+            "max": 59.2,
+            "min": 59.2,
+            "p50": 59.2,
+            "p95": 59.2
+          },
+          "http.bound.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "http.bound.total": {
+            "avg": 179.2,
+            "max": 179.2,
+            "min": 179.2,
+            "p50": 179.2,
+            "p95": 179.2
+          },
+          "plugins.bootstrap": {
+            "avg": 29.2,
+            "max": 29.2,
+            "min": 29.2,
+            "p50": 29.2,
+            "p95": 29.2
+          },
+          "plugins.bootstrap.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "plugins.bootstrap.total": {
+            "avg": 44.3,
+            "max": 44.3,
+            "min": 44.3,
+            "p50": 44.3,
+            "p95": 44.3
+          },
+          "plugins.lookup-table.manifestRegistryMs": {
+            "avg": 6.3,
+            "max": 6.3,
+            "min": 6.3,
+            "p50": 6.3,
+            "p95": 6.3
+          },
+          "plugins.lookup-table.ownerMapsMs": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "plugins.lookup-table.registrySnapshotMs": {
+            "avg": 17.5,
+            "max": 17.5,
+            "min": 17.5,
+            "p50": 17.5,
+            "p95": 17.5
+          },
+          "plugins.lookup-table.startupPlanMs": {
+            "avg": 18.2,
+            "max": 18.2,
+            "min": 18.2,
+            "p50": 18.2,
+            "p95": 18.2
+          },
+          "plugins.lookup-table.totalMs": {
+            "avg": 42.2,
+            "max": 42.2,
+            "min": 42.2,
+            "p50": 42.2,
+            "p95": 42.2
+          },
+          "plugins.runtime-post-bind": {
+            "avg": 76.5,
+            "max": 76.5,
+            "min": 76.5,
+            "p50": 76.5,
+            "p95": 76.5
+          },
+          "plugins.runtime-post-bind.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "plugins.runtime-post-bind.total": {
+            "avg": 278.5,
+            "max": 278.5,
+            "min": 278.5,
+            "p50": 278.5,
+            "p95": 278.5
+          },
+          "post-attach.log": {
+            "avg": 23.5,
+            "max": 23.5,
+            "min": 23.5,
+            "p50": 23.5,
+            "p95": 23.5
+          },
+          "post-attach.log.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.log.total": {
+            "avg": 324.6,
+            "max": 324.6,
+            "min": 324.6,
+            "p50": 324.6,
+            "p95": 324.6
+          },
+          "post-attach.update-check": {
+            "avg": 0.7,
+            "max": 0.7,
+            "min": 0.7,
+            "p50": 0.7,
+            "p95": 0.7
+          },
+          "post-attach.update-check.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.update-check.total": {
+            "avg": 326,
+            "max": 326,
+            "min": 326,
+            "p50": 326,
+            "p95": 326
+          },
+          "post-attach.update-sentinel": {
+            "avg": 20.9,
+            "max": 20.9,
+            "min": 20.9,
+            "p50": 20.9,
+            "p95": 20.9
+          },
+          "post-attach.update-sentinel.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.update-sentinel.total": {
+            "avg": 201.2,
+            "max": 201.2,
+            "min": 201.2,
+            "p50": 201.2,
+            "p95": 201.2
+          },
+          "ready": {
+            "avg": 0.6,
+            "max": 0.6,
+            "min": 0.6,
+            "p50": 0.6,
+            "p95": 0.6
+          },
+          "ready.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "ready.total": {
+            "avg": 405.3,
+            "max": 405.3,
+            "min": 405.3,
+            "p50": 405.3,
+            "p95": 405.3
+          },
+          "runtime.config": {
+            "avg": 1.3,
+            "max": 1.3,
+            "min": 1.3,
+            "p50": 1.3,
+            "p95": 1.3
+          },
+          "runtime.config.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.config.total": {
+            "avg": 47.8,
+            "max": 47.8,
+            "min": 47.8,
+            "p50": 47.8,
+            "p95": 47.8
+          },
+          "runtime.early": {
+            "avg": 64.4,
+            "max": 64.4,
+            "min": 64.4,
+            "p50": 64.4,
+            "p95": 64.4
+          },
+          "runtime.early.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.early.total": {
+            "avg": 120,
+            "max": 120,
+            "min": 120,
+            "p50": 120,
+            "p95": 120
+          },
+          "runtime.post-attach": {
+            "avg": 224.6,
+            "max": 224.6,
+            "min": 224.6,
+            "p50": 224.6,
+            "p95": 224.6
+          },
+          "runtime.post-attach.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.post-attach.total": {
+            "avg": 404.7,
+            "max": 404.7,
+            "min": 404.7,
+            "p50": 404.7,
+            "p95": 404.7
+          },
+          "runtime.state": {
+            "avg": 3.7,
+            "max": 3.7,
+            "min": 3.7,
+            "p50": 3.7,
+            "p95": 3.7
+          },
+          "runtime.state.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.state.total": {
+            "avg": 54.3,
+            "max": 54.3,
+            "min": 54.3,
+            "p50": 54.3,
+            "p95": 54.3
+          },
+          "sidecars.channels": {
+            "avg": 0.7,
+            "max": 0.7,
+            "min": 0.7,
+            "p50": 0.7,
+            "p95": 0.7
+          },
+          "sidecars.channels.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.channels.total": {
+            "avg": 389.5,
+            "max": 389.5,
+            "min": 389.5,
+            "p50": 389.5,
+            "p95": 389.5
+          },
+          "sidecars.gmail-model": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "sidecars.gmail-model.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-model.total": {
+            "avg": 332.4,
+            "max": 332.4,
+            "min": 332.4,
+            "p50": 332.4,
+            "p95": 332.4
+          },
+          "sidecars.gmail-watch": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-watch.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-watch.total": {
+            "avg": 331.7,
+            "max": 331.7,
+            "min": 331.7,
+            "p50": 331.7,
+            "p95": 331.7
+          },
+          "sidecars.internal-hooks": {
+            "avg": 55.1,
+            "max": 55.1,
+            "min": 55.1,
+            "p50": 55.1,
+            "p95": 55.1
+          },
+          "sidecars.internal-hooks.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.internal-hooks.total": {
+            "avg": 388.1,
+            "max": 388.1,
+            "min": 388.1,
+            "p50": 388.1,
+            "p95": 388.1
+          },
+          "sidecars.main-session-recovery": {
+            "avg": 2,
+            "max": 2,
+            "min": 2,
+            "p50": 2,
+            "p95": 2
+          },
+          "sidecars.main-session-recovery.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.main-session-recovery.total": {
+            "avg": 402.2,
+            "max": 402.2,
+            "min": 402.2,
+            "p50": 402.2,
+            "p95": 402.2
+          },
+          "sidecars.memory": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "sidecars.memory.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.memory.total": {
+            "avg": 394.5,
+            "max": 394.5,
+            "min": 394.5,
+            "p50": 394.5,
+            "p95": 394.5
+          },
+          "sidecars.plugin-services": {
+            "avg": 3.7,
+            "max": 3.7,
+            "min": 3.7,
+            "p50": 3.7,
+            "p95": 3.7
+          },
+          "sidecars.plugin-services.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.plugin-services.total": {
+            "avg": 393.8,
+            "max": 393.8,
+            "min": 393.8,
+            "p50": 393.8,
+            "p95": 393.8
+          },
+          "sidecars.ready": {
+            "avg": 0.6,
+            "max": 0.6,
+            "min": 0.6,
+            "p50": 0.6,
+            "p95": 0.6
+          },
+          "sidecars.ready.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.ready.total": {
+            "avg": 403.5,
+            "max": 403.5,
+            "min": 403.5,
+            "p50": 403.5,
+            "p95": 403.5
+          },
+          "sidecars.restart-sentinel": {
+            "avg": 0.6,
+            "max": 0.6,
+            "min": 0.6,
+            "p50": 0.6,
+            "p95": 0.6
+          },
+          "sidecars.restart-sentinel.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.restart-sentinel.total": {
+            "avg": 395.7,
+            "max": 395.7,
+            "min": 395.7,
+            "p50": 395.7,
+            "p95": 395.7
+          },
+          "sidecars.session-locks": {
+            "avg": 1.1,
+            "max": 1.1,
+            "min": 1.1,
+            "p50": 1.1,
+            "p95": 1.1
+          },
+          "sidecars.session-locks.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.session-locks.total": {
+            "avg": 331,
+            "max": 331,
+            "min": 331,
+            "p50": 331,
+            "p95": 331
+          },
+          "sidecars.subagent-recovery": {
+            "avg": 2.9,
+            "max": 2.9,
+            "min": 2.9,
+            "p50": 2.9,
+            "p95": 2.9
+          },
+          "sidecars.subagent-recovery.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.subagent-recovery.total": {
+            "avg": 399.2,
+            "max": 399.2,
+            "min": 399.2,
+            "p50": 399.2,
+            "p95": 399.2
+          },
+          "sidecars.total": {
+            "avg": 73.1,
+            "max": 73.1,
+            "min": 73.1,
+            "p50": 73.1,
+            "p95": 73.1
+          },
+          "sidecars.total.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.total.total": {
+            "avg": 402.8,
+            "max": 402.8,
+            "min": 402.8,
+            "p50": 402.8,
+            "p95": 402.8
+          },
+          "tls.runtime": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "tls.runtime.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "tls.runtime.total": {
+            "avg": 49.3,
+            "max": 49.3,
+            "min": 49.3,
+            "p50": 49.3,
+            "p95": 49.3
+          }
+        }
+      }
+    },
+    {
+      "id": "allInternalHooks",
+      "name": "gateway, all internal hooks",
+      "samples": [
+        {
+          "cpuCoreRatio": 1.149359195899802,
+          "cpuMs": 2000,
+          "exitCode": 0,
+          "firstOutputMs": 26.00684899999942,
+          "healthz": {
+            "ms": 1674.4178730000003,
+            "status": 200
+          },
+          "maxRssMb": 526.8828125,
+          "outputTail": "2026-05-02T16:47:56.456+00:00 [gateway] startup trace: sidecars.channels 0.7ms total=404.0ms eventLoopMax=0.0ms\n2026-05-02T16:47:56.458+00:00 [plugins] embedded acpx runtime backend registered lazily\n2026-05-02T16:47:56.460+00:00 [gateway] startup trace: sidecars.plugin-services 2.7ms total=407.2ms eventLoopMax=0.0ms\n2026-05-02T16:47:56.460+00:00 [gateway] startup trace: sidecars.memory 0.1ms total=407.9ms eventLoopMax=0.0ms\n2026-05-02T16:47:56.461+00:00 [gateway] startup trace: sidecars.restart-sentinel 0.5ms total=409.0ms eventLoopMax=0.0ms\n2026-05-02T16:47:56.465+00:00 [gateway] startup trace: sidecars.subagent-recovery 2.8ms total=412.5ms eventLoopMax=0.0ms\n2026-05-02T16:47:56.468+00:00 [gateway] startup trace: sidecars.main-session-recovery 1.9ms total=415.4ms eventLoopMax=0.0ms\n2026-05-02T16:47:56.468+00:00 [gateway] startup trace: sidecars.total 90.0ms total=416.0ms eventLoopMax=0.0ms\n2026-05-02T16:47:56.469+00:00 [gateway] startup trace: sidecars.ready 0.9ms total=416.9ms eventLoopMax=0.0ms\n2026-05-02T16:47:56.470+00:00 [gateway] ready\n2026-05-02T16:47:56.470+00:00 [gateway] startup trace: runtime.post-attach 238.7ms total=418.2ms eventLoopMax=0.0ms\n2026-05-02T16:47:56.471+00:00 [gateway] startup trace: ready 0.6ms total=418.8ms eventLoopMax=0.0ms\n2026-05-02T16:47:56.474+00:00 [heartbeat] started\n2026-05-02T16:47:56.496+00:00 [gateway] signal SIGTERM received\n2026-05-02T16:47:56.499+00:00 [gateway] received SIGTERM; shutting down\n2026-05-02T16:47:56.507+00:00 [shutdown] started: gateway stopping\n2026-05-02T16:47:56.508+00:00 [plugins] bonjour: advertised gateway fqdn=ip-172-31-64-123 (OpenClaw)._openclaw-gw._tcp.local. host=ip-172-31-64-123.local. port=33093 state=unannounced\n2026-05-02T16:47:56.512+00:00 [gmail-watcher] gmail watcher stopped\n2026-05-02T16:47:56.513+00:00 [shutdown] completed cleanly in 6ms\n",
+          "readyLogMs": 1604.595417999999,
+          "readyz": {
+            "ms": 1740.093241999999,
+            "status": 200
+          },
+          "signal": null,
+          "startupTrace": {
+            "entry.bootstrap": 0.3,
+            "entry.bootstrap.total": 0.3,
+            "entry.argv": 0.6,
+            "entry.argv.total": 0.9,
+            "entry.run-main-import": 6.3,
+            "entry.run-main-import.total": 7.3,
+            "cli.main.argv": 0.1,
+            "cli.main.argv.total": 0.1,
+            "cli.main.gateway-run-imports": 14.2,
+            "cli.main.gateway-run-imports.total": 348.8,
+            "cli.server-import": 0.5,
+            "cli.server-import.total": 0.5,
+            "cli.config-snapshot": 26.7,
+            "cli.config-snapshot.total": 36.9,
+            "cli.auth-resolve": 0.2,
+            "cli.auth-resolve.total": 42.5,
+            "cli.gateway-loop": 1.7,
+            "cli.gateway-loop.total": 44.2,
+            "gateway.server-impl-import": 867.7,
+            "gateway.server-impl-import.total": 867.7,
+            "config.snapshot.auto-enable": 9.5,
+            "config.snapshot.auto-enable.total": 9.7,
+            "config.snapshot.auto-enable.eventLoopMax": 0,
+            "config.snapshot": 11.1,
+            "config.snapshot.total": 11.2,
+            "config.snapshot.eventLoopMax": 0,
+            "config.auth": 1.6,
+            "config.auth.total": 13.5,
+            "config.auth.eventLoopMax": 0,
+            "control-ui.seed": 0.1,
+            "control-ui.seed.total": 14.5,
+            "control-ui.seed.eventLoopMax": 0,
+            "plugins.bootstrap": 29,
+            "plugins.bootstrap.total": 44.2,
+            "plugins.bootstrap.eventLoopMax": 0,
+            "plugins.lookup-table.registrySnapshotMs": 17.7,
+            "plugins.lookup-table.manifestRegistryMs": 5.9,
+            "plugins.lookup-table.startupPlanMs": 18.2,
+            "plugins.lookup-table.ownerMapsMs": 0.1,
+            "plugins.lookup-table.totalMs": 42.1,
+            "runtime.config": 1.2,
+            "runtime.config.total": 47.4,
+            "runtime.config.eventLoopMax": 0,
+            "control-ui.root": 0.1,
+            "control-ui.root.total": 48.3,
+            "control-ui.root.eventLoopMax": 0,
+            "tls.runtime": 0.1,
+            "tls.runtime.total": 48.9,
+            "tls.runtime.eventLoopMax": 0,
+            "runtime.state": 3.5,
+            "runtime.state.total": 53.8,
+            "runtime.state.eventLoopMax": 0,
+            "runtime.early": 64.7,
+            "runtime.early.total": 119.6,
+            "runtime.early.eventLoopMax": 0,
+            "http.bound": 59,
+            "http.bound.total": 178.6,
+            "http.bound.eventLoopMax": 0,
+            "post-attach.update-sentinel": 20.8,
+            "post-attach.update-sentinel.total": 200.5,
+            "post-attach.update-sentinel.eventLoopMax": 0,
+            "plugins.runtime-post-bind": 75.5,
+            "plugins.runtime-post-bind.total": 276.7,
+            "plugins.runtime-post-bind.eventLoopMax": 0,
+            "post-attach.log": 23.5,
+            "post-attach.log.total": 323,
+            "post-attach.log.eventLoopMax": 0,
+            "post-attach.update-check": 0.7,
+            "post-attach.update-check.total": 324.5,
+            "post-attach.update-check.eventLoopMax": 0,
+            "sidecars.session-locks": 1.7,
+            "sidecars.session-locks.total": 327.9,
+            "sidecars.session-locks.eventLoopMax": 0,
+            "sidecars.gmail-watch": 0,
+            "sidecars.gmail-watch.total": 328.6,
+            "sidecars.gmail-watch.eventLoopMax": 0,
+            "sidecars.gmail-model": 0.1,
+            "sidecars.gmail-model.total": 329.2,
+            "sidecars.gmail-model.eventLoopMax": 0,
+            "sidecars.internal-hooks": 72.8,
+            "sidecars.internal-hooks.total": 402.6,
+            "sidecars.internal-hooks.eventLoopMax": 22.3,
+            "sidecars.channels": 0.7,
+            "sidecars.channels.total": 404,
+            "sidecars.channels.eventLoopMax": 0,
+            "sidecars.plugin-services": 2.7,
+            "sidecars.plugin-services.total": 407.2,
+            "sidecars.plugin-services.eventLoopMax": 0,
+            "sidecars.memory": 0.1,
+            "sidecars.memory.total": 407.9,
+            "sidecars.memory.eventLoopMax": 0,
+            "sidecars.restart-sentinel": 0.5,
+            "sidecars.restart-sentinel.total": 409,
+            "sidecars.restart-sentinel.eventLoopMax": 0,
+            "sidecars.subagent-recovery": 2.8,
+            "sidecars.subagent-recovery.total": 412.5,
+            "sidecars.subagent-recovery.eventLoopMax": 0,
+            "sidecars.main-session-recovery": 1.9,
+            "sidecars.main-session-recovery.total": 415.4,
+            "sidecars.main-session-recovery.eventLoopMax": 0,
+            "sidecars.total": 90,
+            "sidecars.total.total": 416,
+            "sidecars.total.eventLoopMax": 0,
+            "sidecars.ready": 0.9,
+            "sidecars.ready.total": 416.9,
+            "sidecars.ready.eventLoopMax": 0,
+            "runtime.post-attach": 238.7,
+            "runtime.post-attach.total": 418.2,
+            "runtime.post-attach.eventLoopMax": 0,
+            "ready": 0.6,
+            "ready.total": 418.8,
+            "ready.eventLoopMax": 0
+          }
+        }
+      ],
+      "summary": {
+        "firstOutputMs": {
+          "avg": 26.00684899999942,
+          "max": 26.00684899999942,
+          "min": 26.00684899999942,
+          "p50": 26.00684899999942,
+          "p95": 26.00684899999942
+        },
+        "cpuCoreRatio": {
+          "avg": 1.149359195899802,
+          "max": 1.149359195899802,
+          "min": 1.149359195899802,
+          "p50": 1.149359195899802,
+          "p95": 1.149359195899802
+        },
+        "cpuMs": {
+          "avg": 2000,
+          "max": 2000,
+          "min": 2000,
+          "p50": 2000,
+          "p95": 2000
+        },
+        "healthzMs": {
+          "avg": 1674.4178730000003,
+          "max": 1674.4178730000003,
+          "min": 1674.4178730000003,
+          "p50": 1674.4178730000003,
+          "p95": 1674.4178730000003
+        },
+        "maxRssMb": {
+          "avg": 526.8828125,
+          "max": 526.8828125,
+          "min": 526.8828125,
+          "p50": 526.8828125,
+          "p95": 526.8828125
+        },
+        "readyLogMs": {
+          "avg": 1604.595417999999,
+          "max": 1604.595417999999,
+          "min": 1604.595417999999,
+          "p50": 1604.595417999999,
+          "p95": 1604.595417999999
+        },
+        "readyzMs": {
+          "avg": 1740.093241999999,
+          "max": 1740.093241999999,
+          "min": 1740.093241999999,
+          "p50": 1740.093241999999,
+          "p95": 1740.093241999999
+        },
+        "startupTrace": {
+          "cli.auth-resolve": {
+            "avg": 0.2,
+            "max": 0.2,
+            "min": 0.2,
+            "p50": 0.2,
+            "p95": 0.2
+          },
+          "cli.auth-resolve.total": {
+            "avg": 42.5,
+            "max": 42.5,
+            "min": 42.5,
+            "p50": 42.5,
+            "p95": 42.5
+          },
+          "cli.config-snapshot": {
+            "avg": 26.7,
+            "max": 26.7,
+            "min": 26.7,
+            "p50": 26.7,
+            "p95": 26.7
+          },
+          "cli.config-snapshot.total": {
+            "avg": 36.9,
+            "max": 36.9,
+            "min": 36.9,
+            "p50": 36.9,
+            "p95": 36.9
+          },
+          "cli.gateway-loop": {
+            "avg": 1.7,
+            "max": 1.7,
+            "min": 1.7,
+            "p50": 1.7,
+            "p95": 1.7
+          },
+          "cli.gateway-loop.total": {
+            "avg": 44.2,
+            "max": 44.2,
+            "min": 44.2,
+            "p50": 44.2,
+            "p95": 44.2
+          },
+          "cli.main.argv": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "cli.main.argv.total": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "cli.main.gateway-run-imports": {
+            "avg": 14.2,
+            "max": 14.2,
+            "min": 14.2,
+            "p50": 14.2,
+            "p95": 14.2
+          },
+          "cli.main.gateway-run-imports.total": {
+            "avg": 348.8,
+            "max": 348.8,
+            "min": 348.8,
+            "p50": 348.8,
+            "p95": 348.8
+          },
+          "cli.server-import": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "cli.server-import.total": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "config.auth": {
+            "avg": 1.6,
+            "max": 1.6,
+            "min": 1.6,
+            "p50": 1.6,
+            "p95": 1.6
+          },
+          "config.auth.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.auth.total": {
+            "avg": 13.5,
+            "max": 13.5,
+            "min": 13.5,
+            "p50": 13.5,
+            "p95": 13.5
+          },
+          "config.snapshot": {
+            "avg": 11.1,
+            "max": 11.1,
+            "min": 11.1,
+            "p50": 11.1,
+            "p95": 11.1
+          },
+          "config.snapshot.auto-enable": {
+            "avg": 9.5,
+            "max": 9.5,
+            "min": 9.5,
+            "p50": 9.5,
+            "p95": 9.5
+          },
+          "config.snapshot.auto-enable.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.snapshot.auto-enable.total": {
+            "avg": 9.7,
+            "max": 9.7,
+            "min": 9.7,
+            "p50": 9.7,
+            "p95": 9.7
+          },
+          "config.snapshot.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.snapshot.total": {
+            "avg": 11.2,
+            "max": 11.2,
+            "min": 11.2,
+            "p50": 11.2,
+            "p95": 11.2
+          },
+          "control-ui.root": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "control-ui.root.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "control-ui.root.total": {
+            "avg": 48.3,
+            "max": 48.3,
+            "min": 48.3,
+            "p50": 48.3,
+            "p95": 48.3
+          },
+          "control-ui.seed": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "control-ui.seed.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "control-ui.seed.total": {
+            "avg": 14.5,
+            "max": 14.5,
+            "min": 14.5,
+            "p50": 14.5,
+            "p95": 14.5
+          },
+          "entry.argv": {
+            "avg": 0.6,
+            "max": 0.6,
+            "min": 0.6,
+            "p50": 0.6,
+            "p95": 0.6
+          },
+          "entry.argv.total": {
+            "avg": 0.9,
+            "max": 0.9,
+            "min": 0.9,
+            "p50": 0.9,
+            "p95": 0.9
+          },
+          "entry.bootstrap": {
+            "avg": 0.3,
+            "max": 0.3,
+            "min": 0.3,
+            "p50": 0.3,
+            "p95": 0.3
+          },
+          "entry.bootstrap.total": {
+            "avg": 0.3,
+            "max": 0.3,
+            "min": 0.3,
+            "p50": 0.3,
+            "p95": 0.3
+          },
+          "entry.run-main-import": {
+            "avg": 6.3,
+            "max": 6.3,
+            "min": 6.3,
+            "p50": 6.3,
+            "p95": 6.3
+          },
+          "entry.run-main-import.total": {
+            "avg": 7.3,
+            "max": 7.3,
+            "min": 7.3,
+            "p50": 7.3,
+            "p95": 7.3
+          },
+          "gateway.server-impl-import": {
+            "avg": 867.7,
+            "max": 867.7,
+            "min": 867.7,
+            "p50": 867.7,
+            "p95": 867.7
+          },
+          "gateway.server-impl-import.total": {
+            "avg": 867.7,
+            "max": 867.7,
+            "min": 867.7,
+            "p50": 867.7,
+            "p95": 867.7
+          },
+          "http.bound": {
+            "avg": 59,
+            "max": 59,
+            "min": 59,
+            "p50": 59,
+            "p95": 59
+          },
+          "http.bound.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "http.bound.total": {
+            "avg": 178.6,
+            "max": 178.6,
+            "min": 178.6,
+            "p50": 178.6,
+            "p95": 178.6
+          },
+          "plugins.bootstrap": {
+            "avg": 29,
+            "max": 29,
+            "min": 29,
+            "p50": 29,
+            "p95": 29
+          },
+          "plugins.bootstrap.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "plugins.bootstrap.total": {
+            "avg": 44.2,
+            "max": 44.2,
+            "min": 44.2,
+            "p50": 44.2,
+            "p95": 44.2
+          },
+          "plugins.lookup-table.manifestRegistryMs": {
+            "avg": 5.9,
+            "max": 5.9,
+            "min": 5.9,
+            "p50": 5.9,
+            "p95": 5.9
+          },
+          "plugins.lookup-table.ownerMapsMs": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "plugins.lookup-table.registrySnapshotMs": {
+            "avg": 17.7,
+            "max": 17.7,
+            "min": 17.7,
+            "p50": 17.7,
+            "p95": 17.7
+          },
+          "plugins.lookup-table.startupPlanMs": {
+            "avg": 18.2,
+            "max": 18.2,
+            "min": 18.2,
+            "p50": 18.2,
+            "p95": 18.2
+          },
+          "plugins.lookup-table.totalMs": {
+            "avg": 42.1,
+            "max": 42.1,
+            "min": 42.1,
+            "p50": 42.1,
+            "p95": 42.1
+          },
+          "plugins.runtime-post-bind": {
+            "avg": 75.5,
+            "max": 75.5,
+            "min": 75.5,
+            "p50": 75.5,
+            "p95": 75.5
+          },
+          "plugins.runtime-post-bind.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "plugins.runtime-post-bind.total": {
+            "avg": 276.7,
+            "max": 276.7,
+            "min": 276.7,
+            "p50": 276.7,
+            "p95": 276.7
+          },
+          "post-attach.log": {
+            "avg": 23.5,
+            "max": 23.5,
+            "min": 23.5,
+            "p50": 23.5,
+            "p95": 23.5
+          },
+          "post-attach.log.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.log.total": {
+            "avg": 323,
+            "max": 323,
+            "min": 323,
+            "p50": 323,
+            "p95": 323
+          },
+          "post-attach.update-check": {
+            "avg": 0.7,
+            "max": 0.7,
+            "min": 0.7,
+            "p50": 0.7,
+            "p95": 0.7
+          },
+          "post-attach.update-check.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.update-check.total": {
+            "avg": 324.5,
+            "max": 324.5,
+            "min": 324.5,
+            "p50": 324.5,
+            "p95": 324.5
+          },
+          "post-attach.update-sentinel": {
+            "avg": 20.8,
+            "max": 20.8,
+            "min": 20.8,
+            "p50": 20.8,
+            "p95": 20.8
+          },
+          "post-attach.update-sentinel.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.update-sentinel.total": {
+            "avg": 200.5,
+            "max": 200.5,
+            "min": 200.5,
+            "p50": 200.5,
+            "p95": 200.5
+          },
+          "ready": {
+            "avg": 0.6,
+            "max": 0.6,
+            "min": 0.6,
+            "p50": 0.6,
+            "p95": 0.6
+          },
+          "ready.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "ready.total": {
+            "avg": 418.8,
+            "max": 418.8,
+            "min": 418.8,
+            "p50": 418.8,
+            "p95": 418.8
+          },
+          "runtime.config": {
+            "avg": 1.2,
+            "max": 1.2,
+            "min": 1.2,
+            "p50": 1.2,
+            "p95": 1.2
+          },
+          "runtime.config.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.config.total": {
+            "avg": 47.4,
+            "max": 47.4,
+            "min": 47.4,
+            "p50": 47.4,
+            "p95": 47.4
+          },
+          "runtime.early": {
+            "avg": 64.7,
+            "max": 64.7,
+            "min": 64.7,
+            "p50": 64.7,
+            "p95": 64.7
+          },
+          "runtime.early.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.early.total": {
+            "avg": 119.6,
+            "max": 119.6,
+            "min": 119.6,
+            "p50": 119.6,
+            "p95": 119.6
+          },
+          "runtime.post-attach": {
+            "avg": 238.7,
+            "max": 238.7,
+            "min": 238.7,
+            "p50": 238.7,
+            "p95": 238.7
+          },
+          "runtime.post-attach.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.post-attach.total": {
+            "avg": 418.2,
+            "max": 418.2,
+            "min": 418.2,
+            "p50": 418.2,
+            "p95": 418.2
+          },
+          "runtime.state": {
+            "avg": 3.5,
+            "max": 3.5,
+            "min": 3.5,
+            "p50": 3.5,
+            "p95": 3.5
+          },
+          "runtime.state.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.state.total": {
+            "avg": 53.8,
+            "max": 53.8,
+            "min": 53.8,
+            "p50": 53.8,
+            "p95": 53.8
+          },
+          "sidecars.channels": {
+            "avg": 0.7,
+            "max": 0.7,
+            "min": 0.7,
+            "p50": 0.7,
+            "p95": 0.7
+          },
+          "sidecars.channels.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.channels.total": {
+            "avg": 404,
+            "max": 404,
+            "min": 404,
+            "p50": 404,
+            "p95": 404
+          },
+          "sidecars.gmail-model": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "sidecars.gmail-model.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-model.total": {
+            "avg": 329.2,
+            "max": 329.2,
+            "min": 329.2,
+            "p50": 329.2,
+            "p95": 329.2
+          },
+          "sidecars.gmail-watch": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-watch.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-watch.total": {
+            "avg": 328.6,
+            "max": 328.6,
+            "min": 328.6,
+            "p50": 328.6,
+            "p95": 328.6
+          },
+          "sidecars.internal-hooks": {
+            "avg": 72.8,
+            "max": 72.8,
+            "min": 72.8,
+            "p50": 72.8,
+            "p95": 72.8
+          },
+          "sidecars.internal-hooks.eventLoopMax": {
+            "avg": 22.3,
+            "max": 22.3,
+            "min": 22.3,
+            "p50": 22.3,
+            "p95": 22.3
+          },
+          "sidecars.internal-hooks.total": {
+            "avg": 402.6,
+            "max": 402.6,
+            "min": 402.6,
+            "p50": 402.6,
+            "p95": 402.6
+          },
+          "sidecars.main-session-recovery": {
+            "avg": 1.9,
+            "max": 1.9,
+            "min": 1.9,
+            "p50": 1.9,
+            "p95": 1.9
+          },
+          "sidecars.main-session-recovery.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.main-session-recovery.total": {
+            "avg": 415.4,
+            "max": 415.4,
+            "min": 415.4,
+            "p50": 415.4,
+            "p95": 415.4
+          },
+          "sidecars.memory": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "sidecars.memory.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.memory.total": {
+            "avg": 407.9,
+            "max": 407.9,
+            "min": 407.9,
+            "p50": 407.9,
+            "p95": 407.9
+          },
+          "sidecars.plugin-services": {
+            "avg": 2.7,
+            "max": 2.7,
+            "min": 2.7,
+            "p50": 2.7,
+            "p95": 2.7
+          },
+          "sidecars.plugin-services.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.plugin-services.total": {
+            "avg": 407.2,
+            "max": 407.2,
+            "min": 407.2,
+            "p50": 407.2,
+            "p95": 407.2
+          },
+          "sidecars.ready": {
+            "avg": 0.9,
+            "max": 0.9,
+            "min": 0.9,
+            "p50": 0.9,
+            "p95": 0.9
+          },
+          "sidecars.ready.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.ready.total": {
+            "avg": 416.9,
+            "max": 416.9,
+            "min": 416.9,
+            "p50": 416.9,
+            "p95": 416.9
+          },
+          "sidecars.restart-sentinel": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "sidecars.restart-sentinel.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.restart-sentinel.total": {
+            "avg": 409,
+            "max": 409,
+            "min": 409,
+            "p50": 409,
+            "p95": 409
+          },
+          "sidecars.session-locks": {
+            "avg": 1.7,
+            "max": 1.7,
+            "min": 1.7,
+            "p50": 1.7,
+            "p95": 1.7
+          },
+          "sidecars.session-locks.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.session-locks.total": {
+            "avg": 327.9,
+            "max": 327.9,
+            "min": 327.9,
+            "p50": 327.9,
+            "p95": 327.9
+          },
+          "sidecars.subagent-recovery": {
+            "avg": 2.8,
+            "max": 2.8,
+            "min": 2.8,
+            "p50": 2.8,
+            "p95": 2.8
+          },
+          "sidecars.subagent-recovery.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.subagent-recovery.total": {
+            "avg": 412.5,
+            "max": 412.5,
+            "min": 412.5,
+            "p50": 412.5,
+            "p95": 412.5
+          },
+          "sidecars.total": {
+            "avg": 90,
+            "max": 90,
+            "min": 90,
+            "p50": 90,
+            "p95": 90
+          },
+          "sidecars.total.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.total.total": {
+            "avg": 416,
+            "max": 416,
+            "min": 416,
+            "p50": 416,
+            "p95": 416
+          },
+          "tls.runtime": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "tls.runtime.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "tls.runtime.total": {
+            "avg": 48.9,
+            "max": 48.9,
+            "min": 48.9,
+            "p50": 48.9,
+            "p95": 48.9
+          }
+        }
+      }
+    },
+    {
+      "id": "fiftyPlugins",
+      "name": "gateway, 50 manifest plugins",
+      "samples": [
+        {
+          "cpuCoreRatio": 1.2242103381791443,
+          "cpuMs": 2000,
+          "exitCode": 0,
+          "firstOutputMs": 28.674918000000616,
+          "healthz": {
+            "ms": 1594.9208630000012,
+            "status": 200
+          },
+          "maxRssMb": 562.7421875,
+          "outputTail": "2026-05-02T16:47:59.846+00:00 [gateway] startup trace: sidecars.session-locks 1.1ms total=291.9ms eventLoopMax=0.0ms\n2026-05-02T16:47:59.847+00:00 [gateway] startup trace: sidecars.gmail-watch 0.0ms total=292.4ms eventLoopMax=0.0ms\n2026-05-02T16:47:59.847+00:00 [gateway] startup trace: sidecars.gmail-model 0.1ms total=292.9ms eventLoopMax=0.0ms\n2026-05-02T16:47:59.848+00:00 [gateway] startup trace: sidecars.internal-hooks 0.0ms total=293.5ms eventLoopMax=0.0ms\n2026-05-02T16:47:59.848+00:00 [gateway/channels] skipping channel start (OPENCLAW_SKIP_CHANNELS=1 or OPENCLAW_SKIP_PROVIDERS=1)\n2026-05-02T16:47:59.849+00:00 [gateway] startup trace: sidecars.channels 0.5ms total=294.5ms eventLoopMax=0.0ms\n2026-05-02T16:47:59.850+00:00 [gateway] startup trace: sidecars.plugin-services 0.5ms total=295.9ms eventLoopMax=0.0ms\n2026-05-02T16:47:59.851+00:00 [gateway] startup trace: sidecars.memory 0.1ms total=296.4ms eventLoopMax=0.0ms\n2026-05-02T16:47:59.856+00:00 [gateway] startup trace: sidecars.restart-sentinel 5.0ms total=301.9ms eventLoopMax=0.0ms\n2026-05-02T16:47:59.862+00:00 [gateway] startup trace: sidecars.subagent-recovery 4.8ms total=307.3ms eventLoopMax=0.0ms\n2026-05-02T16:47:59.866+00:00 [gateway] startup trace: sidecars.main-session-recovery 2.9ms total=311.4ms eventLoopMax=0.0ms\n2026-05-02T16:47:59.867+00:00 [gateway] startup trace: sidecars.total 21.5ms total=312.1ms eventLoopMax=0.0ms\n2026-05-02T16:47:59.867+00:00 [gateway] startup trace: sidecars.ready 0.6ms total=312.7ms eventLoopMax=0.0ms\n2026-05-02T16:47:59.868+00:00 [gateway] ready\n2026-05-02T16:47:59.868+00:00 [gateway] startup trace: runtime.post-attach 100.1ms total=313.8ms eventLoopMax=0.0ms\n2026-05-02T16:47:59.869+00:00 [gateway] startup trace: ready 0.5ms total=314.2ms eventLoopMax=0.0ms\n2026-05-02T16:47:59.871+00:00 [heartbeat] started\n2026-05-02T16:47:59.891+00:00 [gateway] signal SIGTERM received\n2026-05-02T16:47:59.893+00:00 [gateway] received SIGTERM; shutting down\n",
+          "readyLogMs": 1568.2924270000021,
+          "readyz": {
+            "ms": 1633.6949729999997,
+            "status": 200
+          },
+          "signal": null,
+          "startupTrace": {
+            "entry.bootstrap": 0.3,
+            "entry.bootstrap.total": 0.3,
+            "entry.argv": 0.7,
+            "entry.argv.total": 0.9,
+            "entry.run-main-import": 6.4,
+            "entry.run-main-import.total": 7.5,
+            "cli.main.argv": 0.1,
+            "cli.main.argv.total": 0.1,
+            "cli.main.gateway-run-imports": 12.8,
+            "cli.main.gateway-run-imports.total": 379.9,
+            "cli.server-import": 0.5,
+            "cli.server-import.total": 0.5,
+            "cli.config-snapshot": 25.6,
+            "cli.config-snapshot.total": 35.7,
+            "cli.auth-resolve": 0.2,
+            "cli.auth-resolve.total": 41.3,
+            "cli.gateway-loop": 1.8,
+            "cli.gateway-loop.total": 43.1,
+            "gateway.server-impl-import": 836.8,
+            "gateway.server-impl-import.total": 836.8,
+            "config.snapshot.auto-enable": 11.5,
+            "config.snapshot.auto-enable.total": 11.7,
+            "config.snapshot.auto-enable.eventLoopMax": 0,
+            "config.snapshot": 13.4,
+            "config.snapshot.total": 13.5,
+            "config.snapshot.eventLoopMax": 0,
+            "config.auth": 8.8,
+            "config.auth.total": 23.2,
+            "config.auth.eventLoopMax": 0,
+            "control-ui.seed": 0.1,
+            "control-ui.seed.total": 24.6,
+            "control-ui.seed.eventLoopMax": 0,
+            "plugins.bootstrap": 30.1,
+            "plugins.bootstrap.total": 55.6,
+            "plugins.bootstrap.eventLoopMax": 0,
+            "plugins.lookup-table.registrySnapshotMs": 17.5,
+            "plugins.lookup-table.manifestRegistryMs": 3.9,
+            "plugins.lookup-table.startupPlanMs": 18.4,
+            "plugins.lookup-table.ownerMapsMs": 0.1,
+            "plugins.lookup-table.totalMs": 40.1,
+            "runtime.config": 1.3,
+            "runtime.config.total": 59.4,
+            "runtime.config.eventLoopMax": 0,
+            "control-ui.root": 0.1,
+            "control-ui.root.total": 60.4,
+            "control-ui.root.eventLoopMax": 0,
+            "tls.runtime": 0.1,
+            "tls.runtime.total": 61.1,
+            "tls.runtime.eventLoopMax": 0,
+            "runtime.state": 2.7,
+            "runtime.state.total": 65.1,
+            "runtime.state.eventLoopMax": 0,
+            "runtime.early": 77.6,
+            "runtime.early.total": 143.9,
+            "runtime.early.eventLoopMax": 0,
+            "http.bound": 68.7,
+            "http.bound.total": 212.7,
+            "http.bound.eventLoopMax": 0,
+            "post-attach.update-sentinel": 25.9,
+            "post-attach.update-sentinel.total": 239.8,
+            "post-attach.update-sentinel.eventLoopMax": 0,
+            "plugins.runtime-post-bind": 18.6,
+            "plugins.runtime-post-bind.total": 259.3,
+            "plugins.runtime-post-bind.eventLoopMax": 0,
+            "post-attach.log": 25.3,
+            "post-attach.log.total": 285.5,
+            "post-attach.log.eventLoopMax": 0,
+            "post-attach.update-check": 0.7,
+            "post-attach.update-check.total": 286.8,
+            "post-attach.update-check.eventLoopMax": 0,
+            "sidecars.session-locks": 1.1,
+            "sidecars.session-locks.total": 291.9,
+            "sidecars.session-locks.eventLoopMax": 0,
+            "sidecars.gmail-watch": 0,
+            "sidecars.gmail-watch.total": 292.4,
+            "sidecars.gmail-watch.eventLoopMax": 0,
+            "sidecars.gmail-model": 0.1,
+            "sidecars.gmail-model.total": 292.9,
+            "sidecars.gmail-model.eventLoopMax": 0,
+            "sidecars.internal-hooks": 0,
+            "sidecars.internal-hooks.total": 293.5,
+            "sidecars.internal-hooks.eventLoopMax": 0,
+            "sidecars.channels": 0.5,
+            "sidecars.channels.total": 294.5,
+            "sidecars.channels.eventLoopMax": 0,
+            "sidecars.plugin-services": 0.5,
+            "sidecars.plugin-services.total": 295.9,
+            "sidecars.plugin-services.eventLoopMax": 0,
+            "sidecars.memory": 0.1,
+            "sidecars.memory.total": 296.4,
+            "sidecars.memory.eventLoopMax": 0,
+            "sidecars.restart-sentinel": 5,
+            "sidecars.restart-sentinel.total": 301.9,
+            "sidecars.restart-sentinel.eventLoopMax": 0,
+            "sidecars.subagent-recovery": 4.8,
+            "sidecars.subagent-recovery.total": 307.3,
+            "sidecars.subagent-recovery.eventLoopMax": 0,
+            "sidecars.main-session-recovery": 2.9,
+            "sidecars.main-session-recovery.total": 311.4,
+            "sidecars.main-session-recovery.eventLoopMax": 0,
+            "sidecars.total": 21.5,
+            "sidecars.total.total": 312.1,
+            "sidecars.total.eventLoopMax": 0,
+            "sidecars.ready": 0.6,
+            "sidecars.ready.total": 312.7,
+            "sidecars.ready.eventLoopMax": 0,
+            "runtime.post-attach": 100.1,
+            "runtime.post-attach.total": 313.8,
+            "runtime.post-attach.eventLoopMax": 0,
+            "ready": 0.5,
+            "ready.total": 314.2,
+            "ready.eventLoopMax": 0
+          }
+        }
+      ],
+      "summary": {
+        "firstOutputMs": {
+          "avg": 28.674918000000616,
+          "max": 28.674918000000616,
+          "min": 28.674918000000616,
+          "p50": 28.674918000000616,
+          "p95": 28.674918000000616
+        },
+        "cpuCoreRatio": {
+          "avg": 1.2242103381791443,
+          "max": 1.2242103381791443,
+          "min": 1.2242103381791443,
+          "p50": 1.2242103381791443,
+          "p95": 1.2242103381791443
+        },
+        "cpuMs": {
+          "avg": 2000,
+          "max": 2000,
+          "min": 2000,
+          "p50": 2000,
+          "p95": 2000
+        },
+        "healthzMs": {
+          "avg": 1594.9208630000012,
+          "max": 1594.9208630000012,
+          "min": 1594.9208630000012,
+          "p50": 1594.9208630000012,
+          "p95": 1594.9208630000012
+        },
+        "maxRssMb": {
+          "avg": 562.7421875,
+          "max": 562.7421875,
+          "min": 562.7421875,
+          "p50": 562.7421875,
+          "p95": 562.7421875
+        },
+        "readyLogMs": {
+          "avg": 1568.2924270000021,
+          "max": 1568.2924270000021,
+          "min": 1568.2924270000021,
+          "p50": 1568.2924270000021,
+          "p95": 1568.2924270000021
+        },
+        "readyzMs": {
+          "avg": 1633.6949729999997,
+          "max": 1633.6949729999997,
+          "min": 1633.6949729999997,
+          "p50": 1633.6949729999997,
+          "p95": 1633.6949729999997
+        },
+        "startupTrace": {
+          "cli.auth-resolve": {
+            "avg": 0.2,
+            "max": 0.2,
+            "min": 0.2,
+            "p50": 0.2,
+            "p95": 0.2
+          },
+          "cli.auth-resolve.total": {
+            "avg": 41.3,
+            "max": 41.3,
+            "min": 41.3,
+            "p50": 41.3,
+            "p95": 41.3
+          },
+          "cli.config-snapshot": {
+            "avg": 25.6,
+            "max": 25.6,
+            "min": 25.6,
+            "p50": 25.6,
+            "p95": 25.6
+          },
+          "cli.config-snapshot.total": {
+            "avg": 35.7,
+            "max": 35.7,
+            "min": 35.7,
+            "p50": 35.7,
+            "p95": 35.7
+          },
+          "cli.gateway-loop": {
+            "avg": 1.8,
+            "max": 1.8,
+            "min": 1.8,
+            "p50": 1.8,
+            "p95": 1.8
+          },
+          "cli.gateway-loop.total": {
+            "avg": 43.1,
+            "max": 43.1,
+            "min": 43.1,
+            "p50": 43.1,
+            "p95": 43.1
+          },
+          "cli.main.argv": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "cli.main.argv.total": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "cli.main.gateway-run-imports": {
+            "avg": 12.8,
+            "max": 12.8,
+            "min": 12.8,
+            "p50": 12.8,
+            "p95": 12.8
+          },
+          "cli.main.gateway-run-imports.total": {
+            "avg": 379.9,
+            "max": 379.9,
+            "min": 379.9,
+            "p50": 379.9,
+            "p95": 379.9
+          },
+          "cli.server-import": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "cli.server-import.total": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "config.auth": {
+            "avg": 8.8,
+            "max": 8.8,
+            "min": 8.8,
+            "p50": 8.8,
+            "p95": 8.8
+          },
+          "config.auth.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.auth.total": {
+            "avg": 23.2,
+            "max": 23.2,
+            "min": 23.2,
+            "p50": 23.2,
+            "p95": 23.2
+          },
+          "config.snapshot": {
+            "avg": 13.4,
+            "max": 13.4,
+            "min": 13.4,
+            "p50": 13.4,
+            "p95": 13.4
+          },
+          "config.snapshot.auto-enable": {
+            "avg": 11.5,
+            "max": 11.5,
+            "min": 11.5,
+            "p50": 11.5,
+            "p95": 11.5
+          },
+          "config.snapshot.auto-enable.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.snapshot.auto-enable.total": {
+            "avg": 11.7,
+            "max": 11.7,
+            "min": 11.7,
+            "p50": 11.7,
+            "p95": 11.7
+          },
+          "config.snapshot.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.snapshot.total": {
+            "avg": 13.5,
+            "max": 13.5,
+            "min": 13.5,
+            "p50": 13.5,
+            "p95": 13.5
+          },
+          "control-ui.root": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "control-ui.root.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "control-ui.root.total": {
+            "avg": 60.4,
+            "max": 60.4,
+            "min": 60.4,
+            "p50": 60.4,
+            "p95": 60.4
+          },
+          "control-ui.seed": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "control-ui.seed.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "control-ui.seed.total": {
+            "avg": 24.6,
+            "max": 24.6,
+            "min": 24.6,
+            "p50": 24.6,
+            "p95": 24.6
+          },
+          "entry.argv": {
+            "avg": 0.7,
+            "max": 0.7,
+            "min": 0.7,
+            "p50": 0.7,
+            "p95": 0.7
+          },
+          "entry.argv.total": {
+            "avg": 0.9,
+            "max": 0.9,
+            "min": 0.9,
+            "p50": 0.9,
+            "p95": 0.9
+          },
+          "entry.bootstrap": {
+            "avg": 0.3,
+            "max": 0.3,
+            "min": 0.3,
+            "p50": 0.3,
+            "p95": 0.3
+          },
+          "entry.bootstrap.total": {
+            "avg": 0.3,
+            "max": 0.3,
+            "min": 0.3,
+            "p50": 0.3,
+            "p95": 0.3
+          },
+          "entry.run-main-import": {
+            "avg": 6.4,
+            "max": 6.4,
+            "min": 6.4,
+            "p50": 6.4,
+            "p95": 6.4
+          },
+          "entry.run-main-import.total": {
+            "avg": 7.5,
+            "max": 7.5,
+            "min": 7.5,
+            "p50": 7.5,
+            "p95": 7.5
+          },
+          "gateway.server-impl-import": {
+            "avg": 836.8,
+            "max": 836.8,
+            "min": 836.8,
+            "p50": 836.8,
+            "p95": 836.8
+          },
+          "gateway.server-impl-import.total": {
+            "avg": 836.8,
+            "max": 836.8,
+            "min": 836.8,
+            "p50": 836.8,
+            "p95": 836.8
+          },
+          "http.bound": {
+            "avg": 68.7,
+            "max": 68.7,
+            "min": 68.7,
+            "p50": 68.7,
+            "p95": 68.7
+          },
+          "http.bound.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "http.bound.total": {
+            "avg": 212.7,
+            "max": 212.7,
+            "min": 212.7,
+            "p50": 212.7,
+            "p95": 212.7
+          },
+          "plugins.bootstrap": {
+            "avg": 30.1,
+            "max": 30.1,
+            "min": 30.1,
+            "p50": 30.1,
+            "p95": 30.1
+          },
+          "plugins.bootstrap.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "plugins.bootstrap.total": {
+            "avg": 55.6,
+            "max": 55.6,
+            "min": 55.6,
+            "p50": 55.6,
+            "p95": 55.6
+          },
+          "plugins.lookup-table.manifestRegistryMs": {
+            "avg": 3.9,
+            "max": 3.9,
+            "min": 3.9,
+            "p50": 3.9,
+            "p95": 3.9
+          },
+          "plugins.lookup-table.ownerMapsMs": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "plugins.lookup-table.registrySnapshotMs": {
+            "avg": 17.5,
+            "max": 17.5,
+            "min": 17.5,
+            "p50": 17.5,
+            "p95": 17.5
+          },
+          "plugins.lookup-table.startupPlanMs": {
+            "avg": 18.4,
+            "max": 18.4,
+            "min": 18.4,
+            "p50": 18.4,
+            "p95": 18.4
+          },
+          "plugins.lookup-table.totalMs": {
+            "avg": 40.1,
+            "max": 40.1,
+            "min": 40.1,
+            "p50": 40.1,
+            "p95": 40.1
+          },
+          "plugins.runtime-post-bind": {
+            "avg": 18.6,
+            "max": 18.6,
+            "min": 18.6,
+            "p50": 18.6,
+            "p95": 18.6
+          },
+          "plugins.runtime-post-bind.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "plugins.runtime-post-bind.total": {
+            "avg": 259.3,
+            "max": 259.3,
+            "min": 259.3,
+            "p50": 259.3,
+            "p95": 259.3
+          },
+          "post-attach.log": {
+            "avg": 25.3,
+            "max": 25.3,
+            "min": 25.3,
+            "p50": 25.3,
+            "p95": 25.3
+          },
+          "post-attach.log.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.log.total": {
+            "avg": 285.5,
+            "max": 285.5,
+            "min": 285.5,
+            "p50": 285.5,
+            "p95": 285.5
+          },
+          "post-attach.update-check": {
+            "avg": 0.7,
+            "max": 0.7,
+            "min": 0.7,
+            "p50": 0.7,
+            "p95": 0.7
+          },
+          "post-attach.update-check.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.update-check.total": {
+            "avg": 286.8,
+            "max": 286.8,
+            "min": 286.8,
+            "p50": 286.8,
+            "p95": 286.8
+          },
+          "post-attach.update-sentinel": {
+            "avg": 25.9,
+            "max": 25.9,
+            "min": 25.9,
+            "p50": 25.9,
+            "p95": 25.9
+          },
+          "post-attach.update-sentinel.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.update-sentinel.total": {
+            "avg": 239.8,
+            "max": 239.8,
+            "min": 239.8,
+            "p50": 239.8,
+            "p95": 239.8
+          },
+          "ready": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "ready.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "ready.total": {
+            "avg": 314.2,
+            "max": 314.2,
+            "min": 314.2,
+            "p50": 314.2,
+            "p95": 314.2
+          },
+          "runtime.config": {
+            "avg": 1.3,
+            "max": 1.3,
+            "min": 1.3,
+            "p50": 1.3,
+            "p95": 1.3
+          },
+          "runtime.config.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.config.total": {
+            "avg": 59.4,
+            "max": 59.4,
+            "min": 59.4,
+            "p50": 59.4,
+            "p95": 59.4
+          },
+          "runtime.early": {
+            "avg": 77.6,
+            "max": 77.6,
+            "min": 77.6,
+            "p50": 77.6,
+            "p95": 77.6
+          },
+          "runtime.early.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.early.total": {
+            "avg": 143.9,
+            "max": 143.9,
+            "min": 143.9,
+            "p50": 143.9,
+            "p95": 143.9
+          },
+          "runtime.post-attach": {
+            "avg": 100.1,
+            "max": 100.1,
+            "min": 100.1,
+            "p50": 100.1,
+            "p95": 100.1
+          },
+          "runtime.post-attach.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.post-attach.total": {
+            "avg": 313.8,
+            "max": 313.8,
+            "min": 313.8,
+            "p50": 313.8,
+            "p95": 313.8
+          },
+          "runtime.state": {
+            "avg": 2.7,
+            "max": 2.7,
+            "min": 2.7,
+            "p50": 2.7,
+            "p95": 2.7
+          },
+          "runtime.state.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.state.total": {
+            "avg": 65.1,
+            "max": 65.1,
+            "min": 65.1,
+            "p50": 65.1,
+            "p95": 65.1
+          },
+          "sidecars.channels": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "sidecars.channels.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.channels.total": {
+            "avg": 294.5,
+            "max": 294.5,
+            "min": 294.5,
+            "p50": 294.5,
+            "p95": 294.5
+          },
+          "sidecars.gmail-model": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "sidecars.gmail-model.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-model.total": {
+            "avg": 292.9,
+            "max": 292.9,
+            "min": 292.9,
+            "p50": 292.9,
+            "p95": 292.9
+          },
+          "sidecars.gmail-watch": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-watch.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-watch.total": {
+            "avg": 292.4,
+            "max": 292.4,
+            "min": 292.4,
+            "p50": 292.4,
+            "p95": 292.4
+          },
+          "sidecars.internal-hooks": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.internal-hooks.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.internal-hooks.total": {
+            "avg": 293.5,
+            "max": 293.5,
+            "min": 293.5,
+            "p50": 293.5,
+            "p95": 293.5
+          },
+          "sidecars.main-session-recovery": {
+            "avg": 2.9,
+            "max": 2.9,
+            "min": 2.9,
+            "p50": 2.9,
+            "p95": 2.9
+          },
+          "sidecars.main-session-recovery.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.main-session-recovery.total": {
+            "avg": 311.4,
+            "max": 311.4,
+            "min": 311.4,
+            "p50": 311.4,
+            "p95": 311.4
+          },
+          "sidecars.memory": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "sidecars.memory.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.memory.total": {
+            "avg": 296.4,
+            "max": 296.4,
+            "min": 296.4,
+            "p50": 296.4,
+            "p95": 296.4
+          },
+          "sidecars.plugin-services": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "sidecars.plugin-services.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.plugin-services.total": {
+            "avg": 295.9,
+            "max": 295.9,
+            "min": 295.9,
+            "p50": 295.9,
+            "p95": 295.9
+          },
+          "sidecars.ready": {
+            "avg": 0.6,
+            "max": 0.6,
+            "min": 0.6,
+            "p50": 0.6,
+            "p95": 0.6
+          },
+          "sidecars.ready.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.ready.total": {
+            "avg": 312.7,
+            "max": 312.7,
+            "min": 312.7,
+            "p50": 312.7,
+            "p95": 312.7
+          },
+          "sidecars.restart-sentinel": {
+            "avg": 5,
+            "max": 5,
+            "min": 5,
+            "p50": 5,
+            "p95": 5
+          },
+          "sidecars.restart-sentinel.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.restart-sentinel.total": {
+            "avg": 301.9,
+            "max": 301.9,
+            "min": 301.9,
+            "p50": 301.9,
+            "p95": 301.9
+          },
+          "sidecars.session-locks": {
+            "avg": 1.1,
+            "max": 1.1,
+            "min": 1.1,
+            "p50": 1.1,
+            "p95": 1.1
+          },
+          "sidecars.session-locks.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.session-locks.total": {
+            "avg": 291.9,
+            "max": 291.9,
+            "min": 291.9,
+            "p50": 291.9,
+            "p95": 291.9
+          },
+          "sidecars.subagent-recovery": {
+            "avg": 4.8,
+            "max": 4.8,
+            "min": 4.8,
+            "p50": 4.8,
+            "p95": 4.8
+          },
+          "sidecars.subagent-recovery.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.subagent-recovery.total": {
+            "avg": 307.3,
+            "max": 307.3,
+            "min": 307.3,
+            "p50": 307.3,
+            "p95": 307.3
+          },
+          "sidecars.total": {
+            "avg": 21.5,
+            "max": 21.5,
+            "min": 21.5,
+            "p50": 21.5,
+            "p95": 21.5
+          },
+          "sidecars.total.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.total.total": {
+            "avg": 312.1,
+            "max": 312.1,
+            "min": 312.1,
+            "p50": 312.1,
+            "p95": 312.1
+          },
+          "tls.runtime": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "tls.runtime.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "tls.runtime.total": {
+            "avg": 61.1,
+            "max": 61.1,
+            "min": 61.1,
+            "p50": 61.1,
+            "p95": 61.1
+          }
+        }
+      }
+    },
+    {
+      "id": "fiftyStartupLazyPlugins",
+      "name": "gateway, 50 startup-lazy manifest plugins",
+      "samples": [
+        {
+          "cpuCoreRatio": 1.1932423101092118,
+          "cpuMs": 2000,
+          "exitCode": 0,
+          "firstOutputMs": 24.896694999999454,
+          "healthz": {
+            "ms": 1637.1435380000003,
+            "status": 200
+          },
+          "maxRssMb": 555.71484375,
+          "outputTail": "2026-05-02T16:48:03.338+00:00 [gateway] startup trace: sidecars.session-locks 1.1ms total=277.3ms eventLoopMax=0.0ms\n2026-05-02T16:48:03.339+00:00 [gateway] startup trace: sidecars.gmail-watch 0.0ms total=277.9ms eventLoopMax=0.0ms\n2026-05-02T16:48:03.339+00:00 [gateway] startup trace: sidecars.gmail-model 0.1ms total=278.4ms eventLoopMax=0.0ms\n2026-05-02T16:48:03.340+00:00 [gateway] startup trace: sidecars.internal-hooks 0.0ms total=279.0ms eventLoopMax=0.0ms\n2026-05-02T16:48:03.340+00:00 [gateway/channels] skipping channel start (OPENCLAW_SKIP_CHANNELS=1 or OPENCLAW_SKIP_PROVIDERS=1)\n2026-05-02T16:48:03.341+00:00 [gateway] startup trace: sidecars.channels 0.5ms total=279.9ms eventLoopMax=0.0ms\n2026-05-02T16:48:03.342+00:00 [gateway] startup trace: sidecars.plugin-services 0.5ms total=281.3ms eventLoopMax=0.0ms\n2026-05-02T16:48:03.343+00:00 [gateway] startup trace: sidecars.memory 0.1ms total=281.8ms eventLoopMax=0.0ms\n2026-05-02T16:48:03.348+00:00 [gateway] startup trace: sidecars.restart-sentinel 4.8ms total=287.0ms eventLoopMax=0.0ms\n2026-05-02T16:48:03.352+00:00 [gateway] startup trace: sidecars.subagent-recovery 3.4ms total=291.1ms eventLoopMax=0.0ms\n2026-05-02T16:48:03.355+00:00 [gateway] startup trace: sidecars.main-session-recovery 2.1ms total=294.1ms eventLoopMax=0.0ms\n2026-05-02T16:48:03.356+00:00 [gateway] startup trace: sidecars.total 18.8ms total=294.7ms eventLoopMax=0.0ms\n2026-05-02T16:48:03.356+00:00 [gateway] startup trace: sidecars.ready 0.5ms total=295.3ms eventLoopMax=0.0ms\n2026-05-02T16:48:03.357+00:00 [gateway] ready\n2026-05-02T16:48:03.357+00:00 [gateway] startup trace: runtime.post-attach 93.0ms total=296.2ms eventLoopMax=0.0ms\n2026-05-02T16:48:03.358+00:00 [gateway] startup trace: ready 0.5ms total=296.7ms eventLoopMax=0.0ms\n2026-05-02T16:48:03.360+00:00 [heartbeat] started\n2026-05-02T16:48:03.384+00:00 [gateway] signal SIGTERM received\n2026-05-02T16:48:03.387+00:00 [gateway] received SIGTERM; shutting down\n",
+          "readyLogMs": 1613.6976570000006,
+          "readyz": {
+            "ms": 1676.1004119999998,
+            "status": 200
+          },
+          "signal": null,
+          "startupTrace": {
+            "entry.bootstrap": 0.3,
+            "entry.bootstrap.total": 0.3,
+            "entry.argv": 0.6,
+            "entry.argv.total": 0.9,
+            "entry.run-main-import": 6.2,
+            "entry.run-main-import.total": 7.2,
+            "cli.main.argv": 0.1,
+            "cli.main.argv.total": 0.1,
+            "cli.main.gateway-run-imports": 12.8,
+            "cli.main.gateway-run-imports.total": 376.8,
+            "cli.server-import": 0.5,
+            "cli.server-import.total": 0.5,
+            "cli.config-snapshot": 26.1,
+            "cli.config-snapshot.total": 36.3,
+            "cli.auth-resolve": 0.2,
+            "cli.auth-resolve.total": 41.9,
+            "cli.gateway-loop": 1.8,
+            "cli.gateway-loop.total": 43.6,
+            "gateway.server-impl-import": 900,
+            "gateway.server-impl-import.total": 900,
+            "config.snapshot.auto-enable": 10,
+            "config.snapshot.auto-enable.total": 10.2,
+            "config.snapshot.auto-enable.eventLoopMax": 0,
+            "config.snapshot": 11.8,
+            "config.snapshot.total": 11.8,
+            "config.snapshot.eventLoopMax": 0,
+            "config.auth": 1.9,
+            "config.auth.total": 14.5,
+            "config.auth.eventLoopMax": 0,
+            "control-ui.seed": 0.1,
+            "control-ui.seed.total": 15.6,
+            "control-ui.seed.eventLoopMax": 0,
+            "plugins.bootstrap": 30.1,
+            "plugins.bootstrap.total": 46.4,
+            "plugins.bootstrap.eventLoopMax": 0,
+            "plugins.lookup-table.registrySnapshotMs": 17.8,
+            "plugins.lookup-table.manifestRegistryMs": 4,
+            "plugins.lookup-table.startupPlanMs": 18.6,
+            "plugins.lookup-table.ownerMapsMs": 0.2,
+            "plugins.lookup-table.totalMs": 40.8,
+            "runtime.config": 1.3,
+            "runtime.config.total": 50.3,
+            "runtime.config.eventLoopMax": 0,
+            "control-ui.root": 0.1,
+            "control-ui.root.total": 51.2,
+            "control-ui.root.eventLoopMax": 0,
+            "tls.runtime": 0.1,
+            "tls.runtime.total": 51.9,
+            "tls.runtime.eventLoopMax": 0,
+            "runtime.state": 4.3,
+            "runtime.state.total": 57.5,
+            "runtime.state.eventLoopMax": 0,
+            "runtime.early": 78.5,
+            "runtime.early.total": 137.4,
+            "runtime.early.eventLoopMax": 0,
+            "http.bound": 64.9,
+            "http.bound.total": 202.3,
+            "http.bound.eventLoopMax": 0,
+            "post-attach.update-sentinel": 21.2,
+            "post-attach.update-sentinel.total": 224.6,
+            "post-attach.update-sentinel.eventLoopMax": 0,
+            "plugins.runtime-post-bind": 20.3,
+            "plugins.runtime-post-bind.total": 245.8,
+            "plugins.runtime-post-bind.eventLoopMax": 0,
+            "post-attach.log": 24.2,
+            "post-attach.log.total": 270.9,
+            "post-attach.log.eventLoopMax": 0,
+            "post-attach.update-check": 0.7,
+            "post-attach.update-check.total": 272.2,
+            "post-attach.update-check.eventLoopMax": 0,
+            "sidecars.session-locks": 1.1,
+            "sidecars.session-locks.total": 277.3,
+            "sidecars.session-locks.eventLoopMax": 0,
+            "sidecars.gmail-watch": 0,
+            "sidecars.gmail-watch.total": 277.9,
+            "sidecars.gmail-watch.eventLoopMax": 0,
+            "sidecars.gmail-model": 0.1,
+            "sidecars.gmail-model.total": 278.4,
+            "sidecars.gmail-model.eventLoopMax": 0,
+            "sidecars.internal-hooks": 0,
+            "sidecars.internal-hooks.total": 279,
+            "sidecars.internal-hooks.eventLoopMax": 0,
+            "sidecars.channels": 0.5,
+            "sidecars.channels.total": 279.9,
+            "sidecars.channels.eventLoopMax": 0,
+            "sidecars.plugin-services": 0.5,
+            "sidecars.plugin-services.total": 281.3,
+            "sidecars.plugin-services.eventLoopMax": 0,
+            "sidecars.memory": 0.1,
+            "sidecars.memory.total": 281.8,
+            "sidecars.memory.eventLoopMax": 0,
+            "sidecars.restart-sentinel": 4.8,
+            "sidecars.restart-sentinel.total": 287,
+            "sidecars.restart-sentinel.eventLoopMax": 0,
+            "sidecars.subagent-recovery": 3.4,
+            "sidecars.subagent-recovery.total": 291.1,
+            "sidecars.subagent-recovery.eventLoopMax": 0,
+            "sidecars.main-session-recovery": 2.1,
+            "sidecars.main-session-recovery.total": 294.1,
+            "sidecars.main-session-recovery.eventLoopMax": 0,
+            "sidecars.total": 18.8,
+            "sidecars.total.total": 294.7,
+            "sidecars.total.eventLoopMax": 0,
+            "sidecars.ready": 0.5,
+            "sidecars.ready.total": 295.3,
+            "sidecars.ready.eventLoopMax": 0,
+            "runtime.post-attach": 93,
+            "runtime.post-attach.total": 296.2,
+            "runtime.post-attach.eventLoopMax": 0,
+            "ready": 0.5,
+            "ready.total": 296.7,
+            "ready.eventLoopMax": 0
+          }
+        }
+      ],
+      "summary": {
+        "firstOutputMs": {
+          "avg": 24.896694999999454,
+          "max": 24.896694999999454,
+          "min": 24.896694999999454,
+          "p50": 24.896694999999454,
+          "p95": 24.896694999999454
+        },
+        "cpuCoreRatio": {
+          "avg": 1.1932423101092118,
+          "max": 1.1932423101092118,
+          "min": 1.1932423101092118,
+          "p50": 1.1932423101092118,
+          "p95": 1.1932423101092118
+        },
+        "cpuMs": {
+          "avg": 2000,
+          "max": 2000,
+          "min": 2000,
+          "p50": 2000,
+          "p95": 2000
+        },
+        "healthzMs": {
+          "avg": 1637.1435380000003,
+          "max": 1637.1435380000003,
+          "min": 1637.1435380000003,
+          "p50": 1637.1435380000003,
+          "p95": 1637.1435380000003
+        },
+        "maxRssMb": {
+          "avg": 555.71484375,
+          "max": 555.71484375,
+          "min": 555.71484375,
+          "p50": 555.71484375,
+          "p95": 555.71484375
+        },
+        "readyLogMs": {
+          "avg": 1613.6976570000006,
+          "max": 1613.6976570000006,
+          "min": 1613.6976570000006,
+          "p50": 1613.6976570000006,
+          "p95": 1613.6976570000006
+        },
+        "readyzMs": {
+          "avg": 1676.1004119999998,
+          "max": 1676.1004119999998,
+          "min": 1676.1004119999998,
+          "p50": 1676.1004119999998,
+          "p95": 1676.1004119999998
+        },
+        "startupTrace": {
+          "cli.auth-resolve": {
+            "avg": 0.2,
+            "max": 0.2,
+            "min": 0.2,
+            "p50": 0.2,
+            "p95": 0.2
+          },
+          "cli.auth-resolve.total": {
+            "avg": 41.9,
+            "max": 41.9,
+            "min": 41.9,
+            "p50": 41.9,
+            "p95": 41.9
+          },
+          "cli.config-snapshot": {
+            "avg": 26.1,
+            "max": 26.1,
+            "min": 26.1,
+            "p50": 26.1,
+            "p95": 26.1
+          },
+          "cli.config-snapshot.total": {
+            "avg": 36.3,
+            "max": 36.3,
+            "min": 36.3,
+            "p50": 36.3,
+            "p95": 36.3
+          },
+          "cli.gateway-loop": {
+            "avg": 1.8,
+            "max": 1.8,
+            "min": 1.8,
+            "p50": 1.8,
+            "p95": 1.8
+          },
+          "cli.gateway-loop.total": {
+            "avg": 43.6,
+            "max": 43.6,
+            "min": 43.6,
+            "p50": 43.6,
+            "p95": 43.6
+          },
+          "cli.main.argv": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "cli.main.argv.total": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "cli.main.gateway-run-imports": {
+            "avg": 12.8,
+            "max": 12.8,
+            "min": 12.8,
+            "p50": 12.8,
+            "p95": 12.8
+          },
+          "cli.main.gateway-run-imports.total": {
+            "avg": 376.8,
+            "max": 376.8,
+            "min": 376.8,
+            "p50": 376.8,
+            "p95": 376.8
+          },
+          "cli.server-import": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "cli.server-import.total": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "config.auth": {
+            "avg": 1.9,
+            "max": 1.9,
+            "min": 1.9,
+            "p50": 1.9,
+            "p95": 1.9
+          },
+          "config.auth.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.auth.total": {
+            "avg": 14.5,
+            "max": 14.5,
+            "min": 14.5,
+            "p50": 14.5,
+            "p95": 14.5
+          },
+          "config.snapshot": {
+            "avg": 11.8,
+            "max": 11.8,
+            "min": 11.8,
+            "p50": 11.8,
+            "p95": 11.8
+          },
+          "config.snapshot.auto-enable": {
+            "avg": 10,
+            "max": 10,
+            "min": 10,
+            "p50": 10,
+            "p95": 10
+          },
+          "config.snapshot.auto-enable.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.snapshot.auto-enable.total": {
+            "avg": 10.2,
+            "max": 10.2,
+            "min": 10.2,
+            "p50": 10.2,
+            "p95": 10.2
+          },
+          "config.snapshot.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "config.snapshot.total": {
+            "avg": 11.8,
+            "max": 11.8,
+            "min": 11.8,
+            "p50": 11.8,
+            "p95": 11.8
+          },
+          "control-ui.root": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "control-ui.root.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "control-ui.root.total": {
+            "avg": 51.2,
+            "max": 51.2,
+            "min": 51.2,
+            "p50": 51.2,
+            "p95": 51.2
+          },
+          "control-ui.seed": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "control-ui.seed.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "control-ui.seed.total": {
+            "avg": 15.6,
+            "max": 15.6,
+            "min": 15.6,
+            "p50": 15.6,
+            "p95": 15.6
+          },
+          "entry.argv": {
+            "avg": 0.6,
+            "max": 0.6,
+            "min": 0.6,
+            "p50": 0.6,
+            "p95": 0.6
+          },
+          "entry.argv.total": {
+            "avg": 0.9,
+            "max": 0.9,
+            "min": 0.9,
+            "p50": 0.9,
+            "p95": 0.9
+          },
+          "entry.bootstrap": {
+            "avg": 0.3,
+            "max": 0.3,
+            "min": 0.3,
+            "p50": 0.3,
+            "p95": 0.3
+          },
+          "entry.bootstrap.total": {
+            "avg": 0.3,
+            "max": 0.3,
+            "min": 0.3,
+            "p50": 0.3,
+            "p95": 0.3
+          },
+          "entry.run-main-import": {
+            "avg": 6.2,
+            "max": 6.2,
+            "min": 6.2,
+            "p50": 6.2,
+            "p95": 6.2
+          },
+          "entry.run-main-import.total": {
+            "avg": 7.2,
+            "max": 7.2,
+            "min": 7.2,
+            "p50": 7.2,
+            "p95": 7.2
+          },
+          "gateway.server-impl-import": {
+            "avg": 900,
+            "max": 900,
+            "min": 900,
+            "p50": 900,
+            "p95": 900
+          },
+          "gateway.server-impl-import.total": {
+            "avg": 900,
+            "max": 900,
+            "min": 900,
+            "p50": 900,
+            "p95": 900
+          },
+          "http.bound": {
+            "avg": 64.9,
+            "max": 64.9,
+            "min": 64.9,
+            "p50": 64.9,
+            "p95": 64.9
+          },
+          "http.bound.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "http.bound.total": {
+            "avg": 202.3,
+            "max": 202.3,
+            "min": 202.3,
+            "p50": 202.3,
+            "p95": 202.3
+          },
+          "plugins.bootstrap": {
+            "avg": 30.1,
+            "max": 30.1,
+            "min": 30.1,
+            "p50": 30.1,
+            "p95": 30.1
+          },
+          "plugins.bootstrap.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "plugins.bootstrap.total": {
+            "avg": 46.4,
+            "max": 46.4,
+            "min": 46.4,
+            "p50": 46.4,
+            "p95": 46.4
+          },
+          "plugins.lookup-table.manifestRegistryMs": {
+            "avg": 4,
+            "max": 4,
+            "min": 4,
+            "p50": 4,
+            "p95": 4
+          },
+          "plugins.lookup-table.ownerMapsMs": {
+            "avg": 0.2,
+            "max": 0.2,
+            "min": 0.2,
+            "p50": 0.2,
+            "p95": 0.2
+          },
+          "plugins.lookup-table.registrySnapshotMs": {
+            "avg": 17.8,
+            "max": 17.8,
+            "min": 17.8,
+            "p50": 17.8,
+            "p95": 17.8
+          },
+          "plugins.lookup-table.startupPlanMs": {
+            "avg": 18.6,
+            "max": 18.6,
+            "min": 18.6,
+            "p50": 18.6,
+            "p95": 18.6
+          },
+          "plugins.lookup-table.totalMs": {
+            "avg": 40.8,
+            "max": 40.8,
+            "min": 40.8,
+            "p50": 40.8,
+            "p95": 40.8
+          },
+          "plugins.runtime-post-bind": {
+            "avg": 20.3,
+            "max": 20.3,
+            "min": 20.3,
+            "p50": 20.3,
+            "p95": 20.3
+          },
+          "plugins.runtime-post-bind.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "plugins.runtime-post-bind.total": {
+            "avg": 245.8,
+            "max": 245.8,
+            "min": 245.8,
+            "p50": 245.8,
+            "p95": 245.8
+          },
+          "post-attach.log": {
+            "avg": 24.2,
+            "max": 24.2,
+            "min": 24.2,
+            "p50": 24.2,
+            "p95": 24.2
+          },
+          "post-attach.log.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.log.total": {
+            "avg": 270.9,
+            "max": 270.9,
+            "min": 270.9,
+            "p50": 270.9,
+            "p95": 270.9
+          },
+          "post-attach.update-check": {
+            "avg": 0.7,
+            "max": 0.7,
+            "min": 0.7,
+            "p50": 0.7,
+            "p95": 0.7
+          },
+          "post-attach.update-check.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.update-check.total": {
+            "avg": 272.2,
+            "max": 272.2,
+            "min": 272.2,
+            "p50": 272.2,
+            "p95": 272.2
+          },
+          "post-attach.update-sentinel": {
+            "avg": 21.2,
+            "max": 21.2,
+            "min": 21.2,
+            "p50": 21.2,
+            "p95": 21.2
+          },
+          "post-attach.update-sentinel.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "post-attach.update-sentinel.total": {
+            "avg": 224.6,
+            "max": 224.6,
+            "min": 224.6,
+            "p50": 224.6,
+            "p95": 224.6
+          },
+          "ready": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "ready.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "ready.total": {
+            "avg": 296.7,
+            "max": 296.7,
+            "min": 296.7,
+            "p50": 296.7,
+            "p95": 296.7
+          },
+          "runtime.config": {
+            "avg": 1.3,
+            "max": 1.3,
+            "min": 1.3,
+            "p50": 1.3,
+            "p95": 1.3
+          },
+          "runtime.config.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.config.total": {
+            "avg": 50.3,
+            "max": 50.3,
+            "min": 50.3,
+            "p50": 50.3,
+            "p95": 50.3
+          },
+          "runtime.early": {
+            "avg": 78.5,
+            "max": 78.5,
+            "min": 78.5,
+            "p50": 78.5,
+            "p95": 78.5
+          },
+          "runtime.early.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.early.total": {
+            "avg": 137.4,
+            "max": 137.4,
+            "min": 137.4,
+            "p50": 137.4,
+            "p95": 137.4
+          },
+          "runtime.post-attach": {
+            "avg": 93,
+            "max": 93,
+            "min": 93,
+            "p50": 93,
+            "p95": 93
+          },
+          "runtime.post-attach.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.post-attach.total": {
+            "avg": 296.2,
+            "max": 296.2,
+            "min": 296.2,
+            "p50": 296.2,
+            "p95": 296.2
+          },
+          "runtime.state": {
+            "avg": 4.3,
+            "max": 4.3,
+            "min": 4.3,
+            "p50": 4.3,
+            "p95": 4.3
+          },
+          "runtime.state.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "runtime.state.total": {
+            "avg": 57.5,
+            "max": 57.5,
+            "min": 57.5,
+            "p50": 57.5,
+            "p95": 57.5
+          },
+          "sidecars.channels": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "sidecars.channels.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.channels.total": {
+            "avg": 279.9,
+            "max": 279.9,
+            "min": 279.9,
+            "p50": 279.9,
+            "p95": 279.9
+          },
+          "sidecars.gmail-model": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "sidecars.gmail-model.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-model.total": {
+            "avg": 278.4,
+            "max": 278.4,
+            "min": 278.4,
+            "p50": 278.4,
+            "p95": 278.4
+          },
+          "sidecars.gmail-watch": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-watch.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.gmail-watch.total": {
+            "avg": 277.9,
+            "max": 277.9,
+            "min": 277.9,
+            "p50": 277.9,
+            "p95": 277.9
+          },
+          "sidecars.internal-hooks": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.internal-hooks.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.internal-hooks.total": {
+            "avg": 279,
+            "max": 279,
+            "min": 279,
+            "p50": 279,
+            "p95": 279
+          },
+          "sidecars.main-session-recovery": {
+            "avg": 2.1,
+            "max": 2.1,
+            "min": 2.1,
+            "p50": 2.1,
+            "p95": 2.1
+          },
+          "sidecars.main-session-recovery.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.main-session-recovery.total": {
+            "avg": 294.1,
+            "max": 294.1,
+            "min": 294.1,
+            "p50": 294.1,
+            "p95": 294.1
+          },
+          "sidecars.memory": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "sidecars.memory.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.memory.total": {
+            "avg": 281.8,
+            "max": 281.8,
+            "min": 281.8,
+            "p50": 281.8,
+            "p95": 281.8
+          },
+          "sidecars.plugin-services": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "sidecars.plugin-services.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.plugin-services.total": {
+            "avg": 281.3,
+            "max": 281.3,
+            "min": 281.3,
+            "p50": 281.3,
+            "p95": 281.3
+          },
+          "sidecars.ready": {
+            "avg": 0.5,
+            "max": 0.5,
+            "min": 0.5,
+            "p50": 0.5,
+            "p95": 0.5
+          },
+          "sidecars.ready.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.ready.total": {
+            "avg": 295.3,
+            "max": 295.3,
+            "min": 295.3,
+            "p50": 295.3,
+            "p95": 295.3
+          },
+          "sidecars.restart-sentinel": {
+            "avg": 4.8,
+            "max": 4.8,
+            "min": 4.8,
+            "p50": 4.8,
+            "p95": 4.8
+          },
+          "sidecars.restart-sentinel.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.restart-sentinel.total": {
+            "avg": 287,
+            "max": 287,
+            "min": 287,
+            "p50": 287,
+            "p95": 287
+          },
+          "sidecars.session-locks": {
+            "avg": 1.1,
+            "max": 1.1,
+            "min": 1.1,
+            "p50": 1.1,
+            "p95": 1.1
+          },
+          "sidecars.session-locks.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.session-locks.total": {
+            "avg": 277.3,
+            "max": 277.3,
+            "min": 277.3,
+            "p50": 277.3,
+            "p95": 277.3
+          },
+          "sidecars.subagent-recovery": {
+            "avg": 3.4,
+            "max": 3.4,
+            "min": 3.4,
+            "p50": 3.4,
+            "p95": 3.4
+          },
+          "sidecars.subagent-recovery.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.subagent-recovery.total": {
+            "avg": 291.1,
+            "max": 291.1,
+            "min": 291.1,
+            "p50": 291.1,
+            "p95": 291.1
+          },
+          "sidecars.total": {
+            "avg": 18.8,
+            "max": 18.8,
+            "min": 18.8,
+            "p50": 18.8,
+            "p95": 18.8
+          },
+          "sidecars.total.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "sidecars.total.total": {
+            "avg": 294.7,
+            "max": 294.7,
+            "min": 294.7,
+            "p50": 294.7,
+            "p95": 294.7
+          },
+          "tls.runtime": {
+            "avg": 0.1,
+            "max": 0.1,
+            "min": 0.1,
+            "p50": 0.1,
+            "p95": 0.1
+          },
+          "tls.runtime.eventLoopMax": {
+            "avg": 0,
+            "max": 0,
+            "min": 0,
+            "p50": 0,
+            "p95": 0
+          },
+          "tls.runtime.total": {
+            "avg": 51.9,
+            "max": 51.9,
+            "min": 51.9,
+            "p50": 51.9,
+            "p95": 51.9
+          }
+        }
+      }
+    }
+  ]
+}
