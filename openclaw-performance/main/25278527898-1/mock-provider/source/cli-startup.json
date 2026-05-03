@@ -1,0 +1,84 @@
+{
+  "node": "v24.13.0",
+  "runs": 1,
+  "warmup": 1,
+  "timeoutMs": 30000,
+  "cpuProfDir": null,
+  "heapProfDir": null,
+  "primary": {
+    "entry": "openclaw.mjs",
+    "cases": [
+      {
+        "id": "gatewayHealthJson",
+        "name": "gateway health --json",
+        "args": [
+          "gateway",
+          "health",
+          "--json"
+        ],
+        "samples": [
+          {
+            "ms": 1457.654973,
+            "maxRssMb": 55.65234375,
+            "exitCode": 0,
+            "signal": null
+          }
+        ],
+        "summary": {
+          "sampleCount": 1,
+          "durationMs": {
+            "avg": 1457.654973,
+            "p50": 1457.654973,
+            "p95": 1457.654973,
+            "min": 1457.654973,
+            "max": 1457.654973
+          },
+          "maxRssMb": {
+            "avg": 55.65234375,
+            "p50": 55.65234375,
+            "p95": 55.65234375,
+            "min": 55.65234375,
+            "max": 55.65234375
+          },
+          "exitSummary": "code:0x1"
+        }
+      },
+      {
+        "id": "configGetGatewayPort",
+        "name": "config get gateway.port",
+        "args": [
+          "config",
+          "get",
+          "gateway.port"
+        ],
+        "samples": [
+          {
+            "ms": 559.027327,
+            "maxRssMb": 55.6953125,
+            "exitCode": 0,
+            "signal": null
+          }
+        ],
+        "summary": {
+          "sampleCount": 1,
+          "durationMs": {
+            "avg": 559.027327,
+            "p50": 559.027327,
+            "p95": 559.027327,
+            "min": 559.027327,
+            "max": 559.027327
+          },
+          "maxRssMb": {
+            "avg": 55.6953125,
+            "p50": 55.6953125,
+            "p95": 55.6953125,
+            "min": 55.6953125,
+            "max": 55.6953125
+          },
+          "exitSummary": "code:0x1"
+        }
+      }
+    ]
+  },
+  "secondary": null
+}

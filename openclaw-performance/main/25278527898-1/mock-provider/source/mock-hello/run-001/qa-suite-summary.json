@@ -1,0 +1,48 @@
+{
+  "scenarios": [
+    {
+      "name": "Channel baseline conversation",
+      "status": "pass",
+      "steps": [
+        {
+          "name": "ignores unmentioned channel chatter",
+          "status": "pass"
+        },
+        {
+          "name": "replies when mentioned in channel",
+          "status": "pass",
+          "details": "Protocol note: acknowledged. Continue with the QA scenario plan and report worked, failed, and blocked items."
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0
+  },
+  "metrics": {
+    "wallMs": 22859,
+    "gatewayProcessCpuMs": 8000,
+    "gatewayCpuCoreRatio": 0.35,
+    "gatewayProcessRssStartBytes": 575193088,
+    "gatewayProcessRssEndBytes": 853110784,
+    "gatewayProcessRssDeltaBytes": 277917696
+  },
+  "run": {
+    "startedAt": "2026-05-03T12:00:19.146Z",
+    "finishedAt": "2026-05-03T12:00:42.005Z",
+    "providerMode": "mock-openai",
+    "primaryModel": "mock-openai/gpt-5.4",
+    "primaryProvider": "mock-openai",
+    "primaryModelName": "gpt-5.4",
+    "alternateModel": "mock-openai/gpt-5.5-alt",
+    "alternateProvider": "mock-openai",
+    "alternateModelName": "gpt-5.5-alt",
+    "fastMode": false,
+    "concurrency": 1,
+    "scenarioIds": [
+      "channel-chat-baseline"
+    ]
+  }
+}
