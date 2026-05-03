@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-05-03T12:46:22.139Z",
+  "outputDir": "/home/runner/_work/openclaw/openclaw/.artifacts/openclaw-performance/source/mock-provider/gateway-cpu",
+  "startupOutput": "/home/runner/_work/openclaw/openclaw/.artifacts/openclaw-performance/source/mock-provider/gateway-cpu/gateway-startup-bench.json",
+  "qaSummary": null,
+  "options": {
+    "startupCases": [
+      "default",
+      "skipChannels",
+      "oneInternalHook",
+      "allInternalHooks",
+      "fiftyPlugins",
+      "fiftyStartupLazyPlugins"
+    ],
+    "qaScenarios": [
+      "channel-chat-baseline",
+      "memory-failure-fallback",
+      "gateway-restart-inflight-run"
+    ],
+    "runs": 3,
+    "warmup": 1,
+    "cpuCoreWarn": 0.9,
+    "hotWallWarnMs": 30000
+  },
+  "steps": [
+    {
+      "name": "startup bench",
+      "status": 0,
+      "signal": null
+    }
+  ],
+  "observations": []
+}
