@@ -1,0 +1,3426 @@
+{
+  "schemaVersion": "kova.report.v1",
+  "generatedAt": "2026-05-03T06:12:50.768Z",
+  "runId": "kova-2026-05-03T061214Z",
+  "outputPaths": {
+    "markdown": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/reports/mock-deep-profile/kova-2026-05-03T061214Z-diagnostic.md",
+    "json": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/reports/mock-deep-profile/kova-2026-05-03T061214Z-diagnostic.json"
+  },
+  "mode": "execution",
+  "profile": {
+    "id": "diagnostic",
+    "title": "Source-Built Diagnostics",
+    "objective": "Run release-shaped local OpenClaw builds with timeline diagnostics enabled so Kova can attribute startup, plugin, provider, agent, event-loop, CPU, and heap behavior to OpenClaw phases.",
+    "entryCount": 8,
+    "targetKinds": [
+      "local-build"
+    ],
+    "diagnostics": {
+      "timelineRequired": true,
+      "timelineRequiredForTargetKinds": [
+        "local-build"
+      ],
+      "requiredKeySpans": [
+        "gateway.startup",
+        "gateway.ready",
+        "config.normalize",
+        "plugins.metadata.scan",
+        "runtimeDeps.stage",
+        "providers.load",
+        "models.catalog",
+        "agent.turn",
+        "agent.cleanup"
+      ]
+    },
+    "calibration": {
+      "surfaceCount": 8,
+      "roleCount": 6
+    },
+    "gate": {
+      "id": "openclaw-diagnostic",
+      "blockingCount": 8,
+      "warningCount": 0
+    }
+  },
+  "target": "local-build:/home/runner/_work/openclaw/openclaw",
+  "from": null,
+  "controls": {
+    "include": [
+      "scenario:agent-cold-warm-message"
+    ],
+    "exclude": [],
+    "failFast": false,
+    "continueOnFailure": true,
+    "requestedParallel": 1,
+    "parallel": 1,
+    "parallelAdjusted": false,
+    "repeat": 1,
+    "baseline": null,
+    "saveBaseline": null,
+    "gate": false,
+    "reviewedGood": false,
+    "bundle": true
+  },
+  "auth": {
+    "schemaVersion": "kova.auth.report.v1",
+    "requestedMode": "mock",
+    "credentialStore": {
+      "schemaVersion": "kova.credentials.summary.v1",
+      "home": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/credentials",
+      "providersPath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/credentials/providers.json",
+      "liveEnvPath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/credentials/live.env",
+      "defaultProvider": "openai",
+      "providers": {
+        "openai": {
+          "id": "openai",
+          "method": "mock",
+          "envVars": [
+            "OPENAI_API_KEY"
+          ],
+          "fallbackPolicy": "mock",
+          "externalCli": null,
+          "configured": false
+        }
+      }
+    },
+    "live": {
+      "available": false,
+      "providerId": "openai",
+      "method": "mock",
+      "externalCli": null,
+      "fallbackFrom": null,
+      "fallbackPolicy": "mock",
+      "verification": null,
+      "envVars": [
+        "OPENAI_API_KEY"
+      ],
+      "reason": "no live provider configured",
+      "environmentDependent": false
+    }
+  },
+  "state": null,
+  "platform": {
+    "os": "linux",
+    "arch": "x64",
+    "release": "6.5.13",
+    "node": "v24.13.0"
+  },
+  "targetCleanup": {
+    "status": "already-absent",
+    "runtimeName": "kova-local-1777788734744",
+    "command": "ocm runtime remove 'kova-local-1777788734744' --json",
+    "reason": "target runtime was not present when cleanup ran",
+    "result": {
+      "status": 1,
+      "durationMs": 2,
+      "timedOut": false,
+      "stdout": "",
+      "stderr": "ocm: runtime \"kova-local-1777788734744\" does not exist\nRun \"ocm help\" for usage.\n",
+      "attempts": [
+        {
+          "status": 1,
+          "durationMs": 2,
+          "timedOut": false,
+          "stdout": "",
+          "stderr": "ocm: runtime \"kova-local-1777788734744\" does not exist\nRun \"ocm help\" for usage.\n"
+        }
+      ]
+    }
+  },
+  "performance": {
+    "schemaVersion": "kova.performance.v1",
+    "generatedAt": "2026-05-03T06:12:50.768Z",
+    "repeat": 1,
+    "metricCatalog": [
+      {
+        "id": "timeToHealthReadyMs",
+        "title": "Health Ready",
+        "unit": "ms"
+      },
+      {
+        "id": "timeToListeningMs",
+        "title": "TCP Listening",
+        "unit": "ms"
+      },
+      {
+        "id": "peakRssMb",
+        "title": "Peak RSS",
+        "unit": "MB"
+      },
+      {
+        "id": "resourcePeakGatewayRssMb",
+        "title": "Gateway RSS",
+        "unit": "MB"
+      },
+      {
+        "id": "cpuPercentMax",
+        "title": "Max CPU",
+        "unit": "%"
+      },
+      {
+        "id": "openclawEventLoopMaxMs",
+        "title": "Event Loop Max",
+        "unit": "ms"
+      },
+      {
+        "id": "eventLoopDelayMs",
+        "title": "Event Loop Delay",
+        "unit": "ms"
+      },
+      {
+        "id": "agentTurnMs",
+        "title": "Agent Turn",
+        "unit": "ms"
+      },
+      {
+        "id": "agentTurnP95Ms",
+        "title": "Agent Turn p95",
+        "unit": "ms"
+      },
+      {
+        "id": "agentTurnMaxMs",
+        "title": "Agent Turn Max",
+        "unit": "ms"
+      },
+      {
+        "id": "coldAgentTurnMs",
+        "title": "Cold Agent Turn",
+        "unit": "ms"
+      },
+      {
+        "id": "warmAgentTurnMs",
+        "title": "Warm Agent Turn",
+        "unit": "ms"
+      },
+      {
+        "id": "agentColdWarmDeltaMs",
+        "title": "Cold/Warm Agent Delta",
+        "unit": "ms"
+      },
+      {
+        "id": "agentPreProviderP95Ms",
+        "title": "Pre-Provider p95",
+        "unit": "ms"
+      },
+      {
+        "id": "agentCleanupP95Ms",
+        "title": "Agent Cleanup p95",
+        "unit": "ms"
+      },
+      {
+        "id": "agentCleanupMaxMs",
+        "title": "Agent Cleanup Max",
+        "unit": "ms"
+      },
+      {
+        "id": "coldPreProviderMs",
+        "title": "Cold Pre-Provider",
+        "unit": "ms"
+      },
+      {
+        "id": "warmPreProviderMs",
+        "title": "Warm Pre-Provider",
+        "unit": "ms"
+      },
+      {
+        "id": "healthP95Ms",
+        "title": "Health p95",
+        "unit": "ms"
+      },
+      {
+        "id": "runtimeDepsStagingMs",
+        "title": "Runtime Deps Staging",
+        "unit": "ms"
+      }
+    ],
+    "groupCount": 1,
+    "unstableGroupCount": 0,
+    "profiledRunCount": 1,
+    "groups": [
+      {
+        "key": "agent-cold-warm-message|agent-cli-local-turn|mock-openai-provider",
+        "scenario": "agent-cold-warm-message",
+        "surface": "agent-cli-local-turn",
+        "state": "mock-openai-provider",
+        "title": "Agent CLI Local Cold/Warm Message",
+        "sampleCount": 1,
+        "profiledRunCount": 1,
+        "resourceInterpretation": "instrumented",
+        "statuses": {
+          "BLOCKED": 1
+        },
+        "repeatIndexes": [
+          1
+        ],
+        "metrics": {
+          "peakRssMb": {
+            "count": 1,
+            "min": 2541.1,
+            "median": 2541.1,
+            "p95": 2541.1,
+            "max": 2541.1,
+            "mean": 2541.1,
+            "variance": 0,
+            "stddev": 0,
+            "relativeStddevPercent": 0,
+            "absoluteSpreadPercent": 0,
+            "classification": "stable",
+            "samples": [
+              2541.1
+            ],
+            "unit": "MB",
+            "title": "Peak RSS"
+          },
+          "resourcePeakGatewayRssMb": {
+            "count": 1,
+            "min": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0,
+            "mean": 0,
+            "variance": 0,
+            "stddev": 0,
+            "relativeStddevPercent": 0,
+            "absoluteSpreadPercent": 0,
+            "classification": "stable",
+            "samples": [
+              0
+            ],
+            "unit": "MB",
+            "title": "Gateway RSS"
+          },
+          "cpuPercentMax": {
+            "count": 1,
+            "min": 364.4,
+            "median": 364.4,
+            "p95": 364.4,
+            "max": 364.4,
+            "mean": 364.4,
+            "variance": 0,
+            "stddev": 0,
+            "relativeStddevPercent": 0,
+            "absoluteSpreadPercent": 0,
+            "classification": "stable",
+            "samples": [
+              364.4
+            ],
+            "unit": "%",
+            "title": "Max CPU"
+          }
+        }
+      }
+    ]
+  },
+  "baseline": null,
+  "gate": null,
+  "summary": {
+    "total": 1,
+    "statuses": {
+      "BLOCKED": 1
+    }
+  },
+  "records": [
+    {
+      "scenario": "agent-cold-warm-message",
+      "surface": "agent-cli-local-turn",
+      "title": "Agent CLI Local Cold/Warm Message",
+      "status": "BLOCKED",
+      "target": "local-build:/home/runner/_work/openclaw/openclaw",
+      "from": null,
+      "state": {
+        "id": "mock-openai-provider",
+        "title": "Mock OpenAI Provider",
+        "objective": "A local OpenAI-compatible provider endpoint wired into OpenClaw config so agent turns exercise the real OpenClaw agent path without external model dependencies.",
+        "traits": [
+          "mock-provider",
+          "provider-pressure",
+          "agent-state"
+        ],
+        "riskArea": "agent-provider-latency",
+        "ownerArea": "agent-runtime"
+      },
+      "repeat": {
+        "index": 1,
+        "total": 1
+      },
+      "envName": "kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z",
+      "likelyOwner": "OpenClaw",
+      "objective": "Send cold and warm simple messages through `openclaw agent --local`, verify mock-provider responses, and attribute latency before, during, and after provider work.",
+      "thresholds": {
+        "gatewayReadyMs": 30000,
+        "agentTurnMs": 45000,
+        "coldAgentTurnMs": 45000,
+        "warmAgentTurnMs": 15000,
+        "coldWarmDeltaMs": 30000,
+        "preProviderMs": 10000,
+        "coldPreProviderMs": 10000,
+        "warmPreProviderMs": 5000,
+        "providerFinalMs": 3000,
+        "preProviderDominanceRatio": 0.8,
+        "statusMs": 10000,
+        "peakRssMb": 900,
+        "missingDependencyErrors": 0,
+        "pluginLoadFailures": 0,
+        "providerTimeoutMentions": 0
+      },
+      "cleanup": "already-absent",
+      "auth": {
+        "schemaVersion": "kova.auth.summary.v1",
+        "mode": "mock",
+        "providerId": "openai",
+        "source": "default-mock",
+        "externalCli": null,
+        "fallbackFrom": null,
+        "fallbackPolicy": null,
+        "setup": true,
+        "setupKind": null,
+        "deterministic": true,
+        "environmentDependent": false,
+        "envVars": [
+          "OPENAI_API_KEY"
+        ],
+        "mockProvider": {
+          "mode": "normal",
+          "delayMs": null,
+          "stallMs": null,
+          "errorStatus": null,
+          "concurrency": null
+        },
+        "secretValues": "redacted"
+      },
+      "profiling": {
+        "schemaVersion": "kova.profiling.v1",
+        "enabled": true,
+        "deepProfile": true,
+        "nodeProfile": true,
+        "heapSnapshot": true,
+        "diagnosticReport": true,
+        "profileOnFailure": false,
+        "affectsResourceMeasurements": true,
+        "baselineEligible": false,
+        "interpretation": "instrumented run; CPU/RSS can include profiler and diagnostic overhead"
+      },
+      "collectorArtifactDirs": {
+        "schemaVersion": "kova.collectorArtifactDirs.v1",
+        "root": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z",
+        "collectors": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/collectors",
+        "openclaw": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/openclaw",
+        "provider": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/provider",
+        "processSnapshots": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/process-snapshots",
+        "resourceSamples": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/resource-samples",
+        "nodeProfiles": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/node-profiles",
+        "diagnostics": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/diagnostics",
+        "heap": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/heap",
+        "diagnosticReports": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/diagnostic-reports"
+      },
+      "phases": [
+        {
+          "id": "target-setup",
+          "title": "Target Runtime Setup",
+          "intent": "Prepare the target OpenClaw runtime selector for the scenario.",
+          "commands": [
+            "ocm runtime build-local 'kova-local-1777788734744' --repo '/home/runner/_work/openclaw/openclaw' --force"
+          ],
+          "evidence": [],
+          "results": [
+            {
+              "command": "ocm runtime build-local 'kova-local-1777788734744' --repo '/home/runner/_work/openclaw/openclaw' --force",
+              "status": 1,
+              "signal": null,
+              "timedOut": false,
+              "startedAt": "2026-05-03T06:12:14.768Z",
+              "startedAtEpochMs": 1777788734768,
+              "finishedAt": "2026-05-03T06:12:50.532Z",
+              "finishedAtEpochMs": 1777788770532,
+              "durationMs": 35764,
+              "stdout": "",
+              "stderr": "ocm: failed to pack local OpenClaw build: [build-all] canvas:a2ui:bundle\n[build-all] tsdown\n[build-all] check-cli-bootstrap-imports\n[build-all] runtime-postbuild\nruntime-postbuild: plugin SDK root alias completed in 0ms\nruntime-postbuild: bundled plugin metadata completed in 66ms\nruntime-postbuild: official channel catalog completed in 2ms\nruntime-postbuild: bundled plugin runtime overlay completed in 47ms\nruntime-postbuild: stable root runtime aliases completed in 6ms\nruntime-postbuild: legacy CLI exit compat chunks completed in 0ms\nruntime-postbuild: static extension assets completed in 12ms\n[build-all] build-stamp\nRun \"ocm help\" for usage.\n",
+              "resourceSamples": {
+                "schemaVersion": "kova.resourceSamples.v1",
+                "sampleCount": 143,
+                "intervalMs": 315,
+                "peakTotalRssMb": 2541.1,
+                "maxTotalCpuPercent": 364.4,
+                "peakCommandTreeRssMb": 2541.1,
+                "peakGatewayRssMb": 0,
+                "byRole": {
+                  "browser-sidecar": {
+                    "peakRssMb": 571.6,
+                    "maxCpuPercent": 143,
+                    "peakRssAtMs": 19952,
+                    "peakCpuAtMs": 15984,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 11591,
+                      "roles": [
+                        "browser-sidecar",
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "browser-sidecar,build-tooling,command-tree,runtime-management",
+                      "rssMb": 571.6,
+                      "cpuPercent": 101,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --import tsx --input-type=module --eval const { Command } = await import(\"commander\"); const { registerBrowserCli } = await import(\"file:///home/runner/_work/openclaw/openclaw/extensions/browser/src/cli/browser-cli.ts\"); const { configureProgramHelp } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/help.ts\"); const { createProgramContext } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/context.ts\"); const program = new Command(); configureProgramHelp(program, createProgramContext()); registerBrowserCli(program, [\"node\", \"openclaw\", \"browser\", \"--help\"]); const browser = program.commands.find((cmd) => cmd.name() === \"browser\"); if (!browser) throw new Error(\"Browser command was not registered.\"); browser.outputHelp(); process.exit(0);"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 11591,
+                      "roles": [
+                        "browser-sidecar",
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "browser-sidecar,build-tooling,command-tree,runtime-management",
+                      "rssMb": 96.9,
+                      "cpuPercent": 143,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --import tsx --input-type=module --eval const { Command } = await import(\"commander\"); const { registerBrowserCli } = await import(\"file:///home/runner/_work/openclaw/openclaw/extensions/browser/src/cli/browser-cli.ts\"); const { configureProgramHelp } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/help.ts\"); const { createProgramContext } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/context.ts\"); const program = new Command(); configureProgramHelp(program, createProgramContext()); registerBrowserCli(program, [\"node\", \"openclaw\", \"browser\", \"--help\"]); const browser = program.commands.find((cmd) => cmd.name() === \"browser\"); if (!browser) throw new Error(\"Browser command was not registered.\"); browser.outputHelp(); process.exit(0);"
+                    }
+                  },
+                  "build-tooling": {
+                    "peakRssMb": 2541.1,
+                    "maxCpuPercent": 364.4,
+                    "peakRssAtMs": 3996,
+                    "peakCpuAtMs": 2545,
+                    "peakProcessCount": 11,
+                    "peakRssProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2021.4,
+                      "cpuPercent": 282,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 1130.5,
+                      "cpuPercent": 315,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  "command-tree": {
+                    "peakRssMb": 2541.1,
+                    "maxCpuPercent": 364.4,
+                    "peakRssAtMs": 3996,
+                    "peakCpuAtMs": 2545,
+                    "peakProcessCount": 11,
+                    "peakRssProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2021.4,
+                      "cpuPercent": 282,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 1130.5,
+                      "cpuPercent": 315,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  "package-manager": {
+                    "peakRssMb": 504.7,
+                    "maxCpuPercent": 207,
+                    "peakRssAtMs": 15690,
+                    "peakCpuAtMs": 861,
+                    "peakProcessCount": 3,
+                    "peakRssProcess": {
+                      "pid": 11004,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "package-manager",
+                        "plugin-cli",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+                      "rssMb": 317.1,
+                      "cpuPercent": 147,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 4498,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "package-manager",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,package-manager,runtime-management",
+                      "rssMb": 76.8,
+                      "cpuPercent": 100,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node /home/runner/.cache/node/corepack/v1/pnpm/10.33.2/bin/pnpm.cjs canvas:a2ui:bundle"
+                    }
+                  },
+                  "plugin-cli": {
+                    "peakRssMb": 317.1,
+                    "maxCpuPercent": 147,
+                    "peakRssAtMs": 15690,
+                    "peakCpuAtMs": 15442,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 11004,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "package-manager",
+                        "plugin-cli",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+                      "rssMb": 317.1,
+                      "cpuPercent": 147,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 11004,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "package-manager",
+                        "plugin-cli",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+                      "rssMb": 282.3,
+                      "cpuPercent": 147,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+                    }
+                  },
+                  "runtime-management": {
+                    "peakRssMb": 2541.1,
+                    "maxCpuPercent": 364.4,
+                    "peakRssAtMs": 3996,
+                    "peakCpuAtMs": 2545,
+                    "peakProcessCount": 11,
+                    "peakRssProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2021.4,
+                      "cpuPercent": 282,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 1130.5,
+                      "cpuPercent": 315,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  "runtime-staging": {
+                    "peakRssMb": 1262.1,
+                    "maxCpuPercent": 156.4,
+                    "peakRssAtMs": 35695,
+                    "peakCpuAtMs": 23698,
+                    "peakProcessCount": 2,
+                    "peakRssProcess": {
+                      "pid": 14249,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+                      "rssMb": 1213.6,
+                      "cpuPercent": 145,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 14249,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+                      "rssMb": 563.3,
+                      "cpuPercent": 156,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw"
+                    }
+                  }
+                },
+                "topRolesByRss": [
+                  {
+                    "role": "build-tooling",
+                    "peakRssMb": 2541.1,
+                    "maxCpuPercent": 364.4,
+                    "peakRssAtMs": 3996,
+                    "peakCpuAtMs": 2545,
+                    "peakProcessCount": 11,
+                    "peakRssProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2021.4,
+                      "cpuPercent": 282,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 1130.5,
+                      "cpuPercent": 315,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  {
+                    "role": "command-tree",
+                    "peakRssMb": 2541.1,
+                    "maxCpuPercent": 364.4,
+                    "peakRssAtMs": 3996,
+                    "peakCpuAtMs": 2545,
+                    "peakProcessCount": 11,
+                    "peakRssProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2021.4,
+                      "cpuPercent": 282,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 1130.5,
+                      "cpuPercent": 315,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  {
+                    "role": "runtime-management",
+                    "peakRssMb": 2541.1,
+                    "maxCpuPercent": 364.4,
+                    "peakRssAtMs": 3996,
+                    "peakCpuAtMs": 2545,
+                    "peakProcessCount": 11,
+                    "peakRssProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2021.4,
+                      "cpuPercent": 282,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 1130.5,
+                      "cpuPercent": 315,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  {
+                    "role": "runtime-staging",
+                    "peakRssMb": 1262.1,
+                    "maxCpuPercent": 156.4,
+                    "peakRssAtMs": 35695,
+                    "peakCpuAtMs": 23698,
+                    "peakProcessCount": 2,
+                    "peakRssProcess": {
+                      "pid": 14249,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+                      "rssMb": 1213.6,
+                      "cpuPercent": 145,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 14249,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+                      "rssMb": 563.3,
+                      "cpuPercent": 156,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw"
+                    }
+                  },
+                  {
+                    "role": "browser-sidecar",
+                    "peakRssMb": 571.6,
+                    "maxCpuPercent": 143,
+                    "peakRssAtMs": 19952,
+                    "peakCpuAtMs": 15984,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 11591,
+                      "roles": [
+                        "browser-sidecar",
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "browser-sidecar,build-tooling,command-tree,runtime-management",
+                      "rssMb": 571.6,
+                      "cpuPercent": 101,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --import tsx --input-type=module --eval const { Command } = await import(\"commander\"); const { registerBrowserCli } = await import(\"file:///home/runner/_work/openclaw/openclaw/extensions/browser/src/cli/browser-cli.ts\"); const { configureProgramHelp } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/help.ts\"); const { createProgramContext } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/context.ts\"); const program = new Command(); configureProgramHelp(program, createProgramContext()); registerBrowserCli(program, [\"node\", \"openclaw\", \"browser\", \"--help\"]); const browser = program.commands.find((cmd) => cmd.name() === \"browser\"); if (!browser) throw new Error(\"Browser command was not registered.\"); browser.outputHelp(); process.exit(0);"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 11591,
+                      "roles": [
+                        "browser-sidecar",
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "browser-sidecar,build-tooling,command-tree,runtime-management",
+                      "rssMb": 96.9,
+                      "cpuPercent": 143,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --import tsx --input-type=module --eval const { Command } = await import(\"commander\"); const { registerBrowserCli } = await import(\"file:///home/runner/_work/openclaw/openclaw/extensions/browser/src/cli/browser-cli.ts\"); const { configureProgramHelp } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/help.ts\"); const { createProgramContext } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/context.ts\"); const program = new Command(); configureProgramHelp(program, createProgramContext()); registerBrowserCli(program, [\"node\", \"openclaw\", \"browser\", \"--help\"]); const browser = program.commands.find((cmd) => cmd.name() === \"browser\"); if (!browser) throw new Error(\"Browser command was not registered.\"); browser.outputHelp(); process.exit(0);"
+                    }
+                  },
+                  {
+                    "role": "package-manager",
+                    "peakRssMb": 504.7,
+                    "maxCpuPercent": 207,
+                    "peakRssAtMs": 15690,
+                    "peakCpuAtMs": 861,
+                    "peakProcessCount": 3,
+                    "peakRssProcess": {
+                      "pid": 11004,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "package-manager",
+                        "plugin-cli",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+                      "rssMb": 317.1,
+                      "cpuPercent": 147,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 4498,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "package-manager",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,package-manager,runtime-management",
+                      "rssMb": 76.8,
+                      "cpuPercent": 100,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node /home/runner/.cache/node/corepack/v1/pnpm/10.33.2/bin/pnpm.cjs canvas:a2ui:bundle"
+                    }
+                  },
+                  {
+                    "role": "plugin-cli",
+                    "peakRssMb": 317.1,
+                    "maxCpuPercent": 147,
+                    "peakRssAtMs": 15690,
+                    "peakCpuAtMs": 15442,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 11004,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "package-manager",
+                        "plugin-cli",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+                      "rssMb": 317.1,
+                      "cpuPercent": 147,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 11004,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "package-manager",
+                        "plugin-cli",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+                      "rssMb": 282.3,
+                      "cpuPercent": 147,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+                    }
+                  }
+                ],
+                "topRolesByCpu": [
+                  {
+                    "role": "build-tooling",
+                    "peakRssMb": 2541.1,
+                    "maxCpuPercent": 364.4,
+                    "peakRssAtMs": 3996,
+                    "peakCpuAtMs": 2545,
+                    "peakProcessCount": 11,
+                    "peakRssProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2021.4,
+                      "cpuPercent": 282,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 1130.5,
+                      "cpuPercent": 315,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  {
+                    "role": "command-tree",
+                    "peakRssMb": 2541.1,
+                    "maxCpuPercent": 364.4,
+                    "peakRssAtMs": 3996,
+                    "peakCpuAtMs": 2545,
+                    "peakProcessCount": 11,
+                    "peakRssProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2021.4,
+                      "cpuPercent": 282,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 1130.5,
+                      "cpuPercent": 315,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  {
+                    "role": "runtime-management",
+                    "peakRssMb": 2541.1,
+                    "maxCpuPercent": 364.4,
+                    "peakRssAtMs": 3996,
+                    "peakCpuAtMs": 2545,
+                    "peakProcessCount": 11,
+                    "peakRssProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2021.4,
+                      "cpuPercent": 282,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 4772,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 1130.5,
+                      "cpuPercent": 315,
+                      "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  {
+                    "role": "package-manager",
+                    "peakRssMb": 504.7,
+                    "maxCpuPercent": 207,
+                    "peakRssAtMs": 15690,
+                    "peakCpuAtMs": 861,
+                    "peakProcessCount": 3,
+                    "peakRssProcess": {
+                      "pid": 11004,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "package-manager",
+                        "plugin-cli",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+                      "rssMb": 317.1,
+                      "cpuPercent": 147,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 4498,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "package-manager",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,package-manager,runtime-management",
+                      "rssMb": 76.8,
+                      "cpuPercent": 100,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node /home/runner/.cache/node/corepack/v1/pnpm/10.33.2/bin/pnpm.cjs canvas:a2ui:bundle"
+                    }
+                  },
+                  {
+                    "role": "runtime-staging",
+                    "peakRssMb": 1262.1,
+                    "maxCpuPercent": 156.4,
+                    "peakRssAtMs": 35695,
+                    "peakCpuAtMs": 23698,
+                    "peakProcessCount": 2,
+                    "peakRssProcess": {
+                      "pid": 14249,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+                      "rssMb": 1213.6,
+                      "cpuPercent": 145,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 14249,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+                      "rssMb": 563.3,
+                      "cpuPercent": 156,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw"
+                    }
+                  },
+                  {
+                    "role": "plugin-cli",
+                    "peakRssMb": 317.1,
+                    "maxCpuPercent": 147,
+                    "peakRssAtMs": 15690,
+                    "peakCpuAtMs": 15442,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 11004,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "package-manager",
+                        "plugin-cli",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+                      "rssMb": 317.1,
+                      "cpuPercent": 147,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 11004,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "package-manager",
+                        "plugin-cli",
+                        "runtime-management",
+                        "runtime-staging"
+                      ],
+                      "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+                      "rssMb": 282.3,
+                      "cpuPercent": 147,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+                    }
+                  },
+                  {
+                    "role": "browser-sidecar",
+                    "peakRssMb": 571.6,
+                    "maxCpuPercent": 143,
+                    "peakRssAtMs": 19952,
+                    "peakCpuAtMs": 15984,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 11591,
+                      "roles": [
+                        "browser-sidecar",
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "browser-sidecar,build-tooling,command-tree,runtime-management",
+                      "rssMb": 571.6,
+                      "cpuPercent": 101,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --import tsx --input-type=module --eval const { Command } = await import(\"commander\"); const { registerBrowserCli } = await import(\"file:///home/runner/_work/openclaw/openclaw/extensions/browser/src/cli/browser-cli.ts\"); const { configureProgramHelp } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/help.ts\"); const { createProgramContext } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/context.ts\"); const program = new Command(); configureProgramHelp(program, createProgramContext()); registerBrowserCli(program, [\"node\", \"openclaw\", \"browser\", \"--help\"]); const browser = program.commands.find((cmd) => cmd.name() === \"browser\"); if (!browser) throw new Error(\"Browser command was not registered.\"); browser.outputHelp(); process.exit(0);"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 11591,
+                      "roles": [
+                        "browser-sidecar",
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "browser-sidecar,build-tooling,command-tree,runtime-management",
+                      "rssMb": 96.9,
+                      "cpuPercent": 143,
+                      "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --import tsx --input-type=module --eval const { Command } = await import(\"commander\"); const { registerBrowserCli } = await import(\"file:///home/runner/_work/openclaw/openclaw/extensions/browser/src/cli/browser-cli.ts\"); const { configureProgramHelp } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/help.ts\"); const { createProgramContext } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/context.ts\"); const program = new Command(); configureProgramHelp(program, createProgramContext()); registerBrowserCli(program, [\"node\", \"openclaw\", \"browser\", \"--help\"]); const browser = program.commands.find((cmd) => cmd.name() === \"browser\"); if (!browser) throw new Error(\"Browser command was not registered.\"); browser.outputHelp(); process.exit(0);"
+                    }
+                  }
+                ],
+                "trend": {
+                  "schemaVersion": "kova.resourceTrend.v1",
+                  "available": true,
+                  "sampleCount": 143,
+                  "firstElapsedMs": 63,
+                  "lastElapsedMs": 35819,
+                  "totalRssStartMb": 31.2,
+                  "totalRssEndMb": 0,
+                  "totalRssGrowthMb": -31.2,
+                  "gatewayRssStartMb": 0,
+                  "gatewayRssEndMb": 0,
+                  "gatewayRssGrowthMb": 0
+                },
+                "peakRssSample": {
+                  "timestamp": "2026-05-03T06:12:18.766Z",
+                  "elapsedMs": 3996,
+                  "totalRssMb": 2541.1,
+                  "topProcess": {
+                    "pid": 4772,
+                    "ppid": 4645,
+                    "rssKb": 2069896,
+                    "rssMb": 2021.4,
+                    "cpuPercent": 282,
+                    "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management"
+                  }
+                },
+                "peakCpuSample": {
+                  "timestamp": "2026-05-03T06:12:17.315Z",
+                  "elapsedMs": 2545,
+                  "totalCpuPercent": 364.4,
+                  "topProcess": {
+                    "pid": 4772,
+                    "ppid": 4645,
+                    "rssKb": 1157636,
+                    "rssMb": 1130.5,
+                    "cpuPercent": 315,
+                    "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management"
+                  }
+                },
+                "topByRss": [
+                  {
+                    "pid": 4772,
+                    "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management",
+                    "peakRssMb": 2021.4,
+                    "maxCpuPercent": 315,
+                    "firstSeenMs": 1465,
+                    "lastSeenMs": 4234
+                  },
+                  {
+                    "pid": 6471,
+                    "command": "/home/runner/_work/openclaw/openclaw/node_modules/@typescript/native-preview-linux-x64/lib/tsgo -p tsconfig.plugin-sdk.dts.json --declaration true --singleThreaded --checkers 1",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management",
+                    "peakRssMb": 1549.1,
+                    "maxCpuPercent": 219,
+                    "firstSeenMs": 5000,
+                    "lastSeenMs": 13455
+                  },
+                  {
+                    "pid": 14249,
+                    "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management",
+                      "runtime-staging"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+                    "peakRssMb": 1213.6,
+                    "maxCpuPercent": 156,
+                    "firstSeenMs": 21443,
+                    "lastSeenMs": 35695
+                  },
+                  {
+                    "pid": 11591,
+                    "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --import tsx --input-type=module --eval const { Command } = await import(\"commander\"); const { registerBrowserCli } = await import(\"file:///home/runner/_work/openclaw/openclaw/extensions/browser/src/cli/browser-cli.ts\"); const { configureProgramHelp } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/help.ts\"); const { createProgramContext } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/context.ts\"); const program = new Command(); configureProgramHelp(program, createProgramContext()); registerBrowserCli(program, [\"node\", \"openclaw\", \"browser\", \"--help\"]); const browser = program.commands.find((cmd) => cmd.name() === \"browser\"); if (!browser) throw new Error(\"Browser command was not registered.\"); browser.outputHelp(); process.exit(0);",
+                    "roles": [
+                      "browser-sidecar",
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "browser-sidecar,build-tooling,command-tree,runtime-management",
+                    "peakRssMb": 571.6,
+                    "maxCpuPercent": 143,
+                    "firstSeenMs": 15984,
+                    "lastSeenMs": 19952
+                  },
+                  {
+                    "pid": 13868,
+                    "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/vite build",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management",
+                    "peakRssMb": 515.5,
+                    "maxCpuPercent": 200,
+                    "firstSeenMs": 20794,
+                    "lastSeenMs": 21197
+                  }
+                ],
+                "topByCpu": [
+                  {
+                    "pid": 4772,
+                    "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management",
+                    "peakRssMb": 2021.4,
+                    "maxCpuPercent": 315,
+                    "firstSeenMs": 1465,
+                    "lastSeenMs": 4234
+                  },
+                  {
+                    "pid": 6471,
+                    "command": "/home/runner/_work/openclaw/openclaw/node_modules/@typescript/native-preview-linux-x64/lib/tsgo -p tsconfig.plugin-sdk.dts.json --declaration true --singleThreaded --checkers 1",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management",
+                    "peakRssMb": 1549.1,
+                    "maxCpuPercent": 219,
+                    "firstSeenMs": 5000,
+                    "lastSeenMs": 13455
+                  },
+                  {
+                    "pid": 13868,
+                    "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/vite build",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management",
+                    "peakRssMb": 515.5,
+                    "maxCpuPercent": 200,
+                    "firstSeenMs": 20794,
+                    "lastSeenMs": 21197
+                  },
+                  {
+                    "pid": 14249,
+                    "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management",
+                      "runtime-staging"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+                    "peakRssMb": 1213.6,
+                    "maxCpuPercent": 156,
+                    "firstSeenMs": 21443,
+                    "lastSeenMs": 35695
+                  },
+                  {
+                    "pid": 11004,
+                    "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "package-manager",
+                      "plugin-cli",
+                      "runtime-management",
+                      "runtime-staging"
+                    ],
+                    "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+                    "peakRssMb": 317.1,
+                    "maxCpuPercent": 147,
+                    "firstSeenMs": 14705,
+                    "lastSeenMs": 15690
+                  }
+                ],
+                "artifactPath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/resource-samples/target-setup-1.jsonl"
+              }
+            }
+          ]
+        },
+        {
+          "id": "auth-cleanup",
+          "title": "Auth Cleanup",
+          "intent": "Stop Kova's deterministic mock provider.",
+          "commands": [
+            "if test -f '/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/mock-openai/pid'; then kill \"$(cat '/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/mock-openai/pid')\" 2>/dev/null || true; fi"
+          ],
+          "evidence": [
+            "mock provider stopped"
+          ],
+          "results": [
+            {
+              "command": "if test -f '/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/mock-openai/pid'; then kill \"$(cat '/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/mock-openai/pid')\" 2>/dev/null || true; fi",
+              "status": 0,
+              "signal": null,
+              "timedOut": false,
+              "startedAt": "2026-05-03T06:12:50.619Z",
+              "startedAtEpochMs": 1777788770619,
+              "finishedAt": "2026-05-03T06:12:50.692Z",
+              "finishedAtEpochMs": 1777788770692,
+              "durationMs": 73,
+              "stdout": "",
+              "stderr": "",
+              "resourceSamples": {
+                "schemaVersion": "kova.resourceSamples.v1",
+                "sampleCount": 2,
+                "intervalMs": 66,
+                "peakTotalRssMb": 0,
+                "maxTotalCpuPercent": 0,
+                "peakCommandTreeRssMb": 0,
+                "peakGatewayRssMb": 0,
+                "byRole": {
+                  "command-tree": {
+                    "peakRssMb": 0,
+                    "maxCpuPercent": 0,
+                    "peakRssAtMs": 70,
+                    "peakCpuAtMs": 70,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 21107,
+                      "roles": [
+                        "command-tree",
+                        "uncategorized"
+                      ],
+                      "role": "command-tree,uncategorized",
+                      "rssMb": 0,
+                      "cpuPercent": 0,
+                      "command": "[bash] <defunct>"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 21107,
+                      "roles": [
+                        "command-tree",
+                        "uncategorized"
+                      ],
+                      "role": "command-tree,uncategorized",
+                      "rssMb": 0,
+                      "cpuPercent": 0,
+                      "command": "[bash] <defunct>"
+                    }
+                  },
+                  "uncategorized": {
+                    "peakRssMb": 0,
+                    "maxCpuPercent": 0,
+                    "peakRssAtMs": 70,
+                    "peakCpuAtMs": 70,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 21107,
+                      "roles": [
+                        "command-tree",
+                        "uncategorized"
+                      ],
+                      "role": "command-tree,uncategorized",
+                      "rssMb": 0,
+                      "cpuPercent": 0,
+                      "command": "[bash] <defunct>"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 21107,
+                      "roles": [
+                        "command-tree",
+                        "uncategorized"
+                      ],
+                      "role": "command-tree,uncategorized",
+                      "rssMb": 0,
+                      "cpuPercent": 0,
+                      "command": "[bash] <defunct>"
+                    }
+                  }
+                },
+                "topRolesByRss": [
+                  {
+                    "role": "command-tree",
+                    "peakRssMb": 0,
+                    "maxCpuPercent": 0,
+                    "peakRssAtMs": 70,
+                    "peakCpuAtMs": 70,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 21107,
+                      "roles": [
+                        "command-tree",
+                        "uncategorized"
+                      ],
+                      "role": "command-tree,uncategorized",
+                      "rssMb": 0,
+                      "cpuPercent": 0,
+                      "command": "[bash] <defunct>"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 21107,
+                      "roles": [
+                        "command-tree",
+                        "uncategorized"
+                      ],
+                      "role": "command-tree,uncategorized",
+                      "rssMb": 0,
+                      "cpuPercent": 0,
+                      "command": "[bash] <defunct>"
+                    }
+                  },
+                  {
+                    "role": "uncategorized",
+                    "peakRssMb": 0,
+                    "maxCpuPercent": 0,
+                    "peakRssAtMs": 70,
+                    "peakCpuAtMs": 70,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 21107,
+                      "roles": [
+                        "command-tree",
+                        "uncategorized"
+                      ],
+                      "role": "command-tree,uncategorized",
+                      "rssMb": 0,
+                      "cpuPercent": 0,
+                      "command": "[bash] <defunct>"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 21107,
+                      "roles": [
+                        "command-tree",
+                        "uncategorized"
+                      ],
+                      "role": "command-tree,uncategorized",
+                      "rssMb": 0,
+                      "cpuPercent": 0,
+                      "command": "[bash] <defunct>"
+                    }
+                  }
+                ],
+                "topRolesByCpu": [
+                  {
+                    "role": "command-tree",
+                    "peakRssMb": 0,
+                    "maxCpuPercent": 0,
+                    "peakRssAtMs": 70,
+                    "peakCpuAtMs": 70,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 21107,
+                      "roles": [
+                        "command-tree",
+                        "uncategorized"
+                      ],
+                      "role": "command-tree,uncategorized",
+                      "rssMb": 0,
+                      "cpuPercent": 0,
+                      "command": "[bash] <defunct>"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 21107,
+                      "roles": [
+                        "command-tree",
+                        "uncategorized"
+                      ],
+                      "role": "command-tree,uncategorized",
+                      "rssMb": 0,
+                      "cpuPercent": 0,
+                      "command": "[bash] <defunct>"
+                    }
+                  },
+                  {
+                    "role": "uncategorized",
+                    "peakRssMb": 0,
+                    "maxCpuPercent": 0,
+                    "peakRssAtMs": 70,
+                    "peakCpuAtMs": 70,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 21107,
+                      "roles": [
+                        "command-tree",
+                        "uncategorized"
+                      ],
+                      "role": "command-tree,uncategorized",
+                      "rssMb": 0,
+                      "cpuPercent": 0,
+                      "command": "[bash] <defunct>"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 21107,
+                      "roles": [
+                        "command-tree",
+                        "uncategorized"
+                      ],
+                      "role": "command-tree,uncategorized",
+                      "rssMb": 0,
+                      "cpuPercent": 0,
+                      "command": "[bash] <defunct>"
+                    }
+                  }
+                ],
+                "trend": {
+                  "schemaVersion": "kova.resourceTrend.v1",
+                  "available": true,
+                  "sampleCount": 2,
+                  "firstElapsedMs": 70,
+                  "lastElapsedMs": 136,
+                  "totalRssStartMb": 0,
+                  "totalRssEndMb": 0,
+                  "totalRssGrowthMb": 0,
+                  "gatewayRssStartMb": 0,
+                  "gatewayRssEndMb": 0,
+                  "gatewayRssGrowthMb": 0
+                },
+                "peakRssSample": {
+                  "timestamp": "2026-05-03T06:12:50.691Z",
+                  "elapsedMs": 70,
+                  "totalRssMb": 0,
+                  "topProcess": {
+                    "pid": 21107,
+                    "ppid": 4085,
+                    "rssKb": 0,
+                    "rssMb": 0,
+                    "cpuPercent": 0,
+                    "command": "[bash] <defunct>",
+                    "roles": [
+                      "command-tree",
+                      "uncategorized"
+                    ],
+                    "role": "command-tree,uncategorized"
+                  }
+                },
+                "peakCpuSample": {
+                  "timestamp": "2026-05-03T06:12:50.691Z",
+                  "elapsedMs": 70,
+                  "totalCpuPercent": 0,
+                  "topProcess": {
+                    "pid": 21107,
+                    "ppid": 4085,
+                    "rssKb": 0,
+                    "rssMb": 0,
+                    "cpuPercent": 0,
+                    "command": "[bash] <defunct>",
+                    "roles": [
+                      "command-tree",
+                      "uncategorized"
+                    ],
+                    "role": "command-tree,uncategorized"
+                  }
+                },
+                "topByRss": [
+                  {
+                    "pid": 21107,
+                    "command": "[bash] <defunct>",
+                    "roles": [
+                      "command-tree",
+                      "uncategorized"
+                    ],
+                    "role": "command-tree,uncategorized",
+                    "peakRssMb": 0,
+                    "maxCpuPercent": 0,
+                    "firstSeenMs": 70,
+                    "lastSeenMs": 70
+                  }
+                ],
+                "topByCpu": [
+                  {
+                    "pid": 21107,
+                    "command": "[bash] <defunct>",
+                    "roles": [
+                      "command-tree",
+                      "uncategorized"
+                    ],
+                    "role": "command-tree,uncategorized",
+                    "peakRssMb": 0,
+                    "maxCpuPercent": 0,
+                    "firstSeenMs": 70,
+                    "lastSeenMs": 70
+                  }
+                ],
+                "artifactPath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/resource-samples/auth-cleanup-1.jsonl"
+              }
+            }
+          ],
+          "metrics": {
+            "schemaVersion": "kova.envMetrics.v1",
+            "collectedAt": "2026-05-03T06:12:50.760Z",
+            "artifactDir": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z",
+            "collectorArtifactDirs": {
+              "schemaVersion": "kova.collectorArtifactDirs.v1",
+              "root": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z",
+              "collectors": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/collectors",
+              "openclaw": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/openclaw",
+              "provider": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/provider",
+              "processSnapshots": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/process-snapshots",
+              "resourceSamples": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/resource-samples",
+              "nodeProfiles": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/node-profiles",
+              "diagnostics": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/diagnostics",
+              "heap": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/heap",
+              "diagnosticReports": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/diagnostic-reports"
+            },
+            "collectors": [
+              {
+                "schemaVersion": "kova.collectorReceipt.v1",
+                "id": "service",
+                "status": "FAIL",
+                "durationMs": 2,
+                "commandStatus": 1,
+                "timedOut": false,
+                "artifactCount": 0,
+                "artifacts": [],
+                "error": null
+              }
+            ],
+            "serviceCommand": {
+              "status": 1,
+              "durationMs": 2,
+              "timedOut": false
+            },
+            "service": null,
+            "process": null,
+            "readiness": null,
+            "listening": null,
+            "health": null,
+            "healthSamples": [],
+            "healthSummary": null,
+            "logs": null,
+            "diagnostics": null,
+            "heapSnapshot": null,
+            "diagnosticReport": null,
+            "nodeProfiles": null,
+            "openclawDiagnostics": null,
+            "timeline": null,
+            "error": "ocm: environment \"kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z\" does not exist"
+          }
+        }
+      ],
+      "startedAt": "2026-05-03T06:12:14.767Z",
+      "artifactDir": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z",
+      "finishedAt": "2026-05-03T06:12:50.605Z",
+      "finalMetrics": {
+        "schemaVersion": "kova.envMetrics.v1",
+        "collectedAt": "2026-05-03T06:12:50.609Z",
+        "artifactDir": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z",
+        "collectorArtifactDirs": {
+          "schemaVersion": "kova.collectorArtifactDirs.v1",
+          "root": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z",
+          "collectors": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/collectors",
+          "openclaw": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/openclaw",
+          "provider": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/provider",
+          "processSnapshots": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/process-snapshots",
+          "resourceSamples": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/resource-samples",
+          "nodeProfiles": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/node-profiles",
+          "diagnostics": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/diagnostics",
+          "heap": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/heap",
+          "diagnosticReports": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/diagnostic-reports"
+        },
+        "collectors": [
+          {
+            "schemaVersion": "kova.collectorReceipt.v1",
+            "id": "service",
+            "status": "FAIL",
+            "durationMs": 4,
+            "commandStatus": 1,
+            "timedOut": false,
+            "artifactCount": 0,
+            "artifacts": [],
+            "error": null
+          }
+        ],
+        "serviceCommand": {
+          "status": 1,
+          "durationMs": 4,
+          "timedOut": false
+        },
+        "service": null,
+        "process": null,
+        "readiness": null,
+        "listening": null,
+        "health": null,
+        "healthSamples": [],
+        "healthSummary": null,
+        "logs": null,
+        "diagnostics": null,
+        "heapSnapshot": null,
+        "diagnosticReport": null,
+        "nodeProfiles": {
+          "schemaVersion": "kova.nodeProfiles.v1",
+          "commandStatus": 0,
+          "statusLabel": "INFO",
+          "durationMs": 0,
+          "fileCount": 0,
+          "cpuProfileCount": 0,
+          "heapProfileCount": 0,
+          "reportCount": 0,
+          "traceEventCount": 0,
+          "artifactBytes": 0,
+          "cpuProfileSummary": {
+            "profileCount": 0,
+            "parseErrorCount": 0,
+            "topFunctions": [],
+            "profiles": []
+          },
+          "heapProfileSummary": {
+            "profileCount": 0,
+            "parseErrorCount": 0,
+            "topFunctions": [],
+            "profiles": []
+          },
+          "artifacts": [],
+          "error": "node profile artifacts not emitted"
+        },
+        "openclawDiagnostics": null,
+        "timeline": null,
+        "error": "ocm: environment \"kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z\" does not exist"
+      },
+      "providerEvidence": {
+        "schemaVersion": "kova.providerEvidence.v1",
+        "collectedAt": "2026-05-03T06:12:50.609Z",
+        "available": false,
+        "source": null,
+        "authMode": "mock",
+        "deterministic": true,
+        "environmentDependent": false,
+        "requestLogPath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/mock-openai/requests.jsonl",
+        "timelinePath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/openclaw/timeline.jsonl",
+        "summaryPath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/provider/provider-evidence.json",
+        "requestCount": 0,
+        "firstRequestStartAt": null,
+        "firstRequestStartEpochMs": null,
+        "lastResponseEndAt": null,
+        "lastResponseEndEpochMs": null,
+        "providerDurationMs": null,
+        "firstByteLatencyMs": null,
+        "firstChunkLatencyMs": null,
+        "routes": [],
+        "models": [],
+        "statuses": [],
+        "usage": null,
+        "errors": [],
+        "requests": [],
+        "artifacts": [
+          "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/provider/provider-evidence.json"
+        ],
+        "commandStatus": 0,
+        "durationMs": 0,
+        "error": "provider request log not found",
+        "statusLabel": "INFO"
+      },
+      "measurements": {
+        "peakRssMb": 2541.1,
+        "cpuPercentMax": 364.4,
+        "coldReadyMs": null,
+        "warmReadyMs": null,
+        "upgradeMs": null,
+        "statusMs": null,
+        "pluginsListMs": null,
+        "modelsListMs": null,
+        "agentTurnMs": null,
+        "agentResponseOk": null,
+        "agentTurnCount": 0,
+        "agentTurns": [],
+        "agentTurnStats": {
+          "schemaVersion": "kova.agentTurnStats.v1",
+          "count": 0,
+          "totalTurnMs": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "preProviderMs": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "providerFinalMs": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "postProviderMs": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "cleanupMs": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "firstByteLatencyMs": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "processLeakCount": 0,
+          "missingProviderRequestCount": 0,
+          "responseOkCount": 0
+        },
+        "agentTurnMedianMs": null,
+        "agentTurnP95Ms": null,
+        "agentTurnMaxMs": null,
+        "agentPreProviderMedianMs": null,
+        "agentPreProviderP95Ms": null,
+        "agentPreProviderMaxMs": null,
+        "agentProviderFinalMedianMs": null,
+        "agentProviderFinalP95Ms": null,
+        "agentProviderFinalMaxMs": null,
+        "agentCleanupMedianMs": null,
+        "agentCleanupP95Ms": null,
+        "agentCleanupMaxMs": null,
+        "coldAgentTurnMs": null,
+        "warmAgentTurnMs": null,
+        "agentColdWarmDeltaMs": null,
+        "coldPreProviderMs": null,
+        "warmPreProviderMs": null,
+        "agentColdWarmPreProviderDeltaMs": null,
+        "coldProviderFinalMs": null,
+        "warmProviderFinalMs": null,
+        "coldFirstByteLatencyMs": null,
+        "warmFirstByteLatencyMs": null,
+        "agentLatencyDiagnosis": null,
+        "agentCleanupDiagnosis": null,
+        "agentProviderSimulation": {
+          "schemaVersion": "kova.agentProviderSimulation.v1",
+          "mode": "normal",
+          "expected": false,
+          "observedIssue": "none",
+          "observedIssueSummary": "No provider failure evidence found.",
+          "containmentOk": true,
+          "recoveryOk": null,
+          "slowObserved": null,
+          "expectedFailureCount": 0,
+          "expectedFailureObservedCount": 0,
+          "successfulTurnCount": 0,
+          "finalGatewayState": null,
+          "healthFailures": 0,
+          "healthLimit": 0,
+          "providerSlowMinMs": null,
+          "providerRequestCount": 0,
+          "providerRequestCountMin": null,
+          "providerMaxConcurrency": 0,
+          "providerConcurrencyMin": null,
+          "requestCountOk": null,
+          "overlapObserved": null,
+          "concurrentObserved": null
+        },
+        "agentFailureContainment": {
+          "schemaVersion": "kova.agentFailureContainment.v1",
+          "processLeakCount": 0,
+          "leakLimit": 0,
+          "leakedProcesses": [],
+          "processLeaksOk": true,
+          "finalGatewayState": null,
+          "gatewayHealthy": null,
+          "healthFailures": 0,
+          "healthLimit": 0,
+          "statusWorks": null,
+          "dashboardResponsive": null,
+          "tuiResponsive": null
+        },
+        "agentProcessLeakCount": 0,
+        "agentLeakedProcesses": [],
+        "agentFailureFixerSummary": {
+          "schemaVersion": "kova.agentFailureFixerSummary.v1",
+          "count": 0,
+          "items": []
+        },
+        "agentProviderMode": "normal",
+        "agentProviderIssue": "none",
+        "agentProviderContainmentOk": true,
+        "agentProviderRecoveryOk": null,
+        "providerRequestCount": 0,
+        "providerFirstRequestAt": null,
+        "providerLastResponseAt": null,
+        "providerDurationMs": null,
+        "providerFirstByteLatencyMs": null,
+        "providerFirstChunkLatencyMs": null,
+        "agentPreProviderMs": null,
+        "agentProviderFinalMs": null,
+        "agentPostProviderMs": null,
+        "agentPreProviderDominance": null,
+        "agentProviderRequestCount": null,
+        "agentProviderRequestMissing": null,
+        "agentProviderAttribution": null,
+        "tcpConnectMaxMs": null,
+        "timeToListeningMs": null,
+        "timeToHealthReadyMs": null,
+        "readinessClassification": null,
+        "readinessClassificationReason": null,
+        "readinessThresholdMs": null,
+        "readinessHardDeadlineMs": null,
+        "missingDependencyErrors": 0,
+        "finalGatewayState": null,
+        "healthFailures": 0,
+        "healthP95Ms": null,
+        "soakEvidence": {
+          "schemaVersion": "kova.soakEvidence.v1",
+          "available": false,
+          "durationMs": null,
+          "iterations": null,
+          "commandP95Ms": null,
+          "commandMaxMs": null,
+          "commandFailures": null,
+          "healthP95Ms": null,
+          "healthMaxMs": null,
+          "healthFailures": null,
+          "loops": []
+        },
+        "mcpBridgeEvidence": {
+          "schemaVersion": "kova.mcpBridgeEvidence.v1",
+          "available": false,
+          "initializeMs": null,
+          "toolsListMs": null,
+          "shutdownMs": null,
+          "toolCount": null,
+          "toolNames": [],
+          "processExited": null,
+          "errors": [],
+          "smokes": []
+        },
+        "mcpInitializeMs": null,
+        "mcpToolsListMs": null,
+        "mcpShutdownMs": null,
+        "mcpToolCount": null,
+        "mcpToolNames": [],
+        "mcpProcessExited": null,
+        "mcpProcessLeaks": null,
+        "mcpErrors": [],
+        "browserAutomationEvidence": {
+          "schemaVersion": "kova.browserAutomationEvidence.v1",
+          "available": false,
+          "browserDoctorMs": null,
+          "browserStartMs": null,
+          "browserTabsMs": null,
+          "browserOpenMs": null,
+          "browserSnapshotMs": null,
+          "browserStopMs": null,
+          "browserTabCount": null,
+          "browserSnapshotOk": null,
+          "browserStopped": null,
+          "errors": [],
+          "smokes": []
+        },
+        "browserDoctorMs": null,
+        "browserStartMs": null,
+        "browserTabsMs": null,
+        "browserOpenMs": null,
+        "browserSnapshotMs": null,
+        "browserStopMs": null,
+        "browserTabCount": null,
+        "browserSnapshotOk": null,
+        "browserStopped": null,
+        "browserProcessLeaks": null,
+        "browserErrors": [],
+        "mediaUnderstandingEvidence": {
+          "schemaVersion": "kova.mediaUnderstandingEvidence.v1",
+          "available": false,
+          "mediaDescribeMs": null,
+          "mediaTimeoutObserved": null,
+          "mediaCommandTimedOut": null,
+          "mediaStatusAfterTimeoutMs": null,
+          "gatewayStatusWorks": null,
+          "errors": [],
+          "smokes": []
+        },
+        "mediaDescribeMs": null,
+        "mediaTimeoutObserved": null,
+        "mediaCommandTimedOut": null,
+        "mediaStatusAfterTimeoutMs": null,
+        "mediaGatewayStatusWorks": null,
+        "mediaErrors": [],
+        "networkOfflineEvidence": {
+          "schemaVersion": "kova.networkOfflineEvidence.v1",
+          "available": false,
+          "networkTurnMs": null,
+          "networkFailureObserved": null,
+          "networkCommandTimedOut": null,
+          "networkStatusAfterFailureMs": null,
+          "gatewayStatusWorks": null,
+          "errors": [],
+          "smokes": []
+        },
+        "networkTurnMs": null,
+        "networkFailureObserved": null,
+        "networkCommandTimedOut": null,
+        "networkStatusAfterFailureMs": null,
+        "networkGatewayStatusWorks": null,
+        "networkErrors": [],
+        "soakDurationMs": null,
+        "soakIterations": null,
+        "soakCommandP95Ms": null,
+        "soakCommandMaxMs": null,
+        "soakHealthP95Ms": null,
+        "soakHealthMaxMs": null,
+        "soakHealthFailures": null,
+        "soakCommandFailures": null,
+        "rssGrowthMb": 0,
+        "gatewayRssGrowthMb": 0,
+        "listeningFailures": 0,
+        "readinessFailures": 0,
+        "gatewayRestartCount": 0,
+        "pluginLoadFailures": 0,
+        "metadataScanMentions": 0,
+        "configNormalizationMentions": 0,
+        "providerLoadMentions": 0,
+        "modelCatalogMentions": 0,
+        "providerTimeoutMentions": 0,
+        "eventLoopDelayMentions": 0,
+        "v8DiagnosticMentions": 0,
+        "v8ReportCount": 0,
+        "heapSnapshotCount": 0,
+        "diagnosticArtifactBytes": 0,
+        "nodeCpuProfileCount": 0,
+        "nodeHeapProfileCount": 0,
+        "nodeTraceEventCount": 0,
+        "nodeProfileArtifactBytes": 0,
+        "nodeProfileTopFunction": null,
+        "nodeProfileTopFunctionMs": null,
+        "nodeProfileTopFunctionUrl": null,
+        "nodeHeapTopFunction": null,
+        "nodeHeapTopFunctionMb": null,
+        "nodeHeapTopFunctionUrl": null,
+        "heapSnapshotBytes": 0,
+        "diagnosticReportCount": 0,
+        "diagnosticReportBytes": 0,
+        "profilingEnabled": true,
+        "profilingResourceInterpretation": "instrumented run; CPU/RSS can include profiler and diagnostic overhead",
+        "profilingBaselineEligible": false,
+        "profilingAffectsResourceMeasurements": true,
+        "resourceSampleCount": 145,
+        "resourceSampleArtifacts": [
+          "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/resource-samples/target-setup-1.jsonl",
+          "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/resource-samples/auth-cleanup-1.jsonl"
+        ],
+        "resourcePeakCommandTreeRssMb": 2541.1,
+        "resourcePeakGatewayRssMb": 0,
+        "resourceByRole": {
+          "browser-sidecar": {
+            "peakRssMb": 571.6,
+            "maxCpuPercent": 143,
+            "peakRssAtMs": 19952,
+            "peakCpuAtMs": 15984,
+            "peakProcessCount": 1,
+            "peakRssProcess": {
+              "pid": 11591,
+              "roles": [
+                "browser-sidecar",
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "browser-sidecar,build-tooling,command-tree,runtime-management",
+              "rssMb": 571.6,
+              "cpuPercent": 101,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --import tsx --input-type=module --eval const { Command } = await import(\"commander\"); const { registerBrowserCli } = await import(\"file:///home/runner/_work/openclaw/openclaw/extensions/browser/src/cli/browser-cli.ts\"); const { configureProgramHelp } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/help.ts\"); const { createProgramContext } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/context.ts\"); const program = new Command(); configureProgramHelp(program, createProgramContext()); registerBrowserCli(program, [\"node\", \"openclaw\", \"browser\", \"--help\"]); const browser = program.commands.find((cmd) => cmd.name() === \"browser\"); if (!browser) throw new Error(\"Browser command was not registered.\"); browser.outputHelp(); process.exit(0);"
+            },
+            "peakCpuProcess": {
+              "pid": 11591,
+              "roles": [
+                "browser-sidecar",
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "browser-sidecar,build-tooling,command-tree,runtime-management",
+              "rssMb": 96.9,
+              "cpuPercent": 143,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --import tsx --input-type=module --eval const { Command } = await import(\"commander\"); const { registerBrowserCli } = await import(\"file:///home/runner/_work/openclaw/openclaw/extensions/browser/src/cli/browser-cli.ts\"); const { configureProgramHelp } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/help.ts\"); const { createProgramContext } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/context.ts\"); const program = new Command(); configureProgramHelp(program, createProgramContext()); registerBrowserCli(program, [\"node\", \"openclaw\", \"browser\", \"--help\"]); const browser = program.commands.find((cmd) => cmd.name() === \"browser\"); if (!browser) throw new Error(\"Browser command was not registered.\"); browser.outputHelp(); process.exit(0);"
+            }
+          },
+          "build-tooling": {
+            "peakRssMb": 2541.1,
+            "maxCpuPercent": 364.4,
+            "peakRssAtMs": 3996,
+            "peakCpuAtMs": 2545,
+            "peakProcessCount": 11,
+            "peakRssProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 2021.4,
+              "cpuPercent": 282,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            },
+            "peakCpuProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 1130.5,
+              "cpuPercent": 315,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            }
+          },
+          "command-tree": {
+            "peakRssMb": 2541.1,
+            "maxCpuPercent": 364.4,
+            "peakRssAtMs": 3996,
+            "peakCpuAtMs": 2545,
+            "peakProcessCount": 11,
+            "peakRssProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 2021.4,
+              "cpuPercent": 282,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            },
+            "peakCpuProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 1130.5,
+              "cpuPercent": 315,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            }
+          },
+          "package-manager": {
+            "peakRssMb": 504.7,
+            "maxCpuPercent": 207,
+            "peakRssAtMs": 15690,
+            "peakCpuAtMs": 861,
+            "peakProcessCount": 3,
+            "peakRssProcess": {
+              "pid": 11004,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "package-manager",
+                "plugin-cli",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+              "rssMb": 317.1,
+              "cpuPercent": 147,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+            },
+            "peakCpuProcess": {
+              "pid": 4498,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "package-manager",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,package-manager,runtime-management",
+              "rssMb": 76.8,
+              "cpuPercent": 100,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node /home/runner/.cache/node/corepack/v1/pnpm/10.33.2/bin/pnpm.cjs canvas:a2ui:bundle"
+            }
+          },
+          "plugin-cli": {
+            "peakRssMb": 317.1,
+            "maxCpuPercent": 147,
+            "peakRssAtMs": 15690,
+            "peakCpuAtMs": 15442,
+            "peakProcessCount": 1,
+            "peakRssProcess": {
+              "pid": 11004,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "package-manager",
+                "plugin-cli",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+              "rssMb": 317.1,
+              "cpuPercent": 147,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+            },
+            "peakCpuProcess": {
+              "pid": 11004,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "package-manager",
+                "plugin-cli",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+              "rssMb": 282.3,
+              "cpuPercent": 147,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+            }
+          },
+          "runtime-management": {
+            "peakRssMb": 2541.1,
+            "maxCpuPercent": 364.4,
+            "peakRssAtMs": 3996,
+            "peakCpuAtMs": 2545,
+            "peakProcessCount": 11,
+            "peakRssProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 2021.4,
+              "cpuPercent": 282,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            },
+            "peakCpuProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 1130.5,
+              "cpuPercent": 315,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            }
+          },
+          "runtime-staging": {
+            "peakRssMb": 1262.1,
+            "maxCpuPercent": 156.4,
+            "peakRssAtMs": 35695,
+            "peakCpuAtMs": 23698,
+            "peakProcessCount": 2,
+            "peakRssProcess": {
+              "pid": 14249,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+              "rssMb": 1213.6,
+              "cpuPercent": 145,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw"
+            },
+            "peakCpuProcess": {
+              "pid": 14249,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+              "rssMb": 563.3,
+              "cpuPercent": 156,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw"
+            }
+          },
+          "uncategorized": {
+            "peakRssMb": 0,
+            "maxCpuPercent": 0,
+            "peakRssAtMs": 70,
+            "peakCpuAtMs": 70,
+            "peakProcessCount": 1,
+            "peakRssProcess": {
+              "pid": 21107,
+              "roles": [
+                "command-tree",
+                "uncategorized"
+              ],
+              "role": "command-tree,uncategorized",
+              "rssMb": 0,
+              "cpuPercent": 0,
+              "command": "[bash] <defunct>"
+            },
+            "peakCpuProcess": {
+              "pid": 21107,
+              "roles": [
+                "command-tree",
+                "uncategorized"
+              ],
+              "role": "command-tree,uncategorized",
+              "rssMb": 0,
+              "cpuPercent": 0,
+              "command": "[bash] <defunct>"
+            }
+          }
+        },
+        "resourceTopRolesByRss": [
+          {
+            "role": "build-tooling",
+            "peakRssMb": 2541.1,
+            "maxCpuPercent": 364.4,
+            "peakRssAtMs": 3996,
+            "peakCpuAtMs": 2545,
+            "peakProcessCount": 11,
+            "peakRssProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 2021.4,
+              "cpuPercent": 282,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            },
+            "peakCpuProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 1130.5,
+              "cpuPercent": 315,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            }
+          },
+          {
+            "role": "command-tree",
+            "peakRssMb": 2541.1,
+            "maxCpuPercent": 364.4,
+            "peakRssAtMs": 3996,
+            "peakCpuAtMs": 2545,
+            "peakProcessCount": 11,
+            "peakRssProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 2021.4,
+              "cpuPercent": 282,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            },
+            "peakCpuProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 1130.5,
+              "cpuPercent": 315,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            }
+          },
+          {
+            "role": "runtime-management",
+            "peakRssMb": 2541.1,
+            "maxCpuPercent": 364.4,
+            "peakRssAtMs": 3996,
+            "peakCpuAtMs": 2545,
+            "peakProcessCount": 11,
+            "peakRssProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 2021.4,
+              "cpuPercent": 282,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            },
+            "peakCpuProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 1130.5,
+              "cpuPercent": 315,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            }
+          },
+          {
+            "role": "runtime-staging",
+            "peakRssMb": 1262.1,
+            "maxCpuPercent": 156.4,
+            "peakRssAtMs": 35695,
+            "peakCpuAtMs": 23698,
+            "peakProcessCount": 2,
+            "peakRssProcess": {
+              "pid": 14249,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+              "rssMb": 1213.6,
+              "cpuPercent": 145,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw"
+            },
+            "peakCpuProcess": {
+              "pid": 14249,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+              "rssMb": 563.3,
+              "cpuPercent": 156,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw"
+            }
+          },
+          {
+            "role": "browser-sidecar",
+            "peakRssMb": 571.6,
+            "maxCpuPercent": 143,
+            "peakRssAtMs": 19952,
+            "peakCpuAtMs": 15984,
+            "peakProcessCount": 1,
+            "peakRssProcess": {
+              "pid": 11591,
+              "roles": [
+                "browser-sidecar",
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "browser-sidecar,build-tooling,command-tree,runtime-management",
+              "rssMb": 571.6,
+              "cpuPercent": 101,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --import tsx --input-type=module --eval const { Command } = await import(\"commander\"); const { registerBrowserCli } = await import(\"file:///home/runner/_work/openclaw/openclaw/extensions/browser/src/cli/browser-cli.ts\"); const { configureProgramHelp } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/help.ts\"); const { createProgramContext } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/context.ts\"); const program = new Command(); configureProgramHelp(program, createProgramContext()); registerBrowserCli(program, [\"node\", \"openclaw\", \"browser\", \"--help\"]); const browser = program.commands.find((cmd) => cmd.name() === \"browser\"); if (!browser) throw new Error(\"Browser command was not registered.\"); browser.outputHelp(); process.exit(0);"
+            },
+            "peakCpuProcess": {
+              "pid": 11591,
+              "roles": [
+                "browser-sidecar",
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "browser-sidecar,build-tooling,command-tree,runtime-management",
+              "rssMb": 96.9,
+              "cpuPercent": 143,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --import tsx --input-type=module --eval const { Command } = await import(\"commander\"); const { registerBrowserCli } = await import(\"file:///home/runner/_work/openclaw/openclaw/extensions/browser/src/cli/browser-cli.ts\"); const { configureProgramHelp } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/help.ts\"); const { createProgramContext } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/context.ts\"); const program = new Command(); configureProgramHelp(program, createProgramContext()); registerBrowserCli(program, [\"node\", \"openclaw\", \"browser\", \"--help\"]); const browser = program.commands.find((cmd) => cmd.name() === \"browser\"); if (!browser) throw new Error(\"Browser command was not registered.\"); browser.outputHelp(); process.exit(0);"
+            }
+          },
+          {
+            "role": "package-manager",
+            "peakRssMb": 504.7,
+            "maxCpuPercent": 207,
+            "peakRssAtMs": 15690,
+            "peakCpuAtMs": 861,
+            "peakProcessCount": 3,
+            "peakRssProcess": {
+              "pid": 11004,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "package-manager",
+                "plugin-cli",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+              "rssMb": 317.1,
+              "cpuPercent": 147,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+            },
+            "peakCpuProcess": {
+              "pid": 4498,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "package-manager",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,package-manager,runtime-management",
+              "rssMb": 76.8,
+              "cpuPercent": 100,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node /home/runner/.cache/node/corepack/v1/pnpm/10.33.2/bin/pnpm.cjs canvas:a2ui:bundle"
+            }
+          },
+          {
+            "role": "plugin-cli",
+            "peakRssMb": 317.1,
+            "maxCpuPercent": 147,
+            "peakRssAtMs": 15690,
+            "peakCpuAtMs": 15442,
+            "peakProcessCount": 1,
+            "peakRssProcess": {
+              "pid": 11004,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "package-manager",
+                "plugin-cli",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+              "rssMb": 317.1,
+              "cpuPercent": 147,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+            },
+            "peakCpuProcess": {
+              "pid": 11004,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "package-manager",
+                "plugin-cli",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+              "rssMb": 282.3,
+              "cpuPercent": 147,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+            }
+          },
+          {
+            "role": "uncategorized",
+            "peakRssMb": 0,
+            "maxCpuPercent": 0,
+            "peakRssAtMs": 70,
+            "peakCpuAtMs": 70,
+            "peakProcessCount": 1,
+            "peakRssProcess": {
+              "pid": 21107,
+              "roles": [
+                "command-tree",
+                "uncategorized"
+              ],
+              "role": "command-tree,uncategorized",
+              "rssMb": 0,
+              "cpuPercent": 0,
+              "command": "[bash] <defunct>"
+            },
+            "peakCpuProcess": {
+              "pid": 21107,
+              "roles": [
+                "command-tree",
+                "uncategorized"
+              ],
+              "role": "command-tree,uncategorized",
+              "rssMb": 0,
+              "cpuPercent": 0,
+              "command": "[bash] <defunct>"
+            }
+          }
+        ],
+        "resourceTopRolesByCpu": [
+          {
+            "role": "build-tooling",
+            "peakRssMb": 2541.1,
+            "maxCpuPercent": 364.4,
+            "peakRssAtMs": 3996,
+            "peakCpuAtMs": 2545,
+            "peakProcessCount": 11,
+            "peakRssProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 2021.4,
+              "cpuPercent": 282,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            },
+            "peakCpuProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 1130.5,
+              "cpuPercent": 315,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            }
+          },
+          {
+            "role": "command-tree",
+            "peakRssMb": 2541.1,
+            "maxCpuPercent": 364.4,
+            "peakRssAtMs": 3996,
+            "peakCpuAtMs": 2545,
+            "peakProcessCount": 11,
+            "peakRssProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 2021.4,
+              "cpuPercent": 282,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            },
+            "peakCpuProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 1130.5,
+              "cpuPercent": 315,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            }
+          },
+          {
+            "role": "runtime-management",
+            "peakRssMb": 2541.1,
+            "maxCpuPercent": 364.4,
+            "peakRssAtMs": 3996,
+            "peakCpuAtMs": 2545,
+            "peakProcessCount": 11,
+            "peakRssProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 2021.4,
+              "cpuPercent": 282,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            },
+            "peakCpuProcess": {
+              "pid": 4772,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,runtime-management",
+              "rssMb": 1130.5,
+              "cpuPercent": 315,
+              "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+            }
+          },
+          {
+            "role": "package-manager",
+            "peakRssMb": 504.7,
+            "maxCpuPercent": 207,
+            "peakRssAtMs": 15690,
+            "peakCpuAtMs": 861,
+            "peakProcessCount": 3,
+            "peakRssProcess": {
+              "pid": 11004,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "package-manager",
+                "plugin-cli",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+              "rssMb": 317.1,
+              "cpuPercent": 147,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+            },
+            "peakCpuProcess": {
+              "pid": 4498,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "package-manager",
+                "runtime-management"
+              ],
+              "role": "build-tooling,command-tree,package-manager,runtime-management",
+              "rssMb": 76.8,
+              "cpuPercent": 100,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node /home/runner/.cache/node/corepack/v1/pnpm/10.33.2/bin/pnpm.cjs canvas:a2ui:bundle"
+            }
+          },
+          {
+            "role": "runtime-staging",
+            "peakRssMb": 1262.1,
+            "maxCpuPercent": 156.4,
+            "peakRssAtMs": 35695,
+            "peakCpuAtMs": 23698,
+            "peakProcessCount": 2,
+            "peakRssProcess": {
+              "pid": 14249,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+              "rssMb": 1213.6,
+              "cpuPercent": 145,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw"
+            },
+            "peakCpuProcess": {
+              "pid": 14249,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+              "rssMb": 563.3,
+              "cpuPercent": 156,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw"
+            }
+          },
+          {
+            "role": "plugin-cli",
+            "peakRssMb": 317.1,
+            "maxCpuPercent": 147,
+            "peakRssAtMs": 15690,
+            "peakCpuAtMs": 15442,
+            "peakProcessCount": 1,
+            "peakRssProcess": {
+              "pid": 11004,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "package-manager",
+                "plugin-cli",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+              "rssMb": 317.1,
+              "cpuPercent": 147,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+            },
+            "peakCpuProcess": {
+              "pid": 11004,
+              "roles": [
+                "build-tooling",
+                "command-tree",
+                "package-manager",
+                "plugin-cli",
+                "runtime-management",
+                "runtime-staging"
+              ],
+              "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+              "rssMb": 282.3,
+              "cpuPercent": 147,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);"
+            }
+          },
+          {
+            "role": "browser-sidecar",
+            "peakRssMb": 571.6,
+            "maxCpuPercent": 143,
+            "peakRssAtMs": 19952,
+            "peakCpuAtMs": 15984,
+            "peakProcessCount": 1,
+            "peakRssProcess": {
+              "pid": 11591,
+              "roles": [
+                "browser-sidecar",
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "browser-sidecar,build-tooling,command-tree,runtime-management",
+              "rssMb": 571.6,
+              "cpuPercent": 101,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --import tsx --input-type=module --eval const { Command } = await import(\"commander\"); const { registerBrowserCli } = await import(\"file:///home/runner/_work/openclaw/openclaw/extensions/browser/src/cli/browser-cli.ts\"); const { configureProgramHelp } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/help.ts\"); const { createProgramContext } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/context.ts\"); const program = new Command(); configureProgramHelp(program, createProgramContext()); registerBrowserCli(program, [\"node\", \"openclaw\", \"browser\", \"--help\"]); const browser = program.commands.find((cmd) => cmd.name() === \"browser\"); if (!browser) throw new Error(\"Browser command was not registered.\"); browser.outputHelp(); process.exit(0);"
+            },
+            "peakCpuProcess": {
+              "pid": 11591,
+              "roles": [
+                "browser-sidecar",
+                "build-tooling",
+                "command-tree",
+                "runtime-management"
+              ],
+              "role": "browser-sidecar,build-tooling,command-tree,runtime-management",
+              "rssMb": 96.9,
+              "cpuPercent": 143,
+              "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --import tsx --input-type=module --eval const { Command } = await import(\"commander\"); const { registerBrowserCli } = await import(\"file:///home/runner/_work/openclaw/openclaw/extensions/browser/src/cli/browser-cli.ts\"); const { configureProgramHelp } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/help.ts\"); const { createProgramContext } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/context.ts\"); const program = new Command(); configureProgramHelp(program, createProgramContext()); registerBrowserCli(program, [\"node\", \"openclaw\", \"browser\", \"--help\"]); const browser = program.commands.find((cmd) => cmd.name() === \"browser\"); if (!browser) throw new Error(\"Browser command was not registered.\"); browser.outputHelp(); process.exit(0);"
+            }
+          },
+          {
+            "role": "uncategorized",
+            "peakRssMb": 0,
+            "maxCpuPercent": 0,
+            "peakRssAtMs": 70,
+            "peakCpuAtMs": 70,
+            "peakProcessCount": 1,
+            "peakRssProcess": {
+              "pid": 21107,
+              "roles": [
+                "command-tree",
+                "uncategorized"
+              ],
+              "role": "command-tree,uncategorized",
+              "rssMb": 0,
+              "cpuPercent": 0,
+              "command": "[bash] <defunct>"
+            },
+            "peakCpuProcess": {
+              "pid": 21107,
+              "roles": [
+                "command-tree",
+                "uncategorized"
+              ],
+              "role": "command-tree,uncategorized",
+              "rssMb": 0,
+              "cpuPercent": 0,
+              "command": "[bash] <defunct>"
+            }
+          }
+        ],
+        "resourcePeakRssAtMs": 3996,
+        "resourcePeakCpuAtMs": 2545,
+        "resourcePeakRssProcess": {
+          "pid": 4772,
+          "role": "build-tooling,command-tree,runtime-management",
+          "rssMb": 2021.4,
+          "cpuPercent": 282,
+          "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+        },
+        "resourcePeakCpuProcess": {
+          "pid": 4772,
+          "role": "build-tooling,command-tree,runtime-management",
+          "rssMb": 1130.5,
+          "cpuPercent": 315,
+          "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+        },
+        "resourceTrend": {
+          "schemaVersion": "kova.resourceTrend.v1",
+          "available": true,
+          "sampleCount": 143,
+          "firstElapsedMs": 63,
+          "lastElapsedMs": 35819,
+          "totalRssStartMb": 31.2,
+          "totalRssEndMb": 0,
+          "totalRssGrowthMb": -31.2,
+          "gatewayRssStartMb": 0,
+          "gatewayRssEndMb": 0,
+          "gatewayRssGrowthMb": 0
+        },
+        "resourceTopByRss": [
+          {
+            "pid": 4772,
+            "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean",
+            "role": "build-tooling,command-tree,runtime-management",
+            "peakRssMb": 2021.4,
+            "maxCpuPercent": 315,
+            "firstSeenMs": 1465,
+            "lastSeenMs": 4234
+          },
+          {
+            "pid": 6471,
+            "command": "/home/runner/_work/openclaw/openclaw/node_modules/@typescript/native-preview-linux-x64/lib/tsgo -p tsconfig.plugin-sdk.dts.json --declaration true --singleThreaded --checkers 1",
+            "role": "build-tooling,command-tree,runtime-management",
+            "peakRssMb": 1549.1,
+            "maxCpuPercent": 219,
+            "firstSeenMs": 5000,
+            "lastSeenMs": 13455
+          },
+          {
+            "pid": 14249,
+            "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw",
+            "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+            "peakRssMb": 1213.6,
+            "maxCpuPercent": 156,
+            "firstSeenMs": 21443,
+            "lastSeenMs": 35695
+          },
+          {
+            "pid": 11591,
+            "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --import tsx --input-type=module --eval const { Command } = await import(\"commander\"); const { registerBrowserCli } = await import(\"file:///home/runner/_work/openclaw/openclaw/extensions/browser/src/cli/browser-cli.ts\"); const { configureProgramHelp } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/help.ts\"); const { createProgramContext } = await import(\"file:///home/runner/_work/openclaw/openclaw/src/cli/program/context.ts\"); const program = new Command(); configureProgramHelp(program, createProgramContext()); registerBrowserCli(program, [\"node\", \"openclaw\", \"browser\", \"--help\"]); const browser = program.commands.find((cmd) => cmd.name() === \"browser\"); if (!browser) throw new Error(\"Browser command was not registered.\"); browser.outputHelp(); process.exit(0);",
+            "role": "browser-sidecar,build-tooling,command-tree,runtime-management",
+            "peakRssMb": 571.6,
+            "maxCpuPercent": 143,
+            "firstSeenMs": 15984,
+            "lastSeenMs": 19952
+          },
+          {
+            "pid": 13868,
+            "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/vite build",
+            "role": "build-tooling,command-tree,runtime-management",
+            "peakRssMb": 515.5,
+            "maxCpuPercent": 200,
+            "firstSeenMs": 20794,
+            "lastSeenMs": 21197
+          }
+        ],
+        "resourceTopByCpu": [
+          {
+            "pid": 4772,
+            "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean",
+            "role": "build-tooling,command-tree,runtime-management",
+            "peakRssMb": 2021.4,
+            "maxCpuPercent": 315,
+            "firstSeenMs": 1465,
+            "lastSeenMs": 4234
+          },
+          {
+            "pid": 6471,
+            "command": "/home/runner/_work/openclaw/openclaw/node_modules/@typescript/native-preview-linux-x64/lib/tsgo -p tsconfig.plugin-sdk.dts.json --declaration true --singleThreaded --checkers 1",
+            "role": "build-tooling,command-tree,runtime-management",
+            "peakRssMb": 1549.1,
+            "maxCpuPercent": 219,
+            "firstSeenMs": 5000,
+            "lastSeenMs": 13455
+          },
+          {
+            "pid": 13868,
+            "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/vite build",
+            "role": "build-tooling,command-tree,runtime-management",
+            "peakRssMb": 515.5,
+            "maxCpuPercent": 200,
+            "firstSeenMs": 20794,
+            "lastSeenMs": 21197
+          },
+          {
+            "pid": 14249,
+            "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mjs --package-root /tmp/openclaw-channel-entry-smoke-60x0zG/node_modules/openclaw",
+            "role": "build-tooling,command-tree,runtime-management,runtime-staging",
+            "peakRssMb": 1213.6,
+            "maxCpuPercent": 156,
+            "firstSeenMs": 21443,
+            "lastSeenMs": 35695
+          },
+          {
+            "pid": 11004,
+            "command": "/opt/hostedtoolcache/node/24.13.0/x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-DuMZ0l3M.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-DuMZ0l3M.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/workspace\"}},\"plugins\":{\"loadPaths\":[]}},\"env\":{\"HOME\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/.cache/node/corepack/v1/pnpm/10.33.2/dist/node-gyp-bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/openclaw/node_modules/.bin:/home/runner/_work/openclaw/node_modules/.bin:/home/runner/_work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/24.13.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/.local/bin:/opt/hostedtoolcache/node/24.13.0/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/home/runner/_work/openclaw/openclaw/.openclaw-build-root-help\"}}); process.exit(0);",
+            "role": "build-tooling,command-tree,package-manager,plugin-cli,runtime-management,runtime-staging",
+            "peakRssMb": 317.1,
+            "maxCpuPercent": 147,
+            "firstSeenMs": 14705,
+            "lastSeenMs": 15690
+          }
+        ],
+        "openclawTimelineAvailable": false,
+        "openclawTimelineEventCount": 0,
+        "openclawTimelineParseErrors": 0,
+        "openclawSlowestSpanName": null,
+        "openclawSlowestSpanMs": null,
+        "openclawRepeatedSpanCount": 0,
+        "openclawOpenSpanCount": 0,
+        "openclawOpenRequiredSpanCount": 0,
+        "openclawOpenSpans": [],
+        "openclawKeySpans": {},
+        "openclawEventLoopMaxMs": null,
+        "openclawLogEventLoopMaxMs": null,
+        "openclawLivenessWarningCount": 0,
+        "embeddedRunTraceCount": 0,
+        "embeddedRunStartupTraceCount": 0,
+        "embeddedRunPrepTraceCount": 0,
+        "embeddedRunTraceMaxMs": null,
+        "embeddedRunTopStages": [],
+        "openclawProviderRequestMaxMs": null,
+        "openclawChildProcessFailedCount": 0,
+        "runtimeDepsStagingPluginId": null,
+        "runtimeDepsLogEvidence": {
+          "schemaVersion": "kova.runtimeDepsEvidence.v1",
+          "available": false,
+          "installCount": 0,
+          "installMaxMs": null,
+          "postbuildCount": 0,
+          "postbuildMaxMs": null,
+          "pluginIds": [],
+          "coldStart": {
+            "eventCount": null,
+            "installCount": null,
+            "installMaxMs": null,
+            "postbuildCount": null,
+            "postbuildMaxMs": null,
+            "pluginIds": []
+          },
+          "warmRestart": {
+            "eventCount": null,
+            "installCount": null,
+            "installMaxMs": null,
+            "postbuildCount": null,
+            "postbuildMaxMs": null,
+            "pluginIds": []
+          },
+          "phases": [
+            {
+              "id": "target-setup",
+              "eventCount": 0,
+              "stageCount": 0,
+              "installCount": 0,
+              "installMaxMs": null,
+              "postbuildCount": 0,
+              "postbuildMaxMs": null,
+              "pluginIds": []
+            },
+            {
+              "id": "auth-cleanup",
+              "eventCount": 0,
+              "stageCount": 0,
+              "installCount": 0,
+              "installMaxMs": null,
+              "postbuildCount": 0,
+              "postbuildMaxMs": null,
+              "pluginIds": []
+            }
+          ]
+        },
+        "runtimeDepsInstallCount": 0,
+        "runtimeDepsInstallMaxMs": null,
+        "runtimeDepsPostbuildMaxMs": null,
+        "coldRuntimeDepsInstallCount": null,
+        "coldRuntimeDepsStagingMs": null,
+        "warmRuntimeDepsRestageCount": null,
+        "warmRuntimeDepsStagingMs": null,
+        "runtimeDepsWarmReuseOk": null,
+        "pluginMetadataScanCount": null,
+        "configNormalizationCount": null,
+        "runtimeDepsStagingMs": null,
+        "eventLoopDelayMs": null,
+        "providerModelTimingMs": null,
+        "diagnosticCorrelation": {
+          "schemaVersion": "kova.diagnosticCorrelation.v1",
+          "findingCount": 2,
+          "findings": [
+            {
+              "kind": "cpu-peak",
+              "summary": "CPU peaked at 364.4% around 2545ms",
+              "elapsedMs": 2545,
+              "process": {
+                "pid": 4772,
+                "role": "build-tooling,command-tree,runtime-management",
+                "rssMb": 1130.5,
+                "cpuPercent": 315,
+                "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+              }
+            },
+            {
+              "kind": "rss-peak",
+              "summary": "RSS peaked at 2541.1 MB around 3996ms",
+              "elapsedMs": 3996,
+              "process": {
+                "pid": 4772,
+                "role": "build-tooling,command-tree,runtime-management",
+                "rssMb": 2021.4,
+                "cpuPercent": 282,
+                "command": "node ./node_modules/.bin/tsdown --config-loader unrun --logLevel warn --no-clean"
+              }
+            }
+          ]
+        }
+      },
+      "thresholdPolicy": {
+        "schemaVersion": "kova.thresholdPolicy.v1",
+        "profileId": "diagnostic",
+        "surfaceId": "agent-cli-local-turn",
+        "scenarioId": "agent-cold-warm-message",
+        "sources": [
+          {
+            "kind": "surface",
+            "id": "agent-cli-local-turn",
+            "thresholds": [
+              "agentCleanupMs",
+              "agentTurnMs",
+              "coldAgentTurnMs",
+              "coldWarmDeltaMs",
+              "healthP95Ms",
+              "peakRssMb",
+              "preProviderMs",
+              "providerFinalMs",
+              "warmAgentTurnMs"
+            ]
+          },
+          {
+            "kind": "surface-role",
+            "id": "agent-cli-local-turn",
+            "roles": [
+              "agent-cli",
+              "agent-process",
+              "gateway",
+              "mock-provider"
+            ]
+          },
+          {
+            "kind": "profile-surface",
+            "id": "diagnostic:agent-cli-local-turn",
+            "thresholds": [
+              "agentCleanupMs",
+              "coldAgentTurnMs",
+              "coldPreProviderMs",
+              "openclawSlowestSpanMs",
+              "providerFinalMs",
+              "warmAgentTurnMs"
+            ]
+          },
+          {
+            "kind": "profile-role",
+            "id": "diagnostic",
+            "roles": [
+              "agent-cli",
+              "command-tree",
+              "gateway",
+              "mock-provider",
+              "package-manager",
+              "runtime-staging"
+            ]
+          },
+          {
+            "kind": "scenario",
+            "id": "agent-cold-warm-message",
+            "thresholds": [
+              "agentTurnMs",
+              "coldAgentTurnMs",
+              "coldPreProviderMs",
+              "coldWarmDeltaMs",
+              "gatewayReadyMs",
+              "missingDependencyErrors",
+              "peakRssMb",
+              "pluginLoadFailures",
+              "preProviderDominanceRatio",
+              "preProviderMs",
+              "providerFinalMs",
+              "providerTimeoutMentions",
+              "statusMs",
+              "warmAgentTurnMs",
+              "warmPreProviderMs"
+            ]
+          }
+        ],
+        "thresholds": {
+          "agentTurnMs": 45000,
+          "coldAgentTurnMs": 45000,
+          "warmAgentTurnMs": 15000,
+          "coldWarmDeltaMs": 30000,
+          "preProviderMs": 10000,
+          "providerFinalMs": 3000,
+          "agentCleanupMs": 5000,
+          "healthP95Ms": 1000,
+          "peakRssMb": 900,
+          "coldPreProviderMs": 10000,
+          "openclawSlowestSpanMs": 45000,
+          "gatewayReadyMs": 30000,
+          "warmPreProviderMs": 5000,
+          "preProviderDominanceRatio": 0.8,
+          "statusMs": 10000,
+          "missingDependencyErrors": 0,
+          "pluginLoadFailures": 0,
+          "providerTimeoutMentions": 0
+        },
+        "roleThresholds": {
+          "gateway": {
+            "peakRssMb": 700,
+            "maxCpuPercent": 250
+          },
+          "command-tree": {
+            "peakRssMb": 1400,
+            "maxCpuPercent": 450
+          },
+          "runtime-staging": {
+            "peakRssMb": 900,
+            "maxCpuPercent": 350
+          },
+          "package-manager": {
+            "peakRssMb": 900,
+            "maxCpuPercent": 350
+          },
+          "agent-cli": {
+            "peakRssMb": 900,
+            "maxCpuPercent": 300
+          },
+          "mock-provider": {
+            "peakRssMb": 250,
+            "maxCpuPercent": 150
+          },
+          "agent-process": {
+            "peakRssMb": 900,
+            "maxCpuPercent": 300
+          }
+        }
+      },
+      "violations": [
+        {
+          "kind": "threshold",
+          "metric": "peakRssMb",
+          "expected": "<= 900",
+          "actual": 2541.1,
+          "message": "peak RSS 2541.1 MB exceeded threshold 900 MB"
+        },
+        {
+          "kind": "resource",
+          "metric": "resourceByRole.command-tree.peakRssMb",
+          "role": "command-tree",
+          "expected": "<= 1400",
+          "actual": 2541.1,
+          "message": "command-tree peak RSS 2541.1 MB exceeded threshold 1400 MB"
+        },
+        {
+          "kind": "resource",
+          "metric": "resourceByRole.runtime-staging.peakRssMb",
+          "role": "runtime-staging",
+          "expected": "<= 900",
+          "actual": 1262.1,
+          "message": "runtime-staging peak RSS 1262.1 MB exceeded threshold 900 MB"
+        },
+        {
+          "kind": "diagnostics",
+          "metric": "openclawTimelineAvailable",
+          "expected": "available",
+          "actual": false,
+          "message": "OpenClaw diagnostics timeline was required for profile 'diagnostic' on target kind 'local-build' but was not emitted"
+        }
+      ],
+      "failureDiagnostics": {
+        "schemaVersion": "kova.envMetrics.v1",
+        "collectedAt": "2026-05-03T06:12:50.618Z",
+        "artifactDir": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z",
+        "collectorArtifactDirs": {
+          "schemaVersion": "kova.collectorArtifactDirs.v1",
+          "root": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z",
+          "collectors": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/collectors",
+          "openclaw": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/openclaw",
+          "provider": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/provider",
+          "processSnapshots": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/process-snapshots",
+          "resourceSamples": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/resource-samples",
+          "nodeProfiles": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/node-profiles",
+          "diagnostics": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/diagnostics",
+          "heap": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/heap",
+          "diagnosticReports": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/mock-deep-profile/artifacts/kova-2026-05-03T061214Z/kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z/diagnostic-reports"
+        },
+        "collectors": [
+          {
+            "schemaVersion": "kova.collectorReceipt.v1",
+            "id": "service",
+            "status": "FAIL",
+            "durationMs": 4,
+            "commandStatus": 1,
+            "timedOut": false,
+            "artifactCount": 0,
+            "artifacts": [],
+            "error": null
+          }
+        ],
+        "serviceCommand": {
+          "status": 1,
+          "durationMs": 4,
+          "timedOut": false
+        },
+        "service": null,
+        "process": null,
+        "readiness": null,
+        "listening": null,
+        "health": null,
+        "healthSamples": [],
+        "healthSummary": null,
+        "logs": null,
+        "diagnostics": null,
+        "heapSnapshot": null,
+        "diagnosticReport": null,
+        "nodeProfiles": null,
+        "openclawDiagnostics": null,
+        "timeline": null,
+        "error": "ocm: environment \"kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z\" does not exist"
+      },
+      "cleanupResult": {
+        "command": "ocm env destroy 'kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z' --yes",
+        "status": 1,
+        "signal": null,
+        "timedOut": false,
+        "startedAt": "2026-05-03T06:12:50.760Z",
+        "startedAtEpochMs": 1777788770760,
+        "finishedAt": "2026-05-03T06:12:50.763Z",
+        "finishedAtEpochMs": 1777788770763,
+        "durationMs": 3,
+        "stdout": "",
+        "stderr": "ocm: environment \"kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z\" does not exist\nRun \"ocm help\" for usage.\n",
+        "attempts": [
+          {
+            "status": 1,
+            "durationMs": 3,
+            "timedOut": false,
+            "stdout": "",
+            "stderr": "ocm: environment \"kova-agent-cold-warm-message-mock-openai-provider-kova-2026-05-03t061214z\" does not exist\nRun \"ocm help\" for usage.\n"
+          }
+        ]
+      },
+      "postCleanupNodeProfiles": {
+        "schemaVersion": "kova.nodeProfiles.v1",
+        "commandStatus": 0,
+        "statusLabel": "INFO",
+        "durationMs": 0,
+        "fileCount": 0,
+        "cpuProfileCount": 0,
+        "heapProfileCount": 0,
+        "reportCount": 0,
+        "traceEventCount": 0,
+        "artifactBytes": 0,
+        "cpuProfileSummary": {
+          "profileCount": 0,
+          "parseErrorCount": 0,
+          "topFunctions": [],
+          "profiles": []
+        },
+        "heapProfileSummary": {
+          "profileCount": 0,
+          "parseErrorCount": 0,
+          "topFunctions": [],
+          "profiles": []
+        },
+        "artifacts": [],
+        "error": "node profile artifacts not emitted"
+      }
+    }
+  ]
+}
