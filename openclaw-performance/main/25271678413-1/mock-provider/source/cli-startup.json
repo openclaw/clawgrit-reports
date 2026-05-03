@@ -1,0 +1,108 @@
+{
+  "node": "v24.13.0",
+  "runs": 3,
+  "warmup": 1,
+  "timeoutMs": 30000,
+  "cpuProfDir": null,
+  "heapProfDir": null,
+  "primary": {
+    "entry": "openclaw.mjs",
+    "cases": [
+      {
+        "id": "gatewayHealthJson",
+        "name": "gateway health --json",
+        "args": [
+          "gateway",
+          "health",
+          "--json"
+        ],
+        "samples": [
+          {
+            "ms": 1273.360075,
+            "maxRssMb": 55.88671875,
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 1245.59659,
+            "maxRssMb": 55.7421875,
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 1238.883781,
+            "maxRssMb": 55.63671875,
+            "exitCode": 0,
+            "signal": null
+          }
+        ],
+        "summary": {
+          "sampleCount": 3,
+          "durationMs": {
+            "avg": 1252.613482,
+            "p50": 1245.59659,
+            "p95": 1273.360075,
+            "min": 1238.883781,
+            "max": 1273.360075
+          },
+          "maxRssMb": {
+            "avg": 55.755208333333336,
+            "p50": 55.7421875,
+            "p95": 55.88671875,
+            "min": 55.63671875,
+            "max": 55.88671875
+          },
+          "exitSummary": "code:0x3"
+        }
+      },
+      {
+        "id": "configGetGatewayPort",
+        "name": "config get gateway.port",
+        "args": [
+          "config",
+          "get",
+          "gateway.port"
+        ],
+        "samples": [
+          {
+            "ms": 465.052342,
+            "maxRssMb": 55.81640625,
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 470.013055,
+            "maxRssMb": 55.578125,
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 450.732728,
+            "maxRssMb": 55.796875,
+            "exitCode": 0,
+            "signal": null
+          }
+        ],
+        "summary": {
+          "sampleCount": 3,
+          "durationMs": {
+            "avg": 461.9327083333333,
+            "p50": 465.052342,
+            "p95": 470.013055,
+            "min": 450.732728,
+            "max": 470.013055
+          },
+          "maxRssMb": {
+            "avg": 55.73046875,
+            "p50": 55.796875,
+            "p95": 55.81640625,
+            "min": 55.578125,
+            "max": 55.81640625
+          },
+          "exitSummary": "code:0x3"
+        }
+      }
+    ]
+  },
+  "secondary": null
+}
