@@ -1,0 +1,33 @@
+# OpenClaw Performance Report
+
+- Lane: mock-provider
+- Run: kova-2026-05-03T114645Z
+- Generated: 2026-05-03T11:47:04.837Z
+- Target: local-build:/home/runner/_work/openclaw/openclaw
+- Statuses: BLOCKED: 1
+- Repeat: 1
+- Published report: https://github.com/openclaw/clawgrit-reports/tree/main/openclaw-performance/main/25278293858-1/mock-provider
+
+## Key metrics
+
+| Scenario | State | Metric | Median | p95 | Max |
+| --- | --- | --- | ---: | ---: | ---: |
+| agent-cold-warm-message | mock-openai-provider | Peak RSS | 2,522 MB | 2,522 MB | 2,522 MB |
+| agent-cold-warm-message | mock-openai-provider | Gateway RSS | 0 MB | 0 MB | 0 MB |
+| agent-cold-warm-message | mock-openai-provider | Max CPU | 352 % | 352 % | 352 % |
+
+## Threshold violations
+
+| Scenario | State | Metric | Actual | Threshold |
+| --- | --- | --- | ---: | ---: |
+| agent-cold-warm-message | mock-openai-provider | peakRssMb | 2,522 | <= 900 |
+
+## Records
+
+| Scenario | State | Status | Failure |
+| --- | --- | --- | --- |
+| agent-cold-warm-message | mock-openai-provider | BLOCKED |  |
+
+## Source probes
+
+Additional gateway boot, memory, plugin pressure, mock hello-loop, and CLI startup numbers are in [source/index.md](source/index.md).
