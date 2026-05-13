@@ -1,0 +1,136 @@
+{
+  "node": "v24.13.0",
+  "runs": 3,
+  "warmup": 1,
+  "timeoutMs": 30000,
+  "cpuProfDir": null,
+  "heapProfDir": null,
+  "primary": {
+    "entry": "openclaw.mjs",
+    "cases": [
+      {
+        "id": "gatewayHealthJson",
+        "name": "gateway health --json",
+        "args": [
+          "gateway",
+          "health",
+          "--json"
+        ],
+        "contract": null,
+        "samples": [
+          {
+            "ms": 1035.563349,
+            "firstOutputMs": 997.605383,
+            "maxRssMb": 56.41796875,
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 1025.625436,
+            "firstOutputMs": 994.731612,
+            "maxRssMb": 56.0859375,
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 990.950749,
+            "firstOutputMs": 958.06877,
+            "maxRssMb": 56.42578125,
+            "exitCode": 0,
+            "signal": null
+          }
+        ],
+        "summary": {
+          "sampleCount": 3,
+          "durationMs": {
+            "avg": 1017.3798446666668,
+            "p50": 1025.625436,
+            "p95": 1035.563349,
+            "min": 990.950749,
+            "max": 1035.563349
+          },
+          "firstOutputMs": {
+            "avg": 983.4685883333333,
+            "p50": 994.731612,
+            "p95": 997.605383,
+            "min": 958.06877,
+            "max": 997.605383
+          },
+          "maxRssMb": {
+            "avg": 56.309895833333336,
+            "p50": 56.41796875,
+            "p95": 56.42578125,
+            "min": 56.0859375,
+            "max": 56.42578125
+          },
+          "exitSummary": "code:0x3"
+        }
+      },
+      {
+        "id": "configGetGatewayPort",
+        "name": "config get gateway.port",
+        "args": [
+          "config",
+          "get",
+          "gateway.port"
+        ],
+        "contract": null,
+        "samples": [
+          {
+            "ms": 412.47625,
+            "firstOutputMs": 400.619452,
+            "maxRssMb": 56.1875,
+            "exitCode": 1,
+            "signal": null,
+            "stdoutTail": "",
+            "stderrTail": "Config path not found: gateway.port. Run openclaw config validate to inspect config shape.\n__OPENCLAW_MAX_RSS_KB__=234740\n__OPENCLAW_MAX_RSS_KB__=57536"
+          },
+          {
+            "ms": 416.375824,
+            "firstOutputMs": 391.672183,
+            "maxRssMb": 56.17578125,
+            "exitCode": 1,
+            "signal": null,
+            "stdoutTail": "",
+            "stderrTail": "Config path not found: gateway.port. Run openclaw config validate to inspect config shape.\n__OPENCLAW_MAX_RSS_KB__=233632\n__OPENCLAW_MAX_RSS_KB__=57524"
+          },
+          {
+            "ms": 480.869663,
+            "firstOutputMs": 468.159315,
+            "maxRssMb": 56.36328125,
+            "exitCode": 1,
+            "signal": null,
+            "stdoutTail": "",
+            "stderrTail": "Config path not found: gateway.port. Run openclaw config validate to inspect config shape.\n__OPENCLAW_MAX_RSS_KB__=234660\n__OPENCLAW_MAX_RSS_KB__=57716"
+          }
+        ],
+        "summary": {
+          "sampleCount": 3,
+          "durationMs": {
+            "avg": 436.57391233333334,
+            "p50": 416.375824,
+            "p95": 480.869663,
+            "min": 412.47625,
+            "max": 480.869663
+          },
+          "firstOutputMs": {
+            "avg": 420.15031666666664,
+            "p50": 400.619452,
+            "p95": 468.159315,
+            "min": 391.672183,
+            "max": 468.159315
+          },
+          "maxRssMb": {
+            "avg": 56.2421875,
+            "p50": 56.1875,
+            "p95": 56.36328125,
+            "min": 56.17578125,
+            "max": 56.36328125
+          },
+          "exitSummary": "code:1x3"
+        }
+      }
+    ]
+  },
+  "secondary": null
+}
