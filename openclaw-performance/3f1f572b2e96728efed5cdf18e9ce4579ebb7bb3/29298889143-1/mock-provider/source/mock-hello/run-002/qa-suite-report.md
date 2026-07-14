@@ -1,0 +1,25 @@
+# OpenClaw QA Scenario Suite
+
+- Started: 2026-07-14T01:38:10.920Z
+- Finished: 2026-07-14T01:38:20.554Z
+- Duration ms: 9634
+- Passed: 1
+- Failed: 0
+
+
+## Scenarios
+
+### Channel baseline conversation
+
+- Status: pass
+- Steps:
+  - [x] ignores unmentioned channel chatter
+  - [x] replies when mentioned in channel
+    - Details: QA-CHANNEL-BASELINE-OK
+
+
+## Notes
+
+- Runs against qa-channel + qa-lab bus + real gateway child + mock-openai provider.
+- Scenarios run serially in one gateway worker.
+- Cron uses a one-minute schedule assertion plus forced execution for fast verification.
