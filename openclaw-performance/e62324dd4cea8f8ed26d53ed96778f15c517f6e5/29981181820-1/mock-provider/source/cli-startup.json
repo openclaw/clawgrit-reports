@@ -1,0 +1,145 @@
+{
+  "node": "v24.18.0",
+  "runs": 3,
+  "warmup": 1,
+  "timeoutMs": 30000,
+  "cpuProfDir": null,
+  "heapProfDir": null,
+  "primary": {
+    "entry": "openclaw.mjs",
+    "cases": [
+      {
+        "id": "gatewayHealthJson",
+        "name": "gateway health --json",
+        "args": [
+          "gateway",
+          "health",
+          "--json"
+        ],
+        "expectedExitCodes": [
+          0,
+          1
+        ],
+        "expectedNonzeroOutputIncludes": [
+          "\"ok\"",
+          "\"gateway_transport_error\""
+        ],
+        "contract": null,
+        "samples": [
+          {
+            "ms": 3339.562257,
+            "firstOutputMs": 3263.943197,
+            "maxRssMb": 60.24609375,
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 3364.856862,
+            "firstOutputMs": 3316.229852,
+            "maxRssMb": 60.78125,
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 3325.970543,
+            "firstOutputMs": 3278.999177,
+            "maxRssMb": 60.265625,
+            "exitCode": 0,
+            "signal": null
+          }
+        ],
+        "summary": {
+          "sampleCount": 3,
+          "durationMs": {
+            "avg": 3343.4632206666665,
+            "p50": 3339.562257,
+            "p95": 3364.856862,
+            "min": 3325.970543,
+            "max": 3364.856862
+          },
+          "firstOutputMs": {
+            "avg": 3286.390742,
+            "p50": 3278.999177,
+            "p95": 3316.229852,
+            "min": 3263.943197,
+            "max": 3316.229852
+          },
+          "maxRssMb": {
+            "avg": 60.430989583333336,
+            "p50": 60.265625,
+            "p95": 60.78125,
+            "min": 60.24609375,
+            "max": 60.78125
+          },
+          "exitSummary": "code:0x3"
+        }
+      },
+      {
+        "id": "configGetGatewayPort",
+        "name": "config get gateway.port",
+        "args": [
+          "config",
+          "get",
+          "gateway.port"
+        ],
+        "expectedExitCodes": [
+          0,
+          1
+        ],
+        "expectedNonzeroOutputIncludes": [
+          "Config path not found: gateway.port"
+        ],
+        "contract": null,
+        "samples": [
+          {
+            "ms": 807.672762,
+            "firstOutputMs": 788.141056,
+            "maxRssMb": 60.21875,
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 826.881632,
+            "firstOutputMs": 805.454761,
+            "maxRssMb": 60.33203125,
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 768.602527,
+            "firstOutputMs": 746.391425,
+            "maxRssMb": 60.12109375,
+            "exitCode": 0,
+            "signal": null
+          }
+        ],
+        "summary": {
+          "sampleCount": 3,
+          "durationMs": {
+            "avg": 801.0523069999999,
+            "p50": 807.672762,
+            "p95": 826.881632,
+            "min": 768.602527,
+            "max": 826.881632
+          },
+          "firstOutputMs": {
+            "avg": 779.9957473333334,
+            "p50": 788.141056,
+            "p95": 805.454761,
+            "min": 746.391425,
+            "max": 805.454761
+          },
+          "maxRssMb": {
+            "avg": 60.223958333333336,
+            "p50": 60.21875,
+            "p95": 60.33203125,
+            "min": 60.12109375,
+            "max": 60.33203125
+          },
+          "exitSummary": "code:0x3"
+        }
+      }
+    ]
+  },
+  "secondary": null
+}
