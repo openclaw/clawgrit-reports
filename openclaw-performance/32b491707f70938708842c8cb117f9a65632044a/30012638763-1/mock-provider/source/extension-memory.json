@@ -1,0 +1,1038 @@
+{
+  "generatedAt": "2026-07-23T13:52:28.470Z",
+  "repoRoot": "/home/runner/_work/openclaw/openclaw",
+  "selectedExtensions": [
+    "acpx",
+    "active-memory",
+    "admin-http-rpc",
+    "alibaba",
+    "anthropic",
+    "azure-speech",
+    "bonjour",
+    "brave",
+    "browser",
+    "byteplus",
+    "canvas",
+    "clawrouter",
+    "codex",
+    "cohere",
+    "comfy",
+    "copilot-proxy",
+    "crabbox",
+    "cua-computer",
+    "deepgram",
+    "device-pair",
+    "diagnostics-otel",
+    "diagnostics-prometheus",
+    "diffs",
+    "diffs-language-pack",
+    "discord",
+    "document-extract",
+    "duckduckgo",
+    "elevenlabs",
+    "fal",
+    "feishu",
+    "file-transfer",
+    "github-copilot",
+    "google",
+    "google-meet",
+    "googlechat",
+    "huggingface",
+    "imessage",
+    "line",
+    "linux-canvas",
+    "linux-node",
+    "litellm",
+    "llama-cpp",
+    "llm-task",
+    "lmstudio",
+    "lobster",
+    "logbook",
+    "matrix",
+    "memory-core",
+    "memory-lancedb",
+    "memory-wiki",
+    "meta",
+    "microsoft",
+    "microsoft-foundry",
+    "migrate-claude",
+    "migrate-hermes",
+    "minimax",
+    "mistral",
+    "msteams",
+    "nextcloud-talk",
+    "nostr",
+    "novita",
+    "nvidia",
+    "oc-path",
+    "ollama",
+    "onepassword",
+    "open-prose",
+    "openai",
+    "opencode",
+    "opencode-go",
+    "openrouter",
+    "phone-control",
+    "policy",
+    "qa-channel",
+    "qa-lab",
+    "raft",
+    "reef",
+    "runway",
+    "senseaudio",
+    "sglang",
+    "synology-chat",
+    "synthetic",
+    "talk-voice",
+    "teams-meetings",
+    "telegram",
+    "thread-ownership",
+    "tlon",
+    "together",
+    "tts-local-cli",
+    "twitch",
+    "vault",
+    "vllm",
+    "voice-call",
+    "volcengine",
+    "voyage",
+    "vydra",
+    "web-readability",
+    "webhooks",
+    "workboard",
+    "xai",
+    "xiaomi",
+    "zalo",
+    "zalouser",
+    "zoom-meetings"
+  ],
+  "baseline": {
+    "status": "ok",
+    "maxRssMb": 46.58984375
+  },
+  "combined": {
+    "status": "ok",
+    "maxRssMb": 730.234375,
+    "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=747760"
+  },
+  "counts": {
+    "totalEntries": 103,
+    "ok": 103,
+    "fail": 0,
+    "timeout": 0
+  },
+  "options": {
+    "concurrency": 6,
+    "timeoutMs": 90000,
+    "combinedTimeoutMs": 180000,
+    "skipCombined": false
+  },
+  "topByDeltaMb": [
+    {
+      "dir": "active-memory",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/active-memory/index.js",
+      "status": "ok",
+      "maxRssMb": 530.6171875,
+      "deltaFromBaselineMb": 484.02734375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=543352"
+    },
+    {
+      "dir": "workboard",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/workboard/index.js",
+      "status": "ok",
+      "maxRssMb": 527.22265625,
+      "deltaFromBaselineMb": 480.6328125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=539876"
+    },
+    {
+      "dir": "codex",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/codex/index.js",
+      "status": "ok",
+      "maxRssMb": 512.4375,
+      "deltaFromBaselineMb": 465.84765625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=524736"
+    },
+    {
+      "dir": "google-meet",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/google-meet/index.js",
+      "status": "ok",
+      "maxRssMb": 508.46484375,
+      "deltaFromBaselineMb": 461.875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=520668"
+    },
+    {
+      "dir": "migrate-hermes",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/migrate-hermes/index.js",
+      "status": "ok",
+      "maxRssMb": 507.21875,
+      "deltaFromBaselineMb": 460.62890625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=519392"
+    },
+    {
+      "dir": "memory-lancedb",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/memory-lancedb/index.js",
+      "status": "ok",
+      "maxRssMb": 506.2265625,
+      "deltaFromBaselineMb": 459.63671875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=518376"
+    },
+    {
+      "dir": "llm-task",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/llm-task/index.js",
+      "status": "ok",
+      "maxRssMb": 504.203125,
+      "deltaFromBaselineMb": 457.61328125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=516304"
+    },
+    {
+      "dir": "voice-call",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/voice-call/index.js",
+      "status": "ok",
+      "maxRssMb": 503.64453125,
+      "deltaFromBaselineMb": 457.0546875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=515732"
+    },
+    {
+      "dir": "teams-meetings",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/teams-meetings/index.js",
+      "status": "ok",
+      "maxRssMb": 502.30078125,
+      "deltaFromBaselineMb": 455.7109375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=514356"
+    },
+    {
+      "dir": "anthropic",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/anthropic/index.js",
+      "status": "ok",
+      "maxRssMb": 502.21484375,
+      "deltaFromBaselineMb": 455.625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=514268"
+    }
+  ],
+  "results": [
+    {
+      "dir": "acpx",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/acpx/index.js",
+      "status": "ok",
+      "maxRssMb": 113.16015625,
+      "deltaFromBaselineMb": 66.5703125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=115876"
+    },
+    {
+      "dir": "active-memory",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/active-memory/index.js",
+      "status": "ok",
+      "maxRssMb": 530.6171875,
+      "deltaFromBaselineMb": 484.02734375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=543352"
+    },
+    {
+      "dir": "admin-http-rpc",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/admin-http-rpc/index.js",
+      "status": "ok",
+      "maxRssMb": 343.73828125,
+      "deltaFromBaselineMb": 297.1484375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=351988"
+    },
+    {
+      "dir": "alibaba",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/alibaba/index.js",
+      "status": "ok",
+      "maxRssMb": 349.046875,
+      "deltaFromBaselineMb": 302.45703125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=357424"
+    },
+    {
+      "dir": "anthropic",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/anthropic/index.js",
+      "status": "ok",
+      "maxRssMb": 502.21484375,
+      "deltaFromBaselineMb": 455.625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=514268"
+    },
+    {
+      "dir": "azure-speech",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/azure-speech/index.js",
+      "status": "ok",
+      "maxRssMb": 315.52734375,
+      "deltaFromBaselineMb": 268.9375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=323100"
+    },
+    {
+      "dir": "bonjour",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/bonjour/index.js",
+      "status": "ok",
+      "maxRssMb": 76.56640625,
+      "deltaFromBaselineMb": 29.9765625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=78404"
+    },
+    {
+      "dir": "brave",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/brave/index.js",
+      "status": "ok",
+      "maxRssMb": 90.90625,
+      "deltaFromBaselineMb": 44.31640625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=93088"
+    },
+    {
+      "dir": "browser",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/browser/index.js",
+      "status": "ok",
+      "maxRssMb": 211.921875,
+      "deltaFromBaselineMb": 165.33203125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=217008"
+    },
+    {
+      "dir": "byteplus",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/byteplus/index.js",
+      "status": "ok",
+      "maxRssMb": 359.875,
+      "deltaFromBaselineMb": 313.28515625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=368512"
+    },
+    {
+      "dir": "canvas",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/canvas/index.js",
+      "status": "ok",
+      "maxRssMb": 205.62109375,
+      "deltaFromBaselineMb": 159.03125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=210556"
+    },
+    {
+      "dir": "clawrouter",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/clawrouter/index.js",
+      "status": "ok",
+      "maxRssMb": 351.296875,
+      "deltaFromBaselineMb": 304.70703125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=359728"
+    },
+    {
+      "dir": "codex",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/codex/index.js",
+      "status": "ok",
+      "maxRssMb": 512.4375,
+      "deltaFromBaselineMb": 465.84765625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=524736"
+    },
+    {
+      "dir": "cohere",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/cohere/index.js",
+      "status": "ok",
+      "maxRssMb": 341.66796875,
+      "deltaFromBaselineMb": 295.078125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=349868"
+    },
+    {
+      "dir": "comfy",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/comfy/index.js",
+      "status": "ok",
+      "maxRssMb": 361.640625,
+      "deltaFromBaselineMb": 315.05078125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=370320"
+    },
+    {
+      "dir": "copilot-proxy",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/copilot-proxy/index.js",
+      "status": "ok",
+      "maxRssMb": 91.8125,
+      "deltaFromBaselineMb": 45.22265625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=94016"
+    },
+    {
+      "dir": "crabbox",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/crabbox/index.js",
+      "status": "ok",
+      "maxRssMb": 274.5546875,
+      "deltaFromBaselineMb": 227.96484375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=281144"
+    },
+    {
+      "dir": "cua-computer",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/cua-computer/index.js",
+      "status": "ok",
+      "maxRssMb": 128.015625,
+      "deltaFromBaselineMb": 81.42578125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=131088"
+    },
+    {
+      "dir": "deepgram",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/deepgram/index.js",
+      "status": "ok",
+      "maxRssMb": 304.42578125,
+      "deltaFromBaselineMb": 257.8359375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=311732"
+    },
+    {
+      "dir": "device-pair",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/device-pair/index.js",
+      "status": "ok",
+      "maxRssMb": 92.36328125,
+      "deltaFromBaselineMb": 45.7734375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=94580"
+    },
+    {
+      "dir": "diagnostics-otel",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/diagnostics-otel/index.js",
+      "status": "ok",
+      "maxRssMb": 150.75,
+      "deltaFromBaselineMb": 104.16015625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=154368"
+    },
+    {
+      "dir": "diagnostics-prometheus",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/diagnostics-prometheus/index.js",
+      "status": "ok",
+      "maxRssMb": 130.34375,
+      "deltaFromBaselineMb": 83.75390625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=133472"
+    },
+    {
+      "dir": "diffs",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/diffs/index.js",
+      "status": "ok",
+      "maxRssMb": 298.05859375,
+      "deltaFromBaselineMb": 251.46875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=305212"
+    },
+    {
+      "dir": "diffs-language-pack",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/diffs-language-pack/index.js",
+      "status": "ok",
+      "maxRssMb": 78.15234375,
+      "deltaFromBaselineMb": 31.5625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=80028"
+    },
+    {
+      "dir": "discord",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/discord/index.js",
+      "status": "ok",
+      "maxRssMb": 358.015625,
+      "deltaFromBaselineMb": 311.42578125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=366608"
+    },
+    {
+      "dir": "document-extract",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/document-extract/index.js",
+      "status": "ok",
+      "maxRssMb": 77.16796875,
+      "deltaFromBaselineMb": 30.578125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=79020"
+    },
+    {
+      "dir": "duckduckgo",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/duckduckgo/index.js",
+      "status": "ok",
+      "maxRssMb": 117.52734375,
+      "deltaFromBaselineMb": 70.9375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=120348"
+    },
+    {
+      "dir": "elevenlabs",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/elevenlabs/index.js",
+      "status": "ok",
+      "maxRssMb": 365.7421875,
+      "deltaFromBaselineMb": 319.15234375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=374520"
+    },
+    {
+      "dir": "fal",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/fal/index.js",
+      "status": "ok",
+      "maxRssMb": 348.62109375,
+      "deltaFromBaselineMb": 302.03125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=356988"
+    },
+    {
+      "dir": "feishu",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/feishu/index.js",
+      "status": "ok",
+      "maxRssMb": 126.19140625,
+      "deltaFromBaselineMb": 79.6015625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=129220"
+    },
+    {
+      "dir": "file-transfer",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/file-transfer/index.js",
+      "status": "ok",
+      "maxRssMb": 211.12890625,
+      "deltaFromBaselineMb": 164.5390625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=216196"
+    },
+    {
+      "dir": "github-copilot",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/github-copilot/index.js",
+      "status": "ok",
+      "maxRssMb": 362.68359375,
+      "deltaFromBaselineMb": 316.09375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=371388"
+    },
+    {
+      "dir": "google",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/google/index.js",
+      "status": "ok",
+      "maxRssMb": 415.8125,
+      "deltaFromBaselineMb": 369.22265625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=425792"
+    },
+    {
+      "dir": "google-meet",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/google-meet/index.js",
+      "status": "ok",
+      "maxRssMb": 508.46484375,
+      "deltaFromBaselineMb": 461.875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=520668"
+    },
+    {
+      "dir": "googlechat",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/googlechat/index.js",
+      "status": "ok",
+      "maxRssMb": 126.546875,
+      "deltaFromBaselineMb": 79.95703125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=129584"
+    },
+    {
+      "dir": "huggingface",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/huggingface/index.js",
+      "status": "ok",
+      "maxRssMb": 332.68359375,
+      "deltaFromBaselineMb": 286.09375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=340668"
+    },
+    {
+      "dir": "imessage",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/imessage/index.js",
+      "status": "ok",
+      "maxRssMb": 128.40234375,
+      "deltaFromBaselineMb": 81.8125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=131484"
+    },
+    {
+      "dir": "line",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/line/index.js",
+      "status": "ok",
+      "maxRssMb": 126.5703125,
+      "deltaFromBaselineMb": 79.98046875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=129608"
+    },
+    {
+      "dir": "linux-canvas",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/linux-canvas/index.js",
+      "status": "ok",
+      "maxRssMb": 83.05078125,
+      "deltaFromBaselineMb": 36.4609375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=85044"
+    },
+    {
+      "dir": "linux-node",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/linux-node/index.js",
+      "status": "ok",
+      "maxRssMb": 132.0859375,
+      "deltaFromBaselineMb": 85.49609375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=135256"
+    },
+    {
+      "dir": "litellm",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/litellm/index.js",
+      "status": "ok",
+      "maxRssMb": 328.828125,
+      "deltaFromBaselineMb": 282.23828125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=336720"
+    },
+    {
+      "dir": "llama-cpp",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/llama-cpp/index.js",
+      "status": "ok",
+      "maxRssMb": 360.2890625,
+      "deltaFromBaselineMb": 313.69921875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=368936"
+    },
+    {
+      "dir": "llm-task",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/llm-task/index.js",
+      "status": "ok",
+      "maxRssMb": 504.203125,
+      "deltaFromBaselineMb": 457.61328125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=516304"
+    },
+    {
+      "dir": "lmstudio",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/lmstudio/index.js",
+      "status": "ok",
+      "maxRssMb": 353.19140625,
+      "deltaFromBaselineMb": 306.6015625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=361668"
+    },
+    {
+      "dir": "lobster",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/lobster/index.js",
+      "status": "ok",
+      "maxRssMb": 198.1015625,
+      "deltaFromBaselineMb": 151.51171875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=202856"
+    },
+    {
+      "dir": "logbook",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/logbook/index.js",
+      "status": "ok",
+      "maxRssMb": 343.6796875,
+      "deltaFromBaselineMb": 297.08984375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=351928"
+    },
+    {
+      "dir": "matrix",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/matrix/index.js",
+      "status": "ok",
+      "maxRssMb": 127.30859375,
+      "deltaFromBaselineMb": 80.71875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=130364"
+    },
+    {
+      "dir": "memory-core",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/memory-core/index.js",
+      "status": "ok",
+      "maxRssMb": 360.953125,
+      "deltaFromBaselineMb": 314.36328125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=369616"
+    },
+    {
+      "dir": "memory-lancedb",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/memory-lancedb/index.js",
+      "status": "ok",
+      "maxRssMb": 506.2265625,
+      "deltaFromBaselineMb": 459.63671875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=518376"
+    },
+    {
+      "dir": "memory-wiki",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/memory-wiki/index.js",
+      "status": "ok",
+      "maxRssMb": 354.52734375,
+      "deltaFromBaselineMb": 307.9375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=363036"
+    },
+    {
+      "dir": "meta",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/meta/index.js",
+      "status": "ok",
+      "maxRssMb": 349.05859375,
+      "deltaFromBaselineMb": 302.46875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=357436"
+    },
+    {
+      "dir": "microsoft",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/microsoft/index.js",
+      "status": "ok",
+      "maxRssMb": 356.51171875,
+      "deltaFromBaselineMb": 309.921875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=365068"
+    },
+    {
+      "dir": "microsoft-foundry",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/microsoft-foundry/index.js",
+      "status": "ok",
+      "maxRssMb": 411.328125,
+      "deltaFromBaselineMb": 364.73828125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=421200"
+    },
+    {
+      "dir": "migrate-claude",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/migrate-claude/index.js",
+      "status": "ok",
+      "maxRssMb": 125.46875,
+      "deltaFromBaselineMb": 78.87890625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=128480"
+    },
+    {
+      "dir": "migrate-hermes",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/migrate-hermes/index.js",
+      "status": "ok",
+      "maxRssMb": 507.21875,
+      "deltaFromBaselineMb": 460.62890625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=519392"
+    },
+    {
+      "dir": "minimax",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/minimax/index.js",
+      "status": "ok",
+      "maxRssMb": 412.53125,
+      "deltaFromBaselineMb": 365.94140625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=422432"
+    },
+    {
+      "dir": "mistral",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/mistral/index.js",
+      "status": "ok",
+      "maxRssMb": 361.34765625,
+      "deltaFromBaselineMb": 314.7578125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=370020"
+    },
+    {
+      "dir": "msteams",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/msteams/index.js",
+      "status": "ok",
+      "maxRssMb": 126.8828125,
+      "deltaFromBaselineMb": 80.29296875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=129928"
+    },
+    {
+      "dir": "nextcloud-talk",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/nextcloud-talk/index.js",
+      "status": "ok",
+      "maxRssMb": 127.5,
+      "deltaFromBaselineMb": 80.91015625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=130560"
+    },
+    {
+      "dir": "nostr",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/nostr/index.js",
+      "status": "ok",
+      "maxRssMb": 127.1015625,
+      "deltaFromBaselineMb": 80.51171875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=130152"
+    },
+    {
+      "dir": "novita",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/novita/index.js",
+      "status": "ok",
+      "maxRssMb": 346.48046875,
+      "deltaFromBaselineMb": 299.890625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=354796"
+    },
+    {
+      "dir": "nvidia",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/nvidia/index.js",
+      "status": "ok",
+      "maxRssMb": 333.5703125,
+      "deltaFromBaselineMb": 286.98046875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=341576"
+    },
+    {
+      "dir": "oc-path",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/oc-path/index.js",
+      "status": "ok",
+      "maxRssMb": 77.8359375,
+      "deltaFromBaselineMb": 31.24609375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=79704"
+    },
+    {
+      "dir": "ollama",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/ollama/index.js",
+      "status": "ok",
+      "maxRssMb": 358.140625,
+      "deltaFromBaselineMb": 311.55078125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=366736"
+    },
+    {
+      "dir": "onepassword",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/onepassword/index.js",
+      "status": "ok",
+      "maxRssMb": 136.734375,
+      "deltaFromBaselineMb": 90.14453125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=140016"
+    },
+    {
+      "dir": "open-prose",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/open-prose/index.js",
+      "status": "ok",
+      "maxRssMb": 77.734375,
+      "deltaFromBaselineMb": 31.14453125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=79600"
+    },
+    {
+      "dir": "openai",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/openai/index.js",
+      "status": "ok",
+      "maxRssMb": 413.53515625,
+      "deltaFromBaselineMb": 366.9453125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=423460"
+    },
+    {
+      "dir": "opencode",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/opencode/index.js",
+      "status": "ok",
+      "maxRssMb": 376.109375,
+      "deltaFromBaselineMb": 329.51953125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=385136"
+    },
+    {
+      "dir": "opencode-go",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/opencode-go/index.js",
+      "status": "ok",
+      "maxRssMb": 377.67578125,
+      "deltaFromBaselineMb": 331.0859375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=386740"
+    },
+    {
+      "dir": "openrouter",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/openrouter/index.js",
+      "status": "ok",
+      "maxRssMb": 353.4921875,
+      "deltaFromBaselineMb": 306.90234375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=361976"
+    },
+    {
+      "dir": "phone-control",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/phone-control/index.js",
+      "status": "ok",
+      "maxRssMb": 93.6328125,
+      "deltaFromBaselineMb": 47.04296875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=95880"
+    },
+    {
+      "dir": "policy",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/policy/index.js",
+      "status": "ok",
+      "maxRssMb": 363.16796875,
+      "deltaFromBaselineMb": 316.578125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=371884"
+    },
+    {
+      "dir": "qa-channel",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/qa-channel/index.js",
+      "status": "ok",
+      "maxRssMb": 126.25390625,
+      "deltaFromBaselineMb": 79.6640625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=129284"
+    },
+    {
+      "dir": "qa-lab",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/qa-lab/index.js",
+      "status": "ok",
+      "maxRssMb": 176.6328125,
+      "deltaFromBaselineMb": 130.04296875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=180872"
+    },
+    {
+      "dir": "raft",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/raft/index.js",
+      "status": "ok",
+      "maxRssMb": 127.0546875,
+      "deltaFromBaselineMb": 80.46484375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=130104"
+    },
+    {
+      "dir": "reef",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/reef/index.js",
+      "status": "ok",
+      "maxRssMb": 213.73046875,
+      "deltaFromBaselineMb": 167.140625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=218860"
+    },
+    {
+      "dir": "runway",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/runway/index.js",
+      "status": "ok",
+      "maxRssMb": 345.69140625,
+      "deltaFromBaselineMb": 299.1015625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=353988"
+    },
+    {
+      "dir": "senseaudio",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/senseaudio/index.js",
+      "status": "ok",
+      "maxRssMb": 186.2421875,
+      "deltaFromBaselineMb": 139.65234375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=190712"
+    },
+    {
+      "dir": "sglang",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/sglang/index.js",
+      "status": "ok",
+      "maxRssMb": 345.76953125,
+      "deltaFromBaselineMb": 299.1796875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=354068"
+    },
+    {
+      "dir": "synology-chat",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/synology-chat/index.js",
+      "status": "ok",
+      "maxRssMb": 126.94140625,
+      "deltaFromBaselineMb": 80.3515625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=129988"
+    },
+    {
+      "dir": "synthetic",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/synthetic/index.js",
+      "status": "ok",
+      "maxRssMb": 295.58203125,
+      "deltaFromBaselineMb": 248.9921875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=302676"
+    },
+    {
+      "dir": "talk-voice",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/talk-voice/index.js",
+      "status": "ok",
+      "maxRssMb": 189.6953125,
+      "deltaFromBaselineMb": 143.10546875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=194248"
+    },
+    {
+      "dir": "teams-meetings",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/teams-meetings/index.js",
+      "status": "ok",
+      "maxRssMb": 502.30078125,
+      "deltaFromBaselineMb": 455.7109375,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=514356"
+    },
+    {
+      "dir": "telegram",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/telegram/index.js",
+      "status": "ok",
+      "maxRssMb": 312.39453125,
+      "deltaFromBaselineMb": 265.8046875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=319892"
+    },
+    {
+      "dir": "thread-ownership",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/thread-ownership/index.js",
+      "status": "ok",
+      "maxRssMb": 187.65234375,
+      "deltaFromBaselineMb": 141.0625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=192156"
+    },
+    {
+      "dir": "tlon",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/tlon/index.js",
+      "status": "ok",
+      "maxRssMb": 126.09375,
+      "deltaFromBaselineMb": 79.50390625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=129120"
+    },
+    {
+      "dir": "together",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/together/index.js",
+      "status": "ok",
+      "maxRssMb": 350.91796875,
+      "deltaFromBaselineMb": 304.328125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=359340"
+    },
+    {
+      "dir": "tts-local-cli",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/tts-local-cli/index.js",
+      "status": "ok",
+      "maxRssMb": 356.56640625,
+      "deltaFromBaselineMb": 309.9765625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=365124"
+    },
+    {
+      "dir": "twitch",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/twitch/index.js",
+      "status": "ok",
+      "maxRssMb": 126.89453125,
+      "deltaFromBaselineMb": 80.3046875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=129940"
+    },
+    {
+      "dir": "vault",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/vault/index.js",
+      "status": "ok",
+      "maxRssMb": 78.08984375,
+      "deltaFromBaselineMb": 31.5,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=79964"
+    },
+    {
+      "dir": "vllm",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/vllm/index.js",
+      "status": "ok",
+      "maxRssMb": 340.73046875,
+      "deltaFromBaselineMb": 294.140625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=348908"
+    },
+    {
+      "dir": "voice-call",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/voice-call/index.js",
+      "status": "ok",
+      "maxRssMb": 503.64453125,
+      "deltaFromBaselineMb": 457.0546875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=515732"
+    },
+    {
+      "dir": "volcengine",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/volcengine/index.js",
+      "status": "ok",
+      "maxRssMb": 347.15234375,
+      "deltaFromBaselineMb": 300.5625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=355484"
+    },
+    {
+      "dir": "voyage",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/voyage/index.js",
+      "status": "ok",
+      "maxRssMb": 349.47265625,
+      "deltaFromBaselineMb": 302.8828125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=357860"
+    },
+    {
+      "dir": "vydra",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/vydra/index.js",
+      "status": "ok",
+      "maxRssMb": 358.6328125,
+      "deltaFromBaselineMb": 312.04296875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=367240"
+    },
+    {
+      "dir": "web-readability",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/web-readability/index.js",
+      "status": "ok",
+      "maxRssMb": 76.6015625,
+      "deltaFromBaselineMb": 30.01171875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=78440"
+    },
+    {
+      "dir": "webhooks",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/webhooks/index.js",
+      "status": "ok",
+      "maxRssMb": 237.125,
+      "deltaFromBaselineMb": 190.53515625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=242816"
+    },
+    {
+      "dir": "workboard",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/workboard/index.js",
+      "status": "ok",
+      "maxRssMb": 527.22265625,
+      "deltaFromBaselineMb": 480.6328125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=539876"
+    },
+    {
+      "dir": "xai",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/xai/index.js",
+      "status": "ok",
+      "maxRssMb": 450.921875,
+      "deltaFromBaselineMb": 404.33203125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=461744"
+    },
+    {
+      "dir": "xiaomi",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/xiaomi/index.js",
+      "status": "ok",
+      "maxRssMb": 411.21484375,
+      "deltaFromBaselineMb": 364.625,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=421084"
+    },
+    {
+      "dir": "zalo",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/zalo/index.js",
+      "status": "ok",
+      "maxRssMb": 126.66015625,
+      "deltaFromBaselineMb": 80.0703125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=129700"
+    },
+    {
+      "dir": "zalouser",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/zalouser/index.js",
+      "status": "ok",
+      "maxRssMb": 126.7578125,
+      "deltaFromBaselineMb": 80.16796875,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=129800"
+    },
+    {
+      "dir": "zoom-meetings",
+      "file": "/home/runner/_work/openclaw/openclaw/dist/extensions/zoom-meetings/index.js",
+      "status": "ok",
+      "maxRssMb": 500.91015625,
+      "deltaFromBaselineMb": 454.3203125,
+      "stderrPreview": "__OPENCLAW_MAX_RSS_KB__=512932"
+    }
+  ]
+}
