@@ -1,0 +1,35 @@
+[32m[state-migrations][39m [36mAuto-migrated legacy state:[39m
+[36m- Migrated plugins.bundledDiscovery → shared SQLite state[39m
+│
+◇  Doctor changes ────────────────────────────────────────────╮
+│                                                             │
+│  - Migrated plugins.bundledDiscovery → shared SQLite state  │
+│                                                             │
+├─────────────────────────────────────────────────────────────╯
+[90m2026-07-25T18:09:34.423+00:00[39m [36m[gateway][39m [36mloading configuration…[39m
+[90m2026-07-25T18:09:34.473+00:00[39m [36m[gateway][39m [36mresolving authentication…[39m
+[90m2026-07-25T18:09:34.477+00:00[39m [36m[gateway][39m [36mstarting...[39m
+[90m2026-07-25T18:09:35.061+00:00[39m [36m[gateway][39m [36mControl UI assets missing; building them now (rerun `pnpm ui:build` after UI changes, or use `pnpm ui:dev` while developing the Control UI)…[39m
+[90m2026-07-25T18:09:35.081+00:00[39m [36m[gateway][39m [36mstarting HTTP server...[39m
+[90m2026-07-25T18:09:35.117+00:00[39m [32m[health-monitor][39m [36mstarted (interval: 300s, startup-grace: 60s, channel-connect-grace: 120s)[39m
+[90m2026-07-25T18:09:35.247+00:00[39m [36m[gateway][39m [36magent model: mock-openai/gpt-5.6-luna (thinking=medium, fast=off)[39m
+[90m2026-07-25T18:09:35.247+00:00[39m [36m[gateway][39m [36mhttp server listening (3 plugins: acpx, memory-core, qa-channel; 0.7s)[39m
+[90m2026-07-25T18:09:35.248+00:00[39m [36m[gateway][39m [36mlog file: /tmp/openclaw/openclaw-2026-07-25.log[39m
+[90m2026-07-25T18:09:35.303+00:00[39m [36m[gateway][39m [36mstarting channels and sidecars...[39m
+[90m2026-07-25T18:09:35.557+00:00[39m [35m[plugins][39m [36membedded acpx runtime backend registered lazily[39m
+[90m2026-07-25T18:09:35.562+00:00[39m [36m[gateway][39m [36mstartup outcomes: internal-hooks=skipped (not-configured); internal-startup-hook=skipped (no-handlers-loaded); gateway-start-hooks=scheduled; memory-qmd=skipped (not-configured); gmail-watcher=skipped (hooks-disabled); gmail-model=skipped (not-configured)[39m
+[90m2026-07-25T18:09:35.563+00:00[39m [36m[gateway][39m [36mready[39m
+[90m2026-07-25T18:09:35.574+00:00[39m [36m[heartbeat][39m [36mstarted[39m
+[90m2026-07-25T18:09:35.628+00:00[39m [36m[gateway][39m [36magent runtime plugins pre-warmed in 1ms[39m
+[90m2026-07-25T18:09:36.656+00:00[39m [36m[ws][39m [36m⇄ res ✓ config.get 581ms conn=ed44d5a7…6636 id=1647efae…d8d9[39m
+[90m2026-07-25T18:09:39.805+00:00[39m [36m[agents/tool-policy][39m [36mtool policy removed 9 tool(s) via tools.profile (coding): agents_list, computer, gateway, message, mobile_ui, nodes, openclaw, transcripts, tts[39m
+[90m2026-07-25T18:09:39.807+00:00[39m [36m[agents/tool-policy][39m [36mtool policy removed 6 tool(s) via gateway sender owner-only tools.deny: conversations_list, conversations_send, conversations_turn, cron, sessions, terminal; matched conversations_list, conversations_send, conversations_turn, cron, sessions, terminal[39m
+[90m2026-07-25T18:09:39.922+00:00[39m [33m[provider-transport-fetch][39m [36m[model-fetch] start provider=mock-openai api=openai-responses model=gpt-5.6-luna method=POST url=http://127.0.0.1:44693/v1/responses timeoutMs=undefined proxy=none policy=custom[39m
+[90m2026-07-25T18:09:39.940+00:00[39m [33m[provider-transport-fetch][39m [36m[model-fetch] response provider=mock-openai api=openai-responses model=gpt-5.6-luna status=200 elapsedMs=18 contentType=text/event-stream[39m
+[90m2026-07-25T18:09:41.819+00:00[39m [36m[agents/tool-policy][39m [36mtool policy removed 9 tool(s) via tools.profile (coding): agents_list, computer, gateway, message, mobile_ui, nodes, openclaw, transcripts, tts[39m
+[90m2026-07-25T18:09:41.821+00:00[39m [36m[agents/tool-policy][39m [36mtool policy removed 6 tool(s) via gateway sender owner-only tools.deny: conversations_list, conversations_send, conversations_turn, cron, sessions, terminal; matched conversations_list, conversations_send, conversations_turn, cron, sessions, terminal[39m
+[90m2026-07-25T18:09:41.883+00:00[39m [33m[provider-transport-fetch][39m [36m[model-fetch] start provider=mock-openai api=openai-responses model=gpt-5.6-luna method=POST url=http://127.0.0.1:44693/v1/responses timeoutMs=undefined proxy=none policy=custom[39m
+[90m2026-07-25T18:09:41.888+00:00[39m [33m[provider-transport-fetch][39m [36m[model-fetch] response provider=mock-openai api=openai-responses model=gpt-5.6-luna status=200 elapsedMs=5 contentType=text/event-stream[39m
+[90m2026-07-25T18:09:42.922+00:00[39m [36m[gateway][39m [36mreceived SIGTERM; shutting down[39m
+[90m2026-07-25T18:09:46.611+00:00[39m [34m[gmail-watcher][39m [36mgmail watcher stopped[39m
+[90m2026-07-25T18:09:46.617+00:00[39m [33m[shutdown][39m [36mcompleted cleanly in 56ms[39m
