@@ -1,0 +1,29 @@
+[90m2026-08-03T06:26:01.590+00:00[39m [36m[gateway][39m [36mloading configuration…[39m
+[90m2026-08-03T06:26:01.653+00:00[39m [36m[gateway][39m [36mresolving authentication…[39m
+[90m2026-08-03T06:26:01.678+00:00[39m [36m[gateway][39m [33mauth mode=none explicitly configured; all gateway connections are unauthenticated.[39m
+[90m2026-08-03T06:26:01.679+00:00[39m [36m[gateway][39m [36mstarting...[39m
+[90m2026-08-03T06:26:03.312+00:00[39m [36m[gateway][39m [36mstarting HTTP server...[39m
+[90m2026-08-03T06:26:03.754+00:00[39m [36m[gateway][39m [36magent model: openai/gpt-5.6-sol (thinking=medium, fast=off)[39m
+[90m2026-08-03T06:26:03.755+00:00[39m [36m[gateway][39m [36mhttp server listening (11 plugins: acpx, anthropic, canvas, device-pair, file-transfer, google-meet, linux-canvas, linux-node, memory-core, ollama, talk-voice; 0.7s)[39m
+[90m2026-08-03T06:26:03.756+00:00[39m [36m[gateway][39m [36mlog file: /tmp/openclaw/openclaw-2026-08-03.log[39m
+[90m2026-08-03T06:26:03.762+00:00[39m [36m[gateway][39m [36mready[39m
+[90m2026-08-03T06:26:03.851+00:00[39m [36m[gateway][39m [36mstarting channels and sidecars...[39m
+[90m2026-08-03T06:26:04.099+00:00[39m [31m[gateway/channels][39m [36mskipping channel start (OPENCLAW_SKIP_CHANNELS=1 or OPENCLAW_SKIP_PROVIDERS=1)[39m
+[90m2026-08-03T06:26:04.101+00:00[39m [35m[plugins][39m [36membedded acpx runtime backend registered lazily[39m
+[90m2026-08-03T06:26:04.109+00:00[39m [36m[gateway][39m [36mstartup outcomes: internal-hooks=skipped (not-configured); internal-startup-hook=skipped (no-handlers-loaded); gateway-start-hooks=scheduled; memory-qmd=skipped (not-configured); gmail-watcher=skipped (hooks-disabled); gmail-model=skipped (not-configured)[39m
+[90m2026-08-03T06:26:04.114+00:00[39m [36m[heartbeat][39m [36mstarted[39m
+[90m2026-08-03T06:26:05.741+00:00[39m [35m[plugins][39m [36mmemory-core: created managed dreaming cron job.[39m
+[90m2026-08-03T06:26:25.702+00:00[39m [36m[gateway][39m [36magent runtime plugins pre-warmed in 57ms[39m
+[90m2026-08-03T06:26:25.734+00:00[39m [36m[ws][39m [33mhandshake timeout conn=0cf9e508-9d92-49fc-a082-4ebc1f0021f3 peer=127.0.0.1:58232->127.0.0.1:34891 remote=127.0.0.1 phase=ws_upgrade_started[39m
+[90m2026-08-03T06:26:25.774+00:00[39m [36m[ws][39m [33mclosed before connect conn=0cf9e508-9d92-49fc-a082-4ebc1f0021f3 peer=127.0.0.1:58232->127.0.0.1:34891 remote=127.0.0.1 fwd=n/a origin=n/a host=127.0.0.1:34891 ua=n/a code=4000 reason=connect timeout phase=ws_upgrade_started[39m
+[90m2026-08-03T06:26:26.748+00:00[39m [36m[gateway][39m [36mdevice pairing auto-approved device=271e61ee3ab89eb6d79d22fe6251da9181f6557b232e0b219caafb9216362707 role=operator[39m
+[90m2026-08-03T06:26:27.513+00:00[39m [36m[gateway][39m [36mdevice pairing auto-approved device=285b0468a656e868a73fa32f84de1ea966b6a2cf0b6360f157c8dd41d0cc2dfc role=operator[39m
+[90m2026-08-03T06:26:30.521+00:00[39m [36m[gateway][39m [36mdevice pairing auto-approved device=35d8fe2543febc09e1611f678c4a6eeb0d272c4810a7bcc41906ccc4a6cc807f role=operator[39m
+[90m2026-08-03T06:26:31.194+00:00[39m [36m[gateway][39m [36mdevice pairing auto-approved device=089aafb59fd1766b3c464557218fa77569cbf7ab92ad9f301636f88201adf8ef role=operator[39m
+[90m2026-08-03T06:26:31.880+00:00[39m [36m[gateway][39m [36mdevice pairing auto-approved device=4eb7785638c1e1820ab495822822ebf86d517701622c48f93a2f99ecc85e917f role=operator[39m
+[90m2026-08-03T06:26:32.574+00:00[39m [36m[gateway][39m [36mdevice pairing auto-approved device=f43e55a6c0b73a5807e3d0c00d59c97204477ca349716fcfc35d3b7f8e345756 role=operator[39m
+[90m2026-08-03T06:26:33.327+00:00[39m [36m[diagnostics/memory][39m [33mmemory pressure: level=warning reason=rss_threshold rss=1.77 GiB heap=573.4 MiB threshold=1.5 GiB thresholdRatio=118.3% rssBytes=1904660480 heapUsedBytes=601232184 thresholdBytes=1610612736 nextStep=run openclaw gateway status --deep and openclaw gateway diagnostics export; restart gateway if pressure persists[39m
+[90m2026-08-03T06:26:36.277+00:00[39m [32m[admission][39m [36mclosed: restart drain[39m
+[90m2026-08-03T06:26:36.278+00:00[39m [36m[gateway][39m [36mreceived SIGTERM; shutting down[39m
+[90m2026-08-03T06:26:36.321+00:00[39m [34m[gmail-watcher][39m [36mgmail watcher stopped[39m
+[90m2026-08-03T06:26:36.337+00:00[39m [33m[shutdown][39m [36mcompleted cleanly in 25ms[39m

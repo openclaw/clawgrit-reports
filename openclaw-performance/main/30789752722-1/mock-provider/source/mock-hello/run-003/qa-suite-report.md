@@ -1,0 +1,26 @@
+# OpenClaw QA Scenario Suite
+
+- Started: 2026-08-03T06:25:44.466Z
+- Finished: 2026-08-03T06:25:59.922Z
+- Duration ms: 15456
+- Passed: 1
+- Failed: 0
+- Skipped: 0
+
+
+## Scenarios
+
+### Channel baseline conversation
+
+- Status: pass
+- Steps:
+  - [x] ignores unmentioned channel chatter
+  - [x] replies when mentioned in channel
+    - Details: QA-CHANNEL-BASELINE-OK
+
+
+## Notes
+
+- Runs against qa-channel + qa-lab bus + real gateway child + mock-openai provider.
+- Scenarios run serially in one gateway worker.
+- Scheduling scenarios verify stored schedules and execution behavior through the Gateway.
