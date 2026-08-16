@@ -1,0 +1,246 @@
+{
+  "node": "v24.19.0",
+  "runs": 3,
+  "warmup": 1,
+  "timeoutMs": 30000,
+  "cpuProfDir": null,
+  "heapProfDir": null,
+  "primary": {
+    "entry": "/home/runner/_work/openclaw/openclaw/openclaw.mjs",
+    "cases": [
+      {
+        "id": "gatewayHealthJsonConnected",
+        "name": "gateway health --json (connected)",
+        "args": [
+          "gateway",
+          "health",
+          "--json"
+        ],
+        "contract": null,
+        "warmupSamples": [
+          {
+            "ms": 712.576594,
+            "firstOutputMs": 677.640133,
+            "maxRssMb": 193.02734375,
+            "startedAt": "2026-08-16T11:21:19.600Z",
+            "endedAt": "2026-08-16T11:21:20.313Z",
+            "exitCode": 0,
+            "signal": null
+          }
+        ],
+        "samples": [
+          {
+            "ms": 736.473459,
+            "firstOutputMs": 706.870209,
+            "maxRssMb": 192.96484375,
+            "startedAt": "2026-08-16T11:21:20.313Z",
+            "endedAt": "2026-08-16T11:21:21.050Z",
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 725.698113,
+            "firstOutputMs": 696.531949,
+            "maxRssMb": 193.11328125,
+            "startedAt": "2026-08-16T11:21:21.050Z",
+            "endedAt": "2026-08-16T11:21:21.775Z",
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 718.95562,
+            "firstOutputMs": 690.473879,
+            "maxRssMb": 193.14453125,
+            "startedAt": "2026-08-16T11:21:21.776Z",
+            "endedAt": "2026-08-16T11:21:22.495Z",
+            "exitCode": 0,
+            "signal": null
+          }
+        ],
+        "summary": {
+          "sampleCount": 3,
+          "durationMs": {
+            "avg": 727.0423973333333,
+            "p50": 725.698113,
+            "p95": 736.473459,
+            "min": 718.95562,
+            "max": 736.473459
+          },
+          "firstOutputMs": {
+            "avg": 697.958679,
+            "p50": 696.531949,
+            "p95": 706.870209,
+            "min": 690.473879,
+            "max": 706.870209
+          },
+          "maxRssMb": {
+            "avg": 193.07421875,
+            "p50": 193.11328125,
+            "p95": 193.14453125,
+            "min": 192.96484375,
+            "max": 193.14453125
+          },
+          "exitSummary": "code:0x3"
+        }
+      },
+      {
+        "id": "gatewayHealthJsonFirstDevice",
+        "name": "gateway health --json (first device)",
+        "args": [
+          "gateway",
+          "health",
+          "--json"
+        ],
+        "contract": null,
+        "warmupSamples": [
+          {
+            "ms": 677.9922,
+            "firstOutputMs": 649.077571,
+            "maxRssMb": 192.98828125,
+            "startedAt": "2026-08-16T11:21:22.495Z",
+            "endedAt": "2026-08-16T11:21:23.173Z",
+            "exitCode": 0,
+            "signal": null
+          }
+        ],
+        "samples": [
+          {
+            "ms": 705.50073,
+            "firstOutputMs": 673.530767,
+            "maxRssMb": 193.234375,
+            "startedAt": "2026-08-16T11:21:23.174Z",
+            "endedAt": "2026-08-16T11:21:23.879Z",
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 699.496813,
+            "firstOutputMs": 666.677986,
+            "maxRssMb": 192.78515625,
+            "startedAt": "2026-08-16T11:21:23.880Z",
+            "endedAt": "2026-08-16T11:21:24.579Z",
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 682.89696,
+            "firstOutputMs": 653.746215,
+            "maxRssMb": 193.21875,
+            "startedAt": "2026-08-16T11:21:24.580Z",
+            "endedAt": "2026-08-16T11:21:25.263Z",
+            "exitCode": 0,
+            "signal": null
+          }
+        ],
+        "summary": {
+          "sampleCount": 3,
+          "durationMs": {
+            "avg": 695.9648343333333,
+            "p50": 699.496813,
+            "p95": 705.50073,
+            "min": 682.89696,
+            "max": 705.50073
+          },
+          "firstOutputMs": {
+            "avg": 664.651656,
+            "p50": 666.677986,
+            "p95": 673.530767,
+            "min": 653.746215,
+            "max": 673.530767
+          },
+          "maxRssMb": {
+            "avg": 193.07942708333334,
+            "p50": 193.21875,
+            "p95": 193.234375,
+            "min": 192.78515625,
+            "max": 193.234375
+          },
+          "exitSummary": "code:0x3"
+        }
+      },
+      {
+        "id": "configGetGatewayPort",
+        "name": "config get gateway.port",
+        "args": [
+          "config",
+          "get",
+          "gateway.port"
+        ],
+        "expectedExitCodes": [
+          0,
+          1
+        ],
+        "expectedNonzeroOutputIncludes": [
+          "Config path not found: gateway.port"
+        ],
+        "contract": null,
+        "warmupSamples": [
+          {
+            "ms": 938.742074,
+            "firstOutputMs": 906.624081,
+            "maxRssMb": 192.828125,
+            "startedAt": "2026-08-16T11:21:25.263Z",
+            "endedAt": "2026-08-16T11:21:26.202Z",
+            "exitCode": 0,
+            "signal": null
+          }
+        ],
+        "samples": [
+          {
+            "ms": 936.722247,
+            "firstOutputMs": 906.300952,
+            "maxRssMb": 192.953125,
+            "startedAt": "2026-08-16T11:21:26.202Z",
+            "endedAt": "2026-08-16T11:21:27.139Z",
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 935.317673,
+            "firstOutputMs": 904.032474,
+            "maxRssMb": 193.0546875,
+            "startedAt": "2026-08-16T11:21:27.139Z",
+            "endedAt": "2026-08-16T11:21:28.075Z",
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "ms": 927.637366,
+            "firstOutputMs": 895.484127,
+            "maxRssMb": 193.2421875,
+            "startedAt": "2026-08-16T11:21:28.075Z",
+            "endedAt": "2026-08-16T11:21:29.003Z",
+            "exitCode": 0,
+            "signal": null
+          }
+        ],
+        "summary": {
+          "sampleCount": 3,
+          "durationMs": {
+            "avg": 933.225762,
+            "p50": 935.317673,
+            "p95": 936.722247,
+            "min": 927.637366,
+            "max": 936.722247
+          },
+          "firstOutputMs": {
+            "avg": 901.9391843333333,
+            "p50": 904.032474,
+            "p95": 906.300952,
+            "min": 895.484127,
+            "max": 906.300952
+          },
+          "maxRssMb": {
+            "avg": 193.08333333333334,
+            "p50": 193.0546875,
+            "p95": 193.2421875,
+            "min": 192.953125,
+            "max": 193.2421875
+          },
+          "exitSummary": "code:0x3"
+        }
+      }
+    ]
+  },
+  "secondary": null
+}

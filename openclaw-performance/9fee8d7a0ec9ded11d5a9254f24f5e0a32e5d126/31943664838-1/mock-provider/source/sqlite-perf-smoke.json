@@ -1,0 +1,85 @@
+{
+  "integrity": {
+    "agent": [
+      "ok",
+      "ok"
+    ],
+    "state": "ok"
+  },
+  "node": "v24.19.0",
+  "paths": {
+    "agentDatabases": [
+      "/tmp/openclaw-sqlite-perf-i1EOnZ/agents/perf-agent-0/agent/openclaw-agent.sqlite",
+      "/tmp/openclaw-sqlite-perf-i1EOnZ/agents/perf-agent-1/agent/openclaw-agent.sqlite"
+    ],
+    "artifact": ".artifacts/sqlite-perf/smoke.json",
+    "stateDatabase": "/tmp/openclaw-sqlite-perf-i1EOnZ/state/openclaw.sqlite",
+    "stateDir": "/tmp/openclaw-sqlite-perf-i1EOnZ"
+  },
+  "profile": "smoke",
+  "queries": [
+    {
+      "p50Ms": 0.006,
+      "p95Ms": 0.015,
+      "query": "SELECT job_id, name, updated_at\n         FROM cron_jobs\n        WHERE store_key = ?\n        ORDER BY sort_order ASC, updated_at ASC, job_id\n        LIMIT 50",
+      "rows": 13
+    },
+    {
+      "p50Ms": 0.003,
+      "p95Ms": 0.006,
+      "query": "SELECT job_id, next_run_at_ms\n         FROM cron_jobs\n        WHERE store_key = ? AND enabled = 1 AND next_run_at_ms IS NOT NULL\n        ORDER BY next_run_at_ms ASC, job_id\n        LIMIT 50",
+      "rows": 10
+    },
+    {
+      "p50Ms": 0.031,
+      "p95Ms": 0.04,
+      "query": "SELECT id, entry_json\n         FROM delivery_queue_entries\n        WHERE queue_name = ? AND status = ?\n        ORDER BY enqueued_at ASC, id\n        LIMIT 100",
+      "rows": 100
+    },
+    {
+      "p50Ms": 0.008,
+      "p95Ms": 0.011,
+      "query": "SELECT entry_key, value_json\n         FROM plugin_state_entries\n        WHERE plugin_id = ? AND namespace = ?\n        ORDER BY created_at ASC, entry_key\n        LIMIT 100",
+      "rows": 21
+    },
+    {
+      "p50Ms": 0.031,
+      "p95Ms": 0.036,
+      "query": "SELECT key, value_json\n         FROM cache_entries\n        WHERE scope = ?\n        ORDER BY key ASC\n        LIMIT 100",
+      "rows": 100
+    },
+    {
+      "p50Ms": 0.005,
+      "p95Ms": 0.007,
+      "query": "SELECT key, expires_at\n         FROM cache_entries\n        WHERE scope = ? AND expires_at IS NOT NULL\n        ORDER BY expires_at ASC, key\n        LIMIT 100",
+      "rows": 18
+    }
+  ],
+  "rows": {
+    "agentCacheEntries": 1000,
+    "agentDatabases": 2,
+    "channelIngressEvents": 1000,
+    "cronJobs": 100,
+    "cronTaskRuns": 1000,
+    "deliveryQueueEntries": 1000,
+    "pluginStateEntries": 1000,
+    "stateRows": 4100
+  },
+  "timingsMs": {
+    "checkpoint": 4.265,
+    "seed": 14.438,
+    "total": 141.734
+  },
+  "walBytes": {
+    "agentAfter": [
+      0,
+      0
+    ],
+    "agentBefore": [
+      613912,
+      613912
+    ],
+    "stateAfter": 0,
+    "stateBefore": 3456712
+  }
+}
