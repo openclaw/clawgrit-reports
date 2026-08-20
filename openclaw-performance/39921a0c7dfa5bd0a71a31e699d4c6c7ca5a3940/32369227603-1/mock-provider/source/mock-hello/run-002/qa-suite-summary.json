@@ -1,0 +1,79 @@
+{
+  "scenarios": [
+    {
+      "name": "Channel baseline conversation",
+      "status": "pass",
+      "steps": [
+        {
+          "name": "ignores unmentioned channel chatter",
+          "status": "pass"
+        },
+        {
+          "name": "replies when mentioned in channel",
+          "status": "pass",
+          "details": "QA-CHANNEL-BASELINE-OK"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0
+  },
+  "metrics": {
+    "wallMs": 14705,
+    "gatewayProcessCpuMs": 1000,
+    "gatewayCpuCoreRatio": 0.068,
+    "gatewayProcessRssStartBytes": 1207771136,
+    "gatewayProcessRssEndBytes": 1248092160,
+    "gatewayProcessRssDeltaBytes": 40321024,
+    "gatewayProcessRssPeakBytes": 1248092160,
+    "gatewayProcessRssPeakDeltaBytes": 40321024,
+    "gatewayProcessRssSamples": [
+      {
+        "label": "suite-start",
+        "at": "2026-08-20T12:41:25.089Z",
+        "gatewayProcessRssBytes": 1207771136
+      },
+      {
+        "label": "scenario:channel-chat-baseline:start",
+        "at": "2026-08-20T12:41:25.093Z",
+        "gatewayProcessRssBytes": 1207783424
+      },
+      {
+        "label": "scenario:channel-chat-baseline:finish",
+        "at": "2026-08-20T12:41:28.290Z",
+        "gatewayProcessRssBytes": 1248092160
+      },
+      {
+        "label": "suite-finish",
+        "at": "2026-08-20T12:41:28.300Z",
+        "gatewayProcessRssBytes": 1248092160
+      }
+    ]
+  },
+  "run": {
+    "status": "completed",
+    "startedAt": "2026-08-20T12:41:13.586Z",
+    "finishedAt": "2026-08-20T12:41:28.970Z",
+    "providerMode": "mock-openai",
+    "primaryModel": "mock-openai/gpt-5.6-luna",
+    "primaryProvider": "mock-openai",
+    "primaryModelName": "gpt-5.6-luna",
+    "alternateModel": "mock-openai/gpt-5.6-luna-alt",
+    "alternateProvider": "mock-openai",
+    "alternateModelName": "gpt-5.6-luna-alt",
+    "fastMode": false,
+    "concurrency": 1,
+    "channelDriver": "qa-channel",
+    "channel": "qa-channel",
+    "channelCapabilityMatrixPath": null,
+    "channelDriverSmokePath": null,
+    "scenarioIds": [
+      "channel-chat-baseline"
+    ],
+    "runtimePair": null
+  }
+}
