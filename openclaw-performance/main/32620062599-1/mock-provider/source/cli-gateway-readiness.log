@@ -1,0 +1,69 @@
+{
+  "ok": true,
+  "ts": 1787462759875,
+  "durationMs": 3,
+  "eventLoop": {
+    "degraded": true,
+    "degradedSinceMs": 1129,
+    "reasons": [
+      "event_loop_utilization",
+      "cpu"
+    ],
+    "intervalMs": 1129.1857230000005,
+    "delayP99Ms": 48.5,
+    "delayMaxMs": 48.5,
+    "utilization": 1,
+    "cpuCoreRatio": 1.424
+  },
+  "plugins": {
+    "loaded": [
+      "acpx",
+      "anthropic",
+      "canvas",
+      "device-pair",
+      "file-transfer",
+      "google-meet",
+      "linux-node",
+      "memory-core",
+      "ollama",
+      "talk-voice",
+      "teams-meetings",
+      "xai",
+      "zoom-meetings"
+    ],
+    "errors": [],
+    "unavailable": []
+  },
+  "configReload": {
+    "hotReloadStatus": "active"
+  },
+  "channels": {},
+  "channelOrder": [],
+  "channelLabels": {},
+  "heartbeatSeconds": 0,
+  "defaultAgentId": "main",
+  "agents": [
+    {
+      "agentId": "main",
+      "isDefault": true,
+      "heartbeat": {
+        "enabled": false,
+        "every": "disabled",
+        "everyMs": null,
+        "prompt": "Follow the heartbeat monitor scratch context when provided. Recurring tasks are automations; create or change their schedules with the automations tool, not heartbeat scratch. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.",
+        "target": "owner",
+        "ackMaxChars": 300
+      },
+      "sessions": {
+        "path": "/tmp/tmp.7wqB9HdLa8/.openclaw/agents/main/agent/openclaw-agent.sqlite",
+        "count": 0,
+        "recent": []
+      }
+    }
+  ],
+  "sessions": {
+    "path": "/tmp/tmp.7wqB9HdLa8/.openclaw/agents/main/agent/openclaw-agent.sqlite",
+    "count": 0,
+    "recent": []
+  }
+}
