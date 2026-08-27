@@ -1,0 +1,92 @@
+{
+  "integrity": {
+    "agent": [
+      "ok",
+      "ok"
+    ],
+    "state": "ok"
+  },
+  "node": "v24.19.0",
+  "paths": {
+    "agentDatabases": [
+      "/tmp/openclaw-sqlite-perf-xiCTKA/agents/perf-agent-0/agent/openclaw-agent.sqlite",
+      "/tmp/openclaw-sqlite-perf-xiCTKA/agents/perf-agent-1/agent/openclaw-agent.sqlite"
+    ],
+    "artifact": ".artifacts/sqlite-perf/smoke.json",
+    "stateDatabase": "/tmp/openclaw-sqlite-perf-xiCTKA/state/openclaw.sqlite",
+    "stateDir": "/tmp/openclaw-sqlite-perf-xiCTKA"
+  },
+  "profile": "smoke",
+  "queries": [
+    {
+      "p50Ms": 0.015,
+      "p95Ms": 0.037,
+      "query": "SELECT *\n         FROM cron_jobs\n        WHERE store_key = ?\n        ORDER BY sort_order ASC, updated_at ASC, job_id ASC",
+      "rows": 13
+    },
+    {
+      "p50Ms": 0.029,
+      "p95Ms": 0.04,
+      "query": "SELECT id, entry_json\n         FROM delivery_queue_entries\n        WHERE queue_name = ? AND status = ?\n        ORDER BY enqueued_at ASC, id\n        LIMIT 100",
+      "rows": 100
+    },
+    {
+      "p50Ms": 0.008,
+      "p95Ms": 0.012,
+      "query": "SELECT entry_key, value_json\n         FROM plugin_state_entries\n        WHERE plugin_id = ? AND namespace = ?\n        ORDER BY created_at ASC, entry_key\n        LIMIT 100",
+      "rows": 21
+    },
+    {
+      "p50Ms": 0.029,
+      "p95Ms": 0.035,
+      "query": "SELECT key, value_json\n         FROM cache_entries\n        WHERE scope = ?\n        ORDER BY key ASC\n        LIMIT 100",
+      "rows": 100
+    },
+    {
+      "p50Ms": 0.005,
+      "p95Ms": 0.007,
+      "query": "SELECT key, expires_at\n         FROM cache_entries\n        WHERE scope = ? AND expires_at IS NOT NULL\n        ORDER BY expires_at ASC, key\n        LIMIT 100",
+      "rows": 18
+    },
+    {
+      "p50Ms": 0.011,
+      "p95Ms": 0.016,
+      "query": "SELECT active.message_position, event.event_json\n       FROM session_transcript_active_events AS active\n       JOIN transcript_events AS event\n         ON event.session_id = active.session_id AND event.seq = active.event_seq\n      WHERE active.session_id = ?\n        AND active.message_position >= ? AND active.message_position < ?\n      ORDER BY active.message_position ASC",
+      "rows": 32
+    },
+    {
+      "p50Ms": 0.012,
+      "p95Ms": 0.013,
+      "query": "SELECT active.message_position, event.event_json\n       FROM session_transcript_active_events AS active\n       JOIN transcript_events AS event\n         ON event.session_id = active.session_id AND event.seq = active.event_seq\n      WHERE active.session_id = ?\n        AND active.message_position >= ? AND active.message_position < ?\n      ORDER BY active.message_position ASC",
+      "rows": 32
+    }
+  ],
+  "rows": {
+    "agentCacheEntries": 1000,
+    "agentDatabases": 2,
+    "channelIngressEvents": 1000,
+    "cronJobs": 100,
+    "cronTaskRuns": 1000,
+    "deliveryQueueEntries": 1000,
+    "pluginStateEntries": 1000,
+    "stateRows": 4100,
+    "transcriptEvents": 128
+  },
+  "timingsMs": {
+    "checkpoint": 6.204,
+    "seed": 15.09,
+    "total": 141.359
+  },
+  "walBytes": {
+    "agentAfter": [
+      0,
+      0
+    ],
+    "agentBefore": [
+      815792,
+      688072
+    ],
+    "stateAfter": 0,
+    "stateBefore": 3254832
+  }
+}
