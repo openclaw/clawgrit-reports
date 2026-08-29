@@ -1,0 +1,294 @@
+{
+  "integrity": {
+    "agent": [
+      "ok",
+      "ok"
+    ],
+    "state": "ok"
+  },
+  "node": "v24.19.0",
+  "schemaVersion": 2,
+  "paths": {
+    "agentDatabases": [
+      "/tmp/openclaw-sqlite-perf-x6DWgQ/agents/perf-agent-0/agent/openclaw-agent.sqlite",
+      "/tmp/openclaw-sqlite-perf-x6DWgQ/agents/perf-agent-1/agent/openclaw-agent.sqlite"
+    ],
+    "artifact": ".artifacts/sqlite-perf/smoke.json",
+    "stateDatabase": "/tmp/openclaw-sqlite-perf-x6DWgQ/state/openclaw.sqlite",
+    "stateDir": "/tmp/openclaw-sqlite-perf-x6DWgQ"
+  },
+  "profile": "smoke",
+  "queries": [
+    {
+      "database": "state",
+      "id": "cron.store.load",
+      "p50Ms": 0.014,
+      "p95Ms": 0.016,
+      "plan": {
+        "fullTableScans": [],
+        "indexes": [
+          "idx_cron_jobs_store_order"
+        ],
+        "raw": [
+          "SEARCH cron_jobs USING INDEX idx_cron_jobs_store_order (store_key=?)"
+        ],
+        "tempSorts": []
+      },
+      "runs": 20,
+      "rows": 13,
+      "sql": "SELECT *\n         FROM cron_jobs\n        WHERE store_key = ?\n        ORDER BY sort_order ASC, updated_at ASC, job_id ASC"
+    },
+    {
+      "database": "state",
+      "id": "task-runs.cron.list",
+      "p50Ms": 1.951,
+      "p95Ms": 1.962,
+      "plan": {
+        "fullTableScans": [],
+        "indexes": [
+          "idx_task_runs_runtime_status"
+        ],
+        "raw": [
+          "SEARCH task_runs USING INDEX idx_task_runs_runtime_status (runtime=?)",
+          "USE TEMP B-TREE FOR ORDER BY"
+        ],
+        "tempSorts": [
+          "USE TEMP B-TREE FOR ORDER BY"
+        ]
+      },
+      "runs": 20,
+      "rows": 1000,
+      "sql": "SELECT\n      task_id, runtime, task_kind, source_id, requester_session_key, owner_key, scope_kind,\n      child_session_key, parent_flow_id, parent_task_id, agent_id, requester_agent_id,\n      run_id, label, task, status, delivery_status, notify_policy, created_at, started_at,\n      ended_at, last_event_at, cleanup_after, tool_use_count, last_tool_name, error,\n      progress_summary, terminal_summary, terminal_outcome, detail_json\n    FROM task_runs\n    WHERE runtime = ?\n    ORDER BY created_at ASC, task_id ASC"
+    },
+    {
+      "database": "state",
+      "id": "task-runs.cron-source.list",
+      "p50Ms": 0.418,
+      "p95Ms": 0.519,
+      "plan": {
+        "fullTableScans": [],
+        "indexes": [
+          "idx_task_runs_runtime_source_ended"
+        ],
+        "raw": [
+          "SEARCH task_runs USING INDEX idx_task_runs_runtime_source_ended (runtime=? AND source_id=?)",
+          "USE TEMP B-TREE FOR ORDER BY"
+        ],
+        "tempSorts": [
+          "USE TEMP B-TREE FOR ORDER BY"
+        ]
+      },
+      "runs": 20,
+      "rows": 250,
+      "sql": "SELECT\n      task_id, runtime, task_kind, source_id, requester_session_key, owner_key, scope_kind,\n      child_session_key, parent_flow_id, parent_task_id, agent_id, requester_agent_id,\n      run_id, label, task, status, delivery_status, notify_policy, created_at, started_at,\n      ended_at, last_event_at, cleanup_after, tool_use_count, last_tool_name, error,\n      progress_summary, terminal_summary, terminal_outcome, detail_json\n    FROM task_runs\n    WHERE runtime = ? AND source_id = ?\n    ORDER BY created_at ASC, task_id ASC"
+    },
+    {
+      "database": "state",
+      "id": "delivery.pending.load",
+      "p50Ms": 0.29,
+      "p95Ms": 0.294,
+      "plan": {
+        "fullTableScans": [],
+        "indexes": [
+          "idx_delivery_queue_pending"
+        ],
+        "raw": [
+          "SEARCH delivery_queue_entries USING INDEX idx_delivery_queue_pending (queue_name=? AND status=?)"
+        ],
+        "tempSorts": []
+      },
+      "runs": 20,
+      "rows": 696,
+      "sql": "SELECT id, entry_json, enqueued_at, retry_count, last_attempt_at, last_error,\n                platform_send_started_at, recovery_state\n         FROM delivery_queue_entries\n        WHERE queue_name = ? AND status = ?\n        ORDER BY enqueued_at ASC, id ASC"
+    },
+    {
+      "database": "state",
+      "id": "ingress.pending.first-page",
+      "p50Ms": 0.098,
+      "p95Ms": 0.102,
+      "plan": {
+        "fullTableScans": [],
+        "indexes": [
+          "idx_channel_ingress_pending"
+        ],
+        "raw": [
+          "SEARCH channel_ingress_events USING INDEX idx_channel_ingress_pending (queue_name=? AND status=?)"
+        ],
+        "tempSorts": []
+      },
+      "runs": 20,
+      "rows": 100,
+      "sql": "SELECT *\n         FROM channel_ingress_events\n        WHERE queue_name = ? AND status = ?\n        ORDER BY received_at ASC, event_id ASC\n        LIMIT ?"
+    },
+    {
+      "database": "state",
+      "id": "ingress.pending.seek-page",
+      "p50Ms": 0.117,
+      "p95Ms": 0.122,
+      "plan": {
+        "fullTableScans": [],
+        "indexes": [
+          "idx_channel_ingress_pending"
+        ],
+        "raw": [
+          "SEARCH channel_ingress_events USING INDEX idx_channel_ingress_pending (queue_name=? AND status=?)"
+        ],
+        "tempSorts": []
+      },
+      "runs": 20,
+      "rows": 100,
+      "sql": "SELECT *\n         FROM channel_ingress_events\n        WHERE queue_name = ? AND status = ?\n          AND (received_at > ? OR (received_at = ? AND event_id > ?))\n        ORDER BY received_at ASC, event_id ASC\n        LIMIT ?"
+    },
+    {
+      "database": "state",
+      "id": "ingress.pending.id-page",
+      "p50Ms": 0.098,
+      "p95Ms": 0.101,
+      "plan": {
+        "fullTableScans": [],
+        "indexes": [
+          "sqlite_autoindex_channel_ingress_events_1"
+        ],
+        "raw": [
+          "SEARCH channel_ingress_events USING INDEX sqlite_autoindex_channel_ingress_events_1 (queue_name=?)"
+        ],
+        "tempSorts": []
+      },
+      "runs": 20,
+      "rows": 100,
+      "sql": "SELECT *\n         FROM channel_ingress_events\n        WHERE queue_name = ? AND status = ?\n        ORDER BY event_id ASC\n        LIMIT ?"
+    },
+    {
+      "database": "state",
+      "id": "ingress.pending.id-seek-page",
+      "p50Ms": 0.098,
+      "p95Ms": 0.101,
+      "plan": {
+        "fullTableScans": [],
+        "indexes": [
+          "sqlite_autoindex_channel_ingress_events_1"
+        ],
+        "raw": [
+          "SEARCH channel_ingress_events USING INDEX sqlite_autoindex_channel_ingress_events_1 (queue_name=? AND event_id>?)"
+        ],
+        "tempSorts": []
+      },
+      "runs": 20,
+      "rows": 100,
+      "sql": "SELECT *\n         FROM channel_ingress_events\n        WHERE queue_name = ? AND status = ? AND event_id > ?\n        ORDER BY event_id ASC\n        LIMIT ?"
+    },
+    {
+      "database": "state",
+      "id": "plugin-state.namespace.live",
+      "p50Ms": 0.257,
+      "p95Ms": 0.262,
+      "plan": {
+        "fullTableScans": [],
+        "indexes": [
+          "idx_plugin_state_listing"
+        ],
+        "raw": [
+          "SEARCH plugin_state_entries USING INDEX idx_plugin_state_listing (plugin_id=? AND namespace=?)"
+        ],
+        "tempSorts": []
+      },
+      "runs": 20,
+      "rows": 675,
+      "sql": "SELECT plugin_id, namespace, entry_key, value_json, created_at, expires_at\n         FROM plugin_state_entries\n        WHERE plugin_id = ? AND namespace = ?\n          AND (expires_at IS NULL OR expires_at > ?)\n        ORDER BY created_at ASC, entry_key ASC"
+    },
+    {
+      "database": "agent",
+      "id": "agent-cache.plugin-model-catalog.list",
+      "p50Ms": 0.014,
+      "p95Ms": 0.016,
+      "plan": {
+        "fullTableScans": [],
+        "indexes": [
+          "sqlite_autoindex_cache_entries_1"
+        ],
+        "raw": [
+          "SEARCH cache_entries USING INDEX sqlite_autoindex_cache_entries_1 (scope=?)"
+        ],
+        "tempSorts": []
+      },
+      "runs": 20,
+      "rows": 64,
+      "sql": "SELECT key, value_json\n         FROM cache_entries\n        WHERE scope = ?\n        ORDER BY key ASC"
+    },
+    {
+      "database": "agent",
+      "id": "transcript.tail.metadata",
+      "p50Ms": 0.18,
+      "p95Ms": 0.191,
+      "plan": {
+        "fullTableScans": [],
+        "indexes": [
+          "idx_agent_transcript_active_messages",
+          "sqlite_autoindex_transcript_events_1"
+        ],
+        "raw": [
+          "SEARCH active USING INDEX idx_agent_transcript_active_messages (session_id=? AND message_position=?)",
+          "SEARCH event USING INDEX sqlite_autoindex_transcript_events_1 (session_id=? AND seq=?)"
+        ],
+        "tempSorts": []
+      },
+      "runs": 20,
+      "rows": 256,
+      "sql": "SELECT active.message_position,\n                   LENGTH(CAST(event.event_json AS BLOB)) + 1 AS serialized_bytes\n              FROM session_transcript_active_events AS active\n              JOIN transcript_events AS event\n                ON event.session_id = active.session_id AND event.seq = active.event_seq\n             WHERE active.session_id = ?\n               AND active.message_position IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)\n             ORDER BY active.message_position DESC"
+    },
+    {
+      "database": "agent",
+      "id": "transcript.tail.payload",
+      "p50Ms": 0.217,
+      "p95Ms": 0.221,
+      "plan": {
+        "fullTableScans": [],
+        "indexes": [
+          "idx_agent_transcript_active_messages",
+          "sqlite_autoindex_transcript_events_1"
+        ],
+        "raw": [
+          "SEARCH active USING INDEX idx_agent_transcript_active_messages (session_id=? AND message_position=?)",
+          "SEARCH event USING INDEX sqlite_autoindex_transcript_events_1 (session_id=? AND seq=?)"
+        ],
+        "tempSorts": []
+      },
+      "runs": 20,
+      "rows": 256,
+      "sql": "SELECT active.message_position, event.event_json\n              FROM session_transcript_active_events AS active\n              JOIN transcript_events AS event\n                ON event.session_id = active.session_id AND event.seq = active.event_seq\n             WHERE active.session_id = ?\n               AND active.message_position IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)\n             ORDER BY active.message_position ASC"
+    }
+  ],
+  "versions": {
+    "agentSchema": 18,
+    "sqlite": "3.53.3",
+    "stateSchema": 13
+  },
+  "rows": {
+    "agentCacheEntries": 1000,
+    "agentDatabases": 2,
+    "channelIngressEvents": 1000,
+    "cronJobs": 100,
+    "cronTaskRuns": 1000,
+    "deliveryQueueEntries": 1000,
+    "pluginStateEntries": 1000,
+    "stateRows": 4100,
+    "transcriptEvents": 256
+  },
+  "timingsMs": {
+    "checkpoint": 6.462,
+    "seed": 17.311,
+    "total": 220.623
+  },
+  "walBytes": {
+    "agentAfter": [
+      0,
+      0
+    ],
+    "agentBefore": [
+      2076512,
+      708672
+    ],
+    "stateAfter": 0,
+    "stateBefore": 3596792
+  }
+}
