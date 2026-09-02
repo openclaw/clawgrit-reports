@@ -1,0 +1,2838 @@
+{
+  "schemaVersion": "kova.report.v1",
+  "generatedAt": "2026-09-02T05:29:09.125Z",
+  "runId": "kova-260902-052828-e2b903",
+  "outputPaths": {
+    "markdown": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/reports/live-openai-candidate/kova-260902-052828-e2b903-diagnostic.md",
+    "json": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/reports/live-openai-candidate/kova-260902-052828-e2b903-diagnostic.json",
+    "summary": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/reports/live-openai-candidate/kova-260902-052828-e2b903-diagnostic.summary.json"
+  },
+  "mode": "execution",
+  "profile": {
+    "id": "diagnostic",
+    "title": "Source-Built Diagnostics",
+    "objective": "Run release-shaped local OpenClaw builds with timeline diagnostics enabled so Kova can attribute startup, plugin, provider, agent, event-loop, CPU, and heap behavior to OpenClaw phases.",
+    "purpose": "diagnostic",
+    "entryCount": 7,
+    "targetKinds": [
+      "local-build"
+    ],
+    "localBuildProfile": "sourcePerformance",
+    "diagnostics": {
+      "timelineRequired": true,
+      "timelineRequiredForTargetKinds": [
+        "local-build"
+      ]
+    },
+    "calibration": {
+      "surfaceCount": 7,
+      "roleCount": 6
+    },
+    "gate": {
+      "id": "openclaw-diagnostic",
+      "blockingCount": 7,
+      "warningCount": 0
+    }
+  },
+  "target": "local-build:/home/runner/_work/openclaw/openclaw",
+  "from": null,
+  "controls": {
+    "include": [
+      "scenario:agent-cold-warm-message"
+    ],
+    "exclude": [],
+    "failFast": false,
+    "continueOnFailure": true,
+    "requestedParallel": 1,
+    "parallel": 1,
+    "parallelAdjusted": false,
+    "repeat": 1,
+    "baseline": null,
+    "saveBaseline": null,
+    "gate": false,
+    "reviewedGood": false,
+    "bundle": true,
+    "networkFrontage": {
+      "schemaVersion": "kova.networkFrontage.v1",
+      "mode": "port",
+      "enabled": false,
+      "requested": null,
+      "workerId": null
+    }
+  },
+  "auth": {
+    "schemaVersion": "kova.auth.report.v1",
+    "requestedMode": "live",
+    "modelId": "gpt-5.6-luna",
+    "credentialStore": {
+      "schemaVersion": "kova.credentials.summary.v1",
+      "home": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/credentials",
+      "providersPath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/credentials/providers.json",
+      "liveEnvPath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/credentials/live.env",
+      "defaultProvider": "openai",
+      "providers": {
+        "openai": {
+          "id": "openai",
+          "method": "env-only",
+          "envVars": [
+            "OPENAI_API_KEY"
+          ],
+          "externalCli": null,
+          "configured": true
+        }
+      }
+    },
+    "live": {
+      "available": true,
+      "providerId": "openai",
+      "method": "env-only",
+      "externalCli": null,
+      "verification": null,
+      "envVars": [
+        "OPENAI_API_KEY"
+      ],
+      "reason": "configured",
+      "environmentDependent": true
+    }
+  },
+  "state": null,
+  "platform": {
+    "os": "linux",
+    "arch": "x64",
+    "release": "6.6.141",
+    "node": "v24.19.0"
+  },
+  "targetCleanup": {
+    "status": "already-absent",
+    "runtimeName": "kova-local-mtjno1sj-436-765c004b",
+    "command": "ocm runtime remove 'kova-local-mtjno1sj-436-765c004b' --json",
+    "reason": "target runtime was not present when cleanup ran",
+    "result": {
+      "status": 1,
+      "durationMs": 2,
+      "timedOut": false,
+      "stdout": "",
+      "stderr": "ocm: runtime \"kova-local-mtjno1sj-436-765c004b\" does not exist\nRun \"ocm help\" for usage.\n",
+      "attempts": [
+        {
+          "status": 1,
+          "durationMs": 2,
+          "timedOut": false,
+          "stdout": "",
+          "stderr": "ocm: runtime \"kova-local-mtjno1sj-436-765c004b\" does not exist\nRun \"ocm help\" for usage.\n"
+        }
+      ]
+    }
+  },
+  "networkFrontage": {
+    "schemaVersion": "kova.networkFrontage.v1",
+    "mode": "port",
+    "enabled": false,
+    "allocations": []
+  },
+  "performance": {
+    "schemaVersion": "kova.performance.v1",
+    "resourceMeasurementScope": "product",
+    "resourceHeadlineContract": "primary-role-product-scope-v3",
+    "generatedAt": "2026-09-02T05:29:09.125Z",
+    "repeat": 1,
+    "parallel": 1,
+    "parallelContaminated": false,
+    "metricCatalog": [
+      {
+        "id": "readinessHealthReadyMs",
+        "title": "Health Ready",
+        "unit": "ms"
+      },
+      {
+        "id": "readinessListeningMs",
+        "title": "TCP Listening",
+        "unit": "ms"
+      },
+      {
+        "id": "peakRssMb",
+        "title": "Primary RSS",
+        "unit": "MB"
+      },
+      {
+        "id": "resourcePeakGatewayRssMb",
+        "title": "Gateway RSS",
+        "unit": "MB"
+      },
+      {
+        "id": "cpuPercentMax",
+        "title": "Max CPU",
+        "unit": "%"
+      },
+      {
+        "id": "openclawEventLoopMaxMs",
+        "title": "Event Loop Max",
+        "unit": "ms"
+      },
+      {
+        "id": "eventLoopDelayMs",
+        "title": "Event Loop Delay",
+        "unit": "ms"
+      },
+      {
+        "id": "agentTurnMs",
+        "title": "Agent Turn",
+        "unit": "ms"
+      },
+      {
+        "id": "agentTurnP95Ms",
+        "title": "Agent Turn p95",
+        "unit": "ms"
+      },
+      {
+        "id": "agentTurnMaxMs",
+        "title": "Agent Turn Max",
+        "unit": "ms"
+      },
+      {
+        "id": "coldAgentTurnMs",
+        "title": "Cold Agent Turn",
+        "unit": "ms"
+      },
+      {
+        "id": "warmAgentTurnMs",
+        "title": "Warm Agent Turn",
+        "unit": "ms"
+      },
+      {
+        "id": "agentColdWarmDeltaMs",
+        "title": "Cold/Warm Agent Delta",
+        "unit": "ms"
+      },
+      {
+        "id": "agentPreProviderP95Ms",
+        "title": "Pre-Provider p95",
+        "unit": "ms"
+      },
+      {
+        "id": "agentCleanupP95Ms",
+        "title": "Agent Cleanup p95",
+        "unit": "ms"
+      },
+      {
+        "id": "agentCleanupMaxMs",
+        "title": "Agent Cleanup Max",
+        "unit": "ms"
+      },
+      {
+        "id": "coldPreProviderMs",
+        "title": "Cold Pre-Provider",
+        "unit": "ms"
+      },
+      {
+        "id": "warmPreProviderMs",
+        "title": "Warm Pre-Provider",
+        "unit": "ms"
+      },
+      {
+        "id": "coldPreProviderAttributedMs",
+        "title": "Cold Pre-Provider Attributed",
+        "unit": "ms"
+      },
+      {
+        "id": "warmPreProviderAttributedMs",
+        "title": "Warm Pre-Provider Attributed",
+        "unit": "ms"
+      },
+      {
+        "id": "coldPreProviderUnattributedMs",
+        "title": "Cold Pre-Provider Unattributed",
+        "unit": "ms"
+      },
+      {
+        "id": "warmPreProviderUnattributedMs",
+        "title": "Warm Pre-Provider Unattributed",
+        "unit": "ms"
+      },
+      {
+        "id": "agentMetadataScanCount",
+        "title": "Agent Metadata Scans",
+        "unit": "count"
+      },
+      {
+        "id": "agentMetadataScanTotalMs",
+        "title": "Agent Metadata Scan Total",
+        "unit": "ms"
+      },
+      {
+        "id": "agentEventLoopMaxMs",
+        "title": "Agent Event Loop Max",
+        "unit": "ms"
+      },
+      {
+        "id": "agentSessionPollCount",
+        "title": "Agent Session Polls",
+        "unit": "count"
+      },
+      {
+        "id": "startupHealthP95Ms",
+        "title": "Startup Health p95",
+        "unit": "ms"
+      },
+      {
+        "id": "postReadyHealthP95Ms",
+        "title": "Post-Ready Health p95",
+        "unit": "ms"
+      },
+      {
+        "id": "runtimeDepsStagingMs",
+        "title": "Runtime Deps Staging",
+        "unit": "ms"
+      }
+    ],
+    "groupCount": 1,
+    "unstableGroupCount": 0,
+    "profiledRunCount": 0,
+    "groups": [
+      {
+        "key": "agent-cold-warm-message|agent-cli-local-turn|mock-openai-provider",
+        "scenario": "agent-cold-warm-message",
+        "surface": "agent-cli-local-turn",
+        "state": "mock-openai-provider",
+        "title": "Agent CLI Local Cold/Warm Message",
+        "sampleCount": 1,
+        "profiledRunCount": 0,
+        "resourceInterpretation": "normal",
+        "resourceMeasurementScope": "product",
+        "resourceHeadlineContract": "primary-role-product-scope-v3",
+        "statuses": {
+          "BLOCKED": 1
+        },
+        "repeatIndexes": [
+          1
+        ],
+        "metrics": {
+          "agentMetadataScanCount": {
+            "count": 1,
+            "min": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0,
+            "mean": 0,
+            "variance": 0,
+            "stddev": 0,
+            "relativeStddevPercent": 0,
+            "absoluteSpreadPercent": 0,
+            "classification": "stable",
+            "samples": [
+              0
+            ],
+            "unit": "count",
+            "title": "Agent Metadata Scans"
+          },
+          "agentMetadataScanTotalMs": {
+            "count": 1,
+            "min": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0,
+            "mean": 0,
+            "variance": 0,
+            "stddev": 0,
+            "relativeStddevPercent": 0,
+            "absoluteSpreadPercent": 0,
+            "classification": "stable",
+            "samples": [
+              0
+            ],
+            "unit": "ms",
+            "title": "Agent Metadata Scan Total"
+          },
+          "agentSessionPollCount": {
+            "count": 1,
+            "min": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0,
+            "mean": 0,
+            "variance": 0,
+            "stddev": 0,
+            "relativeStddevPercent": 0,
+            "absoluteSpreadPercent": 0,
+            "classification": "stable",
+            "samples": [
+              0
+            ],
+            "unit": "count",
+            "title": "Agent Session Polls"
+          }
+        }
+      }
+    ]
+  },
+  "baseline": null,
+  "gate": null,
+  "summary": {
+    "total": 1,
+    "statuses": {
+      "BLOCKED": 1
+    }
+  },
+  "records": [
+    {
+      "scenario": "agent-cold-warm-message",
+      "surface": "agent-cli-local-turn",
+      "title": "Agent CLI Local Cold/Warm Message",
+      "status": "BLOCKED",
+      "target": "local-build:/home/runner/_work/openclaw/openclaw",
+      "from": null,
+      "state": {
+        "id": "mock-openai-provider",
+        "title": "Mock OpenAI Provider",
+        "objective": "A local OpenAI-compatible provider endpoint wired into OpenClaw config so agent turns exercise the real OpenClaw agent path without external model dependencies.",
+        "traits": [
+          "mock-provider",
+          "provider-pressure",
+          "agent-state"
+        ],
+        "riskArea": "agent-provider-latency",
+        "ownerArea": "agent-runtime",
+        "officialPlugins": []
+      },
+      "repeat": {
+        "index": 1,
+        "total": 1
+      },
+      "envName": "kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903",
+      "likelyOwner": "OpenClaw",
+      "objective": "After config readiness completes, send process-cold and warm simple messages through short-lived `openclaw agent --local` CLI processes, verify mock-provider responses, and attribute latency before, during, and after provider work.",
+      "thresholds": {
+        "gatewayReadyMs": 30000,
+        "agentTurnMs": 45000,
+        "coldAgentTurnMs": 45000,
+        "warmAgentTurnMs": 15000,
+        "coldWarmDeltaMs": 30000,
+        "preProviderMs": 10000,
+        "coldPreProviderMs": 10000,
+        "warmPreProviderMs": 10000,
+        "providerFinalMs": 3000,
+        "statusMs": 10000,
+        "peakRssMb": 1000,
+        "agentProcessLeaks": 4,
+        "missingDependencyErrors": 0,
+        "pluginLoadFailures": 0,
+        "providerTimeoutMentions": 0
+      },
+      "cleanup": "already-absent",
+      "auth": {
+        "schemaVersion": "kova.auth.summary.v1",
+        "mode": "live",
+        "providerId": "openai",
+        "modelId": "gpt-5.6-luna",
+        "source": "env-only",
+        "externalCli": null,
+        "setup": true,
+        "setupKind": "openclaw-onboard",
+        "deterministic": false,
+        "environmentDependent": true,
+        "envVars": [
+          "OPENAI_API_KEY"
+        ],
+        "mockProvider": null,
+        "secretValues": "redacted"
+      },
+      "networkFrontage": {
+        "schemaVersion": "kova.networkFrontage.v1",
+        "mode": "port",
+        "enabled": false
+      },
+      "profiling": {
+        "schemaVersion": "kova.profiling.v1",
+        "enabled": false,
+        "deepProfile": false,
+        "nodeProfile": false,
+        "heapSnapshot": false,
+        "diagnosticReport": false,
+        "profileOnFailure": false,
+        "affectsPerformanceMeasurements": false,
+        "affectsResourceMeasurements": false,
+        "baselineEligible": true,
+        "interpretation": "normal user-path resource measurements"
+      },
+      "collectorArtifactDirs": {
+        "schemaVersion": "kova.collectorArtifactDirs.v1",
+        "root": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903",
+        "collectors": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/collectors",
+        "openclaw": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/openclaw",
+        "provider": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/provider",
+        "processSnapshots": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/process-snapshots",
+        "resourceSamples": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/resource-samples",
+        "nodeProfiles": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/node-profiles",
+        "diagnostics": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/diagnostics",
+        "heap": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/heap",
+        "diagnosticReports": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/diagnostic-reports"
+      },
+      "phases": [
+        {
+          "id": "target-setup",
+          "title": "Target Runtime Setup",
+          "intent": "Prepare the target OpenClaw runtime selector for the scenario.",
+          "measurementScope": "harness",
+          "driverKind": "ocm",
+          "commands": [
+            "ocm runtime build-local 'kova-local-mtjno1sj-436-765c004b' --repo '/home/runner/_work/openclaw/openclaw' --force"
+          ],
+          "evidence": [
+            "local-build runtime kova-local-mtjno1sj-436-765c004b",
+            "kova env kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903"
+          ],
+          "results": [
+            {
+              "command": "ocm runtime build-local 'kova-local-mtjno1sj-436-765c004b' --repo '/home/runner/_work/openclaw/openclaw' --force",
+              "status": 1,
+              "signal": null,
+              "timedOut": false,
+              "startedAt": "2026-09-02T05:28:28.468Z",
+              "startedAtEpochMs": 1788326908468,
+              "finishedAt": "2026-09-02T05:29:09.099Z",
+              "finishedAtEpochMs": 1788326949099,
+              "durationMs": 40631,
+              "stdout": "",
+              "stderr": "[ocm] Building runtime kova-local-mtjno1sj-436-765c004b (15s elapsed; still running)\n[ocm] Building runtime kova-local-mtjno1sj-436-765c004b (30s elapsed; still running)\nocm: failed to pack local OpenClaw build: [build-all] plugins:assets:build\n$ node --import ./scripts/tsx.mjs scripts/bundled-plugin-assets.mts --phase build\n[build-all] plugins:assets:build done in 1.02s\n[build-all] tsdown\n... 129 lines omitted ...\nat runPreparedRuntimePack (file:///home/runner/_work/openclaw/openclaw/scripts/ocm-npm-workspace-deps.mts:208:3)\nat main (file:///home/runner/_work/openclaw/openclaw/scripts/ocm-npm-workspace-deps.mts:349:12)\nat file:///home/runner/_work/openclaw/openclaw/scripts/ocm-npm-workspace-deps.mts:391:22\nat ModuleJob.run (node:internal/modules/esm/module_job:439:25)\nat async node:internal/modules/esm/loader:643:26\nat async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\nNode.js v24.19.0\nRun \"ocm help\" for usage.\n",
+              "outputBudget": {
+                "schemaVersion": "kova.commandOutputBudget.v1",
+                "stdout": {
+                  "originalChars": 0,
+                  "retainedChars": 0,
+                  "omittedChars": 0,
+                  "truncated": false,
+                  "limitChars": 20000
+                },
+                "stderr": {
+                  "originalChars": 952,
+                  "retainedChars": 952,
+                  "omittedChars": 0,
+                  "truncated": false,
+                  "limitChars": 20000
+                },
+                "truncated": false,
+                "omittedChars": 0
+              },
+              "resourceSamples": {
+                "schemaVersion": "kova.resourceSamples.v1",
+                "sampleCount": 42,
+                "successfulSampleCount": 42,
+                "failedSampleCount": 0,
+                "available": true,
+                "errors": [],
+                "intervalMs": 1010,
+                "peakTotalRssMb": 5612.7,
+                "maxTotalCpuPercent": 336.5,
+                "peakCommandTreeRssMb": 5612.7,
+                "peakGatewayRssMb": 0,
+                "byRole": {
+                  "build-tooling": {
+                    "peakRssMb": 5447.1,
+                    "maxCpuPercent": 333.9,
+                    "peakRssAtMs": 8091,
+                    "peakCpuAtMs": 4078,
+                    "peakProcessCount": 5,
+                    "peakRssProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 5202.9,
+                      "cpuPercent": 316,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2466.9,
+                      "cpuPercent": 314,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  "command-tree": {
+                    "peakRssMb": 5612.7,
+                    "maxCpuPercent": 336.5,
+                    "peakRssAtMs": 8091,
+                    "peakCpuAtMs": 4078,
+                    "peakProcessCount": 9,
+                    "peakRssProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 5202.9,
+                      "cpuPercent": 316,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2466.9,
+                      "cpuPercent": 314,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  "package-manager": {
+                    "peakRssMb": 189.5,
+                    "maxCpuPercent": 56.9,
+                    "peakRssAtMs": 2079,
+                    "peakCpuAtMs": 2079,
+                    "peakProcessCount": 5,
+                    "peakRssProcess": {
+                      "pid": 5319,
+                      "roles": [
+                        "command-tree",
+                        "package-manager"
+                      ],
+                      "role": "command-tree,package-manager",
+                      "rssMb": 76.4,
+                      "cpuPercent": 2.4,
+                      "command": "node /home/runner/_work/openclaw/openclaw/scripts/ocm-npm-workspace-deps.mts pack --pack-destination /home/runner/.ocm/runtimes/.kova-local-mtjno1sj-436-765c004b.pack-5311-1788326908474662927"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5751,
+                      "roles": [
+                        "command-tree",
+                        "package-manager",
+                        "tool-runtime"
+                      ],
+                      "role": "command-tree,package-manager,tool-runtime",
+                      "rssMb": 58.4,
+                      "cpuPercent": 50,
+                      "command": "node /home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/pnpm exec tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  "plugin-cli": {
+                    "peakRssMb": 334.7,
+                    "maxCpuPercent": 142,
+                    "peakRssAtMs": 30163,
+                    "peakCpuAtMs": 30163,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 8190,
+                      "roles": [
+                        "command-tree",
+                        "plugin-cli",
+                        "runtime-staging"
+                      ],
+                      "role": "command-tree,plugin-cli,runtime-staging",
+                      "rssMb": 334.7,
+                      "cpuPercent": 142,
+                      "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-ft-Ss6-p.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-ft-Ss6-p.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/tmp/openclaw-build-root-help-5cCtja/workspace\"}}},\"env\":{\"HOME\":\"/tmp/openclaw-build-root-help-5cCtja/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/.local/bin:/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/tmp/openclaw-build-root-help-5cCtja\"}}); process.exit(0);"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 8190,
+                      "roles": [
+                        "command-tree",
+                        "plugin-cli",
+                        "runtime-staging"
+                      ],
+                      "role": "command-tree,plugin-cli,runtime-staging",
+                      "rssMb": 334.7,
+                      "cpuPercent": 142,
+                      "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-ft-Ss6-p.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-ft-Ss6-p.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/tmp/openclaw-build-root-help-5cCtja/workspace\"}}},\"env\":{\"HOME\":\"/tmp/openclaw-build-root-help-5cCtja/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/.local/bin:/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/tmp/openclaw-build-root-help-5cCtja\"}}); process.exit(0);"
+                    }
+                  },
+                  "runtime-management": {
+                    "peakRssMb": 5211,
+                    "maxCpuPercent": 319,
+                    "peakRssAtMs": 8091,
+                    "peakCpuAtMs": 6083,
+                    "peakProcessCount": 2,
+                    "peakRssProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 5202.9,
+                      "cpuPercent": 316,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 4256.7,
+                      "cpuPercent": 319,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  "runtime-staging": {
+                    "peakRssMb": 547,
+                    "maxCpuPercent": 181.4,
+                    "peakRssAtMs": 40178,
+                    "peakCpuAtMs": 39115,
+                    "peakProcessCount": 4,
+                    "peakRssProcess": {
+                      "pid": 8704,
+                      "roles": [
+                        "command-tree",
+                        "runtime-staging"
+                      ],
+                      "role": "command-tree,runtime-staging",
+                      "rssMb": 429.6,
+                      "cpuPercent": 152,
+                      "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mts --package-root /tmp/openclaw-channel-entry-smoke-hQvJDP/node_modules/openclaw"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 8704,
+                      "roles": [
+                        "command-tree",
+                        "runtime-staging"
+                      ],
+                      "role": "command-tree,runtime-staging",
+                      "rssMb": 331,
+                      "cpuPercent": 157,
+                      "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mts --package-root /tmp/openclaw-channel-entry-smoke-hQvJDP/node_modules/openclaw"
+                    }
+                  },
+                  "tool-runtime": {
+                    "peakRssMb": 58.4,
+                    "maxCpuPercent": 50,
+                    "peakRssAtMs": 2079,
+                    "peakCpuAtMs": 2079,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 5751,
+                      "roles": [
+                        "command-tree",
+                        "package-manager",
+                        "tool-runtime"
+                      ],
+                      "role": "command-tree,package-manager,tool-runtime",
+                      "rssMb": 58.4,
+                      "cpuPercent": 50,
+                      "command": "node /home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/pnpm exec tsdown --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5751,
+                      "roles": [
+                        "command-tree",
+                        "package-manager",
+                        "tool-runtime"
+                      ],
+                      "role": "command-tree,package-manager,tool-runtime",
+                      "rssMb": 58.4,
+                      "cpuPercent": 50,
+                      "command": "node /home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/pnpm exec tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  }
+                },
+                "topRolesByRss": [
+                  {
+                    "role": "command-tree",
+                    "peakRssMb": 5612.7,
+                    "maxCpuPercent": 336.5,
+                    "peakRssAtMs": 8091,
+                    "peakCpuAtMs": 4078,
+                    "peakProcessCount": 9,
+                    "peakRssProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 5202.9,
+                      "cpuPercent": 316,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2466.9,
+                      "cpuPercent": 314,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  {
+                    "role": "build-tooling",
+                    "peakRssMb": 5447.1,
+                    "maxCpuPercent": 333.9,
+                    "peakRssAtMs": 8091,
+                    "peakCpuAtMs": 4078,
+                    "peakProcessCount": 5,
+                    "peakRssProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 5202.9,
+                      "cpuPercent": 316,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2466.9,
+                      "cpuPercent": 314,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  {
+                    "role": "runtime-management",
+                    "peakRssMb": 5211,
+                    "maxCpuPercent": 319,
+                    "peakRssAtMs": 8091,
+                    "peakCpuAtMs": 6083,
+                    "peakProcessCount": 2,
+                    "peakRssProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 5202.9,
+                      "cpuPercent": 316,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 4256.7,
+                      "cpuPercent": 319,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  {
+                    "role": "runtime-staging",
+                    "peakRssMb": 547,
+                    "maxCpuPercent": 181.4,
+                    "peakRssAtMs": 40178,
+                    "peakCpuAtMs": 39115,
+                    "peakProcessCount": 4,
+                    "peakRssProcess": {
+                      "pid": 8704,
+                      "roles": [
+                        "command-tree",
+                        "runtime-staging"
+                      ],
+                      "role": "command-tree,runtime-staging",
+                      "rssMb": 429.6,
+                      "cpuPercent": 152,
+                      "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mts --package-root /tmp/openclaw-channel-entry-smoke-hQvJDP/node_modules/openclaw"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 8704,
+                      "roles": [
+                        "command-tree",
+                        "runtime-staging"
+                      ],
+                      "role": "command-tree,runtime-staging",
+                      "rssMb": 331,
+                      "cpuPercent": 157,
+                      "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mts --package-root /tmp/openclaw-channel-entry-smoke-hQvJDP/node_modules/openclaw"
+                    }
+                  },
+                  {
+                    "role": "plugin-cli",
+                    "peakRssMb": 334.7,
+                    "maxCpuPercent": 142,
+                    "peakRssAtMs": 30163,
+                    "peakCpuAtMs": 30163,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 8190,
+                      "roles": [
+                        "command-tree",
+                        "plugin-cli",
+                        "runtime-staging"
+                      ],
+                      "role": "command-tree,plugin-cli,runtime-staging",
+                      "rssMb": 334.7,
+                      "cpuPercent": 142,
+                      "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-ft-Ss6-p.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-ft-Ss6-p.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/tmp/openclaw-build-root-help-5cCtja/workspace\"}}},\"env\":{\"HOME\":\"/tmp/openclaw-build-root-help-5cCtja/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/.local/bin:/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/tmp/openclaw-build-root-help-5cCtja\"}}); process.exit(0);"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 8190,
+                      "roles": [
+                        "command-tree",
+                        "plugin-cli",
+                        "runtime-staging"
+                      ],
+                      "role": "command-tree,plugin-cli,runtime-staging",
+                      "rssMb": 334.7,
+                      "cpuPercent": 142,
+                      "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-ft-Ss6-p.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-ft-Ss6-p.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/tmp/openclaw-build-root-help-5cCtja/workspace\"}}},\"env\":{\"HOME\":\"/tmp/openclaw-build-root-help-5cCtja/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/.local/bin:/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/tmp/openclaw-build-root-help-5cCtja\"}}); process.exit(0);"
+                    }
+                  },
+                  {
+                    "role": "package-manager",
+                    "peakRssMb": 189.5,
+                    "maxCpuPercent": 56.9,
+                    "peakRssAtMs": 2079,
+                    "peakCpuAtMs": 2079,
+                    "peakProcessCount": 5,
+                    "peakRssProcess": {
+                      "pid": 5319,
+                      "roles": [
+                        "command-tree",
+                        "package-manager"
+                      ],
+                      "role": "command-tree,package-manager",
+                      "rssMb": 76.4,
+                      "cpuPercent": 2.4,
+                      "command": "node /home/runner/_work/openclaw/openclaw/scripts/ocm-npm-workspace-deps.mts pack --pack-destination /home/runner/.ocm/runtimes/.kova-local-mtjno1sj-436-765c004b.pack-5311-1788326908474662927"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5751,
+                      "roles": [
+                        "command-tree",
+                        "package-manager",
+                        "tool-runtime"
+                      ],
+                      "role": "command-tree,package-manager,tool-runtime",
+                      "rssMb": 58.4,
+                      "cpuPercent": 50,
+                      "command": "node /home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/pnpm exec tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  {
+                    "role": "tool-runtime",
+                    "peakRssMb": 58.4,
+                    "maxCpuPercent": 50,
+                    "peakRssAtMs": 2079,
+                    "peakCpuAtMs": 2079,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 5751,
+                      "roles": [
+                        "command-tree",
+                        "package-manager",
+                        "tool-runtime"
+                      ],
+                      "role": "command-tree,package-manager,tool-runtime",
+                      "rssMb": 58.4,
+                      "cpuPercent": 50,
+                      "command": "node /home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/pnpm exec tsdown --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5751,
+                      "roles": [
+                        "command-tree",
+                        "package-manager",
+                        "tool-runtime"
+                      ],
+                      "role": "command-tree,package-manager,tool-runtime",
+                      "rssMb": 58.4,
+                      "cpuPercent": 50,
+                      "command": "node /home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/pnpm exec tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  }
+                ],
+                "topRolesByCpu": [
+                  {
+                    "role": "command-tree",
+                    "peakRssMb": 5612.7,
+                    "maxCpuPercent": 336.5,
+                    "peakRssAtMs": 8091,
+                    "peakCpuAtMs": 4078,
+                    "peakProcessCount": 9,
+                    "peakRssProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 5202.9,
+                      "cpuPercent": 316,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2466.9,
+                      "cpuPercent": 314,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  {
+                    "role": "build-tooling",
+                    "peakRssMb": 5447.1,
+                    "maxCpuPercent": 333.9,
+                    "peakRssAtMs": 8091,
+                    "peakCpuAtMs": 4078,
+                    "peakProcessCount": 5,
+                    "peakRssProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 5202.9,
+                      "cpuPercent": 316,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 2466.9,
+                      "cpuPercent": 314,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  {
+                    "role": "runtime-management",
+                    "peakRssMb": 5211,
+                    "maxCpuPercent": 319,
+                    "peakRssAtMs": 8091,
+                    "peakCpuAtMs": 6083,
+                    "peakProcessCount": 2,
+                    "peakRssProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 5202.9,
+                      "cpuPercent": 316,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5777,
+                      "roles": [
+                        "build-tooling",
+                        "command-tree",
+                        "runtime-management"
+                      ],
+                      "role": "build-tooling,command-tree,runtime-management",
+                      "rssMb": 4256.7,
+                      "cpuPercent": 319,
+                      "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  {
+                    "role": "runtime-staging",
+                    "peakRssMb": 547,
+                    "maxCpuPercent": 181.4,
+                    "peakRssAtMs": 40178,
+                    "peakCpuAtMs": 39115,
+                    "peakProcessCount": 4,
+                    "peakRssProcess": {
+                      "pid": 8704,
+                      "roles": [
+                        "command-tree",
+                        "runtime-staging"
+                      ],
+                      "role": "command-tree,runtime-staging",
+                      "rssMb": 429.6,
+                      "cpuPercent": 152,
+                      "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mts --package-root /tmp/openclaw-channel-entry-smoke-hQvJDP/node_modules/openclaw"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 8704,
+                      "roles": [
+                        "command-tree",
+                        "runtime-staging"
+                      ],
+                      "role": "command-tree,runtime-staging",
+                      "rssMb": 331,
+                      "cpuPercent": 157,
+                      "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mts --package-root /tmp/openclaw-channel-entry-smoke-hQvJDP/node_modules/openclaw"
+                    }
+                  },
+                  {
+                    "role": "plugin-cli",
+                    "peakRssMb": 334.7,
+                    "maxCpuPercent": 142,
+                    "peakRssAtMs": 30163,
+                    "peakCpuAtMs": 30163,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 8190,
+                      "roles": [
+                        "command-tree",
+                        "plugin-cli",
+                        "runtime-staging"
+                      ],
+                      "role": "command-tree,plugin-cli,runtime-staging",
+                      "rssMb": 334.7,
+                      "cpuPercent": 142,
+                      "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-ft-Ss6-p.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-ft-Ss6-p.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/tmp/openclaw-build-root-help-5cCtja/workspace\"}}},\"env\":{\"HOME\":\"/tmp/openclaw-build-root-help-5cCtja/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/.local/bin:/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/tmp/openclaw-build-root-help-5cCtja\"}}); process.exit(0);"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 8190,
+                      "roles": [
+                        "command-tree",
+                        "plugin-cli",
+                        "runtime-staging"
+                      ],
+                      "role": "command-tree,plugin-cli,runtime-staging",
+                      "rssMb": 334.7,
+                      "cpuPercent": 142,
+                      "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --input-type=module --eval const mod = await import(\"file:///home/runner/_work/openclaw/openclaw/dist/root-help-ft-Ss6-p.js\"); if (typeof mod.outputRootHelp !== 'function') {   throw new Error(\"Bundle root-help-ft-Ss6-p.js does not export outputRootHelp.\"); } await mod.outputRootHelp({\"config\":{\"agents\":{\"defaults\":{\"workspace\":\"/tmp/openclaw-build-root-help-5cCtja/workspace\"}}},\"env\":{\"HOME\":\"/tmp/openclaw-build-root-help-5cCtja/home\",\"LOGNAME\":\"runner\",\"USER\":\"runner\",\"PATH\":\"/home/runner/.local/bin:/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\",\"TMPDIR\":\"/tmp\",\"LANG\":\"C.UTF-8\",\"LC_ALL\":\"C.UTF-8\",\"TERM\":\"vt220\",\"NO_COLOR\":\"1\",\"OPENCLAW_BUNDLED_PLUGINS_DIR\":\"/home/runner/_work/openclaw/openclaw/dist/extensions\",\"OPENCLAW_DISABLE_BUNDLED_PLUGINS\":\"\",\"OPENCLAW_STATE_DIR\":\"/tmp/openclaw-build-root-help-5cCtja\"}}); process.exit(0);"
+                    }
+                  },
+                  {
+                    "role": "package-manager",
+                    "peakRssMb": 189.5,
+                    "maxCpuPercent": 56.9,
+                    "peakRssAtMs": 2079,
+                    "peakCpuAtMs": 2079,
+                    "peakProcessCount": 5,
+                    "peakRssProcess": {
+                      "pid": 5319,
+                      "roles": [
+                        "command-tree",
+                        "package-manager"
+                      ],
+                      "role": "command-tree,package-manager",
+                      "rssMb": 76.4,
+                      "cpuPercent": 2.4,
+                      "command": "node /home/runner/_work/openclaw/openclaw/scripts/ocm-npm-workspace-deps.mts pack --pack-destination /home/runner/.ocm/runtimes/.kova-local-mtjno1sj-436-765c004b.pack-5311-1788326908474662927"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5751,
+                      "roles": [
+                        "command-tree",
+                        "package-manager",
+                        "tool-runtime"
+                      ],
+                      "role": "command-tree,package-manager,tool-runtime",
+                      "rssMb": 58.4,
+                      "cpuPercent": 50,
+                      "command": "node /home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/pnpm exec tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  },
+                  {
+                    "role": "tool-runtime",
+                    "peakRssMb": 58.4,
+                    "maxCpuPercent": 50,
+                    "peakRssAtMs": 2079,
+                    "peakCpuAtMs": 2079,
+                    "peakProcessCount": 1,
+                    "peakRssProcess": {
+                      "pid": 5751,
+                      "roles": [
+                        "command-tree",
+                        "package-manager",
+                        "tool-runtime"
+                      ],
+                      "role": "command-tree,package-manager,tool-runtime",
+                      "rssMb": 58.4,
+                      "cpuPercent": 50,
+                      "command": "node /home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/pnpm exec tsdown --config-loader unrun --logLevel warn --no-clean"
+                    },
+                    "peakCpuProcess": {
+                      "pid": 5751,
+                      "roles": [
+                        "command-tree",
+                        "package-manager",
+                        "tool-runtime"
+                      ],
+                      "role": "command-tree,package-manager,tool-runtime",
+                      "rssMb": 58.4,
+                      "cpuPercent": 50,
+                      "command": "node /home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/pnpm exec tsdown --config-loader unrun --logLevel warn --no-clean"
+                    }
+                  }
+                ],
+                "trend": {
+                  "schemaVersion": "kova.resourceTrend.v1",
+                  "available": true,
+                  "sampleCount": 42,
+                  "firstElapsedMs": 68,
+                  "lastElapsedMs": 40635,
+                  "totalRssStartMb": 8,
+                  "totalRssEndMb": 0,
+                  "totalRssGrowthMb": -8,
+                  "gatewayRssStartMb": 0,
+                  "gatewayRssEndMb": 0,
+                  "gatewayRssGrowthMb": 0
+                },
+                "peakRssSample": {
+                  "timestamp": "2026-09-02T05:28:36.561Z",
+                  "elapsedMs": 8091,
+                  "totalRssMb": 5612.7,
+                  "topProcess": {
+                    "pid": 5777,
+                    "ppid": 5762,
+                    "rssKb": 5327820,
+                    "rssMb": 5202.9,
+                    "cpuPercent": 316,
+                    "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management"
+                  }
+                },
+                "peakCpuSample": {
+                  "timestamp": "2026-09-02T05:28:32.548Z",
+                  "elapsedMs": 4078,
+                  "totalCpuPercent": 336.5,
+                  "topProcess": {
+                    "pid": 5777,
+                    "ppid": 5762,
+                    "rssKb": 2526076,
+                    "rssMb": 2466.9,
+                    "cpuPercent": 314,
+                    "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management"
+                  }
+                },
+                "topByRss": [
+                  {
+                    "pid": 5777,
+                    "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management",
+                    "peakRssMb": 5202.9,
+                    "maxCpuPercent": 319,
+                    "firstSeenMs": 2079,
+                    "lastSeenMs": 11088
+                  },
+                  {
+                    "pid": 8432,
+                    "command": "node /home/runner/_work/openclaw/openclaw/ui/node_modules/.bin/../vite/bin/vite.js build",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree"
+                    ],
+                    "role": "build-tooling,command-tree",
+                    "peakRssMb": 1584.4,
+                    "maxCpuPercent": 204,
+                    "firstSeenMs": 33109,
+                    "lastSeenMs": 37113
+                  },
+                  {
+                    "pid": 7554,
+                    "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --import tsx scripts/check-cli-bootstrap-imports.mts",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management",
+                    "peakRssMb": 1317.4,
+                    "maxCpuPercent": 146,
+                    "firstSeenMs": 15155,
+                    "lastSeenMs": 25150
+                  },
+                  {
+                    "pid": 8093,
+                    "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node -e  const { createRequire } = require(\"node:module\"); const path = require(\"node:path\"); const targets = JSON.parse(Buffer.from(process.argv[1], \"base64url\").toString(\"utf8\")); const requireFromRoot = createRequire(path.join(process.cwd(), \"package.json\")); const failures = []; for (const target of targets) {   try {     requireFromRoot(path.resolve(process.cwd(), target.relativePath));   } catch (error) {     failures.push({       ...target,       error: error instanceof Error ? (error.stack || error.message) : String(error),     });   } } process.stdout.write(\"\\n__OPENCLAW_PLUGIN_CONTROL_PLANE_PROBE__\" + JSON.stringify({ failures }));  W3sicGx1Z2luSWQiOiJhY3B4Iiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9hY3B4L2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoiYWN0aXZlLW1lbW9yeSIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvYWN0aXZlLW1lbW9yeS9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImFudGhyb3BpYyIsImtpbmQiOiJjb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9hbnRocm9waWMvY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImNhbnZhcyIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvY2FudmFzL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoiY2xpY2tjbGFjayIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvY2xpY2tjbGFjay9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImNvZGV4Iiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9jb2RleC9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImNvcGlsb3QiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2NvcGlsb3QvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJjcmFiYm94Iiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9jcmFiYm94L2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoiZGVlcGluZnJhIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9kZWVwaW5mcmEvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJkZXZpY2UtcGFpciIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvZGV2aWNlLXBhaXIvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJkaXNjb3JkIiwia2luZCI6ImNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2Rpc2NvcmQvY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImRpc2NvcmQiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2Rpc2NvcmQvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJlbGV2ZW5sYWJzIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9lbGV2ZW5sYWJzL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoiZmVpc2h1Iiwia2luZCI6ImNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2ZlaXNodS9jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoiZmVpc2h1Iiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9mZWlzaHUvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJmaWxlLXRyYW5zZmVyIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9maWxlLXRyYW5zZmVyL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoiZ29vZ2xlLW1lZXQiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2dvb2dsZS1tZWV0L2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoiZ29vZ2xlY2hhdCIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvZ29vZ2xlY2hhdC9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImltZXNzYWdlIiwia2luZCI6ImNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2ltZXNzYWdlL2NvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJpbWVzc2FnZSIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvaW1lc3NhZ2UvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJpcmMiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2lyYy9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImxpbmUiLCJraW5kIjoiY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvbGluZS9jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoibGluZSIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvbGluZS9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImxsbS10YXNrIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9sbG0tdGFzay9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImxvbmdjYXQiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2xvbmdjYXQvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJtYXRyaXgiLCJraW5kIjoiY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvbWF0cml4L2NvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJtYXRyaXgiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL21hdHJpeC9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6Im1hdHRlcm1vc3QiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL21hdHRlcm1vc3QvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJtZW1vcnktY29yZSIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvbWVtb3J5LWNvcmUvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJtZW1vcnktbGFuY2VkYiIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvbWVtb3J5LWxhbmNlZGIvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJtZW1vcnktd2lraSIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvbWVtb3J5LXdpa2kvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJtc3RlYW1zIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9tc3RlYW1zL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoibmV4dGNsb3VkLXRhbGsiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL25leHRjbG91ZC10YWxrL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoibm9zdHIiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL25vc3RyL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoib2xsYW1hIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9vbGxhbWEvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJyZWVmIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9yZWVmL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoic2lnbmFsIiwia2luZCI6ImNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3NpZ25hbC9jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoic2lnbmFsIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9zaWduYWwvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJzbGFjayIsImtpbmQiOiJjb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9zbGFjay9jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoic2xhY2siLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3NsYWNrL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoic3lub2xvZ3ktY2hhdCIsImtpbmQiOiJjb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9zeW5vbG9neS1jaGF0L2NvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJ0ZWxlZ3JhbSIsImtpbmQiOiJjb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy90ZWxlZ3JhbS9jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoidGVsZWdyYW0iLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3RlbGVncmFtL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoidGxvbiIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvdGxvbi9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6InZvaWNlLWNhbGwiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3ZvaWNlLWNhbGwvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJ3aGF0c2FwcCIsImtpbmQiOiJjb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy93aGF0c2FwcC9jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoid2hhdHNhcHAiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3doYXRzYXBwL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoid2hhdHNhcHAiLCJraW5kIjoiY2hhbm5lbC1sZWdhY3ktc2Vzc2lvbi1zdXJmYWNlIiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3doYXRzYXBwL2xlZ2FjeS1zZXNzaW9uLXN1cmZhY2UtYXBpLmpzIn0seyJwbHVnaW5JZCI6Indvcmtib2FyZCIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvd29ya2JvYXJkL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoieGFpIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy94YWkvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJ6YWxvIiwia2luZCI6ImNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3phbG8vY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6InphbG91c2VyIiwia2luZCI6ImNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3phbG91c2VyL2NvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJ6YWxvdXNlciIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvemFsb3VzZXIvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9XQ",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management",
+                    "peakRssMb": 668.2,
+                    "maxCpuPercent": 152,
+                    "firstSeenMs": 27102,
+                    "lastSeenMs": 28104
+                  },
+                  {
+                    "pid": 6078,
+                    "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --import tsx scripts/build-external-plugin-local-dist.mts",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree"
+                    ],
+                    "role": "build-tooling,command-tree",
+                    "peakRssMb": 436.9,
+                    "maxCpuPercent": 84,
+                    "firstSeenMs": 12087,
+                    "lastSeenMs": 14089
+                  }
+                ],
+                "topByCpu": [
+                  {
+                    "pid": 5777,
+                    "command": "node /home/runner/_work/openclaw/openclaw/node_modules/.bin/../tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management",
+                    "peakRssMb": 5202.9,
+                    "maxCpuPercent": 319,
+                    "firstSeenMs": 2079,
+                    "lastSeenMs": 11088
+                  },
+                  {
+                    "pid": 8432,
+                    "command": "node /home/runner/_work/openclaw/openclaw/ui/node_modules/.bin/../vite/bin/vite.js build",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree"
+                    ],
+                    "role": "build-tooling,command-tree",
+                    "peakRssMb": 1584.4,
+                    "maxCpuPercent": 204,
+                    "firstSeenMs": 33109,
+                    "lastSeenMs": 37113
+                  },
+                  {
+                    "pid": 8704,
+                    "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --preserve-symlinks /home/runner/_work/openclaw/openclaw/scripts/test-built-bundled-channel-entry-smoke.mts --package-root /tmp/openclaw-channel-entry-smoke-hQvJDP/node_modules/openclaw",
+                    "roles": [
+                      "command-tree",
+                      "runtime-staging"
+                    ],
+                    "role": "command-tree,runtime-staging",
+                    "peakRssMb": 429.6,
+                    "maxCpuPercent": 157,
+                    "firstSeenMs": 39115,
+                    "lastSeenMs": 40178
+                  },
+                  {
+                    "pid": 8093,
+                    "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node -e  const { createRequire } = require(\"node:module\"); const path = require(\"node:path\"); const targets = JSON.parse(Buffer.from(process.argv[1], \"base64url\").toString(\"utf8\")); const requireFromRoot = createRequire(path.join(process.cwd(), \"package.json\")); const failures = []; for (const target of targets) {   try {     requireFromRoot(path.resolve(process.cwd(), target.relativePath));   } catch (error) {     failures.push({       ...target,       error: error instanceof Error ? (error.stack || error.message) : String(error),     });   } } process.stdout.write(\"\\n__OPENCLAW_PLUGIN_CONTROL_PLANE_PROBE__\" + JSON.stringify({ failures }));  W3sicGx1Z2luSWQiOiJhY3B4Iiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9hY3B4L2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoiYWN0aXZlLW1lbW9yeSIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvYWN0aXZlLW1lbW9yeS9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImFudGhyb3BpYyIsImtpbmQiOiJjb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9hbnRocm9waWMvY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImNhbnZhcyIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvY2FudmFzL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoiY2xpY2tjbGFjayIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvY2xpY2tjbGFjay9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImNvZGV4Iiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9jb2RleC9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImNvcGlsb3QiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2NvcGlsb3QvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJjcmFiYm94Iiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9jcmFiYm94L2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoiZGVlcGluZnJhIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9kZWVwaW5mcmEvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJkZXZpY2UtcGFpciIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvZGV2aWNlLXBhaXIvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJkaXNjb3JkIiwia2luZCI6ImNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2Rpc2NvcmQvY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImRpc2NvcmQiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2Rpc2NvcmQvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJlbGV2ZW5sYWJzIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9lbGV2ZW5sYWJzL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoiZmVpc2h1Iiwia2luZCI6ImNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2ZlaXNodS9jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoiZmVpc2h1Iiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9mZWlzaHUvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJmaWxlLXRyYW5zZmVyIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9maWxlLXRyYW5zZmVyL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoiZ29vZ2xlLW1lZXQiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2dvb2dsZS1tZWV0L2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoiZ29vZ2xlY2hhdCIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvZ29vZ2xlY2hhdC9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImltZXNzYWdlIiwia2luZCI6ImNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2ltZXNzYWdlL2NvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJpbWVzc2FnZSIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvaW1lc3NhZ2UvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJpcmMiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2lyYy9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImxpbmUiLCJraW5kIjoiY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvbGluZS9jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoibGluZSIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvbGluZS9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImxsbS10YXNrIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9sbG0tdGFzay9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6ImxvbmdjYXQiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL2xvbmdjYXQvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJtYXRyaXgiLCJraW5kIjoiY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvbWF0cml4L2NvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJtYXRyaXgiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL21hdHJpeC9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6Im1hdHRlcm1vc3QiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL21hdHRlcm1vc3QvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJtZW1vcnktY29yZSIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvbWVtb3J5LWNvcmUvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJtZW1vcnktbGFuY2VkYiIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvbWVtb3J5LWxhbmNlZGIvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJtZW1vcnktd2lraSIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvbWVtb3J5LXdpa2kvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJtc3RlYW1zIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9tc3RlYW1zL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoibmV4dGNsb3VkLXRhbGsiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL25leHRjbG91ZC10YWxrL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoibm9zdHIiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL25vc3RyL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoib2xsYW1hIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9vbGxhbWEvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJyZWVmIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9yZWVmL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoic2lnbmFsIiwia2luZCI6ImNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3NpZ25hbC9jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoic2lnbmFsIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9zaWduYWwvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJzbGFjayIsImtpbmQiOiJjb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9zbGFjay9jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoic2xhY2siLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3NsYWNrL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoic3lub2xvZ3ktY2hhdCIsImtpbmQiOiJjb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy9zeW5vbG9neS1jaGF0L2NvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJ0ZWxlZ3JhbSIsImtpbmQiOiJjb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy90ZWxlZ3JhbS9jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoidGVsZWdyYW0iLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3RlbGVncmFtL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoidGxvbiIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvdGxvbi9kb2N0b3ItY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6InZvaWNlLWNhbGwiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3ZvaWNlLWNhbGwvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJ3aGF0c2FwcCIsImtpbmQiOiJjb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy93aGF0c2FwcC9jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoid2hhdHNhcHAiLCJraW5kIjoiZG9jdG9yLWNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3doYXRzYXBwL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoid2hhdHNhcHAiLCJraW5kIjoiY2hhbm5lbC1sZWdhY3ktc2Vzc2lvbi1zdXJmYWNlIiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3doYXRzYXBwL2xlZ2FjeS1zZXNzaW9uLXN1cmZhY2UtYXBpLmpzIn0seyJwbHVnaW5JZCI6Indvcmtib2FyZCIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvd29ya2JvYXJkL2RvY3Rvci1jb250cmFjdC1hcGkuanMifSx7InBsdWdpbklkIjoieGFpIiwia2luZCI6ImRvY3Rvci1jb250cmFjdCIsInJlbGF0aXZlUGF0aCI6ImRpc3QvZXh0ZW5zaW9ucy94YWkvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJ6YWxvIiwia2luZCI6ImNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3phbG8vY29udHJhY3QtYXBpLmpzIn0seyJwbHVnaW5JZCI6InphbG91c2VyIiwia2luZCI6ImNvbnRyYWN0IiwicmVsYXRpdmVQYXRoIjoiZGlzdC9leHRlbnNpb25zL3phbG91c2VyL2NvbnRyYWN0LWFwaS5qcyJ9LHsicGx1Z2luSWQiOiJ6YWxvdXNlciIsImtpbmQiOiJkb2N0b3ItY29udHJhY3QiLCJyZWxhdGl2ZVBhdGgiOiJkaXN0L2V4dGVuc2lvbnMvemFsb3VzZXIvZG9jdG9yLWNvbnRyYWN0LWFwaS5qcyJ9XQ",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management",
+                    "peakRssMb": 668.2,
+                    "maxCpuPercent": 152,
+                    "firstSeenMs": 27102,
+                    "lastSeenMs": 28104
+                  },
+                  {
+                    "pid": 7554,
+                    "command": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node --import tsx scripts/check-cli-bootstrap-imports.mts",
+                    "roles": [
+                      "build-tooling",
+                      "command-tree",
+                      "runtime-management"
+                    ],
+                    "role": "build-tooling,command-tree,runtime-management",
+                    "peakRssMb": 1317.4,
+                    "maxCpuPercent": 146,
+                    "firstSeenMs": 15155,
+                    "lastSeenMs": 25150
+                  }
+                ],
+                "artifactPath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/resource-samples/target-setup-1.jsonl"
+              },
+              "measurementScope": "harness",
+              "driverKind": "ocm"
+            }
+          ]
+        }
+      ],
+      "evidenceLedger": {
+        "schemaVersion": "kova.evidenceLedger.v1",
+        "completeness": "incomplete",
+        "summary": {
+          "total": 16,
+          "required": 16,
+          "requiredMissing": 10,
+          "requiredFailed": 4,
+          "byStatus": {
+            "failed": 4,
+            "missing": 10,
+            "passed": 2
+          },
+          "byCategory": {
+            "command": 1,
+            "invariant": 12,
+            "artifact": 1,
+            "cleanup": 1,
+            "collector": 1
+          }
+        },
+        "entries": [
+          {
+            "id": "command:target-setup:1",
+            "category": "command",
+            "required": true,
+            "status": "failed",
+            "phaseId": "target-setup",
+            "commandIndex": 0,
+            "summary": "ocm runtime build-local 'kova-local-mtjno1sj-436-765c004b' --repo '/home/runner/_work/openclaw/openclaw' --force",
+            "artifactPath": null,
+            "reason": "command exited 1"
+          },
+          {
+            "id": "invariant:agent-cli-command-receipts",
+            "category": "invariant",
+            "required": true,
+            "status": "missing",
+            "phaseId": "post-agent-health",
+            "commandIndex": null,
+            "summary": "agent CLI provision, turn, status, and collector command receipts were captured",
+            "artifactPath": null,
+            "reason": "target-setup command 1: command exited 1"
+          },
+          {
+            "id": "invariant:agent-cli-local-transport-proof",
+            "category": "invariant",
+            "required": true,
+            "status": "failed",
+            "phaseId": "cold-agent-turn",
+            "commandIndex": null,
+            "summary": "agent turns used the local embedded agent CLI path, not Gateway session RPC",
+            "artifactPath": null,
+            "reason": "expected at least 2 agent turn(s), found 0"
+          },
+          {
+            "id": "invariant:agent-cli-response-proof",
+            "category": "invariant",
+            "required": true,
+            "status": "failed",
+            "phaseId": "warm-agent-turn",
+            "commandIndex": null,
+            "summary": "agent turns produced the expected assistant marker or expected failure evidence",
+            "artifactPath": null,
+            "reason": "expected at least 2 agent turn(s), found 0"
+          },
+          {
+            "id": "invariant:agent-cli-provider-proof",
+            "category": "invariant",
+            "required": true,
+            "status": "missing",
+            "phaseId": "warm-agent-turn",
+            "commandIndex": null,
+            "summary": "mock provider request/response evidence was captured and attributed to every successful agent turn",
+            "artifactPath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/provider/provider-evidence.json",
+            "reason": "agent turn attribution count 0 was below required 2"
+          },
+          {
+            "id": "invariant:agent-cli-latency-windows",
+            "category": "invariant",
+            "required": true,
+            "status": "missing",
+            "phaseId": "warm-agent-turn",
+            "commandIndex": null,
+            "summary": "agent total, pre-provider, provider, and post-provider latency windows were measured",
+            "artifactPath": null,
+            "reason": "expected at least 2 agent turn(s), found 0"
+          },
+          {
+            "id": "invariant:agent-cli-no-service-health-proof",
+            "category": "invariant",
+            "required": true,
+            "status": "missing",
+            "phaseId": "post-agent-health",
+            "commandIndex": null,
+            "summary": "no-service local agent env state and final health accounting were captured",
+            "artifactPath": null,
+            "reason": "final gateway state was missing"
+          },
+          {
+            "id": "invariant:agent-cli-resource-proof",
+            "category": "invariant",
+            "required": true,
+            "status": "missing",
+            "phaseId": "warm-agent-turn",
+            "commandIndex": null,
+            "summary": "agent CLI resource samples and retained sample artifacts were captured",
+            "artifactPath": null,
+            "reason": "resource samples were not collected"
+          },
+          {
+            "id": "invariant:agent-cli-diagnostic-timeline-proof",
+            "category": "invariant",
+            "required": true,
+            "status": "missing",
+            "phaseId": "warm-agent-turn",
+            "commandIndex": null,
+            "summary": "OpenClaw diagnostic timeline was captured and parsed without errors",
+            "artifactPath": null,
+            "reason": "OpenClaw diagnostic timeline was not available"
+          },
+          {
+            "id": "invariant:agent-cli-logs-captured",
+            "category": "invariant",
+            "required": true,
+            "status": "missing",
+            "phaseId": "post-agent-health",
+            "commandIndex": null,
+            "summary": "bounded gateway or command logs were captured for dependency and plugin-load checks",
+            "artifactPath": null,
+            "reason": "log artifact path was not recorded"
+          },
+          {
+            "id": "invariant:agent-cli-no-missing-runtime-dependency-errors",
+            "category": "invariant",
+            "required": true,
+            "status": "missing",
+            "phaseId": "post-agent-health",
+            "commandIndex": null,
+            "summary": "agent CLI logs and command output contain no missing runtime dependency errors",
+            "artifactPath": null,
+            "reason": "missingDependencyErrors measurement was not collected"
+          },
+          {
+            "id": "invariant:agent-cli-no-plugin-load-failures",
+            "category": "invariant",
+            "required": true,
+            "status": "missing",
+            "phaseId": "post-agent-health",
+            "commandIndex": null,
+            "summary": "agent CLI logs contain no plugin load failures",
+            "artifactPath": null,
+            "reason": "pluginLoadFailures measurement was not collected"
+          },
+          {
+            "id": "invariant:agent-cli-no-provider-timeout-mentions",
+            "category": "invariant",
+            "required": true,
+            "status": "missing",
+            "phaseId": "post-agent-health",
+            "commandIndex": null,
+            "summary": "agent CLI logs and command output contain no provider timeout mentions",
+            "artifactPath": null,
+            "reason": "providerTimeoutMentions measurement was not collected"
+          },
+          {
+            "id": "artifact:record-budget",
+            "category": "artifact",
+            "required": true,
+            "status": "passed",
+            "phaseId": null,
+            "commandIndex": null,
+            "summary": "total retained evidence artifact bytes stay within the per-record cap",
+            "artifactPath": null,
+            "reason": null
+          },
+          {
+            "id": "cleanup:env-cleanup",
+            "category": "cleanup",
+            "required": true,
+            "status": "passed",
+            "phaseId": "env-cleanup",
+            "commandIndex": null,
+            "summary": "disposable Kova env cleanup completed or was explicitly accounted for",
+            "artifactPath": null,
+            "reason": null
+          },
+          {
+            "id": "collector:final-metrics",
+            "category": "collector",
+            "required": true,
+            "status": "failed",
+            "phaseId": "final",
+            "commandIndex": null,
+            "summary": "final service and health metrics were collected",
+            "artifactPath": null,
+            "reason": "ocm: environment \"kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903\" does not exist"
+          }
+        ]
+      },
+      "startedAt": "2026-09-02T05:28:28.467Z",
+      "artifactDir": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903",
+      "finishedAt": "2026-09-02T05:29:09.109Z",
+      "finalMetrics": {
+        "schemaVersion": "kova.envMetrics.v1",
+        "collectedAt": "2026-09-02T05:29:09.109Z",
+        "artifactDir": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903",
+        "collectorArtifactDirs": {
+          "schemaVersion": "kova.collectorArtifactDirs.v1",
+          "root": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903",
+          "collectors": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/collectors",
+          "openclaw": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/openclaw",
+          "provider": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/provider",
+          "processSnapshots": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/process-snapshots",
+          "resourceSamples": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/resource-samples",
+          "nodeProfiles": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/node-profiles",
+          "diagnostics": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/diagnostics",
+          "heap": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/heap",
+          "diagnosticReports": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/diagnostic-reports"
+        },
+        "collectionPolicy": {
+          "schemaVersion": "kova.collectionPolicy.v1",
+          "mode": "full",
+          "reason": "final metrics require full collection before cleanup",
+          "context": {
+            "kind": "final",
+            "scenario": "agent-cold-warm-message",
+            "surface": "agent-cli-local-turn",
+            "phaseId": null,
+            "phaseHealthScope": null,
+            "measurementScope": "product",
+            "resultStatus": null,
+            "collectionIntent": null,
+            "lifecycleKind": null,
+            "lifecycleCommandScope": null
+          },
+          "readiness": "wait",
+          "healthSamples": true,
+          "collectors": {
+            "service": true,
+            "process": true,
+            "readiness": true,
+            "health": true,
+            "logs": true,
+            "openclaw-diagnostics": true,
+            "timeline": true,
+            "diagnostics": true,
+            "node-profiles": true,
+            "heap-snapshot": true,
+            "diagnostic-report": true
+          },
+          "skipped": []
+        },
+        "collectors": [
+          {
+            "schemaVersion": "kova.collectorReceipt.v1",
+            "id": "service",
+            "status": "FAIL",
+            "durationMs": 3,
+            "commandStatus": 1,
+            "timedOut": false,
+            "artifactCount": 0,
+            "artifacts": [],
+            "error": null
+          }
+        ],
+        "serviceCommand": {
+          "status": 1,
+          "durationMs": 3,
+          "timedOut": false
+        },
+        "service": null,
+        "process": null,
+        "readiness": null,
+        "listening": null,
+        "health": null,
+        "healthSamples": [],
+        "healthSummary": null,
+        "logs": null,
+        "diagnostics": null,
+        "heapSnapshot": null,
+        "diagnosticReport": null,
+        "nodeProfiles": null,
+        "openclawDiagnostics": null,
+        "timeline": null,
+        "error": "ocm: environment \"kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903\" does not exist"
+      },
+      "targetRuntime": {
+        "schemaVersion": "kova.targetRuntime.v1",
+        "nodeVersion": null,
+        "gatewayPid": null,
+        "gatewayPort": null,
+        "expectedGatewayPid": null,
+        "expectedGatewayPort": null,
+        "collectionStatus": "missing-service-identity",
+        "commandStatus": null,
+        "compatibilityCommandStatus": null
+      },
+      "stateFixtureAccounting": null,
+      "providerEvidence": {
+        "schemaVersion": "kova.providerEvidence.v1",
+        "collectedAt": "2026-09-02T05:29:09.112Z",
+        "available": false,
+        "source": null,
+        "authMode": "live",
+        "deterministic": false,
+        "environmentDependent": true,
+        "requestLogPath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/mock-openai/requests.jsonl",
+        "timelinePath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/openclaw/timeline.jsonl",
+        "summaryPath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/provider/provider-evidence.json",
+        "requestCount": 0,
+        "firstRequestStartAt": null,
+        "firstRequestStartEpochMs": null,
+        "lastResponseEndAt": null,
+        "lastResponseEndEpochMs": null,
+        "providerDurationMs": null,
+        "firstByteLatencyMs": null,
+        "firstChunkLatencyMs": null,
+        "routes": [],
+        "models": [],
+        "statuses": [],
+        "usage": null,
+        "errors": [],
+        "requests": [],
+        "artifacts": [
+          "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/provider/provider-evidence.json"
+        ],
+        "commandStatus": 0,
+        "durationMs": 0,
+        "error": "provider request log not found",
+        "statusLabel": "INFO"
+      },
+      "measurements": {
+        "peakRssMb": null,
+        "cpuPercentMax": null,
+        "measurementScopeSummary": {
+          "schemaVersion": "kova.measurementScopeSummary.v1",
+          "productPhaseCount": 0,
+          "harnessPhaseCount": 1,
+          "cleanupPhaseCount": 0,
+          "productCommandCount": 0,
+          "harnessCommandCount": 1,
+          "cleanupCommandCount": 0
+        },
+        "resourceMeasurementScope": "product",
+        "resourceHeadlineContract": "primary-role-product-scope-v3",
+        "resourcePrimaryRole": "agent-process",
+        "resourceGateKind": "role-missing",
+        "resourceGateReason": "configured primary resource role 'agent-process' was not observed in product resource samples",
+        "resourceGateAttribution": {
+          "role": "agent-process",
+          "observed": false,
+          "topRolesByRss": [],
+          "topRolesByCpu": [],
+          "peakRssProcess": null,
+          "peakCpuProcess": null
+        },
+        "resourcePeakTrackedRssMb": null,
+        "resourceCpuPercentMaxTracked": null,
+        "coldReadyMs": null,
+        "warmReadyMs": null,
+        "upgradeMs": null,
+        "statusMs": null,
+        "doctorFixMs": null,
+        "pluginsListMs": null,
+        "pluginInstallMs": null,
+        "modelsListMs": null,
+        "agentTurnMs": null,
+        "agentResponseOk": null,
+        "agentTurnCount": 0,
+        "agentTurns": [],
+        "agentTurnStats": {
+          "schemaVersion": "kova.agentTurnStats.v1",
+          "count": 0,
+          "totalTurnMs": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "preProviderMs": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "providerFinalMs": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "postProviderMs": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "cleanupMs": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "firstByteLatencyMs": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "processLeakCount": 0,
+          "missingProviderRequestCount": 0,
+          "responseOkCount": 0
+        },
+        "agentTurnMedianMs": null,
+        "agentTurnP95Ms": null,
+        "agentTurnMaxMs": null,
+        "agentPreProviderMedianMs": null,
+        "agentPreProviderP95Ms": null,
+        "agentPreProviderMaxMs": null,
+        "agentProviderFinalMedianMs": null,
+        "agentProviderFinalP95Ms": null,
+        "agentProviderFinalMaxMs": null,
+        "agentCleanupMedianMs": null,
+        "agentCleanupP95Ms": null,
+        "agentCleanupMaxMs": null,
+        "agentMetadataScanCount": 0,
+        "agentMetadataScanTotalMs": 0,
+        "agentMetadataScanMaxMs": null,
+        "agentEventLoopMaxMs": null,
+        "agentEventLoopSampleCount": 0,
+        "agentSessionPollCount": 0,
+        "agentSessionPollErrorCount": 0,
+        "gatewaySessionPreProviderAttribution": {
+          "schemaVersion": "kova.gatewaySessionPreProviderAttributionSummary.v1",
+          "available": false,
+          "count": 0,
+          "cold": {
+            "count": 0,
+            "preProviderMs": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "knownAttributedMs": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "unattributedMs": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "coverageRatio": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "warm": {
+            "count": 0,
+            "preProviderMs": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "knownAttributedMs": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "unattributedMs": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "coverageRatio": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "spanMedians": [],
+          "timelineArtifacts": []
+        },
+        "agentCliPreProviderAttribution": {
+          "schemaVersion": "kova.agentCliPreProviderAttributionSummary.v1",
+          "available": false,
+          "count": 0,
+          "cold": {
+            "count": 0,
+            "preProviderMs": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "knownAttributedMs": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "unattributedMs": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "coverageRatio": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "warm": {
+            "count": 0,
+            "preProviderMs": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "knownAttributedMs": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "unattributedMs": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            },
+            "coverageRatio": {
+              "count": 0,
+              "median": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "spanMedians": [],
+          "timelineArtifacts": []
+        },
+        "coldPreProviderAttributedMs": null,
+        "warmPreProviderAttributedMs": null,
+        "coldPreProviderUnattributedMs": null,
+        "warmPreProviderUnattributedMs": null,
+        "coldPreProviderAttributionCoverage": null,
+        "warmPreProviderAttributionCoverage": null,
+        "coldAgentTurnMs": null,
+        "warmAgentTurnMs": null,
+        "agentColdWarmDeltaMs": null,
+        "coldPreProviderMs": null,
+        "warmPreProviderMs": null,
+        "agentColdWarmPreProviderDeltaMs": null,
+        "coldProviderFinalMs": null,
+        "warmProviderFinalMs": null,
+        "coldFirstByteLatencyMs": null,
+        "warmFirstByteLatencyMs": null,
+        "agentLatencyDiagnosis": null,
+        "agentCleanupDiagnosis": null,
+        "agentProviderSimulation": {
+          "schemaVersion": "kova.agentProviderSimulation.v1",
+          "mode": "normal",
+          "expected": false,
+          "observedIssue": "none",
+          "observedIssueSummary": "No provider failure evidence found.",
+          "containmentOk": true,
+          "recoveryOk": null,
+          "slowObserved": null,
+          "expectedFailureCount": 0,
+          "expectedFailureObservedCount": 0,
+          "successfulTurnCount": 0,
+          "protocolFailureObserved": null,
+          "disconnectObserved": null,
+          "finalGatewayState": null,
+          "healthFailures": 0,
+          "healthFailureScope": "post-startup",
+          "healthFailureBreakdown": {
+            "startup": 0,
+            "postReady": 0,
+            "unknown": 0,
+            "final": 0
+          },
+          "healthLimit": 0,
+          "providerSlowMinMs": null,
+          "providerRequestCount": 0,
+          "providerRequestCountMin": null,
+          "providerMaxConcurrency": 0,
+          "providerConcurrencyMin": null,
+          "requestCountOk": null,
+          "overlapObserved": null,
+          "concurrentObserved": null
+        },
+        "agentFailureContainment": {
+          "schemaVersion": "kova.agentFailureContainment.v1",
+          "processLeakCount": 0,
+          "leakLimit": 0,
+          "leakedProcesses": [],
+          "processLeaksOk": true,
+          "finalGatewayState": null,
+          "gatewayHealthy": true,
+          "healthFailures": 0,
+          "healthFailureScope": "post-startup",
+          "healthFailureBreakdown": {
+            "startup": 0,
+            "postReady": 0,
+            "unknown": 0,
+            "final": 0
+          },
+          "healthLimit": 0,
+          "statusWorks": null,
+          "dashboardResponsive": null,
+          "tuiResponsive": null
+        },
+        "agentProcessLeakCount": 0,
+        "agentLeakedProcesses": [],
+        "agentFailureFixerSummary": {
+          "schemaVersion": "kova.agentFailureFixerSummary.v1",
+          "count": 0,
+          "items": []
+        },
+        "agentProviderMode": "normal",
+        "agentProviderIssue": "none",
+        "agentProviderContainmentOk": true,
+        "agentProviderRecoveryOk": null,
+        "providerRequestCount": 0,
+        "providerFirstRequestAt": null,
+        "providerLastResponseAt": null,
+        "providerDurationMs": null,
+        "providerFirstByteLatencyMs": null,
+        "providerFirstChunkLatencyMs": null,
+        "agentPreProviderMs": null,
+        "agentProviderFinalMs": null,
+        "agentPostProviderMs": null,
+        "agentPreProviderDominance": null,
+        "agentProviderRequestCount": null,
+        "agentProviderRequestMissing": null,
+        "agentProviderAttribution": null,
+        "health": {
+          "schemaVersion": "kova.health.v1",
+          "readiness": null,
+          "startupSamples": {
+            "scope": "startup-sample",
+            "count": 0,
+            "okCount": 0,
+            "failureCount": 0,
+            "minMs": null,
+            "p50Ms": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "slowestPhaseId": null
+          },
+          "postReadySamples": {
+            "scope": "post-ready",
+            "count": 0,
+            "okCount": 0,
+            "failureCount": 0,
+            "minMs": null,
+            "p50Ms": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "slowestPhaseId": null
+          },
+          "unknownSamples": {
+            "scope": "unknown",
+            "count": 0,
+            "okCount": 0,
+            "failureCount": 0,
+            "minMs": null,
+            "p50Ms": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "slowestPhaseId": null
+          },
+          "final": {
+            "scope": "final",
+            "gatewayState": null,
+            "ok": null,
+            "collectionError": "ocm: environment \"kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903\" does not exist",
+            "healthOk": null,
+            "failureCount": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "slowestPhaseId": null
+          },
+          "slowestSample": null
+        },
+        "tcpConnectMaxMs": null,
+        "missingDependencyErrors": null,
+        "finalGatewayState": null,
+        "soakEvidence": {
+          "schemaVersion": "kova.soakEvidence.v1",
+          "available": false,
+          "durationMs": null,
+          "iterations": null,
+          "commandP95Ms": null,
+          "commandMaxMs": null,
+          "commandFailures": null,
+          "healthP95Ms": null,
+          "healthMaxMs": null,
+          "healthFailures": null,
+          "loops": []
+        },
+        "mcpBridgeEvidence": {
+          "schemaVersion": "kova.mcpBridgeEvidence.v1",
+          "available": false,
+          "initializeMs": null,
+          "toolsListMs": null,
+          "shutdownMs": null,
+          "toolCount": null,
+          "toolNames": [],
+          "processExited": null,
+          "errors": [],
+          "smokes": []
+        },
+        "mcpLifecycleEvidence": {
+          "schemaVersion": "kova.mcpLifecycleEvidence.v1",
+          "available": false,
+          "initializeMs": null,
+          "toolsListMs": null,
+          "shutdownMs": null,
+          "toolCount": null,
+          "toolNames": [],
+          "processExited": null,
+          "processLeaks": null
+        },
+        "cronRuntimeEvidence": {
+          "schemaVersion": "kova.cronRuntimeEvidence.v1",
+          "available": false,
+          "cronStatusMs": null,
+          "cronRegisterMs": null,
+          "cronRunMs": null,
+          "cronRunsMs": null,
+          "cronRunCompleted": null,
+          "cronTriggerAttributed": null,
+          "errors": [],
+          "smokes": []
+        },
+        "execToolEvidence": {
+          "schemaVersion": "kova.execToolEvidence.v1",
+          "available": false,
+          "safeCommandMs": null,
+          "safeCommandSucceeded": null,
+          "dangerousCommandBlocked": null,
+          "dangerousPayloadExecuted": null,
+          "outputTruncated": null,
+          "timeoutMs": null,
+          "processLeaks": null,
+          "errors": [],
+          "smokes": []
+        },
+        "mcpToolCallEvidence": {
+          "schemaVersion": "kova.mcpToolCallEvidence.v1",
+          "available": false,
+          "initializeMs": null,
+          "toolsListMs": null,
+          "toolsCallMs": null,
+          "invalidToolsCallMs": null,
+          "shutdownMs": null,
+          "toolCount": null,
+          "toolNames": [],
+          "safeToolSucceeded": null,
+          "safeToolName": null,
+          "invalidToolErrorAttributed": null,
+          "processExited": null,
+          "errors": [],
+          "smokes": []
+        },
+        "dirtyPluginEvidence": {
+          "schemaVersion": "kova.dirtyPluginEvidence.v1",
+          "available": false,
+          "dirtyPluginDetected": null,
+          "dirtyPluginReported": null,
+          "dirtyPluginChecksumPreserved": null,
+          "doctorDestructiveChangeCount": null,
+          "pluginsUsableWithDirtyState": null,
+          "gatewaySurvivedDirtyPlugin": null,
+          "errors": [],
+          "summaries": []
+        },
+        "releaseRecoveryEvidence": {
+          "schemaVersion": "kova.releaseRecoveryEvidence.v1",
+          "available": false,
+          "doctorFixSucceeded": null,
+          "doctorUnrepairedFindingCount": null,
+          "updateRetryVersionDrift": null,
+          "upgradeVersion": null,
+          "retryVersion": null,
+          "rollbackAvailable": null,
+          "rollbackSucceeded": null,
+          "pluginsUsableAfterUpgrade": null,
+          "pluginsUsableAfterRollback": null,
+          "rollbackPreservedPluginData": null,
+          "errors": [],
+          "doctor": [],
+          "rollback": null
+        },
+        "cronStatusMs": null,
+        "cronRegisterMs": null,
+        "cronRunMs": null,
+        "cronRunCompleted": null,
+        "cronTriggerAttributed": null,
+        "execSafeCommandMs": null,
+        "execSafeCommandSucceeded": null,
+        "execDangerousCommandBlocked": null,
+        "execDangerousPayloadExecuted": null,
+        "execOutputTruncated": null,
+        "execTimeoutMs": null,
+        "execProcessLeaks": null,
+        "mcpToolsCallMs": null,
+        "mcpInvalidToolsCallMs": null,
+        "mcpToolCallSucceeded": null,
+        "mcpSafeToolName": null,
+        "mcpToolCallErrorAttributed": null,
+        "dirtyPluginDetected": null,
+        "dirtyPluginReported": null,
+        "dirtyPluginChecksumPreserved": null,
+        "doctorDestructiveChangeCount": null,
+        "pluginsUsableWithDirtyState": null,
+        "gatewaySurvivedDirtyPlugin": null,
+        "doctorFixSucceeded": null,
+        "doctorUnrepairedFindingCount": null,
+        "updateRetryVersionDrift": null,
+        "rollbackAvailable": null,
+        "rollbackSucceeded": null,
+        "pluginsUsableAfterUpgrade": null,
+        "pluginsUsableAfterRollback": null,
+        "rollbackPreservedPluginData": null,
+        "mcpInitializeMs": null,
+        "mcpToolsListMs": null,
+        "mcpShutdownMs": null,
+        "mcpToolCount": null,
+        "mcpToolNames": [],
+        "mcpProcessExited": null,
+        "mcpProcessLeaks": null,
+        "mcpErrors": [],
+        "browserAutomationEvidence": {
+          "schemaVersion": "kova.browserAutomationEvidence.v1",
+          "available": false,
+          "browserDoctorMs": null,
+          "browserStartMs": null,
+          "browserTabsMs": null,
+          "browserOpenMs": null,
+          "browserSnapshotMs": null,
+          "browserStopMs": null,
+          "browserTabCount": null,
+          "browserSnapshotOk": null,
+          "browserStopped": null,
+          "errors": [],
+          "smokes": []
+        },
+        "browserDoctorMs": null,
+        "browserStartMs": null,
+        "browserTabsMs": null,
+        "browserOpenMs": null,
+        "browserSnapshotMs": null,
+        "browserStopMs": null,
+        "browserTabCount": null,
+        "browserSnapshotOk": null,
+        "browserStopped": null,
+        "browserProcessLeaks": null,
+        "browserErrors": [],
+        "mediaUnderstandingEvidence": {
+          "schemaVersion": "kova.mediaUnderstandingEvidence.v1",
+          "available": false,
+          "mediaDescribeMs": null,
+          "mediaTimeoutObserved": null,
+          "mediaCommandTimedOut": null,
+          "mediaStatusAfterTimeoutMs": null,
+          "gatewayStatusWorks": null,
+          "errors": [],
+          "smokes": []
+        },
+        "mediaDescribeMs": null,
+        "mediaTimeoutObserved": null,
+        "mediaCommandTimedOut": null,
+        "mediaStatusAfterTimeoutMs": null,
+        "mediaGatewayStatusWorks": null,
+        "mediaErrors": [],
+        "networkOfflineEvidence": {
+          "schemaVersion": "kova.networkOfflineEvidence.v1",
+          "available": false,
+          "networkTurnMs": null,
+          "networkFailureObserved": null,
+          "networkCommandTimedOut": null,
+          "networkStatusAfterFailureMs": null,
+          "gatewayStatusWorks": null,
+          "errors": [],
+          "smokes": []
+        },
+        "officialPluginEvidence": {
+          "schemaVersion": "kova.officialPluginEvidence.v1",
+          "available": false,
+          "ok": null,
+          "pluginCount": 0,
+          "requiredPluginCount": 0,
+          "failedRequiredCount": 0,
+          "durationMs": null,
+          "installed": null,
+          "listed": null,
+          "registryRefreshed": null,
+          "securityBlockCount": null,
+          "securityEvidence": null,
+          "failureEvidence": [],
+          "artifactPath": null,
+          "runs": []
+        },
+        "officialPluginInstallOk": null,
+        "officialPluginSecurityBlocks": null,
+        "officialPluginInstallMs": null,
+        "networkTurnMs": null,
+        "networkFailureObserved": null,
+        "networkCommandTimedOut": null,
+        "networkStatusAfterFailureMs": null,
+        "networkGatewayStatusWorks": null,
+        "networkErrors": [],
+        "soakDurationMs": null,
+        "soakIterations": null,
+        "soakCommandP95Ms": null,
+        "soakCommandMaxMs": null,
+        "soakHealthP95Ms": null,
+        "soakHealthMaxMs": null,
+        "soakHealthFailures": null,
+        "soakCommandFailures": null,
+        "rssGrowthMb": null,
+        "gatewayRssGrowthMb": null,
+        "listeningFailures": 0,
+        "readinessFailures": 0,
+        "gatewayRestartCount": null,
+        "pluginLoadFailures": null,
+        "metadataScanMentions": null,
+        "configNormalizationMentions": null,
+        "providerLoadMentions": null,
+        "modelCatalogMentions": null,
+        "providerTimeoutMentions": null,
+        "eventLoopDelayMentions": null,
+        "v8DiagnosticMentions": null,
+        "v8ReportCount": null,
+        "heapSnapshotCount": null,
+        "diagnosticArtifactBytes": null,
+        "nodeCpuProfileCount": null,
+        "nodeHeapProfileCount": null,
+        "nodeTraceEventCount": null,
+        "nodeProfileArtifactBytes": null,
+        "nodeProfileTopFunction": null,
+        "nodeProfileTopFunctionMs": null,
+        "nodeProfileTopFunctionUrl": null,
+        "nodeHeapTopFunction": null,
+        "nodeHeapTopFunctionMb": null,
+        "nodeHeapTopFunctionUrl": null,
+        "heapSnapshotBytes": null,
+        "diagnosticReportCount": null,
+        "diagnosticReportBytes": null,
+        "profilingEnabled": false,
+        "profilingResourceInterpretation": "normal user-path resource measurements",
+        "profilingBaselineEligible": true,
+        "profilingAffectsPerformanceMeasurements": false,
+        "profilingAffectsResourceMeasurements": false,
+        "resourceSampleCount": 0,
+        "resourceSampleArtifacts": [],
+        "resourcePeakCommandTreeRssMb": null,
+        "resourcePeakGatewayRssMb": null,
+        "resourceByRole": {},
+        "resourceTopRolesByRss": [],
+        "resourceTopRolesByCpu": [],
+        "resourcePeakRssAtMs": null,
+        "resourcePeakCpuAtMs": null,
+        "resourcePeakRssProcess": null,
+        "resourcePeakCpuProcess": null,
+        "resourceTrend": null,
+        "resourceTopByRss": [],
+        "resourceTopByCpu": [],
+        "channelWorkflowResources": {
+          "schemaVersion": "kova.channelWorkflowResources.v1",
+          "available": false,
+          "caseCount": 0,
+          "attributedCaseCount": 0,
+          "artifacts": [],
+          "topByGatewayRss": [],
+          "topByTrackedRss": [],
+          "rows": []
+        },
+        "channelWorkflowResourceTopByGatewayRss": [],
+        "channelWorkflowResourceTopByTrackedRss": [],
+        "openclawTimelineAvailable": false,
+        "openclawTimelineArtifacts": [],
+        "openclawTimelineEventCount": 0,
+        "openclawTimelineParseErrors": 0,
+        "openclawSlowestSpanName": null,
+        "openclawSlowestSpanMs": null,
+        "openclawRepeatedSpanCount": 0,
+        "openclawOpenSpanCount": 0,
+        "openclawOpenRequiredSpanCount": 0,
+        "openclawMissingRequiredSpanCount": 1,
+        "openclawMissingRequiredSpans": [
+          "plugins.metadata.scan"
+        ],
+        "openclawMissingRequiredSpanSeverity": "diagnostic-gap",
+        "openclawDiagnosticsContract": {
+          "schemaVersion": "kova.diagnosticsContract.v1",
+          "targetKind": "local-build",
+          "expectedSpanCount": 1,
+          "missingSpanSeverity": "diagnostic-gap",
+          "enforceMissingSpans": false,
+          "reason": "missing expected spans reduce diagnostic attribution but do not by themselves fail the user path"
+        },
+        "openclawOpenSpans": [],
+        "openclawInterruptedRestartSpanCount": 0,
+        "openclawInterruptedRestartSpans": [],
+        "openclawTerminalGatewayPid": null,
+        "openclawKeySpans": {},
+        "openclawEventLoopMaxMs": null,
+        "openclawLogEventLoopMaxMs": null,
+        "openclawLivenessWarningCount": 0,
+        "embeddedRunTraceCount": 0,
+        "embeddedRunStartupTraceCount": 0,
+        "embeddedRunPrepTraceCount": 0,
+        "embeddedRunTraceMaxMs": null,
+        "embeddedRunTopStages": [],
+        "openclawProviderRequestMaxMs": null,
+        "openclawChildProcessFailedCount": 0,
+        "runtimeDepsStagingPluginId": null,
+        "runtimeDepsLogEvidence": {
+          "schemaVersion": "kova.runtimeDepsEvidence.v1",
+          "available": false,
+          "installCount": 0,
+          "installMaxMs": null,
+          "postbuildCount": 0,
+          "postbuildMaxMs": null,
+          "pluginIds": [],
+          "coldStart": {
+            "eventCount": null,
+            "installCount": null,
+            "installMaxMs": null,
+            "postbuildCount": null,
+            "postbuildMaxMs": null,
+            "pluginIds": []
+          },
+          "warmRestart": {
+            "eventCount": null,
+            "installCount": null,
+            "installMaxMs": null,
+            "postbuildCount": null,
+            "postbuildMaxMs": null,
+            "pluginIds": []
+          },
+          "phases": [
+            {
+              "id": "target-setup",
+              "eventCount": 0,
+              "stageCount": 0,
+              "installCount": 0,
+              "installMaxMs": null,
+              "postbuildCount": 0,
+              "postbuildMaxMs": null,
+              "pluginIds": []
+            }
+          ]
+        },
+        "runtimeDepsInstallCount": 0,
+        "runtimeDepsInstallMaxMs": null,
+        "runtimeDepsPostbuildMaxMs": null,
+        "coldRuntimeDepsInstallCount": null,
+        "coldRuntimeDepsStagingMs": null,
+        "warmRuntimeDepsRestageCount": null,
+        "warmRuntimeDepsStagingMs": null,
+        "runtimeDepsWarmReuseOk": null,
+        "pluginMetadataScanCount": null,
+        "configNormalizationCount": null,
+        "runtimeDepsStagingMs": null,
+        "eventLoopDelayMs": null,
+        "providerModelTimingMs": null,
+        "diagnosticCorrelation": {
+          "schemaVersion": "kova.diagnosticCorrelation.v1",
+          "findingCount": 0,
+          "findings": []
+        }
+      },
+      "thresholdPolicy": {
+        "schemaVersion": "kova.thresholdPolicy.v1",
+        "profileId": "diagnostic",
+        "surfaceId": "agent-cli-local-turn",
+        "scenarioId": "agent-cold-warm-message",
+        "sources": [
+          {
+            "kind": "surface",
+            "id": "agent-cli-local-turn",
+            "thresholds": [
+              "agentCleanupMs",
+              "agentTurnMs",
+              "coldAgentTurnMs",
+              "coldWarmDeltaMs",
+              "peakRssMb",
+              "postReadyHealthP95Ms",
+              "preProviderMs",
+              "providerFinalMs",
+              "warmAgentTurnMs"
+            ]
+          },
+          {
+            "kind": "surface-role",
+            "id": "agent-cli-local-turn",
+            "roles": [
+              "agent-cli",
+              "agent-process",
+              "gateway",
+              "mock-provider"
+            ]
+          },
+          {
+            "kind": "profile-surface",
+            "id": "diagnostic:agent-cli-local-turn",
+            "thresholds": [
+              "agentCleanupMs",
+              "coldAgentTurnMs",
+              "coldPreProviderMs",
+              "openclawSlowestSpanMs",
+              "providerFinalMs",
+              "warmAgentTurnMs"
+            ]
+          },
+          {
+            "kind": "profile-role",
+            "id": "diagnostic",
+            "roles": [
+              "agent-cli",
+              "command-tree",
+              "gateway",
+              "mock-provider",
+              "package-manager",
+              "runtime-staging"
+            ]
+          },
+          {
+            "kind": "scenario",
+            "id": "agent-cold-warm-message",
+            "thresholds": [
+              "agentProcessLeaks",
+              "agentTurnMs",
+              "coldAgentTurnMs",
+              "coldPreProviderMs",
+              "coldWarmDeltaMs",
+              "gatewayReadyMs",
+              "missingDependencyErrors",
+              "peakRssMb",
+              "pluginLoadFailures",
+              "preProviderMs",
+              "providerFinalMs",
+              "providerTimeoutMentions",
+              "statusMs",
+              "warmAgentTurnMs",
+              "warmPreProviderMs"
+            ]
+          },
+          {
+            "kind": "derived",
+            "id": "health-sample-failures",
+            "thresholds": [
+              "postReadyHealthFailures",
+              "finalHealthFailures"
+            ]
+          }
+        ],
+        "runtimeCalibration": [],
+        "thresholds": {
+          "agentTurnMs": 45000,
+          "coldAgentTurnMs": 45000,
+          "warmAgentTurnMs": 15000,
+          "coldWarmDeltaMs": 30000,
+          "preProviderMs": 10000,
+          "providerFinalMs": 3000,
+          "agentCleanupMs": 5000,
+          "peakRssMb": 1000,
+          "postReadyHealthP95Ms": 1000,
+          "coldPreProviderMs": 10000,
+          "openclawSlowestSpanMs": 45000,
+          "gatewayReadyMs": 30000,
+          "warmPreProviderMs": 10000,
+          "statusMs": 10000,
+          "agentProcessLeaks": 4,
+          "missingDependencyErrors": 0,
+          "pluginLoadFailures": 0,
+          "providerTimeoutMentions": 0,
+          "postReadyHealthFailures": 0,
+          "finalHealthFailures": 0
+        },
+        "roleThresholds": {
+          "gateway": {
+            "peakRssMb": 700,
+            "maxCpuPercent": 250
+          },
+          "command-tree": {
+            "peakRssMb": 1400,
+            "maxCpuPercent": 450
+          },
+          "runtime-staging": {
+            "peakRssMb": 900,
+            "maxCpuPercent": 350
+          },
+          "package-manager": {
+            "peakRssMb": 900,
+            "maxCpuPercent": 350
+          },
+          "agent-cli": {
+            "peakRssMb": 1000,
+            "maxCpuPercent": 300
+          },
+          "mock-provider": {
+            "peakRssMb": 250,
+            "maxCpuPercent": 150
+          },
+          "agent-process": {
+            "peakRssMb": 1000,
+            "maxCpuPercent": 300
+          }
+        }
+      },
+      "violations": [
+        {
+          "kind": "resource",
+          "metric": "resourceByRole.agent-process.missing",
+          "role": "agent-process",
+          "resourceGateKind": "role-missing",
+          "expected": "configured primary resource role observed in product samples",
+          "actual": "missing",
+          "attribution": {
+            "role": "agent-process",
+            "observed": false,
+            "topRolesByRss": [],
+            "topRolesByCpu": [],
+            "peakRssProcess": null,
+            "peakCpuProcess": null
+          },
+          "message": "agent-process resource evidence was not captured; configured primary resource role has active resource thresholds"
+        },
+        {
+          "kind": "diagnostics",
+          "metric": "openclawTimelineAvailable",
+          "expected": "available",
+          "actual": false,
+          "message": "OpenClaw diagnostics timeline was required for profile 'diagnostic' on target kind 'local-build' but was not emitted"
+        }
+      ],
+      "cleanupResult": {
+        "command": "ocm env destroy 'kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903' --yes",
+        "status": 1,
+        "signal": null,
+        "timedOut": false,
+        "startedAt": "2026-09-02T05:29:09.118Z",
+        "startedAtEpochMs": 1788326949118,
+        "finishedAt": "2026-09-02T05:29:09.121Z",
+        "finishedAtEpochMs": 1788326949121,
+        "durationMs": 3,
+        "stdout": "",
+        "stderr": "ocm: environment \"kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903\" does not exist\nRun \"ocm help\" for usage.\n",
+        "outputBudget": {
+          "schemaVersion": "kova.commandOutputBudget.v1",
+          "stdout": {
+            "originalChars": 0,
+            "retainedChars": 0,
+            "omittedChars": 0,
+            "truncated": false,
+            "limitChars": 20000
+          },
+          "stderr": {
+            "originalChars": 124,
+            "retainedChars": 124,
+            "omittedChars": 0,
+            "truncated": false,
+            "limitChars": 20000
+          },
+          "truncated": false,
+          "omittedChars": 0
+        },
+        "attempts": [
+          {
+            "status": 1,
+            "durationMs": 3,
+            "timedOut": false,
+            "stdout": "",
+            "stderr": "ocm: environment \"kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903\" does not exist\nRun \"ocm help\" for usage.\n"
+          }
+        ]
+      },
+      "evidenceInvariants": [
+        {
+          "id": "agent-cli-command-receipts",
+          "phaseId": "post-agent-health",
+          "required": true,
+          "status": "missing",
+          "summary": "agent CLI provision, turn, status, and collector command receipts were captured",
+          "artifactPath": null,
+          "reason": "target-setup command 1: command exited 1"
+        },
+        {
+          "id": "agent-cli-local-transport-proof",
+          "phaseId": "cold-agent-turn",
+          "required": true,
+          "status": "failed",
+          "summary": "agent turns used the local embedded agent CLI path, not Gateway session RPC",
+          "artifactPath": null,
+          "reason": "expected at least 2 agent turn(s), found 0"
+        },
+        {
+          "id": "agent-cli-response-proof",
+          "phaseId": "warm-agent-turn",
+          "required": true,
+          "status": "failed",
+          "summary": "agent turns produced the expected assistant marker or expected failure evidence",
+          "artifactPath": null,
+          "reason": "expected at least 2 agent turn(s), found 0"
+        },
+        {
+          "id": "agent-cli-provider-proof",
+          "phaseId": "warm-agent-turn",
+          "required": true,
+          "status": "missing",
+          "summary": "mock provider request/response evidence was captured and attributed to every successful agent turn",
+          "artifactPath": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/provider/provider-evidence.json",
+          "reason": "agent turn attribution count 0 was below required 2"
+        },
+        {
+          "id": "agent-cli-latency-windows",
+          "phaseId": "warm-agent-turn",
+          "required": true,
+          "status": "missing",
+          "summary": "agent total, pre-provider, provider, and post-provider latency windows were measured",
+          "artifactPath": null,
+          "reason": "expected at least 2 agent turn(s), found 0"
+        },
+        {
+          "id": "agent-cli-no-service-health-proof",
+          "phaseId": "post-agent-health",
+          "required": true,
+          "status": "missing",
+          "summary": "no-service local agent env state and final health accounting were captured",
+          "artifactPath": null,
+          "reason": "final gateway state was missing"
+        },
+        {
+          "id": "agent-cli-resource-proof",
+          "phaseId": "warm-agent-turn",
+          "required": true,
+          "status": "missing",
+          "summary": "agent CLI resource samples and retained sample artifacts were captured",
+          "artifactPath": null,
+          "reason": "resource samples were not collected"
+        },
+        {
+          "id": "agent-cli-diagnostic-timeline-proof",
+          "phaseId": "warm-agent-turn",
+          "required": true,
+          "status": "missing",
+          "summary": "OpenClaw diagnostic timeline was captured and parsed without errors",
+          "artifactPath": null,
+          "reason": "OpenClaw diagnostic timeline was not available"
+        },
+        {
+          "id": "agent-cli-logs-captured",
+          "phaseId": "post-agent-health",
+          "required": true,
+          "status": "missing",
+          "summary": "bounded gateway or command logs were captured for dependency and plugin-load checks",
+          "artifactPath": null,
+          "reason": "log artifact path was not recorded"
+        },
+        {
+          "id": "agent-cli-no-missing-runtime-dependency-errors",
+          "phaseId": "post-agent-health",
+          "required": true,
+          "status": "missing",
+          "summary": "agent CLI logs and command output contain no missing runtime dependency errors",
+          "artifactPath": null,
+          "reason": "missingDependencyErrors measurement was not collected"
+        },
+        {
+          "id": "agent-cli-no-plugin-load-failures",
+          "phaseId": "post-agent-health",
+          "required": true,
+          "status": "missing",
+          "summary": "agent CLI logs contain no plugin load failures",
+          "artifactPath": null,
+          "reason": "pluginLoadFailures measurement was not collected"
+        },
+        {
+          "id": "agent-cli-no-provider-timeout-mentions",
+          "phaseId": "post-agent-health",
+          "required": true,
+          "status": "missing",
+          "summary": "agent CLI logs and command output contain no provider timeout mentions",
+          "artifactPath": null,
+          "reason": "providerTimeoutMentions measurement was not collected"
+        }
+      ],
+      "cleanupEvidence": [
+        {
+          "id": "env-cleanup",
+          "required": true,
+          "status": "passed",
+          "phaseId": "env-cleanup",
+          "summary": "disposable Kova env cleanup completed or was explicitly accounted for",
+          "reason": null
+        }
+      ],
+      "evidenceArtifactBudget": {
+        "schemaVersion": "kova.evidenceArtifactBudget.v1",
+        "maxBytes": 5242880,
+        "totalBytes": 1375,
+        "artifactCount": 1,
+        "missingCount": 0,
+        "exceeded": false,
+        "artifacts": [
+          {
+            "path": "/home/runner/_work/openclaw/openclaw/.artifacts/kova/home/live-openai-candidate/artifacts/kova-260902-052828-e2b903/kova-agent-cold-warm-message-2c26dd1d-kova-260902-052828-e2b903/provider/provider-evidence.json",
+            "bytes": 1375
+          }
+        ]
+      },
+      "evidenceArtifacts": [
+        {
+          "id": "record-budget",
+          "required": true,
+          "status": "passed",
+          "summary": "total retained evidence artifact bytes stay within the per-record cap",
+          "artifactPath": null,
+          "reason": null
+        }
+      ]
+    }
+  ]
+}
