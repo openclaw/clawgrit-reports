@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-09-04T05:32:43.720Z",
+  "outputDir": "/home/runner/_work/openclaw/openclaw/.artifacts/openclaw-performance/source/mock-provider/gateway-cpu",
+  "startupOutput": "/home/runner/_work/openclaw/openclaw/.artifacts/openclaw-performance/source/mock-provider/gateway-cpu/gateway-startup-bench.json",
+  "concurrencyOutput": "/home/runner/_work/openclaw/openclaw/.artifacts/openclaw-performance/source/mock-provider/gateway-cpu/gateway-concurrency-bench.json",
+  "qaSummary": null,
+  "options": {
+    "startupCases": [
+      "default",
+      "skipChannels",
+      "preparedRuntimeCatalogStall",
+      "preparedRuntimeScaleOne",
+      "preparedRuntimeScaleMany",
+      "oneInternalHook",
+      "allInternalHooks",
+      "fiftyPlugins",
+      "fiftyStartupLazyPlugins"
+    ],
+    "qaScenarios": [
+      "channel-chat-baseline",
+      "memory-failure-fallback",
+      "gateway-restart-inflight-run"
+    ],
+    "runs": 3,
+    "warmup": 1,
+    "cpuCoreWarn": 0.9,
+    "hotWallWarnMs": 30000,
+    "concurrency": 8,
+    "concurrencyWarnThresholds": {
+      "eventLoopDelayP99Ms": 3000,
+      "sessionsListP99Ms": 3000,
+      "controlUiP99Ms": 3000
+    },
+    "qaStateDir": null
+  },
+  "steps": [
+    {
+      "name": "startup build",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "startup bench",
+      "status": 0,
+      "signal": null
+    },
+    {
+      "name": "concurrency bench",
+      "status": 0,
+      "signal": null
+    }
+  ],
+  "observations": [],
+  "concurrencyWarnings": []
+}
