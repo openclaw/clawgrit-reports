@@ -1,0 +1,81 @@
+{
+  "ok": true,
+  "ts": 1789882099956,
+  "durationMs": 13,
+  "eventLoop": {
+    "degraded": true,
+    "degradedSinceMs": 0,
+    "reasons": [
+      "cpu"
+    ],
+    "intervalMs": 1110.14203,
+    "delayP99Ms": 438.3,
+    "delayMaxMs": 438.3,
+    "utilization": 0.638,
+    "cpuCoreRatio": 1.429,
+    "cpuBreakdown": {
+      "mainThreadCoreRatio": 0.623,
+      "hostUtilization": 0.522,
+      "hostCpuCount": 4
+    }
+  },
+  "plugins": {
+    "loaded": [
+      "acpx",
+      "anthropic",
+      "canvas",
+      "cua-computer",
+      "device-pair",
+      "file-transfer",
+      "geolocation",
+      "github",
+      "google-meet",
+      "linux-node",
+      "memory-core",
+      "ollama",
+      "openai",
+      "talk-voice",
+      "teams-meetings",
+      "xai",
+      "zoom-meetings"
+    ],
+    "errors": [],
+    "unavailable": []
+  },
+  "configReload": {
+    "hotReloadStatus": "active"
+  },
+  "channels": {},
+  "channelOrder": [],
+  "channelLabels": {},
+  "heartbeatSeconds": 0,
+  "defaultAgentId": "main",
+  "agents": [
+    {
+      "agentId": "main",
+      "isDefault": true,
+      "heartbeat": {
+        "enabled": false,
+        "every": "disabled",
+        "everyMs": null,
+        "prompt": "Follow the heartbeat monitor scratch context when provided. Recurring tasks are automations; create or change their schedules with the automations tool, not heartbeat scratch. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply NO_REPLY.",
+        "target": "owner",
+        "ackMaxChars": 300
+      },
+      "sessions": {
+        "path": "/tmp/tmp.KzwmbQ4HKr/.openclaw/agents/main/agent/openclaw-agent.sqlite",
+        "count": 0,
+        "recent": []
+      }
+    }
+  ],
+  "sessions": {
+    "path": "/tmp/tmp.KzwmbQ4HKr/.openclaw/agents/main/agent/openclaw-agent.sqlite",
+    "count": 0,
+    "recent": []
+  },
+  "modelRuntime": {
+    "degraded": false,
+    "pendingAgents": []
+  }
+}
