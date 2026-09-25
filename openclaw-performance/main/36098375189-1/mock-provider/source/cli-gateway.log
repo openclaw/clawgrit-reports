@@ -1,0 +1,24 @@
+[90m2026-09-25T05:32:45.520+00:00[39m [36m[gateway][39m [36mloading configuration…[39m
+[90m2026-09-25T05:32:45.710+00:00[39m [36m[gateway][39m [36mresolving authentication…[39m
+[90m2026-09-25T05:32:45.712+00:00[39m [36m[gateway][39m [36mstarting...[39m
+[90m2026-09-25T05:32:45.866+00:00[39m [36m[gateway][39m [36mshutdown budget at startup: drain=75000ms shutdown=85000ms reserve=10000ms exitMargin=5000ms; source=systemd system setup_and_run_blacksmith.service TimeoutStopUSec=90000ms[39m
+[90m2026-09-25T05:32:45.941+00:00[39m [36m[gateway][39m [36mspawn broker ready pid=17426[39m
+[90m2026-09-25T05:32:47.123+00:00[39m [36m[gateway][39m [36mstarting HTTP server...[39m
+[90m2026-09-25T05:32:47.768+00:00[39m [36m[gateway][39m [36magent model: openai/gpt-6-astra (thinking=medium, fast=off)[39m
+[90m2026-09-25T05:32:47.769+00:00[39m [36m[gateway][39m [36mhttp server listening (17 plugins: acpx, anthropic, canvas, cua-computer, device-pair, file-transfer, geolocation, github, google-meet, linux-node, memory-core, ollama, openai, talk-voice, teams-meetings, xai, zoom-meetings; 1.9s)[39m
+[90m2026-09-25T05:32:47.769+00:00[39m [36m[gateway][39m [36mlog file: /tmp/openclaw/openclaw-2026-09-25.log[39m
+[90m2026-09-25T05:32:47.770+00:00[39m [36m[gateway][39m [36mnative runtime: {"pid":17388,"platform":"linux","arch":"x64","node":"24.19.0","v8":"13.6.233.17-node.51","uv":"1.52.1","openssl":"3.5.7","sqlite":"3.53.3"}[39m
+[90m2026-09-25T05:32:47.770+00:00[39m [36m[gateway][39m [36mworker startup state: {"workerCount":4,"workerLifecycle":[{"script":"sqlite-store.worker.js","started":2,"retired":[{"reason":"exit","count":1}]},{"script":"openclaw-state-lease-heartbeat.worker.js","started":1,"retired":[]},{"script":"openclaw-state-read.worker.js","started":2,"retired":[]}],"compute":{"limit":3,"active":0,"waitingPools":0,"pendingTasks":0,"pendingBytes":0}}[39m
+[90m2026-09-25T05:32:47.796+00:00[39m [36m[gateway][39m [36mstarting channels and sidecars...[39m
+[90m2026-09-25T05:32:48.091+00:00[39m [31m[gateway/channels][39m [36mskipping channel start (OPENCLAW_SKIP_CHANNELS=1 or OPENCLAW_SKIP_PROVIDERS=1)[39m
+[90m2026-09-25T05:32:48.097+00:00[39m [35m[plugins][39m [36membedded acpx runtime backend registered lazily[39m
+[90m2026-09-25T05:32:48.136+00:00[39m [36m[gateway][39m [36mstartup outcomes: internal-hooks=skipped (not-configured); internal-startup-hook=skipped (no-handlers-loaded); gateway-start-hooks=scheduled; gmail-watcher=skipped (hooks-disabled); gmail-model=skipped (not-configured)[39m
+[90m2026-09-25T05:32:48.137+00:00[39m [32m[skill-workshop][39m [33mscheduled skill collection reviews are disabled because the cron scheduler is disabled; enable cron and restart the gateway[39m
+[90m2026-09-25T05:32:48.138+00:00[39m [36m[heartbeat][39m [36mdisabled[39m
+[90m2026-09-25T05:32:48.146+00:00[39m [36m[gateway][39m [36mready[39m
+[90m2026-09-25T05:32:55.957+00:00[39m [32m[admission][39m [36mclosed: stop (SIGTERM)[39m
+[90m2026-09-25T05:32:55.957+00:00[39m [36m[gateway][39m [36mreceived SIGTERM; shutting down[39m
+[90m2026-09-25T05:32:55.967+00:00[39m [36m[gateway][39m [36mshutdown budget at shutdown: drain=74989ms shutdown=84989ms reserve=10000ms exitMargin=5000ms; source=systemd system setup_and_run_blacksmith.service TimeoutStopUSec=90000ms[39m
+[90m2026-09-25T05:32:55.968+00:00[39m [36m[gateway][39m [36mactive-work drain settled; beginning server close[39m
+[90m2026-09-25T05:32:55.983+00:00[39m [34m[gmail-watcher][39m [36mgmail watcher stopped[39m
+[90m2026-09-25T05:32:56.012+00:00[39m [33m[shutdown][39m [36mcompleted cleanly in 42ms[39m
