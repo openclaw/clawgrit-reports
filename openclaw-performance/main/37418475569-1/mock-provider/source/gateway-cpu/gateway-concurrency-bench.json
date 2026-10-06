@@ -1,0 +1,862 @@
+{
+  "agentCount": 1,
+  "browserHistoryMessages": 80,
+  "browserSessionClicks": 0,
+  "cadenceMs": 100,
+  "concurrency": 8,
+  "controlPlane": false,
+  "historyMessages": 0,
+  "historyMessageChars": 1024,
+  "diagnosticsTimeline": true,
+  "entry": "dist/entry.js",
+  "generatedAt": "2026-10-06T05:34:10.851Z",
+  "historyBurst": 5,
+  "historyClients": 0,
+  "mode": "mock-streaming-agent",
+  "provider": "mock",
+  "pluginCount": 0,
+  "probeWorkload": {
+    "mode": "adaptive",
+    "samplerRoundsPerRun": null,
+    "historyRequestsPerRun": null,
+    "peakRssSampling": "sampler-rounds-and-final-memory"
+  },
+  "runs": [],
+  "warmupRuns": [],
+  "failedAttempt": {
+    "status": "failure",
+    "errors": [
+      {
+        "phase": "workload",
+        "error": "sessions.create failed: Error: Agent creation no longer owns its originally observed target\ngateway stderr tail:\n[gateway] startup trace: cli.bootstrap.plugin-plan-import 1.9ms total=3121.6ms start=3119.7ms\n[gateway] startup phase: cli.bootstrap.plugin-plan starting total=3121.7ms\n[gateway] startup trace: cli.bootstrap.plugin-plan 1.6ms total=3123.3ms start=3121.7ms\n[gateway] startup phase: cli.bootstrap.migration-lease-release starting total=3123.8ms\n[gateway] startup trace: cli.bootstrap.migration-lease-release 0.4ms total=3124.2ms start=3123.8ms\n[gateway] startup trace: cli.command.config-ready 2615.8ms total=3130.9ms start=515.1ms\n[gateway] startup phase: cli.main.gateway-run-reload-environment starting total=3131.0ms\n[gateway] startup trace: cli.main.gateway-run-reload-environment 0.4ms total=3131.3ms start=3131.0ms\n[gateway] startup trace: cli.main.gateway-run-bootstrap 2618.0ms total=3131.3ms start=513.3ms\n2026-10-06T05:34:03.659+00:00 [gateway] auth mode=none explicitly configured; all gateway connections are unauthenticated.\n[gateway] startup phase: cli.bootstrap.lifecycle-runtime starting total=3275.9ms\n[gateway] startup trace: cli.bootstrap.lifecycle-runtime 28.7ms total=3304.6ms start=3275.9ms\n[gateway] startup phase: cli.bootstrap.gateway-lock starting total=3304.8ms\n[gateway] startup trace: cli.bootstrap.gateway-lock 121.8ms total=3426.5ms start=3304.8ms\n[gateway] startup phase: cli.bootstrap.boot-lifecycle starting total=3437.8ms\n[gateway] startup trace: cli.bootstrap.boot-lifecycle 1.9ms total=3439.7ms start=3437.8ms\n[gateway] startup phase: gateway.server-start-import starting total=3485.7ms\n[gateway] startup trace: gateway.server-start-import 196.3ms total=3681.9ms start=3485.7ms\n2026-10-06T05:34:06.106+00:00 [gateway] Older local CLI/SDK versions can bypass Gateway state mutation routing. Use matching CLI/SDK and Gateway versions; legacy direct writers remain supported.\n2026-10-06T05:34:09.213+00:00 [gateway] request handler failed: Error: Agent creation no longer owns its originally observed target\ngateway output tail:\n[gateway] startup trace: cli.main.argv 1.0ms total=282.2ms start=281.2ms\n[gateway] startup trace: entry.bootstrap 84.5ms total=141.2ms start=56.7ms\n[gateway] startup trace: entry.argv 0.5ms total=141.7ms start=141.2ms\n[gateway] startup phase: entry.run-main-import starting total=144.5ms\n[gateway] startup trace: entry.run-main-import 21.7ms total=166.2ms start=144.5ms\n[gateway] startup phase: cli.main.gateway-run-select-environment starting total=283.7ms\n[gateway] startup trace: cli.main.gateway-run-select-environment 158.8ms total=442.6ms start=283.7ms\n[gateway] startup trace: cli.main.unhandled-rejection-handler-import 3.1ms total=496.4ms start=493.2ms\n[gateway] startup phase: cli.main.gateway-run-imports starting total=496.6ms\n[gateway] startup trace: cli.main.gateway-run-imports 2.1ms total=498.8ms start=496.6ms\n[gateway] startup phase: cli.main.gateway-run-pre-bootstrap starting total=503.5ms\n[gateway] startup trace: cli.main.gateway-run-pre-bootstrap 9.7ms total=513.2ms start=503.5ms\n[gateway] startup phase: cli.main.gateway-run-bootstrap starting total=513.3ms\n[gateway] startup phase: cli.command.config-ready starting total=515.1ms\n[gateway] startup phase: cli.command.config-guard-import starting total=515.3ms\n[gateway] startup trace: cli.command.config-guard-import 12.3ms total=527.6ms start=515.3ms\n[gateway] startup phase: cli.bootstrap.admission.live-owner starting total=533.7ms\n[gateway] startup trace: cli.bootstrap.admission.live-owner 1.8ms total=535.5ms start=533.7ms\n[gateway] startup phase: cli.bootstrap.admission.core-config starting total=535.5ms\n[gateway] startup trace: cli.bootstrap.admission.core-config 1.6ms total=537.1ms start=535.5ms\n[gateway] startup phase: cli.bootstrap.admission.state-snapshot starting total=537.2ms\n[gateway] startup phase: cli.bootstrap.admission.core-recovery starting total=537.6ms\n[gateway] startup trace: cli.bootstrap.admission.core-recovery 0.4ms total=537.9ms start=537.6ms\n[gateway] startup phase: cli.bootstrap.admission.database-runtime-import starting total=538.0ms\n[gateway] startup trace: cli.bootstrap.admission.database-runtime-import 14.8ms total=552.8ms start=538.0ms\n[gateway] startup phase: cli.bootstrap.admission.database-readiness starting total=552.9ms\n[gateway] startup trace: cli.bootstrap.admission.database-readiness 1.6ms total=554.5ms start=552.9ms agentCount=1 schemaProcessCount=0 schemaInspectionCount=0 schemaSnapshotCount=0\n[gateway] startup phase: cli.bootstrap.admission.session-runtime-import starting total=554.6ms\n[gateway] startup trace: cli.bootstrap.admission.session-runtime-import 140.8ms total=695.4ms start=554.6ms\n[gateway] startup phase: cli.bootstrap.admission.agent-inventory starting total=695.5ms\n[gateway] startup trace: cli.bootstrap.admission.agent-inventory 0.5ms total=695.9ms start=695.5ms\n[gateway] startup phase: cli.bootstrap.admission.session-targets starting total=696.0ms\n[gateway] startup trace: cli.bootstrap.admission.session-targets 0.8ms total=696.8ms start=696.0ms agentCount=1 registeredDatabaseCount=0\n[gateway] startup phase: cli.bootstrap.admission.session-readiness starting total=696.9ms\n[gateway] startup trace: cli.bootstrap.admission.session-readiness 0.2ms total=697.1ms start=696.9ms targetCount=1\n[gateway] startup phase: cli.bootstrap.admission.workspace-runtime-import starting total=697.2ms\n[gateway] startup trace: cli.bootstrap.admission.workspace-runtime-import 2.5ms total=699.6ms start=697.2ms\n[gateway] startup phase: cli.bootstrap.admission.workspace-readiness starting total=699.7ms\n[gateway] startup trace: cli.bootstrap.admission.workspace-readiness 1.2ms total=700.9ms start=699.7ms agentCount=1\n[gateway] startup phase: cli.bootstrap.admission.plugin-config starting total=701.1ms\n[gateway] startup trace: cli.command.config.snapshot.read.file 0.1ms total=701.8ms start=701.8ms\n[gateway] startup trace: cli.command.config.snapshot.read.hash 0.0ms total=701.9ms start=701.9ms\n[gateway] startup trace: cli.command.config.snapshot.read.parse 0.0ms total=702.0ms start=702.0ms\n[gateway] startup trace: cli.command.config.snapshot.read.includes 0.1ms total=702.2ms start=702.1ms\n[gateway] startup trace: cli.command.config.snapshot.read.env 0.1ms total=702.4ms start=702.2ms\n[gateway] startup trace: cli.command.config.snapshot.read.validate 170.0ms total=872.4ms start=702.4ms\n[gateway] startup trace: cli.command.config.snapshot.read.materialize 0.5ms total=873.2ms start=872.6ms\n[gateway] startup trace: cli.command.config.snapshot.read.observe 0.1ms total=873.3ms start=873.3ms\n[gateway] startup trace: cli.bootstrap.admission.plugin-config 201.5ms total=902.5ms start=701.1ms\n[gateway] startup phase: cli.bootstrap.admission.config-recovery starting total=903.8ms\n[gateway] startup trace: cli.bootstrap.admission.config-recovery 0.9ms total=904.7ms start=903.8ms\n[gateway] startup phase: cli.bootstrap.admission.device-identity starting total=904.8ms\n[gateway] startup trace: cli.bootstrap.admission.device-identity 1.7ms total=906.6ms start=904.8ms\n[gateway] startup trace: cli.bootstrap.admission.state-snapshot 369.4ms total=906.6ms start=537.2ms\n[gateway] startup phase: cli.bootstrap.admission.config-guard starting total=906.6ms\n[gateway] startup trace: cli.bootstrap.admission.config-guard 0.3ms total=907.0ms start=906.6ms\n[gateway] startup phase: cli.bootstrap.migration-lease starting total=907.5ms\n[gateway] startup trace: cli.bootstrap.migration-lease 72.0ms total=979.5ms start=907.5ms\n[gateway] startup phase: cli.bootstrap.admission.live-owner starting total=1447.6ms\n[gateway] startup trace: cli.bootstrap.admission.live-owner 0.3ms total=1447.9ms start=1447.6ms\n[gateway] startup phase: cli.bootstrap.admission.core-config starting total=1447.9ms\n[gateway] startup trace: cli.bootstrap.admission.core-config 3.9ms total=1451.8ms start=1447.9ms\n[gateway] startup phase: cli.bootstrap.admission.state-snapshot starting total=1451.8ms\n[gateway] startup phase: cli.bootstrap.admission.core-recovery starting total=1611.6ms\n[gateway] startup trace: cli.bootstrap.admission.core-recovery 0.5ms total=1612.1ms start=1611.6ms\n[gateway] startup phase: cli.bootstrap.admission.database-runtime-import starting total=1612.2ms\n[gateway] startup trace: cli.bootstrap.admission.database-runtime-import 0.1ms total=1612.2ms start=1612.2ms\n[gateway] startup phase: cli.bootstrap.admission.database-readiness starting total=1612.2ms\n[gateway] startup trace: cli.bootstrap.admission.database-readiness 12.9ms total=1625.2ms start=1612.2ms agentCount=1 schemaProcessCount=0 schemaInspectionCount=0 schemaSnapshotCount=0\n[gateway] startup phase: cli.bootstrap.admission.session-runtime-import starting total=1625.2ms\n[gateway] startup trace: cli.bootstrap.admission.session-runtime-import 0.1ms total=1625.3ms start=1625.2ms\n[gateway] startup phase: cli.bootstrap.admission.agent-inventory starting total=1625.3ms\n[gateway] startup trace: cli.bootstrap.admission.agent-inventory 1.6ms total=1626.9ms start=1625.3ms\n[gateway] startup phase: cli.bootstrap.admission.session-targets starting total=1627.0ms\n[gateway] startup trace: cli.bootstrap.admission.session-targets 0.3ms total=1627.3ms start=1627.0ms agentCount=1 registeredDatabaseCount=0\n[gateway] startup phase: cli.bootstrap.admission.session-readiness starting total=1627.3ms\n[gateway] startup trace: cli.bootstrap.admission.session-readiness 0.1ms total=1627.4ms start=1627.3ms targetCount=1\n[gateway] startup phase: cli.bootstrap.admission.workspace-runtime-import starting total=1627.4ms\n[gateway] startup trace: cli.bootstrap.admission.workspace-runtime-import 0.0ms total=1627.4ms start=1627.4ms\n[gateway] startup phase: cli.bootstrap.admission.workspace-readiness starting total=1627.4ms\n[gateway] startup trace: cli.bootstrap.admission.workspace-readiness 0.4ms total=1627.8ms start=1627.4ms agentCount=1\n[gateway] startup phase: cli.bootstrap.admission.plugin-config starting total=1627.9ms\n[gateway] startup trace: cli.command.config.snapshot.read.file 0.0ms total=1628.3ms start=1628.3ms\n[gateway] startup trace: cli.command.config.snapshot.read.hash 0.0ms total=1628.5ms start=1628.4ms\n[gateway] startup trace: cli.command.config.snapshot.read.parse 0.1ms total=1628.6ms start=1628.5ms\n[gateway] startup trace: cli.command.config.snapshot.read.includes 0.1ms total=1628.7ms start=1628.6ms\n[gateway] startup trace: cli.command.config.snapshot.read.env 0.2ms total=1629.0ms start=1628.8ms\n[gateway] startup trace: cli.command.config.snapshot.read.validate 439.6ms total=2068.7ms start=1629.1ms\n[gateway] startup trace: cli.command.config.snapshot.read.materialize 0.3ms total=2069.1ms start=2068.8ms\n[gateway] startup trace: cli.command.config.snapshot.read.observe 0.1ms total=2069.2ms start=2069.2ms\n[gateway] startup trace: cli.bootstrap.admission.plugin-config 457.9ms total=2085.8ms start=1627.9ms\n[gateway] startup phase: cli.bootstrap.admission.config-recovery starting total=2085.9ms\n[gateway] startup trace: cli.bootstrap.admission.config-recovery 3.0ms total=2089.0ms start=2085.9ms\n[gateway] startup phase: cli.bootstrap.admission.device-identity starting total=2089.1ms\n[gateway] startup trace: cli.bootstrap.admission.device-identity 1.8ms total=2090.9ms start=2089.1ms\n[gateway] startup trace: cli.bootstrap.admission.state-snapshot 642.1ms total=2094.0ms start=1451.8ms\n[gateway] startup phase: cli.bootstrap.admission.config-guard starting total=2094.0ms\n[gateway] startup trace: cli.bootstrap.admission.config-guard 0.2ms total=2094.2ms start=2094.0ms\n[gateway] startup phase: cli.bootstrap.plugin-index.refresh starting total=2094.3ms\n[gateway] startup trace: cli.command.plugin-index-store-import 1.2ms total=2095.9ms start=2094.7ms\n[gateway] startup trace: cli.command.plugin-index-persistence 3.5ms total=2099.5ms start=2096.0ms\n[gateway] startup phase: cli.bootstrap.plugin-index.read-persisted starting total=2099.6ms\n[gateway] startup trace: cli.command.config.snapshot.read.file 0.0ms total=2100.0ms start=2099.9ms\n[gateway] startup trace: cli.command.config.snapshot.read.hash 0.0ms total=2100.0ms start=2100.0ms\n[gateway] startup trace: cli.command.config.snapshot.read.parse 0.0ms total=2100.1ms start=2100.1ms\n[gateway] startup trace: cli.command.config.snapshot.read.includes 0.1ms total=2100.2ms start=2100.1ms\n[gateway] startup trace: cli.command.config.snapshot.read.env 0.2ms total=2100.5ms start=2100.2ms\n[gateway] startup trace: cli.command.config.snapshot.read.validate 452.2ms total=2552.7ms start=2100.5ms\n[gateway] startup trace: cli.command.config.snapshot.read.materialize 0.2ms total=2553.1ms start=2552.8ms\n[gateway] startup trace: cli.command.config.snapshot.read.observe 0.0ms total=2553.2ms start=2553.2ms\n[gateway] startup trace: cli.bootstrap.plugin-index.read-persisted 468.2ms total=2567.8ms start=2099.6ms\n[gateway] startup trace: cli.bootstrap.plugin-index.refresh 473.6ms total=2567.9ms start=2094.3ms\n[gateway] startup phase: cli.bootstrap.webhook-readiness starting total=2570.3ms\n[gateway] startup trace: cli.bootstrap.webhook-readiness 149.0ms total=2719.3ms start=2570.3ms\n[gateway] startup trace: cli.command.config.snapshot.read.file 0.0ms total=2719.8ms start=2719.7ms\n[gateway] startup trace: cli.command.config.snapshot.read.hash 0.0ms total=2719.8ms start=2719.8ms\n[gateway] startup trace: cli.command.config.snapshot.read.parse 0.0ms total=2719.9ms start=2719.9ms\n[gateway] startup trace: cli.command.config.snapshot.read.includes 0.1ms total=2720.0ms start=2719.9ms\n[gateway] startup trace: cli.command.config.snapshot.read.env 0.1ms total=2720.2ms start=2720.0ms\n[gateway] startup trace: cli.command.config.snapshot.read.validate 383.8ms total=3104.0ms start=2720.2ms\n[gateway] startup trace: cli.command.config.snapshot.read.materialize 0.2ms total=3104.4ms start=3104.2ms\n[gateway] startup trace: cli.command.config.snapshot.read.observe 0.1ms total=3104.6ms start=3104.4ms\n[gateway] startup phase: cli.bootstrap.plugin-plan-import starting total=3119.7ms\n[gateway] startup trace: cli.bootstrap.plugin-plan-import 1.9ms total=3121.6ms start=3119.7ms\n[gateway] startup phase: cli.bootstrap.plugin-plan starting total=3121.7ms\n[gateway] startup trace: cli.bootstrap.plugin-plan 1.6ms total=3123.3ms start=3121.7ms\n[gateway] startup phase: cli.bootstrap.migration-lease-release starting total=3123.8ms\n[gateway] startup trace: cli.bootstrap.migration-lease-release 0.4ms total=3124.2ms start=3123.8ms\n[gateway] startup trace: cli.command.config-ready 2615.8ms total=3130.9ms start=515.1ms\n[gateway] startup phase: cli.main.gateway-run-reload-environment starting total=3131.0ms\n[gateway] startup trace: cli.main.gateway-run-reload-environment 0.4ms total=3131.3ms start=3131.0ms\n[gateway] startup trace: cli.main.gateway-run-bootstrap 2618.0ms total=3131.3ms start=513.3ms\n[gateway] startup trace: cli.server-import 0.8ms total=3241.3ms start=3240.5ms\n2026-10-06T05:34:03.645+00:00 [gateway] loading configuration…\n2026-10-06T05:34:03.653+00:00 [gateway] startup trace: cli.config-snapshot 5.0ms total=3265.2ms start=3260.2ms\n2026-10-06T05:34:03.657+00:00 [gateway] resolving authentication…\n2026-10-06T05:34:03.658+00:00 [gateway] startup trace: cli.auth-resolve 0.2ms total=3272.9ms start=3272.7ms\n2026-10-06T05:34:03.659+00:00 [gateway] auth mode=none explicitly configured; all gateway connections are unauthenticated.\n2026-10-06T05:34:03.660+00:00 [gateway] starting...\n2026-10-06T05:34:03.660+00:00 [gateway] startup trace: cli.gateway-loop 1.9ms total=3274.7ms start=3272.9ms\n[gateway] startup phase: cli.bootstrap.lifecycle-runtime starting total=3275.9ms\n[gateway] startup trace: cli.bootstrap.lifecycle-runtime 28.7ms total=3304.6ms start=3275.9ms\n[gateway] startup phase: cli.bootstrap.gateway-lock starting total=3304.8ms\n[gateway] startup trace: cli.bootstrap.gateway-lock 121.8ms total=3426.5ms start=3304.8ms\n2026-10-06T05:34:03.822+00:00 [gateway] shutdown budget at startup: drain=75000ms shutdown=85000ms reserve=10000ms exitMargin=5000ms; source=systemd system setup_and_run_blacksmith.service TimeoutStopUSec=90000ms\n[gateway] startup phase: cli.bootstrap.boot-lifecycle starting total=3437.8ms\n[gateway] startup trace: cli.bootstrap.boot-lifecycle 1.9ms total=3439.7ms start=3437.8ms\n2026-10-06T05:34:03.870+00:00 [gateway] spawn broker ready pid=15363\n[gateway] startup phase: gateway.server-start-import starting total=3485.7ms\n[gateway] startup trace: gateway.server-start-import 196.3ms total=3681.9ms start=3485.7ms\n2026-10-06T05:34:04.104+00:00 [gateway] startup trace: process.bootstrap.entry.imports 56.7ms total=56.7ms eventLoopMax=0.0ms start=0.0ms calls=1.0\n2026-10-06T05:34:04.104+00:00 [gateway] startup trace: process.bootstrap.entry.bootstrap 84.5ms total=141.2ms eventLoopMax=0.0ms start=56.7ms calls=1.0\n2026-10-06T05:34:04.104+00:00 [gateway] startup trace: process.bootstrap.entry.argv 0.5ms total=141.7ms eventLoopMax=0.0ms start=141.2ms calls=1.0\n2026-10-06T05:34:04.105+00:00 [gateway] startup trace: process.bootstrap.entry.run-main-import 21.7ms total=166.2ms eventLoopMax=0.0ms start=144.5ms calls=1.0\n2026-10-06T05:34:04.105+00:00 [gateway] startup trace: process.bootstrap.cli.main.argv 1.0ms total=282.2ms eventLoopMax=0.0ms start=281.2ms calls=1.0\n2026-10-06T05:34:04.105+00:00 [gateway] startup trace: process.bootstrap.cli.main.gateway-run-select-environment 158.8ms total=442.6ms eventLoopMax=0.0ms start=283.7ms calls=1.0\n2026-10-06T05:34:04.106+00:00 [gateway] startup trace: process.bootstrap.cli.main.unhandled-rejection-handler-import 3.1ms total=496.4ms eventLoopMax=0.0ms start=493.2ms calls=1.0\n2026-10-06T05:34:04.106+00:00 [gateway] startup trace: process.bootstrap.cli.main.gateway-run-imports 2.1ms total=498.8ms eventLoopMax=0.0ms start=496.6ms calls=1.0\n2026-10-06T05:34:04.106+00:00 [gateway] startup trace: process.bootstrap.cli.main.gateway-run-pre-bootstrap 9.7ms total=513.2ms eventLoopMax=0.0ms start=503.5ms calls=1.0\n2026-10-06T05:34:04.107+00:00 [gateway] startup trace: process.bootstrap.cli.main.gateway-run-bootstrap 2618.0ms total=3131.3ms eventLoopMax=0.0ms start=513.3ms calls=1.0\n2026-10-06T05:34:04.107+00:00 [gateway] startup trace: process.bootstrap.cli.command.config-ready 2615.8ms total=3130.9ms eventLoopMax=0.0ms start=515.1ms calls=1.0\n2026-10-06T05:34:04.107+00:00 [gateway] startup trace: process.bootstrap.cli.command.config-guard-import 12.3ms total=527.6ms eventLoopMax=0.0ms start=515.3ms calls=1.0\n2026-10-06T05:34:04.108+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.live-owner 2.1ms total=1447.9ms eventLoopMax=0.0ms start=533.7ms calls=2.0\n2026-10-06T05:34:04.108+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.core-config 5.4ms total=1451.8ms eventLoopMax=0.0ms start=535.5ms calls=2.0\n2026-10-06T05:34:04.108+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.state-snapshot 1011.5ms total=2094.0ms eventLoopMax=0.0ms start=537.2ms calls=2.0\n2026-10-06T05:34:04.108+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.core-recovery 0.9ms total=1612.1ms eventLoopMax=0.0ms start=537.6ms calls=2.0\n2026-10-06T05:34:04.109+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.database-runtime-import 14.8ms total=1612.2ms eventLoopMax=0.0ms start=538.0ms calls=2.0\n2026-10-06T05:34:04.109+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.database-readiness 14.6ms total=1625.2ms eventLoopMax=0.0ms start=552.9ms calls=2.0 agentCount=2.0 schemaProcessCount=0.0 schemaInspectionCount=0.0 schemaSnapshotCount=0.0\n2026-10-06T05:34:04.109+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.session-runtime-import 140.9ms total=1625.3ms eventLoopMax=0.0ms start=554.6ms calls=2.0\n2026-10-06T05:34:04.110+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.agent-inventory 2.1ms total=1626.9ms eventLoopMax=0.0ms start=695.5ms calls=2.0\n2026-10-06T05:34:04.110+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.session-targets 1.1ms total=1627.3ms eventLoopMax=0.0ms start=696.0ms calls=2.0 agentCount=2.0 registeredDatabaseCount=0.0\n2026-10-06T05:34:04.110+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.session-readiness 0.2ms total=1627.4ms eventLoopMax=0.0ms start=696.9ms calls=2.0 targetCount=2.0\n2026-10-06T05:34:04.111+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.workspace-runtime-import 2.5ms total=1627.4ms eventLoopMax=0.0ms start=697.2ms calls=2.0\n2026-10-06T05:34:04.111+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.workspace-readiness 1.6ms total=1627.8ms eventLoopMax=0.0ms start=699.7ms calls=2.0 agentCount=2.0\n2026-10-06T05:34:04.111+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.plugin-config 659.4ms total=2085.8ms eventLoopMax=0.0ms start=701.1ms calls=2.0\n2026-10-06T05:34:04.111+00:00 [gateway] startup trace: process.bootstrap.cli.command.config.snapshot.read.file 0.2ms total=2719.8ms eventLoopMax=0.0ms start=701.8ms calls=4.0\n2026-10-06T05:34:04.112+00:00 [gateway] startup trace: process.bootstrap.cli.command.config.snapshot.read.hash 0.1ms total=2719.8ms eventLoopMax=0.0ms start=701.9ms calls=4.0\n2026-10-06T05:34:04.112+00:00 [gateway] startup trace: process.bootstrap.cli.command.config.snapshot.read.parse 0.2ms total=2719.9ms eventLoopMax=0.0ms start=702.0ms calls=4.0\n2026-10-06T05:34:04.112+00:00 [gateway] startup trace: process.bootstrap.cli.command.config.snapshot.read.includes 0.3ms total=2720.0ms eventLoopMax=0.0ms start=702.1ms calls=4.0\n2026-10-06T05:34:04.113+00:00 [gateway] startup trace: process.bootstrap.cli.command.config.snapshot.read.env 0.7ms total=2720.2ms eventLoopMax=0.0ms start=702.2ms calls=4.0\n2026-10-06T05:34:04.113+00:00 [gateway] startup trace: process.bootstrap.cli.command.config.snapshot.read.validate 1445.6ms total=3104.0ms eventLoopMax=0.0ms start=702.4ms calls=4.0\n2026-10-06T05:34:04.113+00:00 [gateway] startup trace: process.bootstrap.cli.command.config.snapshot.read.materialize 1.2ms total=3104.4ms eventLoopMax=0.0ms start=872.6ms calls=4.0\n2026-10-06T05:34:04.113+00:00 [gateway] startup trace: process.bootstrap.cli.command.config.snapshot.read.observe 0.3ms total=3104.6ms eventLoopMax=0.0ms start=873.3ms calls=4.0\n2026-10-06T05:34:04.114+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.config-recovery 3.9ms total=2089.0ms eventLoopMax=0.0ms start=903.8ms calls=2.0\n2026-10-06T05:34:04.114+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.device-identity 3.6ms total=2090.9ms eventLoopMax=0.0ms start=904.8ms calls=2.0\n2026-10-06T05:34:04.114+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.admission.config-guard 0.5ms total=2094.2ms eventLoopMax=0.0ms start=906.6ms calls=2.0\n2026-10-06T05:34:04.115+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.migration-lease 72.0ms total=979.5ms eventLoopMax=0.0ms start=907.5ms calls=1.0\n2026-10-06T05:34:04.115+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.plugin-index.refresh 473.6ms total=2567.9ms eventLoopMax=0.0ms start=2094.3ms calls=1.0\n2026-10-06T05:34:04.115+00:00 [gateway] startup trace: process.bootstrap.cli.command.plugin-index-store-import 1.2ms total=2095.9ms eventLoopMax=0.0ms start=2094.7ms calls=1.0\n2026-10-06T05:34:04.115+00:00 [gateway] startup trace: process.bootstrap.cli.command.plugin-index-persistence 3.5ms total=2099.5ms eventLoopMax=0.0ms start=2096.0ms calls=1.0\n2026-10-06T05:34:04.116+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.plugin-index.read-persisted 468.2ms total=2567.8ms eventLoopMax=0.0ms start=2099.6ms calls=1.0\n2026-10-06T05:34:04.116+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.webhook-readiness 149.0ms total=2719.3ms eventLoopMax=0.0ms start=2570.3ms calls=1.0\n2026-10-06T05:34:04.116+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.plugin-plan-import 1.9ms total=3121.6ms eventLoopMax=0.0ms start=3119.7ms calls=1.0\n2026-10-06T05:34:04.117+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.plugin-plan 1.6ms total=3123.3ms eventLoopMax=0.0ms start=3121.7ms calls=1.0\n2026-10-06T05:34:04.117+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.migration-lease-release 0.4ms total=3124.2ms eventLoopMax=0.0ms start=3123.8ms calls=1.0\n2026-10-06T05:34:04.117+00:00 [gateway] startup trace: process.bootstrap.cli.main.gateway-run-reload-environment 0.4ms total=3131.3ms eventLoopMax=0.0ms start=3131.0ms calls=1.0\n2026-10-06T05:34:04.117+00:00 [gateway] startup trace: process.bootstrap.cli.server-import 0.8ms total=3241.3ms eventLoopMax=0.0ms start=3240.5ms calls=1.0\n2026-10-06T05:34:04.118+00:00 [gateway] startup trace: process.bootstrap.cli.config-snapshot 5.0ms total=3265.2ms eventLoopMax=0.0ms start=3260.2ms calls=1.0\n2026-10-06T05:34:04.118+00:00 [gateway] startup trace: process.bootstrap.cli.auth-resolve 0.2ms total=3272.9ms eventLoopMax=0.0ms start=3272.7ms calls=1.0\n2026-10-06T05:34:04.118+00:00 [gateway] startup trace: process.bootstrap.cli.gateway-loop 1.9ms total=3274.7ms eventLoopMax=0.0ms start=3272.9ms calls=1.0\n2026-10-06T05:34:04.119+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.lifecycle-runtime 28.7ms total=3304.6ms eventLoopMax=0.0ms start=3275.9ms calls=1.0\n2026-10-06T05:34:04.119+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.gateway-lock 121.8ms total=3426.5ms eventLoopMax=0.0ms start=3304.8ms calls=1.0\n2026-10-06T05:34:04.119+00:00 [gateway] startup trace: process.bootstrap.cli.bootstrap.boot-lifecycle 1.9ms total=3439.7ms eventLoopMax=0.0ms start=3437.8ms calls=1.0\n2026-10-06T05:34:04.120+00:00 [gateway] startup trace: process.bootstrap.gateway.server-start-import 196.3ms total=3681.9ms eventLoopMax=0.0ms start=3485.7ms calls=1.0\n2026-10-06T05:34:04.121+00:00 [gateway] startup trace: process.bootstrap 3716.8ms total=3716.8ms eventLoopMax=0.0ms bootstrapSteps=entry.imports:56.7ms/1,entry.bootstrap:84.5ms/1,entry.argv:0.5ms/1,entry.run-main-import:21.7ms/1,cli.main.argv:1.0ms/1,cli.main.gateway-run-select-environment:158.8ms/1,cli.main.unhandled-rejection-handler-import:3.1ms/1,cli.main.gateway-run-imports:2.1ms/1,cli.main.gateway-run-pre-bootstrap:9.7ms/1,cli.main.gateway-run-bootstrap:2618.0ms/1,cli.command.config-ready:2615.8ms/1,cli.command.config-guard-import:12.3ms/1,cli.bootstrap.admission.live-owner:2.1ms/2,cli.bootstrap.admission.core-config:5.4ms/2,cli.bootstrap.admission.state-snapshot:1011.5ms/2,cli.bootstrap.admission.core-recovery:0.9ms/2,cli.bootstrap.admission.database-runtime-import:14.8ms/2,cli.bootstrap.admission.database-readiness:14.6ms/2,cli.bootstrap.admission.session-runtime-import:140.9ms/2,cli.bootstrap.admission.agent-inventory:2.1ms/2,cli.bootstrap.admission.session-targets:1.1ms/2,cli.bootstrap.admission.session-readiness:0.2ms/2,cli.bootstrap.admission.workspace-runtime-import:2.5ms/2,cli.bootstrap.admission.workspace-readiness:1.6ms/2,cli.bootstrap.admission.plugin-config:659.4ms/2,cli.command.config.snapshot.read.file:0.2ms/4,cli.command.config.snapshot.read.hash:0.1ms/4,cli.command.config.snapshot.read.parse:0.2ms/4,cli.command.config.snapshot.read.includes:0.3ms/4,cli.command.config.snapshot.read.env:0.7ms/4,cli.command.config.snapshot.read.validate:1445.6ms/4,cli.command.config.snapshot.read.materialize:1.2ms/4,cli.command.config.snapshot.read.observe:0.3ms/4,cli.bootstrap.admission.config-recovery:3.9ms/2,cli.bootstrap.admission.device-identity:3.6ms/2,cli.bootstrap.admission.config-guard:0.5ms/2,cli.bootstrap.migration-lease:72.0ms/1,cli.bootstrap.plugin-index.refresh:473.6ms/1,cli.command.plugin-index-store-import:1.2ms/1,cli.command.plugin-index-persistence:3.5ms/1,cli.bootstrap.plugin-index.read-persisted:468.2ms/1,cli.bootstrap.webhook-readiness:149.0ms/1,cli.bootstrap.plugin-plan-import:1.9ms/1,cli.bootstrap.plugin-plan:1.6ms/1,cli.bootstrap.migration-lease-release:0.4ms/1,cli.main.gateway-run-reload-environment:0.4ms/1,cli.server-import:0.8ms/1,cli.config-snapshot:5.0ms/1,cli.auth-resolve:0.2ms/1,cli.gateway-loop:1.9ms/1,cli.bootstrap.lifecycle-runtime:28.7ms/1,cli.bootstrap.gateway-lock:121.8ms/1,cli.bootstrap.boot-lifecycle:1.9ms/1,gateway.server-start-import:196.3ms/1\n2026-10-06T05:34:04.281+00:00 [gateway] startup trace: state.ownership 158.5ms total=3894.8ms eventLoopMax=10.9ms\n2026-10-06T05:34:04.282+00:00 [gateway] startup trace: state.runtime-imports 0.2ms total=3895.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.282+00:00 [gateway] startup phase: state.schema-preflight starting total=3896.1ms\n2026-10-06T05:34:04.426+00:00 [gateway] startup trace: state.schema-preflight schemaProcessCount=0.0 schemaInspectionCount=0.0 schemaSnapshotCount=0.0\n2026-10-06T05:34:04.427+00:00 [gateway] startup trace: state.schema-preflight 144.9ms total=4041.0ms eventLoopMax=10.1ms\n2026-10-06T05:34:04.428+00:00 [gateway] startup trace: runtime.network-imports 0.5ms total=4042.0ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.428+00:00 [gateway] startup trace: runtime.network-bootstrap 0.1ms total=4042.5ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.431+00:00 [gateway] startup trace: runtime.agent-cli 2.3ms total=4045.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.434+00:00 [gateway] startup trace: config.runtime-imports 2.3ms total=4048.0ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.442+00:00 [gateway] startup trace: config.snapshot.auto-enable 7.4ms total=4056.0ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.442+00:00 [gateway] auto-enabled plugins for this runtime without writing config:\n- openai/gpt-5.6-luna model configured, enabled automatically.\n- memory-core tool configured, enabled automatically.\n2026-10-06T05:34:04.443+00:00 [gateway] startup trace: config.snapshot 8.6ms total=4057.0ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.444+00:00 [gateway] startup trace: control-ui.seed 0.3ms total=4057.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.445+00:00 [gateway] startup phase: config.auth starting total=4059.3ms\n2026-10-06T05:34:04.446+00:00 [gateway] startup trace: config.auth.snapshot-validate 0.0ms total=4060.0ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.446+00:00 [gateway] startup trace: config.auth.runtime-overrides 0.1ms total=4060.5ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.447+00:00 [gateway] startup trace: config.auth.startup-overrides 0.2ms total=4061.1ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.448+00:00 [gateway] startup trace: config.auth.secret-surface 0.3ms total=4061.9ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.448+00:00 [gateway] startup trace: config.auth.secret-preflight 0.1ms total=4062.4ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.449+00:00 [gateway] startup trace: config.auth.preflight-override 0.1ms total=4062.9ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.450+00:00 [gateway] startup trace: config.auth.ensure 0.5ms total=4063.8ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.450+00:00 [gateway] startup trace: config.auth.runtime-startup-overrides 0.1ms total=4064.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.640+00:00 [gateway] startup trace: config.auth.secrets-activate 188.9ms total=4253.6ms eventLoopMax=10.3ms\n2026-10-06T05:34:04.641+00:00 [gateway] startup trace: config.auth 195.4ms total=4254.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.644+00:00 [gateway] startup trace: agents.github-profile-cleanup 2.3ms total=4257.5ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.710+00:00 [gateway] startup trace: worker-environments.store-import 65.0ms total=4323.5ms eventLoopMax=10.3ms\n2026-10-06T05:34:04.713+00:00 [gateway] startup trace: plugins.bootstrap-imports 2.4ms total=4326.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.713+00:00 [gateway] startup phase: state.desktop-approval-admission starting total=4327.1ms\n2026-10-06T05:34:04.715+00:00 [gateway] startup trace: state.desktop-approval-admission 2.0ms total=4329.1ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.715+00:00 [gateway] startup phase: sessions.admission starting total=4329.5ms\n2026-10-06T05:34:04.726+00:00 [gateway] startup trace: sessions.admission 10.3ms total=4339.8ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.812+00:00 [gateway] startup trace: plugins.bootstrap 85.0ms total=4425.5ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.813+00:00 [gateway] startup trace: plugins.lookup-table registrySnapshotMs=95.4 manifestRegistryMs=0.4 startupPlanMs=2.9 ownerMapsMs=1.9 totalMs=100.5 indexPlugins=164 indexPluginCount=164.0 manifestPlugins=164 manifestPluginCount=164.0 startupPlugins=16 startupPluginCount=16.0\n2026-10-06T05:34:04.815+00:00 [gateway] startup trace: node-desktop.runtime-import 0.9ms total=4429.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.818+00:00 [gateway] startup trace: host-desktop.runtime-import 1.9ms total=4431.9ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.820+00:00 [gateway] startup trace: computer.runtime-import 2.0ms total=4434.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.907+00:00 [gateway] startup trace: worker-environments.runtime-imports 85.7ms total=4520.5ms eventLoopMax=15.1ms\n2026-10-06T05:34:04.931+00:00 [gateway] startup trace: worker-environments.placement-module 24.1ms total=4545.2ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.935+00:00 [gateway] startup trace: worker-environments.placement-runtime 2.2ms total=4549.1ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.939+00:00 [gateway] startup trace: runtime.config 1.5ms total=4552.8ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.940+00:00 [gateway] startup trace: control-ui.root 0.2ms total=4554.0ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.941+00:00 [gateway] startup trace: terminal.launch-import 0.5ms total=4554.9ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.943+00:00 [gateway] startup trace: gateway.wizard-imports 1.7ms total=4557.1ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.944+00:00 [gateway] startup trace: tls.runtime 0.1ms total=4557.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.949+00:00 [gateway] startup trace: gateway.channel-manager-import 4.2ms total=4563.0ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.950+00:00 [gateway] starting HTTP server...\n2026-10-06T05:34:04.952+00:00 [gateway] startup trace: runtime.state 2.0ms total=4566.2ms eventLoopMax=0.0ms\n2026-10-06T05:34:04.953+00:00 [gateway] startup trace: gateway.kernel-state 138.9ms total=4566.8ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.009+00:00 [gateway] startup trace: gateway.shutdown-runtime-import 55.3ms total=4622.5ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.021+00:00 [gateway] startup trace: gateway.lifecycle 11.3ms total=4634.5ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.037+00:00 [gateway] startup trace: runtime.post-early-imports 13.7ms total=4651.1ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.040+00:00 [gateway] startup trace: runtime.subscriptions 1.8ms total=4653.5ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.040+00:00 [gateway] startup trace: runtime.services 0.1ms total=4654.1ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.056+00:00 [gateway] startup trace: gateway.handlers 13.7ms total=4669.9ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.058+00:00 [gateway] startup trace: gateway.core-runtime 35.1ms total=4672.1ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.064+00:00 [gateway] startup trace: gateway.chat-metadata-lifecycle 4.8ms total=4677.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.067+00:00 [gateway] startup trace: gateway.config-revision-key 2.9ms total=4681.1ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.070+00:00 [gateway] startup trace: gateway.request-context 2.7ms total=4684.4ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.414+00:00 [gateway] startup trace: sessions.projection 342.6ms total=5027.5ms eventLoopMax=18.5ms\n2026-10-06T05:34:05.415+00:00 [gateway] startup trace: sessions.materialize 0.1ms total=5028.6ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.422+00:00 [gateway] startup trace: gateway.lifetime-sidecars 7.2ms total=5036.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.426+00:00 [gateway] startup trace: gateway.instance-runtime-import 3.4ms total=5040.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.428+00:00 [gateway] startup trace: gateway.request-runtime 369.0ms total=5041.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.437+00:00 [gateway] startup trace: gateway.ws-imports 3.0ms total=5050.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.441+00:00 [gateway] startup trace: gateway.ws-attach 0.2ms total=5054.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.442+00:00 [gateway] startup trace: http.listen 0.8ms total=5056.0ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.442+00:00 [gateway] startup trace: http.bound 0.4ms total=5056.4ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.443+00:00 [gateway] startup phase: runtime.early starting total=5056.9ms\n2026-10-06T05:34:05.445+00:00 [gateway] startup phase: runtime.early.discovery starting total=5058.9ms\n2026-10-06T05:34:05.446+00:00 [gateway] startup trace: runtime.early.discovery.machine-name 0.6ms total=5059.9ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.448+00:00 [gateway] startup trace: runtime.early.discovery.start 1.4ms total=5061.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.448+00:00 [gateway] startup trace: runtime.early.discovery 3.1ms total=5062.0ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.448+00:00 [gateway] startup phase: runtime.early.lazy-runtime-imports starting total=5062.4ms\n2026-10-06T05:34:05.449+00:00 [gateway] startup trace: runtime.early.lazy-runtime-imports 1.0ms total=5063.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.450+00:00 [gateway] startup phase: runtime.early.skills-listener starting total=5063.9ms\n2026-10-06T05:34:05.451+00:00 [gateway] startup trace: runtime.early.skills-listener 1.0ms total=5064.8ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.451+00:00 [gateway] startup trace: runtime.early 8.3ms total=5065.2ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.452+00:00 [gateway] startup trace: gateway.active-work-import 0.6ms total=5066.1ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.457+00:00 [gateway] startup phase: post-attach.system-ca starting total=5070.8ms\n2026-10-06T05:34:05.457+00:00 [gateway] startup trace: post-attach.system-ca 0.4ms total=5071.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.459+00:00 [gateway] startup trace: runtime.post-attach 6.8ms total=5073.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.460+00:00 [gateway] startup phase: runtime.worker-pool-metrics starting total=5073.9ms\n2026-10-06T05:34:05.465+00:00 [gateway] startup trace: runtime.worker-pool-metrics 5.1ms total=5078.9ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.468+00:00 [gateway] startup trace: memory.ready rssMb=758.0 heapTotalMb=343.8 heapUsedMb=234.4 externalMb=16.1 arrayBuffersMb=5.8 processSigintListenersCount=1.0 processSigtermListenersCount=1.0 processRestartListenersCount=1.0 activeHandlesCount=17.0 activeRequestsCount=0.0 activeTimersCount=0.0 transcriptReconciliationMaxWorkers=1.0 transcriptReconciliationWorkers=0.0 transc…ed=0.0 transcriptReconciliationActiveTasks=0.0 transcriptReconciliationPendingTasks=0.0 modelCatalogMaxWorkers=1.0 modelCatalogWorkers=0.0 modelCatalogWorkersCreated=0.0 modelCatalogActiveTasks=0.0 modelCatalogPendingTasks=0.0\n2026-10-06T05:34:05.685+00:00 [gateway] startup trace: sidecars.control-ui-assets 0.3ms total=5299.0ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.686+00:00 [gateway] startup phase: sidecars.main-session-recovery starting total=5300.0ms\n2026-10-06T05:34:05.689+00:00 [gateway] startup phase: plugins.runtime-post-bind starting total=5302.9ms\n2026-10-06T05:34:05.692+00:00 [gateway] startup trace: sidecars.main-session-recovery-load 5.8ms total=5306.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.696+00:00 [gateway] startup trace: plugins.gateway-prepare autoEnableMs=1.2 resolvedConfigMs=0.1\n2026-10-06T05:34:05.726+00:00 [gateway] startup trace: plugins.gateway-load.plugin.teams-meetings loadMs=15.1 loadFailedCount=0.0 registerMs=2.6 loadAndRegisterMs=18.0 registerFailedCount=0.0\n2026-10-06T05:34:05.730+00:00 [gateway] startup trace: plugins.gateway-load.plugin.zoom-meetings loadMs=2.2 loadFailedCount=0.0 registerMs=0.8 loadAndRegisterMs=3.0 registerFailedCount=0.0\n2026-10-06T05:34:05.784+00:00 [gateway] startup trace: plugins.gateway-load.plugin.acpx loadMs=49.3 loadFailedCount=0.0 registerMs=2.7 loadAndRegisterMs=52.1 registerFailedCount=0.0\n2026-10-06T05:34:05.797+00:00 [gateway] startup trace: plugins.gateway-load.plugin.anthropic loadMs=9.4 loadFailedCount=0.0 registerMs=2.3 loadAndRegisterMs=11.8 registerFailedCount=0.0\n2026-10-06T05:34:05.809+00:00 [gateway] startup trace: plugins.gateway-load.plugin.canvas loadMs=9.5 loadFailedCount=0.0 registerMs=1.9 loadAndRegisterMs=11.6 registerFailedCount=0.0\n2026-10-06T05:34:05.817+00:00 [gateway] startup trace: plugins.gateway-load.plugin.cua-computer loadMs=6.4 loadFailedCount=0.0 registerMs=0.7 loadAndRegisterMs=7.2 registerFailedCount=0.0\n2026-10-06T05:34:05.821+00:00 [gateway] startup trace: plugins.gateway-load.plugin.device-pair loadMs=1.4 loadFailedCount=0.0 registerMs=0.9 loadAndRegisterMs=2.4 registerFailedCount=0.0\n2026-10-06T05:34:05.832+00:00 [gateway] startup trace: plugins.gateway-load.plugin.file-transfer loadMs=2.1 loadFailedCount=0.0 registerMs=7.8 loadAndRegisterMs=9.9 registerFailedCount=0.0\n2026-10-06T05:34:05.837+00:00 [gateway] startup trace: plugins.gateway-load.plugin.geolocation loadMs=3.8 loadFailedCount=0.0 registerMs=0.7 loadAndRegisterMs=4.5 registerFailedCount=0.0\n2026-10-06T05:34:05.841+00:00 [gateway] startup trace: plugins.gateway-load.plugin.github loadMs=1.2 loadFailedCount=0.0 registerMs=1.1 loadAndRegisterMs=2.4 registerFailedCount=0.0\n2026-10-06T05:34:05.849+00:00 [gateway] startup trace: plugins.gateway-load.plugin.google-meet loadMs=5.4 loadFailedCount=0.0 registerMs=1.5 loadAndRegisterMs=7.0 registerFailedCount=0.0\n2026-10-06T05:34:05.853+00:00 [gateway] startup trace: plugins.gateway-load.plugin.linux-node loadMs=1.9 loadFailedCount=0.0 registerMs=1.2 loadAndRegisterMs=3.2 registerFailedCount=0.0\n2026-10-06T05:34:05.861+00:00 [gateway] startup trace: plugins.gateway-load.plugin.memory-core loadMs=6.3 loadFailedCount=0.0 registerMs=1.3 loadAndRegisterMs=7.7 registerFailedCount=0.0\n2026-10-06T05:34:05.871+00:00 [gateway] startup trace: plugins.gateway-load.plugin.ollama loadMs=6.6 loadFailedCount=0.0 registerMs=2.3 loadAndRegisterMs=9.0 registerFailedCount=0.0\n2026-10-06T05:34:05.873+00:00 [gateway] startup trace: plugins.gateway-load.plugin.talk-voice loadMs=1.2 loadFailedCount=0.0 registerMs=0.5 loadAndRegisterMs=1.7 registerFailedCount=0.0\n2026-10-06T05:34:05.883+00:00 [gateway] startup trace: plugins.gateway-load.plugin.xai loadMs=6.8 loadFailedCount=0.0 registerMs=1.8 loadAndRegisterMs=8.6 registerFailedCount=0.0\n2026-10-06T05:34:05.884+00:00 [gateway] startup trace: plugins.gateway-load pluginIdsMs=0.2 loadMs=186.4 pluginIds=16 pluginCount=16.0 gatewayHandlers=42 gatewayHandlerCount=42.0 loaderCallsCount=16.0 loaderNativeHitsCount=16.0 loaderNativeMissesCount=0.0 loaderSourceTransformForcedCount=0.0 loaderSourceTransformFallbacksCount=0.0 loaderTopSourceTransformTargets=\n2026-10-06T05:34:05.886+00:00 [gateway] startup trace: plugins.runtime-post-bind 196.9ms total=5499.8ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.886+00:00 [gateway] startup phase: plugins.runtime-attach starting total=5500.2ms\n2026-10-06T05:34:05.889+00:00 [gateway] startup trace: plugins.runtime-attach 3.1ms total=5503.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:05.890+00:00 [gateway] startup trace: plugins.runtime-post-bind loadedPluginCount=16.0 gatewayMethodCount=534.0\n2026-10-06T05:34:06.100+00:00 [gateway] startup trace: sidecars.main-session-recovery-scan 406.5ms total=5713.4ms eventLoopMax=16.1ms\n2026-10-06T05:34:06.100+00:00 [gateway] startup trace: sidecars.main-session-recovery 414.3ms total=5714.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.101+00:00 [gateway] startup phase: sidecars.worker-environments starting total=5715.3ms\n2026-10-06T05:34:06.106+00:00 [gateway] agent model: openai/gpt-5.6-luna (thinking=off, fast=off)\n2026-10-06T05:34:06.106+00:00 [gateway] http server listening (16 plugins: acpx, anthropic, canvas, cua-computer, device-pair, file-transfer, geolocation, github, google-meet, linux-node, memory-core, ollama, talk-voice, teams-meetings, xai, zoom-meetings; 2.3s)\n2026-10-06T05:34:06.106+00:00 [gateway] log file: /tmp/openclaw/openclaw-2026-10-06.log\n2026-10-06T05:34:06.106+00:00 [gateway] Older local CLI/SDK versions can bypass Gateway state mutation routing. Use matching CLI/SDK and Gateway versions; legacy direct writers remain supported.\n2026-10-06T05:34:06.107+00:00 [gateway] native runtime: {\"pid\":15298,\"platform\":\"linux\",\"arch\":\"x64\",\"node\":\"24.19.0\",\"v8\":\"13.6.233.17-node.51\",\"uv\":\"1.52.1\",\"openssl\":\"3.5.7\",\"sqlite\":\"3.53.3\",\"sqliteClose\":{\"explicitSqliteCloseReleasesNativeResources\":true,\"decided\":true,\"reason\":\"Node runtime\"}}\n2026-10-06T05:34:06.107+00:00 [gateway] worker startup state: {\"workerCount\":7,\"workerLifecycle\":[{\"script\":\"gateway-state-owner-heartbeat.worker.js\",\"started\":2,\"retired\":[{\"reason\":\"exit\",\"count\":1}]},{\"script\":\"sqlite-store.worker.js\",\"started\":1,\"retired\":[]},{\"script\":\"worker-native-lifecycle.worker.js\",\"started\":1,\"retired\":[]},{\"script\":\"openclaw-state-read.worker.js\",\"started\":2,\"retired\":[]},{\"script\":\"sqlite-snapshot-staging.worker.js\",\"started\":2,\"retired\":[{\"reason\":\"rotation\",\"count\":2}]},{\"script\":\"openclaw-state-lease-heartbeat.worker.js\",\"started\":1,\"retired\":[]},{\"script\":\"session-transcript.worker.js\",\"started\":1,\"retired\":[]}],\"compute\":{\"limit\":3,\"active\":0,\"waitingPools\":0,\"pendingTasks\":0,\"pendingBytes\":0}}\n2026-10-06T05:34:06.110+00:00 [gateway] startup trace: post-attach.log 7.7ms total=5723.9ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.134+00:00 [gateway] startup trace: sidecars.worker-environments 32.9ms total=5748.3ms eventLoopMax=10.6ms\n2026-10-06T05:34:06.135+00:00 [gateway] starting channels and sidecars...\n2026-10-06T05:34:06.136+00:00 [gateway] startup phase: sidecars.internal-hooks starting total=5749.8ms\n2026-10-06T05:34:06.140+00:00 [gateway] startup trace: sidecars.internal-hooks 3.8ms total=5753.6ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.140+00:00 [gateway] startup phase: sidecars.model-runtime starting total=5754.2ms\n2026-10-06T05:34:06.147+00:00 [gateway] startup trace: sidecars.model-auth 5.5ms total=5761.0ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.219+00:00 [gateway] startup trace: sidecars.model-runtime-build agentCount=1.0 workspaceGroupCount=1.0 configuredFactsGroupCount=1.0 catalogSourceCount=0.0 credentialGroupCount=1.0 catalogGroupCount=0.0 runtimeRegistryCount=1.0 configuredRuntimeModelCount=2.0 generatedCatalogPluginCount=1.0 generatedCatalogReadCount=1.0 workspaceFactsMs=68.3 runtimePluginMs=28.9 pluginMetadataMs=0.0 staticProviderCatalogMs=4.0 ambientCredentialsMs=1.7 agentFactsMs=5.0 configuredProjectionMs=2.3 catalogSourceMs=0.0 registryMs=16.5 sourceConcurrencyLimitCount=2.0 fullCatalogConcurrencyLimitCount=1.0\n2026-10-06T05:34:06.246+00:00 [gateway] startup trace: sidecars.model-runtime 105.2ms total=5859.3ms eventLoopMax=18.2ms\n2026-10-06T05:34:06.246+00:00 [gateway] startup phase: sidecars.reply-runtime starting total=5860.0ms\n2026-10-06T05:34:06.314+00:00 [gateway] startup trace: sidecars.reply-runtime 67.8ms total=5927.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.314+00:00 [gateway] startup phase: sidecars.chat-metadata starting total=5928.5ms\n2026-10-06T05:34:06.315+00:00 [gateway] startup trace: sidecars.chat-metadata 0.9ms total=5929.4ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.316+00:00 [gateway] startup phase: sidecars.channels starting total=5929.9ms\n2026-10-06T05:34:06.317+00:00 [gateway/channels] skipping channel start (OPENCLAW_SKIP_CHANNELS=1 or OPENCLAW_SKIP_PROVIDERS=1)\n2026-10-06T05:34:06.317+00:00 [gateway] startup trace: sidecars.channel-skip 0.8ms total=5931.1ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.317+00:00 [gateway] startup trace: sidecars.channels 1.6ms total=5931.5ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.318+00:00 [gateway] startup phase: sidecars.plugin-services starting total=5931.9ms\n2026-10-06T05:34:06.321+00:00 [gateway] startup trace: sidecars.plugin-services.teams-meetings.teams-meetings-transcripts 0.4ms total=5934.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.321+00:00 [gateway] startup trace: sidecars.plugin-services.zoom-meetings.zoom-meetings-transcripts 0.1ms total=5935.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.322+00:00 [plugins] embedded acpx runtime backend registered lazily\n2026-10-06T05:34:06.322+00:00 [gateway] startup trace: sidecars.plugin-services.acpx.acpx-runtime 0.6ms total=5936.5ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.325+00:00 [gateway] startup trace: sidecars.plugin-services.device-pair.device-pair-notifier 1.9ms total=5938.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.325+00:00 [gateway] startup trace: sidecars.plugin-services.file-transfer.file-transfer-workspaces 0.3ms total=5939.5ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.326+00:00 [gateway] startup trace: sidecars.plugin-services.google-meet.google-meet-transcripts 0.2ms total=5940.1ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.374+00:00 [gateway] startup trace: sidecars.plugin-services.memory-core.memory-core-dreaming 47.6ms total=5988.2ms eventLoopMax=9.6ms\n2026-10-06T05:34:06.375+00:00 [gateway] startup trace: sidecars.plugin-services.summary serviceCount=7.0 startedCount=7.0 failedCount=0.0\n2026-10-06T05:34:06.375+00:00 [gateway] startup trace: sidecars.plugin-services 57.6ms total=5989.5ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.377+00:00 [gateway] startup trace: sidecars.total 241.3ms total=5990.6ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.377+00:00 [gateway] startup trace: sidecars.plugin-loader callsCount=16.0 nativeHitsCount=16.0 nativeMissesCount=0.0 sourceTransformForcedCount=0.0 sourceTransformFallbacksCount=0.0\n2026-10-06T05:34:06.378+00:00 [gateway] startup outcomes: internal-hooks=skipped (not-configured); internal-startup-hook=skipped (no-handlers-loaded); gateway-start-hooks=scheduled; gmail-watcher=skipped (hooks-disabled); gmail-model=skipped (not-configured)\n2026-10-06T05:34:06.378+00:00 [gateway] startup trace: sidecars.ready loadedPluginCount=16.0 postReadySidecarCount=6.0\n2026-10-06T05:34:06.379+00:00 [gateway] startup trace: sidecars.ready 2.3ms total=5992.9ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.379+00:00 [gateway] ready\n2026-10-06T05:34:06.380+00:00 [heartbeat] disabled\n2026-10-06T05:34:06.881+00:00 [gateway] startup phase: post-ready.startup-maintenance starting total=6494.6ms\n2026-10-06T05:34:06.882+00:00 [gateway] startup phase: sidecars.subagent-recovery starting total=6496.1ms\n2026-10-06T05:34:06.893+00:00 [gateway] startup phase: startup.maintenance.channels starting total=6506.5ms\n2026-10-06T05:34:06.898+00:00 [gateway] startup phase: startup.maintenance.sessions starting total=6511.9ms\n2026-10-06T05:34:06.898+00:00 [gateway] startup phase: startup.maintenance.pairing starting total=6512.5ms\n2026-10-06T05:34:06.900+00:00 [gateway] startup trace: startup.maintenance.sessions 1.9ms total=6513.8ms eventLoopMax=17.0ms\n2026-10-06T05:34:06.902+00:00 [gateway] startup trace: startup.maintenance.channels 9.1ms total=6515.6ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.903+00:00 [gateway] startup trace: startup.maintenance.pairing 4.0ms total=6516.6ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.903+00:00 [gateway] startup trace: post-ready.startup-maintenance 22.4ms total=6517.0ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.910+00:00 [gateway] startup trace: post-ready.maintenance 6.4ms total=6523.8ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.911+00:00 [gateway] startup trace: memory.post-ready rssMb=1093.4 heapTotalMb=403.7 heapUsedMb=302.7 externalMb=16.4 arrayBuffersMb=6.1 processSigintListenersCount=1.0 processSigtermListenersCount=1.0 processRestartListenersCount=1.0 activeHandlesCount=31.0 activeRequestsCount=4.0 activeTimersCount=5.0\n2026-10-06T05:34:06.930+00:00 [gateway] startup trace: sidecars.subagent-recovery 47.5ms total=6543.6ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.930+00:00 [gateway] startup trace: post-ready.gateway-data.session-history-worker 5.8ms total=6544.4ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.932+00:00 [gateway] startup trace: sidecars.restart-sentinel 48.4ms total=6545.6ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.934+00:00 [gateway] startup trace: post-attach.update-check 0.2ms total=6547.5ms eventLoopMax=0.0ms\n2026-10-06T05:34:06.973+00:00 [gateway] startup trace: post-attach.update-sentinel 38.9ms total=6587.1ms eventLoopMax=10.6ms\n2026-10-06T05:34:07.133+00:00 [gateway] startup trace: database.page-cache database=state stage=probe residencyScope=file-sample residentRatio=1.0 residentRatioAfter=-1.0 readBytes=29922.0 diskBytes=0.0 payloadBytes=0.0 payloadMessages=0.0 elapsedMs=3.5 projectionQueryBeforeMs=-1.0 projectionQueryAfterMs=-1.0 limited=false\n2026-10-06T05:34:07.138+00:00 [gateway] startup trace: database.page-cache database=state stage=complete residencyScope=file-sample residentRatio=1.0 residentRatioAfter=-1.0 readBytes=30021.0 diskBytes=0.0 payloadBytes=0.0 payloadMessages=0.0 elapsedMs=10.3 projectionQueryBeforeMs=-1.0 projectionQueryAfterMs=-1.0 limited=false\n2026-10-06T05:34:07.140+00:00 [gateway] database page-cache residency: database=state scope=file-sample resident=100.0% readBytes=30021 diskBytes=0 payloadBytes=0 payloadMessages=0 elapsedMs=10.3 projectionQueryMs=n/a->n/a limited=false\n2026-10-06T05:34:07.451+00:00 [gateway] startup trace: post-ready.gateway-data.connection 0.5ms total=7064.3ms eventLoopMax=53.9ms\n2026-10-06T05:34:07.462+00:00 [gateway] startup trace: post-ready.gateway-data.chat.history 9.0ms total=7075.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:07.484+00:00 [gateway] startup trace: post-ready.gateway-data.chat.send 20.9ms total=7097.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:07.485+00:00 [gateway] startup trace: post-ready.gateway-data.sessions.list 0.2ms total=7099.3ms eventLoopMax=0.0ms\n2026-10-06T05:34:07.491+00:00 [gateway] startup trace: post-ready.gateway-data.agent-events 3.2ms total=7104.5ms eventLoopMax=0.0ms\n2026-10-06T05:34:07.494+00:00 [gateway] startup trace: post-ready.gateway-data.session-key 1.2ms total=7107.7ms eventLoopMax=0.0ms\n2026-10-06T05:34:07.550+00:00 [gateway] startup trace: post-ready.gateway-data.skills.main 49.2ms total=7163.4ms eventLoopMax=0.0ms\n2026-10-06T05:34:09.213+00:00 [gateway] request handler failed: Error: Agent creation no longer owns its originally observed target\n\nmock provider output tail:\nmock-openai listening on 43061\n"
+      }
+    ],
+    "partialRun": {
+      "controlPlane": [],
+      "controlUi": [],
+      "history": [],
+      "readyz": [],
+      "sessionsList": [],
+      "sessionUpdates": [],
+      "messageSubscriptions": [],
+      "messageSubscriptionsDuringLoad": [],
+      "memory": {
+        "before": null,
+        "after": null,
+        "peakRssMb": null
+      },
+      "freshConnection": null,
+      "cpuUsage": null,
+      "probeWarmup": {
+        "durationMs": 2612.8266089999997,
+        "samples": [
+          {
+            "controlUi": {
+              "atMs": 6313.834389000001,
+              "error": null,
+              "latencyMs": 117.06665100000009,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 6313.834389000001,
+              "error": null,
+              "latencyMs": 13.72433700000056,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 0,
+              "delayP99Ms": 452.5,
+              "delayMaxMs": 452.5,
+              "utilization": 0.694,
+              "cpuCoreRatio": 1.42
+            },
+            "sessionsList": {
+              "atMs": 6313.834389000001,
+              "error": null,
+              "latencyMs": 9.20419099999981,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 6531.562175,
+              "error": null,
+              "latencyMs": 4.129874999999629,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 6531.562175,
+              "error": null,
+              "latencyMs": 2.940364000000045,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 0,
+              "delayP99Ms": 452.5,
+              "delayMaxMs": 452.5,
+              "utilization": 0.694,
+              "cpuCoreRatio": 1.42
+            },
+            "sessionsList": {
+              "atMs": 6531.562175,
+              "error": null,
+              "latencyMs": 2.134493000000475,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 6636.163219,
+              "error": null,
+              "latencyMs": 3.820846000000529,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 6636.163219,
+              "error": null,
+              "latencyMs": 2.7922569999991538,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 0,
+              "delayP99Ms": 452.5,
+              "delayMaxMs": 452.5,
+              "utilization": 0.694,
+              "cpuCoreRatio": 1.42
+            },
+            "sessionsList": {
+              "atMs": 6636.163219,
+              "error": null,
+              "latencyMs": 2.1312669999997524,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 6740.412202,
+              "error": null,
+              "latencyMs": 3.680102000000261,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 6740.412202,
+              "error": null,
+              "latencyMs": 2.7297090000001845,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 0,
+              "delayP99Ms": 452.5,
+              "delayMaxMs": 452.5,
+              "utilization": 0.694,
+              "cpuCoreRatio": 1.42
+            },
+            "sessionsList": {
+              "atMs": 6740.412202,
+              "error": null,
+              "latencyMs": 2.0201880000004167,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 6844.549506,
+              "error": null,
+              "latencyMs": 9.72164100000009,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 6844.549506,
+              "error": null,
+              "latencyMs": 5.889995999999883,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 1008,
+              "delayP99Ms": 142.5,
+              "delayMaxMs": 142.5,
+              "utilization": 0.438,
+              "cpuCoreRatio": 1.805
+            },
+            "sessionsList": {
+              "atMs": 6844.549506,
+              "error": null,
+              "latencyMs": 4.098957000000155,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 6959.887195,
+              "error": null,
+              "latencyMs": 10.48132699999951,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 6959.887195,
+              "error": null,
+              "latencyMs": 1.585573000000295,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 1008,
+              "delayP99Ms": 142.5,
+              "delayMaxMs": 142.5,
+              "utilization": 0.438,
+              "cpuCoreRatio": 1.805
+            },
+            "sessionsList": {
+              "atMs": 6959.887195,
+              "error": null,
+              "latencyMs": 9.103102000000035,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 7075.385825,
+              "error": null,
+              "latencyMs": 16.904062000000522,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 7075.385825,
+              "error": null,
+              "latencyMs": 11.246431000000484,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 1008,
+              "delayP99Ms": 142.5,
+              "delayMaxMs": 142.5,
+              "utilization": 0.438,
+              "cpuCoreRatio": 1.805
+            },
+            "sessionsList": {
+              "atMs": 7075.385825,
+              "error": null,
+              "latencyMs": 16.127724999999373,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 7192.781935,
+              "error": null,
+              "latencyMs": 7.179263999999421,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 7192.781935,
+              "error": null,
+              "latencyMs": 5.8526959999999235,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 1008,
+              "delayP99Ms": 142.5,
+              "delayMaxMs": 142.5,
+              "utilization": 0.438,
+              "cpuCoreRatio": 1.805
+            },
+            "sessionsList": {
+              "atMs": 7192.781935,
+              "error": null,
+              "latencyMs": 4.658215999999811,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 7300.434982000001,
+              "error": null,
+              "latencyMs": 4.604404999999133,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 7300.434982000001,
+              "error": null,
+              "latencyMs": 3.4564220000002024,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 1008,
+              "delayP99Ms": 142.5,
+              "delayMaxMs": 142.5,
+              "utilization": 0.438,
+              "cpuCoreRatio": 1.805
+            },
+            "sessionsList": {
+              "atMs": 7300.434982000001,
+              "error": null,
+              "latencyMs": 2.3727799999996932,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 7406.407508,
+              "error": null,
+              "latencyMs": 35.073475000000144,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 7406.407508,
+              "error": null,
+              "latencyMs": 31.744001000000026,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 1008,
+              "delayP99Ms": 142.5,
+              "delayMaxMs": 142.5,
+              "utilization": 0.438,
+              "cpuCoreRatio": 1.805
+            },
+            "sessionsList": {
+              "atMs": 7406.407508,
+              "error": null,
+              "latencyMs": 32.49122299999999,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 7541.944988,
+              "error": null,
+              "latencyMs": 3.5585940000000846,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 7541.944988,
+              "error": null,
+              "latencyMs": 2.525155999999697,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 1008,
+              "delayP99Ms": 142.5,
+              "delayMaxMs": 142.5,
+              "utilization": 0.438,
+              "cpuCoreRatio": 1.805
+            },
+            "sessionsList": {
+              "atMs": 7541.944988,
+              "error": null,
+              "latencyMs": 1.798993999999766,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 7650.035997,
+              "error": null,
+              "latencyMs": 7.8934730000000854,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 7650.035997,
+              "error": null,
+              "latencyMs": 3.0621230000006108,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 1008,
+              "delayP99Ms": 142.5,
+              "delayMaxMs": 142.5,
+              "utilization": 0.438,
+              "cpuCoreRatio": 1.805
+            },
+            "sessionsList": {
+              "atMs": 7650.035997,
+              "error": null,
+              "latencyMs": 2.076814999999442,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 7763.38204,
+              "error": null,
+              "latencyMs": 11.98754099999951,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 7763.38204,
+              "error": null,
+              "latencyMs": 3.060679999999593,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 1008,
+              "delayP99Ms": 142.5,
+              "delayMaxMs": 142.5,
+              "utilization": 0.438,
+              "cpuCoreRatio": 1.805
+            },
+            "sessionsList": {
+              "atMs": 7763.38204,
+              "error": null,
+              "latencyMs": 2.2575340000003052,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 7875.922013,
+              "error": null,
+              "latencyMs": 3.5443960000002335,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 7875.922013,
+              "error": null,
+              "latencyMs": 2.6214060000002064,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 2020,
+              "delayP99Ms": 73,
+              "delayMaxMs": 73,
+              "utilization": 0.449,
+              "cpuCoreRatio": 2.392
+            },
+            "sessionsList": {
+              "atMs": 7875.922013,
+              "error": null,
+              "latencyMs": 1.8197620000000825,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 7979.919755,
+              "error": null,
+              "latencyMs": 4.611988999999994,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 7979.919755,
+              "error": null,
+              "latencyMs": 3.572881000000052,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 2020,
+              "delayP99Ms": 73,
+              "delayMaxMs": 73,
+              "utilization": 0.449,
+              "cpuCoreRatio": 2.392
+            },
+            "sessionsList": {
+              "atMs": 7979.919755,
+              "error": null,
+              "latencyMs": 2.28838099999939,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 8085.067594000001,
+              "error": null,
+              "latencyMs": 3.8330280000009225,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 8085.067594000001,
+              "error": null,
+              "latencyMs": 2.788709000000381,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 2020,
+              "delayP99Ms": 73,
+              "delayMaxMs": 73,
+              "utilization": 0.449,
+              "cpuCoreRatio": 2.392
+            },
+            "sessionsList": {
+              "atMs": 8085.067594000001,
+              "error": null,
+              "latencyMs": 1.9855330000009417,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 8189.414892,
+              "error": null,
+              "latencyMs": 3.9494070000000647,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 8189.414892,
+              "error": null,
+              "latencyMs": 2.8157799999989948,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 2020,
+              "delayP99Ms": 73,
+              "delayMaxMs": 73,
+              "utilization": 0.449,
+              "cpuCoreRatio": 2.392
+            },
+            "sessionsList": {
+              "atMs": 8189.414892,
+              "error": null,
+              "latencyMs": 1.9337970000015048,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 8293.967144,
+              "error": null,
+              "latencyMs": 3.337239000000409,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 8293.967144,
+              "error": null,
+              "latencyMs": 2.4641019999999116,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 2020,
+              "delayP99Ms": 73,
+              "delayMaxMs": 73,
+              "utilization": 0.449,
+              "cpuCoreRatio": 2.392
+            },
+            "sessionsList": {
+              "atMs": 8293.967144,
+              "error": null,
+              "latencyMs": 1.7549610000005487,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 8397.835233,
+              "error": null,
+              "latencyMs": 4.143921000000773,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 8397.835233,
+              "error": null,
+              "latencyMs": 3.0818900000012945,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 2020,
+              "delayP99Ms": 73,
+              "delayMaxMs": 73,
+              "utilization": 0.449,
+              "cpuCoreRatio": 2.392
+            },
+            "sessionsList": {
+              "atMs": 8397.835233,
+              "error": null,
+              "latencyMs": 2.100989999999001,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 8502.536656,
+              "error": null,
+              "latencyMs": 3.984232000000702,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 8502.536656,
+              "error": null,
+              "latencyMs": 3.105673999998544,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 2020,
+              "delayP99Ms": 73,
+              "delayMaxMs": 73,
+              "utilization": 0.449,
+              "cpuCoreRatio": 2.392
+            },
+            "sessionsList": {
+              "atMs": 8502.536656,
+              "error": null,
+              "latencyMs": 2.1858290000000125,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 8607.179006,
+              "error": null,
+              "latencyMs": 4.246915000001536,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 8607.179006,
+              "error": null,
+              "latencyMs": 3.224247000000105,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 2020,
+              "delayP99Ms": 73,
+              "delayMaxMs": 73,
+              "utilization": 0.449,
+              "cpuCoreRatio": 2.392
+            },
+            "sessionsList": {
+              "atMs": 8607.179006,
+              "error": null,
+              "latencyMs": 2.341531000000032,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 8712.011633999999,
+              "error": null,
+              "latencyMs": 5.1452490000010584,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 8712.011633999999,
+              "error": null,
+              "latencyMs": 3.8688860000002023,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 2020,
+              "delayP99Ms": 73,
+              "delayMaxMs": 73,
+              "utilization": 0.449,
+              "cpuCoreRatio": 2.392
+            },
+            "sessionsList": {
+              "atMs": 8712.011633999999,
+              "error": null,
+              "latencyMs": 2.722584999999526,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 8817.677414,
+              "error": null,
+              "latencyMs": 3.906355999999505,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 8817.677414,
+              "error": null,
+              "latencyMs": 2.7999309999995603,
+              "ok": true,
+              "status": 200,
+              "degraded": true,
+              "degradedSinceMs": 2020,
+              "delayP99Ms": 73,
+              "delayMaxMs": 73,
+              "utilization": 0.449,
+              "cpuCoreRatio": 2.392
+            },
+            "sessionsList": {
+              "atMs": 8817.677414,
+              "error": null,
+              "latencyMs": 2.034875999999713,
+              "ok": true
+            }
+          },
+          {
+            "controlUi": {
+              "atMs": 8922.103951,
+              "error": null,
+              "latencyMs": 4.209253999999419,
+              "ok": true,
+              "status": 200
+            },
+            "readyz": {
+              "atMs": 8922.103951,
+              "error": null,
+              "latencyMs": 3.2433320000000094,
+              "ok": true,
+              "status": 200,
+              "degraded": false,
+              "degradedSinceMs": null,
+              "delayP99Ms": 21.4,
+              "delayMaxMs": 21.4,
+              "utilization": 0.099,
+              "cpuCoreRatio": 0.258
+            },
+            "sessionsList": {
+              "atMs": 8922.103951,
+              "error": null,
+              "latencyMs": 2.3398379999998724,
+              "ok": true
+            }
+          }
+        ]
+      },
+      "durationMs": 10736.601302,
+      "turnAccounting": {
+        "launched": 0,
+        "terminalOk": 0,
+        "verified": 0
+      },
+      "gatewayProcess": {
+        "pid": 15298,
+        "exitCode": 0,
+        "signalCode": null,
+        "exitEvent": {
+          "atMonotonicMicros": 489731180,
+          "exitCode": 0,
+          "signal": null
+        },
+        "closeEvent": {
+          "atMonotonicMicros": 489731234,
+          "exitCode": 0,
+          "signal": null
+        }
+      },
+      "gatewayExit": {
+        "exitCode": 0,
+        "signal": null,
+        "exitedBeforeTeardown": false
+      }
+    },
+    "cleanup": {
+      "rootRemoved": true
+    },
+    "mockProviderExit": {
+      "exitCode": null,
+      "signal": "SIGTERM",
+      "exitedBeforeTeardown": false
+    },
+    "mockProviderProcess": {
+      "pid": 15290,
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "exitEvent": {
+        "atMonotonicMicros": 489736225,
+        "exitCode": null,
+        "signal": "SIGTERM"
+      }
+    },
+    "phase": "warmup",
+    "index": 1
+  },
+  "sessionCount": 8,
+  "sessionUpdateClients": 0,
+  "sessionUpdates": 0,
+  "streamChunkDelayMs": 1000,
+  "effectivePacing": {
+    "kind": "text-stream",
+    "streamChunkDelayMs": 1000
+  },
+  "subscribers": 0,
+  "summary": {
+    "budgetViolations": [],
+    "gatewayProcessCpuMs": null,
+    "gatewayProcessCpuMsPerTurn": null,
+    "gatewayMainThreadCpuMs": null,
+    "gatewayProcessCpuCoreRatio": null,
+    "gatewaySampledAllocatedBytes": null,
+    "gatewaySampledAllocatedBytesPerTurn": null,
+    "controlPlane": {
+      "cron.list": {
+        "failedSamples": 0,
+        "latencyMs": null
+      },
+      "cron.status": {
+        "failedSamples": 0,
+        "latencyMs": null
+      }
+    },
+    "controlUiFailedSamples": 0,
+    "controlUiLatencyMs": null,
+    "cpuCoreRatio": null,
+    "degradedSamples": 0,
+    "eventLoopDelayMaxMs": null,
+    "eventLoopDelayP99Ms": null,
+    "eventLoopUtilization": null,
+    "freshConnectionFailedRuns": 0,
+    "freshConnectionLatencyMs": null,
+    "gatewayUncleanExits": 0,
+    "gatewayExternalGrowthMb": null,
+    "gatewayExternalMb": null,
+    "gatewayArrayBuffersGrowthMb": null,
+    "gatewayArrayBuffersMb": null,
+    "gatewayHeapGrowthMb": null,
+    "gatewayHeapUsedMb": null,
+    "gatewayPeakRssMb": null,
+    "gatewayRssGrowthMb": null,
+    "historyFailedSamples": 0,
+    "historyLatencyMs": null,
+    "historySampleCount": 0,
+    "messageSubscriptionFailedSamples": 0,
+    "messageSubscriptionLatencyMs": null,
+    "messageSubscriptionLoadFailedSamples": 0,
+    "messageSubscriptionLoadLatencyMs": null,
+    "mockRequestIngress": {
+      "responses": 0,
+      "chatCompletions": 0,
+      "embeddings": 0,
+      "other": 0
+    },
+    "mockResponseSelections": {
+      "model": 0,
+      "global": 0,
+      "automaticTool": 0,
+      "automaticText": 0
+    },
+    "toolTurns": 0,
+    "observerModelDigestTurns": 0,
+    "pluginMetadataScanCount": 0,
+    "pluginMetadataScanTotalDurationMs": 0,
+    "readyzLatencyMs": null,
+    "readyzFailedSamples": 0,
+    "sampleCount": 0,
+    "sessionSeedDurationMs": null,
+    "sessionsListLatencyMs": null,
+    "sessionsListFailedSamples": 0,
+    "sessionUpdateFailedSamples": 0,
+    "sessionUpdateLatencyMs": null,
+    "sessionUpdateSampleCount": 0,
+    "setupDurationMs": null,
+    "turnCount": 0,
+    "turnsDurationMs": null
+  },
+  "toolEvents": false,
+  "turnsPerSession": 1,
+  "agentWarmupTurns": 0,
+  "gatewayRuntime": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node",
+  "visibleObserver": false,
+  "workspaceFanout": true
+}
