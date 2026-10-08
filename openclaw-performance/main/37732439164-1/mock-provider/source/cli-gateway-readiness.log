@@ -1,0 +1,85 @@
+{
+  "ok": true,
+  "ts": 1791437826685,
+  "durationMs": 628,
+  "plugins": {
+    "loaded": [
+      "acpx",
+      "anthropic",
+      "canvas",
+      "cua-computer",
+      "device-pair",
+      "file-transfer",
+      "geolocation",
+      "github",
+      "google-meet",
+      "linux-node",
+      "memory-core",
+      "ollama",
+      "openai",
+      "talk-voice",
+      "teams-meetings",
+      "xai",
+      "zoom-meetings"
+    ],
+    "errors": [],
+    "unavailable": []
+  },
+  "configReload": {
+    "hotReloadStatus": "active"
+  },
+  "channels": {},
+  "channelOrder": [],
+  "channelLabels": {},
+  "heartbeatSeconds": 0,
+  "defaultAgentId": "main",
+  "agents": [
+    {
+      "agentId": "main",
+      "isDefault": true,
+      "heartbeat": {
+        "enabled": false,
+        "every": "disabled",
+        "everyMs": null,
+        "prompt": "Follow the heartbeat monitor scratch context when provided. Recurring tasks are automations; create or change their schedules with the automations tool, not heartbeat scratch. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply NO_REPLY.",
+        "target": "owner",
+        "ackMaxChars": 300
+      },
+      "sessions": {
+        "path": "/tmp/tmp.9e7rPdV0c5/.openclaw/agents/main/agent/openclaw-agent.sqlite",
+        "count": 0,
+        "recent": []
+      }
+    }
+  ],
+  "sessions": {
+    "path": "/tmp/tmp.9e7rPdV0c5/.openclaw/agents/main/agent/openclaw-agent.sqlite",
+    "count": 0,
+    "recent": []
+  },
+  "eventLoop": {
+    "degraded": true,
+    "degradedSinceMs": 1002,
+    "reasons": [
+      "cpu"
+    ],
+    "intervalMs": 1002.0499490000002,
+    "delayP99Ms": 210.4,
+    "delayMaxMs": 210.4,
+    "utilization": 0.568,
+    "cpuCoreRatio": 1.302,
+    "cpuBreakdown": {
+      "mainThreadCoreRatio": 0.532,
+      "hostUtilization": 0.636,
+      "hostCpuCount": 4
+    }
+  },
+  "modelRuntime": {
+    "degraded": false,
+    "pendingAgents": []
+  },
+  "childRuntime": {
+    "execPath": "/home/runner/_work/_temp/openclaw-node-toolchain/node/v24.19.0-linux-x64/bin/node",
+    "available": true
+  }
+}
