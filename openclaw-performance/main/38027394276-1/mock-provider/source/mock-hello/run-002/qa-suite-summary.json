@@ -1,0 +1,287 @@
+{
+  "scenarios": [
+    {
+      "name": "Channel baseline conversation",
+      "status": "pass",
+      "steps": [
+        {
+          "name": "ignores unmentioned channel chatter",
+          "status": "pass"
+        },
+        {
+          "name": "replies when mentioned in channel",
+          "status": "pass",
+          "details": "QA-CHANNEL-BASELINE-OK"
+        }
+      ],
+      "evidenceOccurrenceId": "60b9a155-343b-4bcf-a4df-b4ac0c3cb858"
+    }
+  ],
+  "counts": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0
+  },
+  "metrics": {
+    "wallMs": 11827,
+    "gatewayProcessCpuMs": 6000,
+    "gatewayCpuCoreRatio": 0.507,
+    "gatewayProcessRssStartBytes": 1927163904,
+    "gatewayProcessRssEndBytes": 2547478528,
+    "gatewayProcessRssDeltaBytes": 620314624,
+    "gatewayProcessRssPeakBytes": 2547478528,
+    "gatewayProcessRssPeakDeltaBytes": 620314624,
+    "gatewayProcessRssSamples": [
+      {
+        "label": "suite-start",
+        "at": "2026-10-10T05:34:25.394Z",
+        "gatewayProcessRssBytes": 1927163904
+      },
+      {
+        "label": "scenario:channel-chat-baseline:start",
+        "at": "2026-10-10T05:34:25.400Z",
+        "gatewayProcessRssBytes": 1939193856
+      },
+      {
+        "label": "scenario:channel-chat-baseline:finish",
+        "at": "2026-10-10T05:34:29.433Z",
+        "gatewayProcessRssBytes": 2545668096
+      },
+      {
+        "label": "suite-finish",
+        "at": "2026-10-10T05:34:29.444Z",
+        "gatewayProcessRssBytes": 2547478528
+      }
+    ]
+  },
+  "evidence": {
+    "kind": "openclaw.qa.evidence-summary",
+    "schemaVersion": 3,
+    "generatedAt": "2026-10-10T05:34:30.127Z",
+    "evidenceMode": "full",
+    "entries": [
+      {
+        "test": {
+          "kind": "qa-scenario",
+          "id": "channel-chat-baseline",
+          "title": "Channel baseline conversation",
+          "source": {
+            "path": "qa/scenarios/channels/channel-chat-baseline.yaml"
+          }
+        },
+        "coverage": [
+          {
+            "id": "channels.mention-gating",
+            "role": "primary"
+          },
+          {
+            "id": "channels.mention-required-qa-channel",
+            "role": "secondary"
+          }
+        ],
+        "refs": [
+          {
+            "kind": "docs",
+            "path": "docs/channels/group-messages.md"
+          },
+          {
+            "kind": "docs",
+            "path": "docs/channels/qa-channel.md"
+          },
+          {
+            "kind": "code",
+            "path": "extensions/qa-channel/src/inbound.ts"
+          },
+          {
+            "kind": "code",
+            "path": "extensions/qa-lab/src/bus-state.ts"
+          }
+        ],
+        "execution": {
+          "runner": "host",
+          "environment": {
+            "ref": "6866e219d8ed1cadd539e5de2a2db20ac1c1a095",
+            "os": "linux",
+            "nodeVersion": "v24.19.0"
+          },
+          "provider": {
+            "id": "openai",
+            "live": false,
+            "model": {
+              "name": "gpt-5.6-luna",
+              "ref": "mock-openai/gpt-5.6-luna"
+            },
+            "fixture": "mock-openai"
+          },
+          "channel": {
+            "id": "qa-channel",
+            "live": false
+          },
+          "packageSource": {
+            "kind": "source-checkout"
+          },
+          "artifacts": [
+            {
+              "kind": "scenario-observation",
+              "path": "artifacts/occurrences/60b9a155-343b-4bcf-a4df-b4ac0c3cb858.json",
+              "source": "qa-suite"
+            },
+            {
+              "kind": "summary",
+              "path": "qa-suite-summary.json",
+              "source": "qa-suite"
+            },
+            {
+              "kind": "report",
+              "path": "qa-suite-report.md",
+              "source": "qa-suite"
+            }
+          ]
+        },
+        "result": {
+          "status": "pass"
+        },
+        "binding": {
+          "occurrenceId": "60b9a155-343b-4bcf-a4df-b4ac0c3cb858",
+          "assertionId": null,
+          "receiptId": "60b9a155-343b-4bcf-a4df-b4ac0c3cb858:runtime"
+        },
+        "effective": true
+      }
+    ],
+    "occurrences": [
+      {
+        "id": "5c4b4632-740f-4b46-ab5b-b3eea14ee4ce",
+        "parentCell": {
+          "scenarioId": "channel-chat-baseline",
+          "executionKind": "flow",
+          "channel": "qa-channel"
+        },
+        "scenario": {
+          "kind": "instance",
+          "resultOccurrenceId": "60b9a155-343b-4bcf-a4df-b4ac0c3cb858"
+        },
+        "retryOf": null,
+        "terminalStatus": null,
+        "assertions": null,
+        "launch": {
+          "source": {
+            "ref": "6866e219d8ed1cadd539e5de2a2db20ac1c1a095",
+            "integrity": "git:6866e219d8ed1cadd539e5de2a2db20ac1c1a095"
+          },
+          "runtime": {
+            "id": "node",
+            "version": "v24.19.0"
+          },
+          "package": null,
+          "protocol": null,
+          "accountRef": null,
+          "proofClass": null
+        },
+        "receipts": []
+      },
+      {
+        "id": "60b9a155-343b-4bcf-a4df-b4ac0c3cb858",
+        "parentCell": {
+          "scenarioId": "channel-chat-baseline",
+          "executionKind": "flow",
+          "channel": "qa-channel"
+        },
+        "scenario": {
+          "kind": "observation",
+          "instanceOccurrenceId": "5c4b4632-740f-4b46-ab5b-b3eea14ee4ce"
+        },
+        "retryOf": null,
+        "terminalStatus": "pass",
+        "assertions": null,
+        "launch": {
+          "source": {
+            "ref": "6866e219d8ed1cadd539e5de2a2db20ac1c1a095",
+            "integrity": "git:6866e219d8ed1cadd539e5de2a2db20ac1c1a095"
+          },
+          "runtime": {
+            "id": "node",
+            "version": "v24.19.0"
+          },
+          "package": null,
+          "protocol": null,
+          "accountRef": null,
+          "proofClass": null
+        },
+        "receipts": [
+          {
+            "id": "60b9a155-343b-4bcf-a4df-b4ac0c3cb858:prepared",
+            "phase": "prepared",
+            "identity": {
+              "source": {
+                "ref": "6866e219d8ed1cadd539e5de2a2db20ac1c1a095",
+                "integrity": "git:6866e219d8ed1cadd539e5de2a2db20ac1c1a095"
+              },
+              "runtime": {
+                "id": "node",
+                "version": "v24.19.0"
+              },
+              "package": null,
+              "protocol": null,
+              "accountRef": null,
+              "proofClass": null
+            },
+            "artifact": {
+              "kind": "scenario-observation",
+              "path": "artifacts/occurrences/60b9a155-343b-4bcf-a4df-b4ac0c3cb858.json",
+              "source": "qa-suite",
+              "sha256": "75c6c8cb3f386ac81a53725cb30292d684ee1ef9cdc4b74c547f84a6cc77d3c2"
+            }
+          },
+          {
+            "id": "60b9a155-343b-4bcf-a4df-b4ac0c3cb858:runtime",
+            "phase": "runtime",
+            "identity": {
+              "source": {
+                "ref": null,
+                "integrity": null
+              },
+              "runtime": {
+                "id": "openclaw",
+                "version": "2026.9.9"
+              },
+              "package": null,
+              "protocol": "gateway:4",
+              "accountRef": null,
+              "proofClass": null
+            },
+            "artifact": {
+              "kind": "scenario-observation",
+              "path": "artifacts/occurrences/60b9a155-343b-4bcf-a4df-b4ac0c3cb858.json",
+              "source": "qa-suite",
+              "sha256": "75c6c8cb3f386ac81a53725cb30292d684ee1ef9cdc4b74c547f84a6cc77d3c2"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "run": {
+    "status": "completed",
+    "startedAt": "2026-10-10T05:34:17.606Z",
+    "finishedAt": "2026-10-10T05:34:30.127Z",
+    "providerMode": "mock-openai",
+    "primaryModel": "mock-openai/gpt-5.6-luna",
+    "primaryProvider": "mock-openai",
+    "primaryModelName": "gpt-5.6-luna",
+    "alternateModel": "mock-openai/gpt-5.6-luna-alt",
+    "alternateProvider": "mock-openai",
+    "alternateModelName": "gpt-5.6-luna-alt",
+    "fastMode": false,
+    "concurrency": 1,
+    "channelDriver": "qa-channel",
+    "channel": "qa-channel",
+    "channelCapabilityMatrixPath": null,
+    "channelDriverSmokePath": null,
+    "scenarioIds": [
+      "channel-chat-baseline"
+    ],
+    "runtimePair": null
+  }
+}
