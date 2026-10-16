@@ -41,3 +41,15 @@ Current reports include:
 
 The benchmark harness lives in [openclaw/Kova](https://github.com/openclaw/Kova). The workflow configuration lives in [openclaw/openclaw](https://github.com/openclaw/openclaw/blob/main/.github/workflows/openclaw-performance.yml).
 
+## Maintenance
+
+The ClawSweeper dispatcher keeps each comment command in its own concurrency group. Issue and pull-request metadata changes coalesce per item, and ignored bot label events use separate groups so they cannot displace queued human events. Editing a comment supersedes only that comment's previous dispatch.
+
+Run the synthetic dispatcher regression checks with Node.js 24 or newer:
+
+```sh
+node --test --test-concurrency=1 scripts/dispatch-concurrency.test.mjs
+```
+
+CI runs these checks without dispatching commands or using repository secrets.
+
