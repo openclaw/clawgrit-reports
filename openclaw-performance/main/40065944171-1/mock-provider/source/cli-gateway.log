@@ -1,0 +1,163 @@
+[gateway] startup phase: entry.run-main-import starting total=52.7ms
+[gateway] startup phase: entry.run-main-import 19.7ms total=72.4ms start=52.7ms
+[gateway] startup phase: cli.main.gateway-run-select-environment starting total=241.4ms
+[gateway] startup phase: cli.main.gateway-run-select-environment 137.3ms total=378.7ms start=241.4ms
+[gateway] startup phase: cli.main.gateway-run-imports starting total=387.2ms
+[gateway] startup phase: cli.main.gateway-run-imports 1.6ms total=388.8ms start=387.2ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap starting total=393.2ms
+[gateway] startup phase: cli.main.gateway-run-pre-bootstrap 7.7ms total=401.0ms start=393.2ms
+[gateway] startup phase: cli.main.gateway-run-bootstrap starting total=401.1ms
+[gateway] startup phase: cli.command.config-ready starting total=402.1ms
+[gateway] startup phase: cli.command.config-guard-import starting total=402.2ms
+[gateway] startup phase: cli.command.config-guard-import 7.4ms total=409.6ms start=402.2ms
+[gateway] startup phase: cli.bootstrap.admission.live-owner starting total=436.6ms
+[gateway] startup phase: cli.bootstrap.admission.live-owner 1.6ms total=438.2ms start=436.6ms
+[gateway] startup phase: cli.bootstrap.admission.core-config starting total=438.2ms
+[gateway] startup phase: cli.bootstrap.admission.core-config 1.8ms total=440.1ms start=438.2ms
+[gateway] startup phase: cli.bootstrap.admission.state-snapshot starting total=440.1ms
+[gateway] startup phase: cli.bootstrap.admission.core-recovery starting total=440.4ms
+[gateway] startup phase: cli.bootstrap.admission.core-recovery 0.4ms total=440.9ms start=440.4ms
+[gateway] startup phase: cli.bootstrap.admission.database-runtime-import starting total=441.1ms
+[gateway] startup phase: cli.bootstrap.admission.plugin-config starting total=441.1ms
+[gateway] startup phase: cli.bootstrap.admission.database-runtime-import 19.7ms total=460.9ms start=441.1ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness starting total=460.9ms
+[gateway] startup phase: cli.bootstrap.admission.database-readiness 147.2ms total=608.1ms start=460.9ms agentCount=1 schemaProcessCount=0 schemaInspectionCount=0 schemaSnapshotCount=0
+[gateway] startup phase: cli.bootstrap.admission.session-runtime-import starting total=608.2ms
+[gateway] startup phase: cli.bootstrap.admission.plugin-metadata-completion starting total=608.3ms
+[gateway] startup phase: cli.bootstrap.admission.plugin-metadata-completion 90.1ms total=698.4ms start=608.3ms
+[gateway] startup phase: cli.bootstrap.admission.plugin-config 257.4ms total=698.5ms start=441.1ms registrySnapshotMs=112.43822699999998 manifestRegistryMs=9.654320999999982 ownerMapsMs=8.000243000000069 totalMs=131.10851300000007 indexPluginCount=175 manifestPluginCount=175
+[gateway] startup phase: cli.bootstrap.admission.session-runtime-import 98.7ms total=706.9ms start=608.2ms
+[gateway] startup phase: cli.bootstrap.admission.session-targets starting total=706.9ms
+[gateway] startup phase: cli.bootstrap.admission.session-targets 0.7ms total=707.7ms start=706.9ms agentCount=1 registeredDatabaseCount=0
+[gateway] startup phase: cli.bootstrap.admission.session-readiness starting total=707.7ms
+[gateway] startup phase: cli.bootstrap.admission.session-readiness 0.1ms total=707.9ms start=707.7ms targetCount=1
+[gateway] startup phase: cli.bootstrap.admission.workspace-runtime-import starting total=707.9ms
+[gateway] startup phase: cli.bootstrap.admission.workspace-runtime-import 1.7ms total=709.6ms start=707.9ms
+[gateway] startup phase: cli.bootstrap.admission.workspace-readiness starting total=709.7ms
+[gateway] startup phase: cli.bootstrap.admission.workspace-readiness 1.0ms total=710.6ms start=709.7ms agentCount=1
+[gateway] startup phase: cli.bootstrap.admission.config-recovery starting total=710.8ms
+[gateway] startup phase: cli.bootstrap.admission.config-recovery 3.7ms total=714.5ms start=710.8ms
+[gateway] startup phase: cli.bootstrap.admission.state-snapshot 274.4ms total=714.6ms start=440.1ms
+[gateway] startup phase: cli.bootstrap.admission.config-guard starting total=714.6ms
+[gateway] startup phase: cli.bootstrap.admission.config-guard 0.8ms total=715.4ms start=714.6ms
+[gateway] startup phase: cli.bootstrap.admission.device-identity starting total=870.9ms
+[gateway] startup phase: cli.bootstrap.admission.device-identity 1.9ms total=872.8ms start=870.9ms
+[gateway] startup phase: cli.bootstrap.webhook-readiness starting total=882.4ms
+[gateway] startup phase: cli.bootstrap.webhook-readiness 55.6ms total=938.0ms start=882.4ms
+[gateway] startup phase: cli.bootstrap.plugin-plan-import starting total=1230.3ms
+[gateway] startup phase: cli.bootstrap.plugin-plan-import 2.3ms total=1232.6ms start=1230.3ms
+[gateway] startup phase: cli.bootstrap.plugin-plan starting total=1232.7ms
+[gateway] startup phase: cli.bootstrap.plugin-plan 1.1ms total=1233.7ms start=1232.7ms
+[gateway] startup phase: cli.command.config-ready 834.6ms total=1236.8ms start=402.1ms
+[gateway] startup phase: cli.main.gateway-run-reload-environment starting total=1236.8ms
+[gateway] startup phase: cli.main.gateway-run-reload-environment 0.6ms total=1237.5ms start=1236.8ms
+[gateway] startup phase: cli.main.gateway-run-bootstrap 836.4ms total=1237.5ms start=401.1ms
+[90m2026-10-24T05:32:19.956+00:00[39m [36m[gateway][39m [36mloading configuration…[39m
+[90m2026-10-24T05:32:20.013+00:00[39m [36m[gateway][39m [36mresolving authentication…[39m
+[90m2026-10-24T05:32:20.015+00:00[39m [36m[gateway][39m [36mstarting...[39m
+[gateway] startup phase: cli.bootstrap.lifecycle-runtime starting total=1405.1ms
+[gateway] startup phase: cli.bootstrap.lifecycle-runtime 71.0ms total=1476.1ms start=1405.1ms
+[gateway] startup phase: cli.bootstrap.gateway-lock starting total=1485.1ms
+[gateway] startup phase: cli.bootstrap.gateway-lock 263.4ms total=1748.5ms start=1485.1ms
+[90m2026-10-24T05:32:20.360+00:00[39m [36m[gateway][39m [36mshutdown budget at startup: drain=75000ms shutdown=85000ms reserve=10000ms exitMargin=5000ms; source=systemd system setup_and_run_blacksmith.service TimeoutStopUSec=90000ms[39m
+[gateway] startup phase: cli.bootstrap.boot-lifecycle starting total=1751.2ms
+[gateway] startup phase: cli.bootstrap.boot-lifecycle 5.3ms total=1756.5ms start=1751.2ms
+[90m2026-10-24T05:32:20.480+00:00[39m [36m[gateway][39m [36mspawn broker ready pid=14850[39m
+[gateway] startup phase: gateway.server-start-import starting total=1870.9ms
+[gateway] startup phase: gateway.server-start-import 198.7ms total=2069.6ms start=1870.9ms
+[90m2026-10-24T05:32:20.718+00:00[39m [36m[gateway][39m [36mstartup phase: process.bootstrap 2106.2ms total=2106.2ms[39m
+[90m2026-10-24T05:32:20.854+00:00[39m [36m[gateway][39m [36mstartup phase: state.schema-preflight starting total=2242.6ms[39m
+[90m2026-10-24T05:32:20.953+00:00[39m [36m[gateway][39m [36mstartup phase: state.schema-preflight 99.2ms total=2341.8ms[39m
+[90m2026-10-24T05:32:20.962+00:00[39m [36m[gateway][39m [36mstartup phase: config.auth starting total=2349.7ms[39m
+[90m2026-10-24T05:32:21.042+00:00[39m [36m[gateway][39m [36mstartup phase: config.auth 80.9ms total=2430.6ms[39m
+[90m2026-10-24T05:32:21.067+00:00[39m [36m[gateway][39m [36mstartup phase: state.desktop-approval-admission starting total=2455.4ms[39m
+[90m2026-10-24T05:32:21.084+00:00[39m [36m[gateway][39m [36mstartup phase: state.desktop-approval-admission 17.9ms total=2473.2ms[39m
+[90m2026-10-24T05:32:21.085+00:00[39m [36m[gateway][39m [36mstartup phase: sessions.admission starting total=2474.2ms[39m
+[90m2026-10-24T05:32:21.258+00:00[39m [36m[gateway][39m [36mstartup phase: sessions.admission 172.4ms total=2646.6ms[39m
+[90m2026-10-24T05:32:21.646+00:00[39m [36m[gateway][39m [36mstarting HTTP server...[39m
+[90m2026-10-24T05:32:21.868+00:00[39m [36m[gateway][39m [36mstartup phase: http.bound 0.0ms total=3257.0ms[39m
+[90m2026-10-24T05:32:21.869+00:00[39m [36m[gateway][39m [36mstartup phase: runtime.early starting total=3257.5ms[39m
+[90m2026-10-24T05:32:21.870+00:00[39m [36m[gateway][39m [36mstartup phase: runtime.early.discovery starting total=3259.3ms[39m
+[90m2026-10-24T05:32:21.872+00:00[39m [36m[gateway][39m [36mstartup phase: runtime.early.discovery 1.9ms total=3261.2ms[39m
+[90m2026-10-24T05:32:21.872+00:00[39m [36m[gateway][39m [36mstartup phase: runtime.early.lazy-runtime-imports starting total=3261.3ms[39m
+[90m2026-10-24T05:32:21.873+00:00[39m [36m[gateway][39m [36mstartup phase: runtime.early.lazy-runtime-imports 0.8ms total=3262.2ms[39m
+[90m2026-10-24T05:32:21.874+00:00[39m [36m[gateway][39m [36mstartup phase: runtime.early.skills-listener starting total=3262.6ms[39m
+[90m2026-10-24T05:32:21.876+00:00[39m [36m[gateway][39m [36mstartup phase: runtime.early.skills-listener 1.9ms total=3264.5ms[39m
+[90m2026-10-24T05:32:21.876+00:00[39m [36m[gateway][39m [36mstartup phase: runtime.early 7.1ms total=3264.6ms[39m
+[90m2026-10-24T05:32:22.155+00:00[39m [36m[gateway][39m [36mstartup phase: post-attach.system-ca starting total=3544.0ms[39m
+[90m2026-10-24T05:32:22.155+00:00[39m [36m[gateway][39m [36mstartup phase: post-attach.system-ca 0.4ms total=3544.4ms[39m
+[90m2026-10-24T05:32:22.157+00:00[39m [36m[gateway][39m [36mstartup phase: runtime.worker-pool-metrics starting total=3546.3ms[39m
+[90m2026-10-24T05:32:22.159+00:00[39m [36m[gateway][39m [36mstartup phase: runtime.worker-pool-metrics 1.6ms total=3548.0ms[39m
+[90m2026-10-24T05:32:22.188+00:00[39m [36m[gateway][39m [36mstartup phase: plugins.runtime-post-bind starting total=3577.1ms[39m
+[90m2026-10-24T05:32:22.435+00:00[39m [36m[gateway][39m [36mstartup phase: plugins.runtime-post-bind 246.8ms total=3823.9ms[39m
+[90m2026-10-24T05:32:22.435+00:00[39m [36m[gateway][39m [36mstartup phase: plugins.runtime-attach starting total=3824.2ms[39m
+[90m2026-10-24T05:32:22.439+00:00[39m [36m[gateway][39m [36mstartup phase: plugins.runtime-attach 3.8ms total=3827.9ms[39m
+[90m2026-10-24T05:32:22.443+00:00[39m [36m[gateway][39m [36magent model: openai/gpt-6-astra (thinking=medium, fast=off)[39m
+[90m2026-10-24T05:32:22.443+00:00[39m [36m[gateway][39m [36mhttp server listening (18 plugins: acpx, anthropic, canvas, cua-computer, device-pair, file-transfer, geolocation, github, google-meet, linux-node, llama-cpp, memory-core, ollama, openai, talk-voice, teams-meetings, xai, zoom-meetings; 2.1s)[39m
+[90m2026-10-24T05:32:22.443+00:00[39m [36m[gateway][39m [36mlog file: /tmp/openclaw/openclaw-2026-10-24.log[39m
+[90m2026-10-24T05:32:22.443+00:00[39m [36m[gateway][39m [36mOlder local CLI/SDK versions can bypass Gateway state mutation routing. Use matching CLI/SDK and Gateway versions; direct state writes from another process while this Gateway owns state are unsupported.[39m
+[90m2026-10-24T05:32:22.443+00:00[39m [36m[gateway][39m [36mnative runtime: {"pid":14823,"platform":"linux","arch":"x64","node":"24.22.1","v8":"13.6.233.17-node.58","uv":"1.52.1","openssl":"3.5.9","sqlite":"3.53.4","sqliteClose":{"explicitSqliteCloseReleasesNativeResources":true,"decided":true,"reason":"Node runtime"}}[39m
+[90m2026-10-24T05:32:22.444+00:00[39m [36m[gateway][39m [36mworker startup state: {"workerCount":10,"postgresBridgeCount":0,"workerLifecycle":[{"script":"client-credential.worker.js","started":1,"retired":[]},{"script":"sqlite-store.worker.js","started":1,"retired":[]},{"script":"gateway-state-owner-heartbeat.worker.js","started":2,"retired":[{"reason":"exit","count":1}]},{"script":"worker-native-lifecycle.worker.js","started":1,"retired":[]},{"script":"openclaw-state-read.worker.js","started":2,"retired":[]},{"script":"openclaw-state-lease-heartbeat.worker.js","started":1,"retired":[]},{"script":"session-transcript.worker.js","started":2,"retired":[]},{"script":"other","started":1,"retired":[]}],"workerTaskMetrics":[{"workerClass":"singleton","script":"client-credential.worker.js","tasksCompleted":0,"heapUsedHighWaterBytes":37216488,"gc":[]},{"workerClass":"other","script":"openclaw-state-read.worker.js","tasksCompleted":0,"heapUsedHighWaterBytes":24831576,"gc":[]},{"workerClass":"other","script":"session-transcript.worker.js","tasksCompleted":0,"heapUsedHighWaterBytes":26857504,"gc":[]},{"workerClass":"writer","script":"session-transcript.worker.js","tasksCompleted":0,"heapUsedHighWaterBytes":26005600,"gc":[]}],"compute":{"limit":3,"active":0,"waitingPools":0,"pendingTasks":0,"pendingBytes":0}}[39m
+[90m2026-10-24T05:32:22.448+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.worker-environments starting total=3836.9ms[39m
+[90m2026-10-24T05:32:22.449+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.worker-environments.github-ready starting total=3837.5ms[39m
+[90m2026-10-24T05:32:22.449+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.worker-environments.github-ready 0.2ms total=3837.7ms[39m
+[90m2026-10-24T05:32:22.449+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.worker-environments.workspaces starting total=3837.8ms[39m
+[90m2026-10-24T05:32:22.461+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.worker-environments.workspaces 12.4ms total=3850.2ms[39m
+[90m2026-10-24T05:32:22.462+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.worker-environments.active starting total=3850.5ms[39m
+[90m2026-10-24T05:32:22.470+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.worker-environments.active 8.5ms total=3859.0ms[39m
+[90m2026-10-24T05:32:22.472+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.worker-environments 24.3ms total=3861.2ms[39m
+[90m2026-10-24T05:32:22.472+00:00[39m [36m[gateway][39m [36mstarting channels and sidecars...[39m
+[90m2026-10-24T05:32:22.473+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.internal-hooks starting total=3861.8ms[39m
+[90m2026-10-24T05:32:22.474+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.model-runtime starting total=3862.6ms[39m
+[90m2026-10-24T05:32:22.474+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.reply-runtime starting total=3862.8ms[39m
+[90m2026-10-24T05:32:22.587+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.internal-hooks 114.1ms total=3975.9ms[39m
+[90m2026-10-24T05:32:22.703+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.reply-runtime 229.0ms total=4091.9ms[39m
+[90m2026-10-24T05:32:22.704+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.worker-environments.publications starting total=4092.8ms[39m
+[90m2026-10-24T05:32:22.835+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.model-runtime 361.2ms total=4223.8ms[39m
+[90m2026-10-24T05:32:22.840+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.chat-metadata starting total=4229.3ms[39m
+[90m2026-10-24T05:32:22.841+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.chat-metadata 0.4ms total=4229.7ms[39m
+[90m2026-10-24T05:32:22.841+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.plugin-services starting total=4229.9ms[39m
+[90m2026-10-24T05:32:22.841+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.channels starting total=4230.1ms[39m
+[90m2026-10-24T05:32:22.853+00:00[39m [33m[agent/embedded][39m [36mCodex app-server: using bundled 0.162.1 (no codex on PATH)[39m
+[90m2026-10-24T05:32:22.855+00:00[39m [35m[plugins][39m [36membedded acpx runtime backend registered lazily[39m
+[90m2026-10-24T05:32:22.885+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.plugin-services 43.7ms total=4273.6ms[39m
+[90m2026-10-24T05:32:22.886+00:00[39m [36m[gateway][39m [36mstartup outcomes: internal-hooks=skipped (not-configured); internal-startup-hook=skipped (no-handlers-loaded); gateway-start-hooks=scheduled; gmail-watcher=skipped (hooks-disabled); gmail-model=skipped (not-configured)[39m
+[90m2026-10-24T05:32:22.932+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.worker-environments.publications 228.2ms total=4320.9ms[39m
+[90m2026-10-24T05:32:23.386+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.main-session-recovery starting total=4775.2ms[39m
+[90m2026-10-24T05:32:23.586+00:00[39m [36m[ws][39m [36m⇄ res ✗ connect 2ms bytes=222 sendMs=0.37421100000028673 failurePhase=auth failureCause=startup-sidecars-pending conn=40b9a4c8…f328 id=1:3f8f8263-9…b2d2[39m
+[90m2026-10-24T05:32:23.874+00:00[39m [36m[cron/maintenance][39m [36mSession registry maintenance completed[39m
+[90m2026-10-24T05:32:23.975+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.main-session-recovery 588.5ms total=5363.7ms[39m
+[90m2026-10-24T05:32:23.975+00:00[39m [31m[gateway/channels][39m [36mskipping channel start (OPENCLAW_SKIP_CHANNELS=1 or OPENCLAW_SKIP_PROVIDERS=1)[39m
+[90m2026-10-24T05:32:23.976+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.channels 1134.8ms total=5364.9ms[39m
+[90m2026-10-24T05:32:24.032+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.subagent-recovery starting total=5420.8ms[39m
+[90m2026-10-24T05:32:24.065+00:00[39m [36m[gateway][39m [36mstartup phase: ready 1.3ms total=5454.1ms[39m
+[90m2026-10-24T05:32:24.065+00:00[39m [36m[gateway][39m [36mready[39m
+[90m2026-10-24T05:32:24.066+00:00[39m [36m[gateway][39m [36mstartup phase: sidecars.subagent-recovery 33.7ms total=5454.5ms readersMs=0.0 execMs=33.3 registryLoadMs=2.5 registryActivationMs=4.1 registryActivationBindMs=2.7 registryActivationRequestersMs=0.1 registryActivationReserveMs=0.1 registryActivationResumeMs=0.3 registryActivationAuthorityRestoreMs=0.0 registryActivationPublishMs=0.0 registryActivationSessionReadMs=0.0 registryActivationYieldMs=0.0 registryActivationRuns=0.0 registryActivationActiveRuns=0.0 registryActivationRecoveredRuns=0.0 registryActivationPublishedRuns=0.0 outcome=success[39m
+[90m2026-10-24T05:32:24.105+00:00[39m [36m[ws][39m [36mclient connected conn=5bed150f-28d3-4a70-9763-a23f6a395366 client=cli name=cli mode=cli role=operator auth=token version=2026.10.6 platform=linux build=legacy remote=127.0.0.1[39m
+[90m2026-10-24T05:32:24.494+00:00[39m [36m[gateway][39m [36mdatabase page-cache residency: database=state scope=file-sample resident=100.0% readBytes=14496 diskBytes=0 payloadBytes=0 payloadMessages=0 elapsedMs=6.7 projectionQueryMs=n/a->n/a limited=false[39m
+[90m2026-10-24T05:32:25.041+00:00[39m [36m[ws][39m [36mclient connected conn=4ad5be3e-8d6d-43ab-9cfd-23d41b28397a client=cli name=cli mode=cli role=operator auth=token version=2026.10.6 platform=linux build=legacy remote=127.0.0.1[39m
+[90m2026-10-24T05:32:25.404+00:00[39m [36m[gateway][39m [36mstartup phase: post-ready.startup-maintenance starting total=6792.6ms[39m
+[90m2026-10-24T05:32:25.404+00:00[39m [36m[gateway][39m [36mstartup phase: startup.maintenance.plugin-registry starting total=6793.2ms[39m
+[90m2026-10-24T05:32:25.405+00:00[39m [36m[gateway][39m [36mstartup phase: startup.maintenance.channels starting total=6793.9ms[39m
+[90m2026-10-24T05:32:25.405+00:00[39m [36m[gateway][39m [36mstartup phase: startup.maintenance.sessions starting total=6794.2ms[39m
+[90m2026-10-24T05:32:25.407+00:00[39m [36m[gateway][39m [36mstartup phase: startup.maintenance.pairing starting total=6795.9ms[39m
+[90m2026-10-24T05:32:25.410+00:00[39m [36m[gateway][39m [36mstartup phase: startup.maintenance.sessions 4.6ms total=6798.8ms[39m
+[90m2026-10-24T05:32:25.416+00:00[39m [36m[gateway][39m [36mstartup phase: startup.maintenance.channels 6.6ms total=6800.5ms[39m
+[90m2026-10-24T05:32:25.418+00:00[39m [36m[gateway][39m [36mstartup phase: startup.maintenance.pairing 11.2ms total=6807.1ms[39m
+[90m2026-10-24T05:32:25.577+00:00[39m [36m[ws][39m [36mclient connected conn=91d765cd-6039-4132-8412-ff9ccdd67953 client=cli name=cli mode=cli role=operator auth=token version=2026.10.6 platform=linux build=legacy remote=127.0.0.1[39m
+[90m2026-10-24T05:32:25.599+00:00[39m [36m[gateway][39m [36mstartup phase: startup.maintenance.plugin-registry 194.8ms total=6988.0ms[39m
+[90m2026-10-24T05:32:25.599+00:00[39m [36m[gateway][39m [36mstartup phase: post-ready.startup-maintenance 195.7ms total=6988.3ms[39m
+[90m2026-10-24T05:32:26.105+00:00[39m [36m[ws][39m [36mclient connected conn=e0553d0c-3dc2-4ed1-a823-3eb4a8c42565 client=cli name=cli mode=cli role=operator auth=token version=2026.10.6 platform=linux build=legacy remote=127.0.0.1[39m
+[90m2026-10-24T05:32:26.568+00:00[39m [36m[ws][39m [36mclient connected conn=ecf9dd55-7b64-4326-aa2b-e164acfb73e7 client=cli name=cli mode=cli role=operator auth=token version=2026.10.6 platform=linux build=legacy remote=127.0.0.1[39m
+[90m2026-10-24T05:32:27.056+00:00[39m [36m[ws][39m [36mclient connected conn=a4c189d3-7843-4740-8e97-3b5c315aec1e client=cli name=cli mode=cli role=operator auth=token version=2026.10.6 platform=linux build=legacy remote=127.0.0.1[39m
+[90m2026-10-24T05:32:27.524+00:00[39m [36m[ws][39m [36mclient connected conn=4de052d9-6cfb-4e7c-8dab-5d243ac32dec client=cli name=cli mode=cli role=operator auth=token version=2026.10.6 platform=linux build=legacy remote=127.0.0.1[39m
+[90m2026-10-24T05:32:27.992+00:00[39m [36m[ws][39m [36mclient connected conn=222a0942-7969-44d6-824a-8a6fd108a4fa client=cli name=cli mode=cli role=operator auth=token version=2026.10.6 platform=linux build=legacy remote=127.0.0.1[39m
+[90m2026-10-24T05:32:28.486+00:00[39m [36m[ws][39m [36mclient connected conn=b3782713-222c-45b1-9771-b6030b8a6517 client=cli name=cli mode=cli role=operator auth=token version=2026.10.6 platform=linux build=legacy remote=127.0.0.1[39m
+[90m2026-10-24T05:32:30.780+00:00[39m [32m[admission][39m [36mclosed: restart-signal fence[39m
+[90m2026-10-24T05:32:30.786+00:00[39m [32m[admission][39m [36mclosed: stop (SIGTERM)[39m
+[90m2026-10-24T05:32:30.786+00:00[39m [36m[gateway][39m [36mreceived SIGTERM; shutting down[39m
+[90m2026-10-24T05:32:30.799+00:00[39m [36m[gateway][39m [36mshutdown budget at shutdown: drain=74981ms shutdown=84981ms reserve=10000ms exitMargin=5000ms; source=systemd system setup_and_run_blacksmith.service TimeoutStopUSec=90000ms[39m
+[90m2026-10-24T05:32:30.804+00:00[39m [36m[gateway][39m [36mactive-work drain settled; beginning server close[39m
+[33m[state/agent-db][39m [36magent database clean-close receipt: written; agent=main[39m
+[90m2026-10-24T05:32:30.823+00:00[39m [34m[gmail-watcher][39m [36mgmail watcher stopped[39m
+[90m2026-10-24T05:32:30.860+00:00[39m [33m[shutdown][39m [36mcompleted cleanly in 53ms[39m
